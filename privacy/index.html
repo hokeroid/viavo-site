@@ -13,7 +13,7 @@
   <nav><strong>Privacy</strong> &nbsp;·&nbsp; <a href="../support/">Support</a> &nbsp;·&nbsp; <a href="ru/">Русский</a></nav>
 </header>
 <h1>Privacy Policy</h1>
-<p class="meta">Effective 10 October 2026. Applies to the Viavo app for iPhone and CarPlay (bundle <code>app.viavo.drive</code>).</p>
+<p class="meta">Effective 11 October 2026. Applies to the Viavo app for iPhone and CarPlay (bundle <code>app.viavo.drive</code>).</p>
 
 <p>Viavo is a voice assistant. To do what you ask, it has to hear you, understand you and reach the apps and data on your phone. This page says exactly what leaves your phone, where it goes, how long we keep it and how to delete it. We do not sell your data and we show no advertising.</p>
 
@@ -39,6 +39,7 @@
   <li>what is playing now, when you ask about music;</li>
   <li>your upcoming calendar events and reminders, when the request concerns them.</li>
 </ul>
+<p><strong>Messengers.</strong> If you connect Telegram or Slack in Settings and ask about your messages (“what did Anna write?”, “tell the team I’m late”), our server reads or sends, on your behalf and only at that moment, what you asked for, and passes the text of the fetched messages to the language model so it can answer. Voice messages are transcribed by OpenAI. The access to your account (the Telegram session, the Slack token) is encrypted with a key kept only on the server and stored on your phone, never on the server; the fetched messages are not stored. The assistant’s spoken retelling is kept as part of the day’s conversation like any reply. You agree to this on the Messengers screen before connecting, and “Disconnect” ends it. The mechanics are described in detail in <a href="../messengers/">How Viavo handles your messages</a>.</p>
 <p>Weather questions send your coordinates to Open-Meteo. Podcast searches send the search text to Apple’s iTunes Search API. Places are looked up with Apple Maps on your phone under Apple’s own privacy terms.</p>
 
 <h2>5. Data we store for you</h2>
@@ -53,6 +54,7 @@
 <tr><td>Notes you dictate</td><td>That is the feature</td><td>Until you delete the note</td></tr>
 <tr><td>Preferences: navigator, music app, language, onboarding state</td><td>To keep them across devices</td><td>Until you delete the account</td></tr>
 <tr><td>Bug reports and wishes you say to the assistant, with the transcript, the day’s recent messages and context</td><td>To fix the problem and answer you</td><td>Until handled, then archived</td></tr>
+<tr><td>Nothing about connected messengers: the encrypted account access lives on your phone, and messages fetched from Telegram or Slack are used for the reply and discarded</td><td>See section 4</td><td>Not stored</td></tr>
 <tr><td>Request counts per day</td><td>Fair usage limits</td><td>40 days</td></tr>
 <tr><td>Technical events: type of request, response time, error type</td><td>To find and fix failures</td><td>90 days</td></tr>
 </table>
@@ -68,8 +70,9 @@
 <table>
 <tr><th>Provider</th><th>What for</th><th>What they receive</th></tr>
 <tr><td>Supabase</td><td>Hosting, sign-in, database (EU, Ireland)</td><td>Everything in section 5</td></tr>
-<tr><td>Anthropic</td><td>Language model, web search</td><td>Request text, context from section 4, recent conversation</td></tr>
-<tr><td>OpenAI</td><td>Speech-to-text; backup text-to-speech</td><td>Your recording; answer text</td></tr>
+<tr><td>Anthropic</td><td>Language model, web search</td><td>Request text, context from section 4, recent conversation, and the text of messenger messages fetched to answer a request</td></tr>
+<tr><td>OpenAI</td><td>Speech-to-text; backup text-to-speech</td><td>Your recording; voice messages from Telegram when you ask about them; answer text</td></tr>
+<tr><td>Telegram, Slack</td><td>Reading and sending your messages, only when you ask and only after you connected the account</td><td>The same requests your own Telegram or Slack app makes, from your account</td></tr>
 <tr><td>ElevenLabs</td><td>Text-to-speech</td><td>Answer text</td></tr>
 <tr><td>Open-Meteo</td><td>Weather</td><td>Coordinates</td></tr>
 <tr><td>Apple, Google</td><td>Sign-in; Apple Music, Maps, iTunes Search on the device</td><td>Per their own terms</td></tr>

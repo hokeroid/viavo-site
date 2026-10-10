@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Viavo handles your messages</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<header>
+  <a href="../">Viavo</a>
+  <nav><a href="../privacy/">Privacy</a> &nbsp;·&nbsp; <a href="../support/">Support</a> &nbsp;·&nbsp; <a href="ru/">Русский</a></nav>
+</header>
+<h1>How Viavo handles your messages</h1>
+<p class="meta">Telegram and Slack in Viavo. Updated 11 October 2026. This page explains the mechanics; the <a href="../privacy/">Privacy Policy</a> is the binding document.</p>
+
+<p>Viavo reads or sends a message only when you ask for it, in the moment you ask, and only what you asked for. Nobody at Viavo reads your chats, and our server keeps no copy of your account access or of your messages. The rest of this page says how that is made true, step by step.</p>
+
+<h2>1. Where the access to your account lives</h2>
+<p>When you connect Telegram (phone number, the code Telegram sends, your two-step password if you have one) or Slack (the usual “Allow” page in your workspace), our server receives the session once, at that moment. It encrypts it with a key that exists only in the server’s secret store, hands the encrypted blob back to your phone and forgets it. There is no table of accounts in our database.</p>
+<p>Your phone keeps the blob in the iOS Keychain and sends it along with every request you make. The server decrypts it in memory for the few seconds the request takes and drops it again. So:</p>
+<ul>
+  <li>a copy of our database contains nothing that opens your Telegram or Slack;</li>
+  <li>your phone alone, without the server’s key, holds nothing usable either;</li>
+  <li>the access is per phone: a new phone means connecting again, and nothing follows you around.</li>
+</ul>
+<p>In Telegram, Viavo appears in Settings → Devices as a signed-in device, and you can end it from there at any time. In Slack, it is listed under your workspace’s apps. “Disconnect” in Viavo does both: forgets the blob on the phone and signs the session out.</p>
+
+<h2>2. What happens when you ask</h2>
+<ol>
+  <li>You say, for example, “what did Anna write?”. Your words become text (on the server by OpenAI, or on the phone if you chose on-device recognition).</li>
+  <li>The language model (Anthropic’s Claude) decides what is needed: find the chat named Anna, read its unread messages.</li>
+  <li>Our server connects to Telegram or Slack as you, through their official interfaces, the way a Telegram app on a second device would, and fetches only that: the list of your chats to find the right one, and the messages of that one chat. “What’s new?” fetches the chats with unread messages and the last few messages in each; a search fetches the matches. Nothing is downloaded in bulk and nothing is kept.</li>
+  <li>The text of those messages is given to the language model so it can tell you what they say. For a voice message, the audio is downloaded, turned into text by OpenAI’s speech recognition, and the audio is discarded.</li>
+  <li>The reply is spoken to you (ElevenLabs turns the reply text into speech). The connection to the messenger is closed as soon as the reply is composed.</li>
+</ol>
+<p>Sending works the same way in reverse. Viavo sends only the message you dictated, to the one chat you named, and by default it first reads the recipient and the text back and waits for your “yes”. You can switch that confirmation off per account in Settings. It never sends to several chats at once and never adds anything you did not say.</p>
+<p>Viavo does not mark chats as read behind your back. A chat is marked read only when you ask, or when you turn on “Mark as read” for that account.</p>
+
+<h2>3. What is kept and what is not</h2>
+<table>
+<tr><th>Not kept anywhere</th><th>Kept, like any conversation with Viavo</th></tr>
+<tr>
+<td>The messages fetched from the messenger. The audio of voice messages. Your session or token (the server never stores it). The list of your chats and contacts in the messenger.</td>
+<td>The text of what you asked and the text of the assistant’s spoken reply. When the assistant retells a message to you, that retelling is part of its reply and is kept for 7 days as the day’s conversation, as described in the <a href="../privacy/">Privacy Policy</a> (section 5), so you can follow up with “reply to her”. Daily summaries and the long-term memory are built from those replies; memory can be turned off and any fact deleted in Settings → Memory.</td>
+</tr>
+</table>
+<p>Our technical logs record the type of request, how long it took, how many accounts were connected and whether a message was sent. They do not contain message text, chat names or contact names.</p>
+
+<h2>4. Who sees what</h2>
+<table>
+<tr><th>Who</th><th>What they receive</th></tr>
+<tr><td>Telegram, Slack</td><td>The same requests your own Telegram or Slack app would make, from your own account. Viavo uses the official Telegram API with its own application identifier, and a Slack user token with the permissions listed on the “Allow” page.</td></tr>
+<tr><td>Anthropic (Claude)</td><td>Your request and the text of the messages that were fetched to answer it, together with the day’s recent conversation. Anthropic processes it to produce the reply and does not use it to train models.</td></tr>
+<tr><td>OpenAI</td><td>The audio of voice messages, to turn them into text.</td></tr>
+<tr><td>ElevenLabs</td><td>The text of the spoken reply.</td></tr>
+<tr><td>Supabase</td><td>Our server runs there (EU, Ireland). It passes the data through as described above and stores what section 3 lists.</td></tr>
+</table>
+<p>Before any of this happens, the Messengers screen asks you to agree to the text of your messages being sent to these providers. Until you do, no messenger can be connected.</p>
+
+<h2>5. Your controls</h2>
+<ul>
+  <li><strong>The consent switch</strong> on the Messengers screen: off means nothing is connected and nothing is sent.</li>
+  <li><strong>Confirm before sending</strong>, per account: Viavo reads the message back and asks before sending.</li>
+  <li><strong>Mark as read</strong>, per account: off by default.</li>
+  <li><strong>Disconnect</strong>: forgets the account on the phone and signs it out at Telegram or Slack. You can also end the session from inside Telegram or Slack.</li>
+  <li><strong>Delete account</strong> in Viavo Settings removes everything we keep for you.</li>
+</ul>
+<p>Questions or doubts: the <a href="../support/">Support page</a>.</p>
+
+<footer>© 2026 Viavo</footer>
+</main>
+</body>
+</html>
