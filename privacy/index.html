@@ -34,7 +34,7 @@
 <p>The text of your request is sent to our server and from there to Anthropic’s Claude model, which works out what you want and writes the answer. For questions about current facts or places, the model may run a web search; your request text is what is searched for. The answer is turned into speech by ElevenLabs (or OpenAI when ElevenLabs is unavailable); only the answer text is sent to them.</p>
 <p>To answer well, each request carries some context from your phone:</p>
 <ul>
-  <li>your approximate location (reduced accuracy), time zone and app language;</li>
+  <li>your location (coordinates from the phone’s location service), time zone and app language, and the home and work addresses you saved in Settings, so the assistant can find places near you and route you home. Coordinates are used only to answer the request and are not stored; a bug report keeps only the city and country;</li>
   <li>which navigator and music app you chose, which apps are installed and which permissions are off, so the assistant can say what it can and cannot do;</li>
   <li>what is playing now, when you ask about music;</li>
   <li>your upcoming calendar events and reminders, when the request concerns them.</li>
