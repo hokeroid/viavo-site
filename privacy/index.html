@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Viavo Privacy Policy</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<header>
+  <a href="../">Viavo</a>
+  <nav><strong>Privacy</strong> &nbsp;·&nbsp; <a href="../support/">Support</a> &nbsp;·&nbsp; <a href="ru/">Русский</a></nav>
+</header>
+<h1>Privacy Policy</h1>
+<p class="meta">Effective 10 October 2026. Applies to the Viavo app for iPhone and CarPlay (bundle <code>app.viavo.drive</code>).</p>
+
+<p>Viavo is a voice assistant. To do what you ask, it has to hear you, understand you and reach the apps and data on your phone. This page says exactly what leaves your phone, where it goes, how long we keep it and how to delete it. We do not sell your data and we show no advertising.</p>
+
+<h2>1. Who is responsible</h2>
+<p>Viavo is developed and operated by its developer (“we”). Contact us through the <a href="../support/">Support page</a>.</p>
+
+<h2>2. Your account</h2>
+<p>You sign in with Apple or Google. We receive the identifier that provider gives us, your e-mail address (with Sign in with Apple it may be a private relay address) and, if provided, your name. The account keeps your settings and data together across your devices and lets us apply fair usage limits. Sign-in is handled by Supabase Auth.</p>
+
+<h2>3. Your voice</h2>
+<p>Recording starts only when you tap the microphone button, on the phone or on the CarPlay screen, and stops after you finish speaking or after 30 seconds. There is no wake word and no listening in the background.</p>
+<ul>
+  <li><strong>Server recognition (default).</strong> The recording is sent over an encrypted connection to our server and transcribed with OpenAI’s speech-to-text service. We do not keep the audio after the transcript is produced.</li>
+  <li><strong>On-device recognition.</strong> In Settings you can switch to recognition on the phone. The app then downloads a speech model (from Hugging Face, about 500 MB) and your audio never leaves your phone; only the text does.</li>
+</ul>
+
+<h2>4. Understanding and answering</h2>
+<p>The text of your request is sent to our server and from there to Anthropic’s Claude model, which works out what you want and writes the answer. For questions about current facts or places, the model may run a web search; your request text is what is searched for. The answer is turned into speech by ElevenLabs (or OpenAI when ElevenLabs is unavailable); only the answer text is sent to them.</p>
+<p>To answer well, each request carries some context from your phone:</p>
+<ul>
+  <li>your approximate location (reduced accuracy), time zone and app language;</li>
+  <li>which navigator and music app you chose, which apps are installed and which permissions are off, so the assistant can say what it can and cannot do;</li>
+  <li>what is playing now, when you ask about music;</li>
+  <li>your upcoming calendar events and reminders, when the request concerns them.</li>
+</ul>
+<p>Weather questions send your coordinates to Open-Meteo. Podcast searches send the search text to Apple’s iTunes Search API. Places are looked up with Apple Maps on your phone under Apple’s own privacy terms.</p>
+
+<h2>5. Data we store for you</h2>
+<p>Everything below is stored under your account on our server, hosted by Supabase in the European Union (Ireland), protected by row-level access rules so only you and the assistant acting for you can read it.</p>
+<table>
+<tr><th>Data</th><th>Why</th><th>Kept</th></tr>
+<tr><td>Conversation messages (your requests and the assistant’s replies)</td><td>So the assistant remembers what you said earlier today</td><td>7 days</td></tr>
+<tr><td>Daily conversation summaries</td><td>Same, in compact form</td><td>7 days</td></tr>
+<tr><td>Contact names and nicknames only, never phone numbers or e-mails</td><td>To recognise who you mean when you say “call Anna”. The number stays on your phone and the call is placed by the Phone app</td><td>Until you sign out, re-sync or delete the account</td></tr>
+<tr><td>Artist names from your Apple Music library</td><td>To recognise what you ask to play</td><td>Until you re-sync or delete the account</td></tr>
+<tr><td>Names of your HomeKit homes, rooms, accessories and scenes, only after you turn HomeKit on in Settings</td><td>To recognise “open the garage”. Commands run on your phone. HomeKit data is never used for marketing, advertising or data mining</td><td>Until you turn HomeKit off or delete the account</td></tr>
+<tr><td>Notes you dictate</td><td>That is the feature</td><td>Until you delete the note</td></tr>
+<tr><td>Preferences: navigator, music app, language, onboarding state</td><td>To keep them across devices</td><td>Until you delete the account</td></tr>
+<tr><td>Bug reports and wishes you say to the assistant, with the transcript, the day’s recent messages and context</td><td>To fix the problem and answer you</td><td>Until handled, then archived</td></tr>
+<tr><td>Request counts per day</td><td>Fair usage limits</td><td>40 days</td></tr>
+<tr><td>Technical events: type of request, response time, error type</td><td>To find and fix failures</td><td>90 days</td></tr>
+</table>
+<p>We do not use third-party analytics or advertising SDKs. Model prompts and answers are not used to train any model by us.</p>
+
+<h2>6. Permissions on your phone</h2>
+<p>Viavo asks for each permission when you first need it and works without any of them except the microphone. Microphone: to hear you. Location: for routes, places and weather. Contacts: to call by name. Apple Music: to play from your library. Calendar and Reminders: to create and read events and reminders. HomeKit: to control accessories. You can change any permission in Viavo Settings → Permissions or in the iPhone Settings app.</p>
+
+<h2>7. Apps Viavo opens</h2>
+<p>When you ask for a route or music, Viavo opens the app you chose (Apple Maps, Google Maps, Waze, Yandex Maps or Navigator, Apple Music, Spotify, Apple Podcasts) and passes it the destination or the search text. From that point the other app’s privacy policy applies.</p>
+
+<h2>8. Service providers</h2>
+<table>
+<tr><th>Provider</th><th>What for</th><th>What they receive</th></tr>
+<tr><td>Supabase</td><td>Hosting, sign-in, database (EU, Ireland)</td><td>Everything in section 5</td></tr>
+<tr><td>Anthropic</td><td>Language model, web search</td><td>Request text, context from section 4, recent conversation</td></tr>
+<tr><td>OpenAI</td><td>Speech-to-text; backup text-to-speech</td><td>Your recording; answer text</td></tr>
+<tr><td>ElevenLabs</td><td>Text-to-speech</td><td>Answer text</td></tr>
+<tr><td>Open-Meteo</td><td>Weather</td><td>Coordinates</td></tr>
+<tr><td>Apple, Google</td><td>Sign-in; Apple Music, Maps, iTunes Search on the device</td><td>Per their own terms</td></tr>
+<tr><td>Hugging Face</td><td>Download of the on-device speech model, only if you enable it</td><td>Nothing but the download request</td></tr>
+</table>
+<p>These providers process data on our instructions. Some of them are located in the United States; transfers rely on their standard contractual safeguards.</p>
+
+<h2>9. Deleting your data</h2>
+<p>Signing out removes the session from the phone. To delete your account and everything in section 5, use “Delete account” in Viavo Settings, or ask us via the <a href="../support/">Support page</a> and we will do it within 30 days. Contact and music data is replaced on each sync and removed with the account.</p>
+
+<h2>10. Your rights</h2>
+<p>If you are in the EU, the UK or another place with data protection laws, you can ask for a copy of your data, its correction or deletion, and object to processing. Our legal bases are performing the service you asked for and, for phone permissions, your consent, which you can withdraw at any time. Write to us via the Support page.</p>
+
+<h2>11. Children</h2>
+<p>Viavo is for drivers and is not directed to children under 16. We do not knowingly collect data from children.</p>
+
+<h2>12. Changes</h2>
+<p>When this policy changes we update the date at the top. Significant changes are announced in the app.</p>
+
+<footer>© 2026 Viavo</footer>
+</main>
+</body>
+</html>
