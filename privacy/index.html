@@ -13,9 +13,9 @@
   <nav><strong>Privacy</strong> &nbsp;·&nbsp; <a href="../terms/">Terms</a> &nbsp;·&nbsp; <a href="../support/">Support</a> &nbsp;·&nbsp; <a href="ru/">Русский</a></nav>
 </header>
 <h1>Privacy Policy</h1>
-<p class="meta">Effective 11 October 2026. Applies to the Viavo app for iPhone and CarPlay (bundle <code>app.viavo.drive</code>). The <a href="../terms/">Terms of Use</a> describe credits, the subscription and refunds.</p>
+<p class="meta">Effective 12 October 2026. Applies to the Viavo app for iPhone and CarPlay (bundle <code>app.viavo.drive</code>). The <a href="../terms/">Terms of Use</a> describe credits, the subscription and refunds.</p>
 
-<p>Viavo is a voice assistant. To do what you ask, it has to hear you, understand you and reach the apps and data on your phone. This page says exactly what leaves your phone, where it goes, how long we keep it and how to delete it. We do not sell your data and we show no advertising.</p>
+<p>Viavo is a voice assistant. To do what you ask, it has to hear you, understand you and reach the apps and data on your phone. This page says exactly what leaves your phone, where it goes, how long we keep it and how to delete it. We do not sell your data and we show no advertising inside the app. We do advertise Viavo elsewhere, and section 9 says how we measure that.</p>
 
 <h2>1. Who is responsible</h2>
 <p>Viavo is developed and operated by its developer (“we”). Contact us through the <a href="../support/">Support page</a>.</p>
@@ -65,10 +65,10 @@
 <tr><td>Technical events: type of request, how it went, a template of the request with the specifics removed (“call {contact}”), which tools ran, response time, error type</td><td>To find and fix failures. Never your words: a template that still contains a name, a number or a value from the request is discarded</td><td>90 days</td></tr>
 <tr><td>A request that went wrong and the assistant’s reply, with names, numbers, addresses and everything the tools returned removed, only while “Help improve Viavo” is on (it is by default; the switch is in onboarding and in Settings)</td><td>So the team can see what failed. Requests that worked are never kept as text</td><td>30 days; turning the switch off deletes them at once</td></tr>
 </table>
-<p>We do not use third-party analytics or advertising SDKs. Model prompts and answers are not used to train any model by us.</p>
+<p>The only third-party SDK in the app besides the store is Meta’s, used to measure our own advertising (section 9); there is no third-party analytics SDK. Model prompts and answers are not used to train any model by us.</p>
 
 <h2>6. Permissions on your phone</h2>
-<p>Viavo asks for each permission when you first need it and works without any of them except the microphone. Microphone: to hear you. Location: for routes, places and weather. Contacts: to call by name. Apple Music: to play from your library. Calendar and Reminders: to create and read events and reminders. HomeKit: to control accessories. You can change any permission in Viavo Settings → Permissions or in the iPhone Settings app.</p>
+<p>Viavo asks for each permission when you first need it and works without any of them except the microphone. Microphone: to hear you. Location: for routes, places and weather. Contacts: to call by name. Apple Music: to play from your library. Calendar and Reminders: to create and read events and reminders. HomeKit: to control accessories. Tracking (the “Allow Viavo to track your activity” dialog): only to measure our advertising, see section 9; Viavo works the same whichever way you answer. You can change any permission in Viavo Settings → Permissions or in the iPhone Settings app.</p>
 
 <h2>7. Apps Viavo opens</h2>
 <p>When you ask for a route or music, Viavo opens the app you chose (Apple Maps, Google Maps, Waze, Yandex Maps or Navigator, Apple Music, Spotify, Apple Podcasts) and passes it the destination or the search text. From that point the other app’s privacy policy applies.</p>
@@ -83,23 +83,33 @@
 <tr><td>Anthropic (claude.ai, your own account)</td><td>Running a Claude routine you added, only when you ask</td><td>The task you gave: your words, or the text of the message you asked about with its sender and chat</td></tr>
 <tr><td>ElevenLabs</td><td>Speech-to-text; backup text-to-speech</td><td>Your recording; answer text</td></tr>
 <tr><td>Microsoft (Azure Speech)</td><td>Text-to-speech</td><td>Answer text</td></tr>
-<tr><td>RevenueCat</td><td>Subscriptions and credit packs bought through the App Store</td><td>Your account identifier and the purchase status from Apple; no payment details</td></tr>
+<tr><td>RevenueCat</td><td>Subscriptions and credit packs bought through the App Store; forwarding purchase events to Meta and Apple Ads (section 9)</td><td>Your account identifier and the purchase status from Apple; no payment details. For attribution: the device vendor identifier, the IP address, the Meta SDK’s anonymous install id, Apple’s attribution token and, only if you allowed tracking, the advertising identifier</td></tr>
+<tr><td>Meta (Facebook, Instagram)</td><td>Measuring our ads (section 9)</td><td>That the app was installed and opened, an anonymous install id, device model and iOS version; the fact that a subscription or a credit pack was bought, through RevenueCat; the advertising identifier only if you allowed tracking</td></tr>
 <tr><td>Open-Meteo</td><td>Weather</td><td>Coordinates</td></tr>
 <tr><td>Apple, Google</td><td>Sign-in; Apple Music, Maps, iTunes Search on the device</td><td>Per their own terms</td></tr>
 <tr><td>Hugging Face</td><td>Download of the on-device speech model, only if you enable it</td><td>Nothing but the download request</td></tr>
 </table>
 <p>These providers process data on our instructions. Some of them are located in the United States; transfers rely on their standard contractual safeguards.</p>
 
-<h2>9. Deleting your data</h2>
+<h2>9. Measuring our advertising</h2>
+<p>We advertise Viavo on Meta’s platforms (Facebook, Instagram) and in Apple Search Ads. To know which ads bring drivers who stay and which do not, so that the money goes to the ads that work, three things happen.</p>
+<ul>
+<li><strong>Meta’s SDK</strong> in the app tells Meta that the app was installed and opened, together with an anonymous install id, the device model and the iOS version. Never your voice, your requests or anything you say, type or read.</li>
+<li><strong>Purchases.</strong> When you start a subscription or buy a credit pack, RevenueCat (our purchase provider) tells Meta that a purchase happened on that install, with the same anonymous id and the price, so Meta can tell which ad led to it. Your name, e-mail and account are not sent.</li>
+<li><strong>The tracking dialog.</strong> iOS asks once whether Viavo may “track your activity across other companies’ apps and websites”. If you allow it, the phone’s advertising identifier (IDFA) is added to what Meta and RevenueCat receive above, which lets Meta match the install to the ad more precisely. If you do not allow it, nothing else changes: Apple still reports to Meta, in aggregate and with a delay, that an ad led to an install (SKAdNetwork / AdAttributionKit), without any identifier of you. You can change the answer at any time in iPhone Settings → Privacy &amp; Security → Tracking.</li>
+</ul>
+<p>For Apple Search Ads, the app reads an attribution token from Apple and passes it to RevenueCat, which asks Apple whether the install came from one of our campaigns. The token identifies the ad click, not you. Meta and Apple keep what they receive under their own privacy policies; our account with them holds campaign figures, never a list of people. We never buy audiences from, or share your data with, data brokers.</p>
+
+<h2>10. Deleting your data</h2>
 <p>Signing out removes the session from the phone. To delete your account and everything in section 5, use “Delete account” in Viavo Settings, or ask us via the <a href="../support/">Support page</a> and we will do it within 30 days. Contact and music data is replaced on each sync and removed with the account.</p>
 
-<h2>10. Your rights</h2>
-<p>If you are in the EU, the UK or another place with data protection laws, you can ask for a copy of your data, its correction or deletion, and object to processing. Our legal bases are performing the service you asked for and, for phone permissions, your consent, which you can withdraw at any time. Write to us via the Support page.</p>
+<h2>11. Your rights</h2>
+<p>If you are in the EU, the UK or another place with data protection laws, you can ask for a copy of your data, its correction or deletion, and object to processing. Our legal bases are performing the service you asked for and, for phone permissions and for tracking, your consent, which you can withdraw at any time; and for measuring our advertising without an identifier, our legitimate interest in knowing which ads work. Write to us via the Support page.</p>
 
-<h2>11. Children</h2>
+<h2>12. Children</h2>
 <p>Viavo is for drivers and is not directed to children under 16. We do not knowingly collect data from children.</p>
 
-<h2>12. Changes</h2>
+<h2>13. Changes</h2>
 <p>When this policy changes we update the date at the top. Significant changes are announced in the app.</p>
 
 <footer>© 2026 Viavo</footer>
