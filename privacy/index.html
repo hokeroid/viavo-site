@@ -21,17 +21,17 @@
 <p>Viavo is developed and operated by its developer (“we”). Contact us through the <a href="../support/">Support page</a>.</p>
 
 <h2>2. Your account</h2>
-<p>You sign in with Apple or Google. We receive the identifier that provider gives us, your e-mail address (with Sign in with Apple it may be a private relay address) and, if provided, your name. The account keeps your settings and data together across your devices and lets us apply fair usage limits. Sign-in is handled by Supabase Auth.</p>
+<p>You sign in with Apple or Google. We receive the identifier that provider gives us, your e-mail address (with Sign in with Apple it may be a private relay address) and, if provided, your name. The account keeps your settings and data together across your devices and lets us apply fair usage limits. Sign-in is handled by Supabase Auth. With Sign in with Apple we also keep the token needed to revoke the sign-in at Apple when you delete the account.</p>
 
 <h2>3. Your voice</h2>
 <p>Recording starts only when you tap the microphone button, on the phone or on the CarPlay screen, and stops after you finish speaking or after 30 seconds. There is no wake word and no listening in the background.</p>
 <ul>
-  <li><strong>Server recognition (default).</strong> The recording is sent over an encrypted connection to our server and transcribed with OpenAI’s speech-to-text service. We do not keep the audio after the transcript is produced.</li>
+  <li><strong>Server recognition (default).</strong> The recording is streamed over an encrypted connection to ElevenLabs’ speech-to-text service with a short-lived token issued by our server, and the text comes back to the app. If the stream fails, or when it is turned off on our side, the recording is uploaded to our server and transcribed by OpenAI instead. We do not keep the audio after the transcript is produced.</li>
   <li><strong>On-device recognition.</strong> In Settings you can switch to recognition on the phone. The app then downloads a speech model (from Hugging Face, about 500 MB) and your audio never leaves your phone; only the text does.</li>
 </ul>
 
 <h2>4. Understanding and answering</h2>
-<p>The text of your request is sent to our server and from there to Anthropic’s Claude model, which works out what you want and writes the answer. For questions about current facts or places, the model may run a web search; your request text is what is searched for. The answer is turned into speech by ElevenLabs (or OpenAI when ElevenLabs is unavailable); only the answer text is sent to them.</p>
+<p>The text of your request is sent to our server and from there to Anthropic’s Claude model, which works out what you want and writes the answer. For questions about current facts or places, the model may run a web search; your request text is what is searched for. The answer is turned into speech by Microsoft Azure Speech (or ElevenLabs or OpenAI when it is unavailable); only the answer text is sent to them.</p>
 <p>To answer well, each request carries some context from your phone:</p>
 <ul>
   <li>your location (coordinates from the phone’s location service), time zone and app language, and the home and work addresses you saved in Settings, so the assistant can find places near you and route you home. Coordinates are used only to answer the request and are not stored; a bug report keeps only the city and country;</li>
@@ -40,6 +40,7 @@
   <li>your upcoming calendar events and reminders, when the request concerns them.</li>
 </ul>
 <p><strong>Messengers.</strong> If you connect Telegram or Slack in Settings and ask about your messages (“what did Anna write?”, “tell the team I’m late”), our server reads or sends, on your behalf and only at that moment, what you asked for, and passes the text of the fetched messages to the language model so it can answer. Voice messages are transcribed by OpenAI. The access to your account (the Telegram session, the Slack token) is encrypted with a key kept only on the server and stored on your phone, never on the server; the fetched messages are not stored. The assistant’s spoken retelling is kept as part of the day’s conversation like any reply. You agree to this on the Messengers screen before connecting, and “Disconnect” ends it. The mechanics are described in detail in <a href="../messengers/">How Viavo handles your messages</a>.</p>
+<p><strong>Memory.</strong> When Memory is on (it is by default; the switch is in Settings → Memory), the assistant keeps facts you tell it about yourself (“remember that I drive an electric car”: your car, people, places, tastes) and what it notices in conversation, and daily summaries of your conversations so it can answer “what did we talk about on Monday?”. Facts are shown and deleted one by one on the Memory screen or by saying “forget about…”. To search the summaries, each one is turned into a numeric embedding by OpenAI; only the summary text is sent for that.</p>
 <p>Weather questions send your coordinates to Open-Meteo. Podcast searches send the search text to Apple’s iTunes Search API. Places are looked up with Apple Maps on your phone under Apple’s own privacy terms.</p>
 
 <h2>5. Data we store for you</h2>
@@ -47,7 +48,8 @@
 <table>
 <tr><th>Data</th><th>Why</th><th>Kept</th></tr>
 <tr><td>Conversation messages (your requests and the assistant’s replies)</td><td>So the assistant remembers what you said earlier today</td><td>7 days</td></tr>
-<tr><td>Daily conversation summaries</td><td>Same, in compact form</td><td>7 days</td></tr>
+<tr><td>Daily conversation summaries</td><td>Same, in compact form; with Memory on, also so the assistant can recall an earlier day</td><td>7 days; while Memory is on, until you turn it off or delete the account</td></tr>
+<tr><td>Facts you asked the assistant to remember or that it noticed, with Memory on</td><td>To take them into account in every reply</td><td>Until you delete the fact, clear the memory or delete the account</td></tr>
 <tr><td>Contact names and nicknames only, never phone numbers or e-mails</td><td>To recognise who you mean when you say “call Anna”. The number stays on your phone and the call is placed by the Phone app</td><td>Until you sign out, re-sync or delete the account</td></tr>
 <tr><td>Artist names from your Apple Music library</td><td>To recognise what you ask to play</td><td>Until you re-sync or delete the account</td></tr>
 <tr><td>Names of your HomeKit homes, rooms, accessories and scenes, only after you turn HomeKit on in Settings</td><td>To recognise “open the garage”. Commands run on your phone. HomeKit data is never used for marketing, advertising or data mining</td><td>Until you turn HomeKit off or delete the account</td></tr>
@@ -55,8 +57,9 @@
 <tr><td>Preferences: navigator, music app, language, onboarding state</td><td>To keep them across devices</td><td>Until you delete the account</td></tr>
 <tr><td>Bug reports and wishes you say to the assistant, with the transcript, the day’s recent messages and context</td><td>To fix the problem and answer you</td><td>Until handled, then archived</td></tr>
 <tr><td>Nothing about connected messengers: the encrypted account access lives on your phone, and messages fetched from Telegram or Slack are used for the reply and discarded</td><td>See section 4</td><td>Not stored</td></tr>
-<tr><td>Request counts per day</td><td>Fair usage limits</td><td>40 days</td></tr>
-<tr><td>Technical events: type of request, response time, error type</td><td>To find and fix failures</td><td>90 days</td></tr>
+<tr><td>Request counts per day, the week’s credit balance and credit purchases</td><td>Fair usage limits and billing</td><td>Counts 40 days; balance and purchases until you delete the account</td></tr>
+<tr><td>Technical events: type of request, how it went, a template of the request with the specifics removed (“call {contact}”), which tools ran, response time, error type</td><td>To find and fix failures. Never your words: a template that still contains a name, a number or a value from the request is discarded</td><td>90 days</td></tr>
+<tr><td>A request that went wrong and the assistant’s reply, with names, numbers, addresses and everything the tools returned removed, only while “Help improve Viavo” is on (it is by default; the switch is in onboarding and in Settings)</td><td>So the team can see what failed. Requests that worked are never kept as text</td><td>30 days; turning the switch off deletes them at once</td></tr>
 </table>
 <p>We do not use third-party analytics or advertising SDKs. Model prompts and answers are not used to train any model by us.</p>
 
@@ -71,9 +74,10 @@
 <tr><th>Provider</th><th>What for</th><th>What they receive</th></tr>
 <tr><td>Supabase</td><td>Hosting, sign-in, database (EU, Ireland)</td><td>Everything in section 5</td></tr>
 <tr><td>Anthropic</td><td>Language model, web search</td><td>Request text, context from section 4, recent conversation, and the text of messenger messages fetched to answer a request</td></tr>
-<tr><td>OpenAI</td><td>Speech-to-text; backup text-to-speech</td><td>Your recording; voice messages from Telegram when you ask about them; answer text</td></tr>
+<tr><td>OpenAI</td><td>Backup speech-to-text; embeddings for memory recall; backup text-to-speech</td><td>Your recording when the stream to ElevenLabs fails; voice messages from Telegram when you ask about them; daily summaries; answer text</td></tr>
 <tr><td>Telegram, Slack</td><td>Reading and sending your messages, only when you ask and only after you connected the account</td><td>The same requests your own Telegram or Slack app makes, from your account</td></tr>
-<tr><td>ElevenLabs</td><td>Text-to-speech</td><td>Answer text</td></tr>
+<tr><td>ElevenLabs</td><td>Speech-to-text; backup text-to-speech</td><td>Your recording; answer text</td></tr>
+<tr><td>Microsoft (Azure Speech)</td><td>Text-to-speech</td><td>Answer text</td></tr>
 <tr><td>Open-Meteo</td><td>Weather</td><td>Coordinates</td></tr>
 <tr><td>Apple, Google</td><td>Sign-in; Apple Music, Maps, iTunes Search on the device</td><td>Per their own terms</td></tr>
 <tr><td>Hugging Face</td><td>Download of the on-device speech model, only if you enable it</td><td>Nothing but the download request</td></tr>

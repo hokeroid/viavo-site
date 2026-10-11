@@ -29,11 +29,11 @@
 
 <h2>2. What happens when you ask</h2>
 <ol>
-  <li>You say, for example, “what did Anna write?”. Your words become text (on the server by OpenAI, or on the phone if you chose on-device recognition).</li>
+  <li>You say, for example, “what did Anna write?”. Your words become text (by ElevenLabs’ speech recognition, or on the phone if you chose on-device recognition).</li>
   <li>The language model (Anthropic’s Claude) decides what is needed: find the chat named Anna, read its unread messages.</li>
   <li>Our server connects to Telegram or Slack as you, through their official interfaces, the way a Telegram app on a second device would, and fetches only that: the list of your chats to find the right one, and the messages of that one chat. “What’s new?” fetches the chats with unread messages and the last few messages in each; a search fetches the matches. Nothing is downloaded in bulk and nothing is kept.</li>
   <li>The text of those messages is given to the language model so it can tell you what they say. For a voice message, the audio is downloaded, turned into text by OpenAI’s speech recognition, and the audio is discarded.</li>
-  <li>The reply is spoken to you (ElevenLabs turns the reply text into speech). The connection to the messenger is closed as soon as the reply is composed.</li>
+  <li>The reply is spoken to you (Microsoft Azure Speech turns the reply text into speech). The connection to the messenger is closed as soon as the reply is composed.</li>
 </ol>
 <p>Sending works the same way in reverse. Viavo sends only the message you dictated, to the one chat you named, and by default it first reads the recipient and the text back and waits for your “yes”. You can switch that confirmation off per account in Settings. It never sends to several chats at once and never adds anything you did not say.</p>
 <p>Viavo does not mark chats as read behind your back. A chat is marked read only when you ask, or when you turn on “Mark as read” for that account.</p>
@@ -54,7 +54,7 @@
 <tr><td>Telegram, Slack</td><td>The same requests your own Telegram or Slack app would make, from your own account. Viavo uses the official Telegram API with its own application identifier, and a Slack user token with the permissions listed on the “Allow” page.</td></tr>
 <tr><td>Anthropic (Claude)</td><td>Your request and the text of the messages that were fetched to answer it, together with the day’s recent conversation. Anthropic processes it to produce the reply and does not use it to train models.</td></tr>
 <tr><td>OpenAI</td><td>The audio of voice messages, to turn them into text.</td></tr>
-<tr><td>ElevenLabs</td><td>The text of the spoken reply.</td></tr>
+<tr><td>Microsoft (Azure Speech)</td><td>The text of the spoken reply.</td></tr>
 <tr><td>Supabase</td><td>Our server runs there (EU, Ireland). It passes the data through as described above and stores what section 3 lists.</td></tr>
 </table>
 <p>Before any of this happens, the Messengers screen asks you to agree to the text of your messages being sent to these providers. Until you do, no messenger can be connected.</p>
