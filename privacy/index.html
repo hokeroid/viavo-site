@@ -31,7 +31,7 @@
 </ul>
 
 <h2>4. Understanding and answering</h2>
-<p>The text of your request is sent to our server and from there to Anthropic’s Claude model, which works out what you want and writes the answer. For questions about current facts or places, the model may run a web search; your request text is what is searched for. The answer is turned into speech by Microsoft Azure Speech (or ElevenLabs or OpenAI when it is unavailable); only the answer text is sent to them.</p>
+<p>The text of your request is sent to our server and from there to Anthropic’s Claude model, which works out what you want and writes the answer. For questions about current facts, the model may run a web search; your request text is what is searched for. When you ask for a place by its quality (a good restaurant, a well-rated salon, whether a shop is open now), the search text goes to Google Places together with the city you named or, for places around you, your coordinates. The answer is turned into speech by Microsoft Azure Speech (or ElevenLabs or OpenAI when it is unavailable); only the answer text is sent to them.</p>
 <p>To answer well, each request carries some context from your phone:</p>
 <ul>
   <li>your location (coordinates from the phone’s location service), time zone and app language, and the home and work addresses you saved in Settings, so the assistant can find places near you and route you home. Coordinates are used only to answer the request and are not stored; a bug report keeps only the city and country;</li>
@@ -86,6 +86,7 @@
 <tr><td>RevenueCat</td><td>Subscriptions and credit packs bought through the App Store; forwarding purchase events to Meta and Apple Ads (section 9)</td><td>Your account identifier and the purchase status from Apple; no payment details. For attribution: the device vendor identifier, the IP address, the Meta SDK’s anonymous install id, Apple’s attribution token and, only if you allowed tracking, the advertising identifier</td></tr>
 <tr><td>Meta (Facebook, Instagram)</td><td>Measuring our ads (section 9)</td><td>That the app was installed and opened, an anonymous install id, device model and iOS version; the fact that a subscription or a credit pack was bought, through RevenueCat; the advertising identifier only if you allowed tracking</td></tr>
 <tr><td>Open-Meteo</td><td>Weather</td><td>Coordinates</td></tr>
+<tr><td>Google (Places API)</td><td>Finding places with ratings, opening hours and reviews when you ask for a place by its quality</td><td>The search text of the request, the city you named or your coordinates, and your country</td></tr>
 <tr><td>Spotify</td><td>Finding the track to open, when Spotify is your music app</td><td>The search text of a music request and your country</td></tr>
 <tr><td>Google (YouTube Data API)</td><td>Finding the video to open in YouTube, or the track when YouTube Music is your music app</td><td>The search text or channel name of a video or music request and your country</td></tr>
 <tr><td>Deezer</td><td>Finding the track to open, when Deezer is your music app</td><td>The search text of a music request</td></tr>
