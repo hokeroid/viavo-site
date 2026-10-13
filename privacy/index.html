@@ -26,7 +26,7 @@
 <h2>3. Your voice</h2>
 <p>Recording starts only when you tap the microphone button, on the phone or on the CarPlay screen, and stops after you finish speaking or after 30 seconds. There is no wake word and no listening in the background.</p>
 <ul>
-  <li><strong>Server recognition (default).</strong> The recording is streamed over an encrypted connection to ElevenLabs’ speech-to-text service with a short-lived token issued by our server, and the text comes back to the app. To recognise names right, the stream carries a short list of hints: the names of your contacts, the artists in your library and the streets and towns of your recent routes. If the stream fails, or when it is turned off on our side, the recording is uploaded to our server and transcribed by OpenAI instead. We do not keep the audio after the transcript is produced.</li>
+  <li><strong>Server recognition (default).</strong> The recording is streamed over an encrypted connection to ElevenLabs’ speech-to-text service with a short-lived token issued by our server, and the text comes back to the app. To recognise names right, the stream carries a short list of hints: the names of your contacts, the artists in your library and the streets and towns of your recent routes. If the stream fails, or when it is turned off on our side, the recording is uploaded to our server and transcribed by OpenAI instead, with the same list of hints and the language the app is set to. We do not keep the audio after the transcript is produced.</li>
   <li><strong>On-device recognition.</strong> In Settings you can switch to recognition on the phone. The app then downloads a speech model (from Hugging Face, about 500 MB) and your audio never leaves your phone; only the text does.</li>
 </ul>
 
@@ -78,7 +78,7 @@
 <tr><th>Provider</th><th>What for</th><th>What they receive</th></tr>
 <tr><td>Supabase</td><td>Hosting, sign-in, database (EU, Ireland)</td><td>Everything in section 5</td></tr>
 <tr><td>Anthropic</td><td>Language model, web search</td><td>Request text, context from section 4, recent conversation, and the text of messenger messages fetched to answer a request</td></tr>
-<tr><td>OpenAI</td><td>Backup speech-to-text; embeddings for memory recall; backup text-to-speech</td><td>Your recording when the stream to ElevenLabs fails; voice messages from Telegram when you ask about them; daily summaries; answer text</td></tr>
+<tr><td>OpenAI</td><td>Backup speech-to-text; embeddings for memory recall; backup text-to-speech</td><td>Your recording when the stream to ElevenLabs fails, with the same recognition hints (contact and artist names, streets and towns of recent routes) and the app’s language; voice messages from Telegram when you ask about them; daily summaries; answer text</td></tr>
 <tr><td>Telegram, Slack</td><td>Reading and sending your messages, only when you ask and only after you connected the account</td><td>The same requests your own Telegram or Slack app makes, from your account</td></tr>
 <tr><td>Anthropic (claude.ai, your own account)</td><td>Running a Claude routine you added, only when you ask</td><td>The task you gave: your words, or the text of the message you asked about with its sender and chat</td></tr>
 <tr><td>ElevenLabs</td><td>Speech-to-text; text-to-speech</td><td>Your recording with recognition hints (contact and artist names, streets and towns of recent routes); answer text</td></tr>
