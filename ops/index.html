@@ -87,6 +87,10 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .loading { opacity: .55; transition: opacity .2s; }
 .note { text-align: center; color: var(--hint); padding: 60px 20px; font-size: 17px; }
 .feedback td.text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.feedback .original, .feedback .untranslated { color: var(--hint); font-size: 12px; }
+.feedback .original, .feedback .words { margin-top: 4px; }
+.code { color: var(--hint); font-size: 12px; font-weight: normal; }
+.product-name { overflow-wrap: normal; }
 .feedback .identity span { display: block; white-space: nowrap; }
 .feedback .identity .id { color: var(--hint); font-size: 12px; }
 .feedback td:nth-child(3), .feedback th:nth-child(3) { width: 60%; min-width: 120px; }
@@ -150,13 +154,23 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   function dayLabel(iso) { return iso.slice(8, 10) + "." + iso.slice(5, 7); }
   function timeUtc(iso) { var d = new Date(iso); return String(d.getUTCHours()).padStart(2, "0") + ":" + String(d.getUTCMinutes()).padStart(2, "0"); }
   function country(code) { return code === "unknown" ? "?" : code; }
+  function feedbackKind(kind) { return kind === "feature" ? "фича" : kind === "bug" ? "баг" : kind === "paywall_exit" ? "пейвол" : kind; }
+  function reportLabel(kind, code) {
+    var labels = state.data && state.data.labels && state.data.labels[kind];
+    return labels && Object.prototype.hasOwnProperty.call(labels, code) ? labels[code] : code;
+  }
+  function exitReason(reason) { return reportLabel("exitReasons", reason); }
+  function errorLabel(code) {
+    var label = reportLabel("errors", code);
+    return el("span", null, [label, label === code ? null : el("span", { class: "code", text: " (" + code + ")" })]);
+  }
   function sum(arr, pick) { return arr.reduce(function (t, x) { return t + (pick ? pick(x) : x); }, 0); }
   function productName(id) {
     if (id === "app.viavo.drive.plus.monthly") return "Plus, месяц";
     if (id === "app.viavo.drive.plus.yearly") return "Plus, год";
     var packs = { "app.viavo.drive.credits.100": 100, "app.viavo.drive.credits.300": 300, "app.viavo.drive.credits.1000": 1000 };
     if (Object.prototype.hasOwnProperty.call(packs, id)) return "пакет " + packs[id] + " кредитов";
-    return "неизвестный продукт";
+    return "неизв. продукт";
   }
   function eventName(t, product) {
     if (t === "INITIAL_PURCHASE") return product === "app.viavo.drive.plus.monthly" || product === "app.viavo.drive.plus.yearly" ? "новая подписка" : "покупка";
@@ -182,6 +196,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       var left = el("span");
       if (r.color) { var sw = el("i"); sw.style.background = r.color; left.appendChild(sw); }
       left.appendChild(document.createTextNode(r.name));
+      if (r.code) left.appendChild(el("span", { class: "code", text: " (" + r.code + ")" }));
       row.appendChild(left);
       row.appendChild(el("span", { class: "v", text: r.value }));
       tip.appendChild(row);
@@ -239,8 +254,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
             if (it.values[i] !== null && it.values[i] !== undefined) { last = it.values[i]; break; }
           }
         }
-        var name = it.name + (it.kind === "line" ? " · " + (last === null || last === undefined ? "—" : (draw && draw.fmtValue ? draw.fmtValue(last) : fmt(last))) : "");
-        lg.appendChild(el("span", null, [sw, name]));
+        var name = it.name + (it.legendValue !== undefined ? " · " + fmt(it.legendValue) : it.kind === "line" ? " · " + (last === null || last === undefined ? "—" : (draw && draw.fmtValue ? draw.fmtValue(last) : fmt(last))) : "");
+        lg.appendChild(el("span", null, [sw, name, it.code ? el("span", { class: "code", text: " (" + it.code + ")" }) : null]));
       });
       fig.appendChild(lg);
     }
@@ -266,7 +281,11 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     if (head[0].indexOf("Когда") === 0) t.classList.add("dated");
     if (head.indexOf("$/ход") >= 0) t.classList.add("money");
     var tr = el("tr");
-    head.forEach(function (h, i) { tr.appendChild(el("th", { class: (rows.length && rows.every(function (r) { return numeric(r[i], i); }) ? "num" : "") + (h.length <= 3 ? " short" : ""), text: h })); });
+    head.forEach(function (h, i) {
+      var th = el("th", { class: (rows.length && rows.every(function (r) { return numeric(r[i], i); }) ? "num" : "") + (typeof h === "string" && h.length <= 3 ? " short" : "") });
+      if (h && h.nodeType) th.appendChild(h); else th.textContent = h;
+      tr.appendChild(th);
+    });
     t.appendChild(el("thead", null, tr));
     var body = el("tbody");
     rows.forEach(function (r) {
@@ -322,10 +341,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     });
     svg.appendChild(svgEl("line", { x1: L, x2: W - R, y1: T + ph, y2: T + ph, stroke: "var(--axis)", "stroke-width": 1 }));
     // x labels: every k-th day so they never collide
-    var every = Math.max(1, Math.ceil(38 / slot));
+    var every = opts.hourly ? 3 : Math.max(1, Math.ceil(38 / slot));
     days.forEach(function (d, i) {
-      if ((n - 1 - i) % every !== 0) return;
-      svg.appendChild(svgEl("text", { x: x(i), y: H - 10, "text-anchor": "middle", "font-size": 11, fill: "var(--muted)", text: dayLabel(d) }));
+      if ((opts.hourly ? i : n - 1 - i) % every !== 0) return;
+      svg.appendChild(svgEl("text", { x: x(i), y: H - 10, "text-anchor": "middle", "font-size": 11, fill: "var(--muted)", text: opts.hourly ? timeUtc(d).slice(0, 2) : dayLabel(d) }));
     });
     // bars: thin (<= 24px), 2px surface gap between stacked segments and neighbours, rounded data-end
     var groupCount = bars.filter(function (s) { return !s.stack; }).length || 1;
@@ -342,7 +361,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         // Stacked segments keep a 2px surface gap below each one above the first; grouped bars a gap between neighbours.
         var h = Math.max(1, bh - (s.stack && acc - v > 0 ? gap : 0));
         var bar = roundedBar(bx, by, bw, h, s.color, !s.stack);
-        if (opts.partialLast && i2 === n - 1) bar.setAttribute("opacity", ".55");
+        if ((opts.partialLast && i2 === n - 1) || i2 === opts.partialIndex) bar.setAttribute("opacity", ".55");
         svg.appendChild(bar);
       });
     }
@@ -354,10 +373,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         d += (started ? " L" : " M") + x(i3).toFixed(1) + " " + y(v).toFixed(1);
         started = true;
       });
-      svg.appendChild(svgEl("path", { d: d.trim(), fill: "none", stroke: s.color, "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }));
+      svg.appendChild(svgEl("path", { d: d.trim(), fill: "none", stroke: s.color, "stroke-width": s.strokeWidth || 2, "stroke-linejoin": "round", "stroke-linecap": "round" }));
       s.values.forEach(function (v, i3) {
         if (v === null || v === undefined) return;
-        if (n > 14 && i3 !== n - 1) return;
+        if (s.markers === false || (n > 14 && i3 !== n - 1)) return;
         svg.appendChild(svgEl("circle", { cx: x(i3), cy: y(v), r: 5.5, fill: "var(--card)" }));
         var partial = opts.partialLast && i3 === n - 1;
         svg.appendChild(svgEl("circle", { cx: x(i3), cy: y(v), r: 4, fill: partial ? "var(--card)" : s.color, stroke: partial ? s.color : "none", "stroke-width": partial ? 2 : 0 }));
@@ -377,12 +396,12 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       cross.setAttribute("x1", x(i)); cross.setAttribute("x2", x(i)); cross.classList.remove("hidden");
       var rows = series.map(function (s) {
         var v = s.values[i];
-        return { name: s.name, color: s.color, value: v === null || v === undefined ? "—" : (opts.fmtValue ? opts.fmtValue(v) : fmt(v)) };
+        return { name: s.name, code: s.code, color: s.color, value: v === null || v === undefined ? "—" : (opts.fmtValue ? opts.fmtValue(v) : fmt(v)) };
       });
       var rect = svg.getBoundingClientRect();
       var px = clientX !== undefined ? clientX : rect.left + (x(i) / W) * rect.width;
       var py = clientY !== undefined ? clientY : rect.top + (T / H) * rect.height;
-      showTip(px, py, dayLabel(days[i]) + (opts.partialLast && i === n - 1 ? " (сегодня, не весь день)" : ""), rows);
+      showTip(px, py, opts.hourly ? hourRange(days[i]) + (i === opts.partialIndex ? " (текущий час, неполный)" : "") : dayLabel(days[i]) + (opts.partialLast && i === n - 1 ? " (сегодня, не весь день)" : ""), rows);
     }
     function pointerIndex(ev) {
       var rect = svg.getBoundingClientRect();
@@ -424,7 +443,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   }
 
   // ---------- KPI tiles: yesterday against the average of the seven days before it
-  function tile(label, value, base, fmtFn, upIsGood) {
+  function tile(label, value, base, fmtFn, upIsGood, todayMode) {
     var t = el("div", { class: "tile" });
     t.appendChild(el("div", { class: "label", text: label }));
     t.appendChild(el("div", { class: "value", text: fmtFn ? fmtFn(value) : fmt(value) }));
@@ -433,7 +452,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     else {
       var pct = Math.round(((value - base) / base) * 100);
       var arrow = pct > 10 ? "▲" : pct < -10 ? "▼" : "•";
-      d.textContent = arrow + " " + (pct > 0 ? "+" : "") + pct + " % к ср. " + (fmtFn ? fmtFn(base) : fmt(base, 1));
+      d.textContent = arrow + " " + (pct > 0 ? "+" : "") + pct + (todayMode ? " % к " : " % к ср. ") + (fmtFn ? fmtFn(base) : fmt(base, todayMode ? 0 : 1)) + (todayMode ? " вчера" : "");
       if (Math.abs(pct) > 10) d.classList.add((pct > 0) === (upIsGood !== false) ? "up" : "down");
     }
     t.appendChild(d);
@@ -445,6 +464,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     hideTip();
     redrawers = [];
     clear(app);
+    if (data.days === 0) { renderToday(data); redrawCharts(); return; }
     var allDays = data.series;
     var s = allDays.slice(-data.days);
     var days = s.map(function (d) { return d.day; });
@@ -457,15 +477,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     app.appendChild(el("h1", { text: "Viavo · отчёт за " + data.days + " дней" }));
     app.appendChild(el("p", { class: "sub", text: "Сутки UTC · данные на " + timeUtc(data.generated_at) + " UTC, " + dayLabel(data.generated_at) + " · вчера: " + dayLabel(y.from) + " · водители без команды" }));
 
-    var row = el("div", { class: "row" });
-    var seg = el("div", { class: "seg", role: "group", "aria-label": "Период" });
-    [7, 14, 30].forEach(function (d) {
-      var b = el("button", { type: "button", "aria-pressed": d === state.days ? "true" : "false", text: d + " дн." });
-      b.addEventListener("click", function () { if (state.days !== d) load(d); });
-      seg.appendChild(b);
-    });
-    row.appendChild(seg);
-    app.appendChild(row);
+    periodSwitch();
 
     // tiles: yesterday vs the seven days before
     app.appendChild(el("h2", { text: "Вчера, " + dayLabel(y.from) + " (в сравнении со средним за " + baseDays.length + " дней до)" }));
@@ -535,7 +547,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         return dataTable(["День", "Plus с ходом", "Новые", "Продления", "Пакеты", "Возвраты"], s.map(function (d) { return [dayLabel(d.day), fmt(d.plus_drivers), fmt(d.new_subscriptions), fmt(d.renewals), fmt(d.packs), fmt(d.refunds)]; }));
       }));
     if (period.paywall.exit_reasons.length) {
-      app.appendChild(el("p", { class: "sub", text: "Причины ухода с пейвола за период: " + period.paywall.exit_reasons.map(function (r) { return r.reason + " " + r.n; }).join(" · ") }));
+      app.appendChild(el("p", { class: "sub", text: "Причины ухода с пейвола за период: " + period.paywall.exit_reasons.map(function (r) { return exitReason(r.reason) + " " + r.n; }).join(" · ") }));
     }
 
     // 5. pushes
@@ -586,47 +598,155 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     var errTypes = Object.create(null);
     s.forEach(function (d) { (d.errors || []).forEach(function (e) { errTypes[e.error_type] = (errTypes[e.error_type] || 0) + e.n; }); });
     var errNames = Object.keys(errTypes).sort(function (a, b) { return errTypes[b] - errTypes[a]; }).slice(0, 6);
-    var errSeries = errNames.map(function (name, i) { return { name: name, color: SLOT_VAR[i + 1], kind: "bar", stack: true, values: s.map(function (d) { var e = (d.errors || []).find(function (x) { return x.error_type === name; }); return e ? e.n : 0; }) }; });
+    var errSeries = errNames.map(function (name, i) { return { name: reportLabel("errors", name), code: reportLabel("errors", name) === name ? null : name, color: SLOT_VAR[i + 1], kind: "bar", stack: true, values: s.map(function (d) { var e = (d.errors || []).find(function (x) { return x.error_type === name; }); return e ? e.n : 0; }) }; });
     if (errSeries.length) {
       app.appendChild(figure("Ошибки по типам", "Строки error из voice-pipeline; empty_transcript — пустая расшифровка (тишина, шум).", timeChart(days, errSeries, { label: "Ошибки по дням", partialLast: true }), errSeries, function () {
-        return dataTable(["День"].concat(errNames), s.map(function (d, i) { return [dayLabel(d.day)].concat(errSeries.map(function (es) { return fmt(es.values[i]); })); }));
+        return dataTable(["День"].concat(errNames.map(errorLabel)), s.map(function (d, i) { return [dayLabel(d.day)].concat(errSeries.map(function (es) { return fmt(es.values[i]); })); }));
       }));
     } else app.appendChild(el("p", { class: "sub", text: "Ошибок за период нет." }));
     if (period.quality.outcomes.length) {
       app.appendChild(el("p", { class: "sub", text: "Исходы ходов за период" }));
       var turnsTotal = period.activity.turns || 1;
-      app.appendChild(dataTable(["Исход за период", "Ходов", "Доля"], period.quality.outcomes.map(function (o) { return [o.outcome, fmt(o.n), Math.round((100 * o.n) / turnsTotal) + " %"]; })));
+      app.appendChild(dataTable(["Исход за период", "Ходов", "Доля"], period.quality.outcomes.map(function (o) { return [reportLabel("outcomes", o.outcome), fmt(o.n), Math.round((100 * o.n) / turnsTotal) + " %"]; })));
     }
     if (period.quality.silent.length) {
       app.appendChild(el("p", { class: "sub", text: "Тихие действия за период" }));
-      app.appendChild(dataTable(["Тихое действие", "Сборка", "Ходов", "Водителей"], period.quality.silent.map(function (q) { return [q.action, q.app_version, fmt(q.n), fmt(q.drivers)]; })));
+      app.appendChild(dataTable(["Тихое действие", "Сборка", "Ходов", "Водителей"], period.quality.silent.map(function (q) { return [reportLabel("actions", q.action), q.app_version, fmt(q.n), fmt(q.drivers)]; })));
     }
 
+    renderSalesFeedback(period, false);
+
+    app.appendChild(el("footer", { text: "Счёт по owner_report и owner_report_series (SQL), без модели. Команда и тестовые аккаунты исключены." }));
+    redrawCharts();
+  }
+
+  function periodSwitch() {
+    var row = el("div", { class: "row" });
+    var seg = el("div", { class: "seg", role: "group", "aria-label": "Период" });
+    [0, 7, 14, 30].forEach(function (d) {
+      var b = el("button", { type: "button", "aria-pressed": d === state.days ? "true" : "false", text: d === 0 ? "Сегодня" : d + " дн." });
+      b.addEventListener("click", function () { if (state.days !== d) load(d); });
+      seg.appendChild(b);
+    });
+    row.appendChild(seg);
+    app.appendChild(row);
+
+  }
+
+  function renderSalesFeedback(period, todayMode) {
     // tables: sales and feedback of the period
-    app.appendChild(el("h2", { text: "Продажи за период" }));
+    app.appendChild(el("h2", { text: todayMode ? "Продажи сегодня" : "Продажи за период" }));
     if (period.sales.buyers.length) {
       var sales = dataTable(["Когда (UTC)", "Кто", "Стр.", "Дн.", "Событие"], period.sales.buyers.slice().reverse().map(function (b) {
-        return [dayLabel(b.at) + " " + timeUtc(b.at), b.uid || "?", country(b.country || "unknown"), b.days === null ? "—" : fmt(b.days), eventName(b.event_type, b.product_id) + ": " + productName(b.product_id)];
+        return [dayLabel(b.at) + " " + timeUtc(b.at), b.uid || "?", country(b.country || "unknown"), b.days === null ? "—" : fmt(b.days), el("span", null, [eventName(b.event_type, b.product_id) + ": ", el("span", { class: "product-name", text: productName(b.product_id) })])];
       }), [1, 2, 4]);
       sales.classList.add("sales");
       app.appendChild(sales);
-    } else app.appendChild(el("p", { class: "sub", text: "Продаж за период нет (события RevenueCat, production)." }));
+    } else app.appendChild(el("p", { class: "sub", text: todayMode ? "Продаж сегодня нет." : "Продаж за период нет (события RevenueCat, production)." }));
     app.appendChild(el("p", { class: "sub", text: "Пакетов " + fmt(period.sales.packs) + " · возвратов " + fmt(period.sales.refunds) + " · подписчиков сейчас " + fmt(period.sales.subscribers) }));
 
-    app.appendChild(el("h2", { text: "Отзывы за период" }));
+    app.appendChild(el("h2", { text: todayMode ? "Отзывы сегодня" : "Отзывы за период" }));
     if (period.feedback.latest.length) {
       var ft = dataTable(["Когда", "Вид", "Текст"], period.feedback.latest.map(function (f) {
-        var identity = el("span", { class: "identity" }, [el("span", { text: f.kind }), el("span", { class: "id", text: f.id })]);
-        return [dayLabel(f.created_at) + " " + timeUtc(f.created_at), identity, f.text];
+        var identity = el("span", { class: "identity" }, [el("span", { text: feedbackKind(f.kind) }), el("span", { class: "id", text: f.id })]);
+        var text = el("div", null, [el("div", { text: f.text_ru == null ? f.text : f.text_ru })]);
+        if (f.text_ru == null) text.appendChild(el("span", { class: "untranslated", text: "без перевода" }));
+        else if (f.text_ru !== f.text) text.appendChild(el("div", { class: "original", text: f.text }));
+        var words = f.transcript_ru == null ? f.transcript : f.transcript_ru;
+        if (words) text.appendChild(el("div", { class: "words", text: "водитель: " + words }));
+        return [dayLabel(f.created_at) + " " + timeUtc(f.created_at), identity, text];
       }));
       ft.classList.add("feedback");
       ft.querySelectorAll("td:nth-child(3)").forEach(function (c) { c.classList.add("text"); });
       app.appendChild(ft);
-      app.appendChild(el("p", { class: "sub", text: "Последние пять; всего за период: " + period.feedback.by_kind.map(function (k) { return k.kind + " " + k.n; }).join(" · ") }));
-    } else app.appendChild(el("p", { class: "sub", text: "Отзывов за период нет." }));
+      app.appendChild(el("p", { class: "sub", text: (todayMode ? "Последние пять; всего сегодня: " : "Последние пять; всего за период: ") + period.feedback.by_kind.map(function (k) { return feedbackKind(k.kind) + " " + k.n; }).join(" · ") }));
+    } else app.appendChild(el("p", { class: "sub", text: todayMode ? "Отзывов сегодня нет." : "Отзывов за период нет." }));
 
-    app.appendChild(el("footer", { text: "Счёт по owner_report и owner_report_series (SQL), без модели. Команда и тестовые аккаунты исключены." }));
-    redrawCharts();
+  }
+
+  function hourRange(iso) {
+    var h = new Date(iso).getUTCHours();
+    return String(h).padStart(2, "0") + ":00–" + String(h + 1).padStart(2, "0") + ":00 UTC";
+  }
+
+  function renderToday(data) {
+    var td = data.today, prev = data.same_hours_yesterday;
+    var currentHour = new Date(data.generated_at).getUTCHours();
+    var hours = data.hourly.today, previous = data.hourly.yesterday;
+    var axis = hours.map(function (h) { return h.hour; });
+    var errors = function (r) { return sum(r.quality.errors, function (e) { return e.n; }); };
+    var values = function (pick) { return hours.map(function (h, i) { return i <= currentHour ? pick(h) : null; }); };
+    app.appendChild(el("h1", { text: "Viavo · сегодня" }));
+    app.appendChild(el("p", { class: "sub", text: dayLabel(data.generated_at) + " · с 00:00 UTC · водители без команды" }));
+    periodSwitch();
+    app.appendChild(el("h2", { text: "Сегодня до " + timeUtc(data.generated_at) + " UTC (в сравнении с теми же часами вчера)" }));
+    var tiles = el("div", { class: "tiles" });
+    [
+      ["Новые водители", td.signups.total, prev.signups.total],
+      ["Активные", td.activity.active_drivers, prev.activity.active_drivers],
+      ["Ходы", td.activity.turns, prev.activity.turns],
+      ["В машине", td.activity.car_drivers, prev.activity.car_drivers],
+      ["Вернулись", td.activity.returning_drivers, prev.activity.returning_drivers],
+      ["Показы пейвола", td.paywall.shown, prev.paywall.shown],
+      ["Пуши", td.pushes.sent, prev.pushes.sent],
+      ["Ошибки", errors(td), errors(prev), false]
+    ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], v[2], null, v[3], true)); });
+    app.appendChild(tiles);
+
+    function hourlyFigure(title, key, split) {
+      var todayValues = values(function (h) { return h[key]; });
+      var series = split ? [
+        { name: "телефон сегодня", color: "var(--s1)", kind: "bar", stack: true, values: values(function (h) { return h.turns - h.car_turns; }) },
+        { name: "CarPlay сегодня", color: "var(--s2)", kind: "bar", stack: true, values: values(function (h) { return h.car_turns; }) }
+      ] : [{ name: "сегодня", color: "var(--s1)", kind: "bar", values: todayValues }];
+      series.forEach(function (s) { s.legendValue = sum(s.values); });
+      var yesterdayValues = previous.map(function (h) { return h[key]; });
+      series.push({ name: "вчера, 24 ч", color: "var(--s3)", kind: "line", strokeWidth: 1.5, markers: false, values: yesterdayValues, legendValue: sum(yesterdayValues) });
+      return figure(title, "Последний столбик — текущий час до " + timeUtc(data.generated_at) + " UTC. Линия — все сутки вчера.",
+        timeChart(axis, series, { hourly: true, partialIndex: currentHour, label: title }), series, function () {
+          return dataTable(split ? ["Час UTC", "Телефон", "CarPlay", "Вчера, всего"] : ["Час UTC", "Сегодня", "Вчера"], hours.map(function (h, i) {
+            return split ? [timeUtc(h.hour), fmt(series[0].values[i]), fmt(series[1].values[i]), fmt(yesterdayValues[i])] : [timeUtc(h.hour), fmt(todayValues[i]), fmt(yesterdayValues[i])];
+          }));
+        });
+    }
+    function table(title, headings, rows, textColumns) {
+      app.appendChild(el("h2", { text: title }));
+      app.appendChild(rows.length ? dataTable(headings, rows, textColumns) : el("p", { class: "sub", text: "За сегодня нет данных." }));
+    }
+    app.appendChild(el("h2", { text: "Ходы по часам" }));
+    app.appendChild(hourlyFigure("Ходы: телефон и CarPlay", "turns", true));
+    app.appendChild(el("h2", { text: "Новые водители по часам" }));
+    app.appendChild(hourlyFigure("Регистрации", "signups", false));
+    var countries = Array.from(new Set(td.signups.by_country.concat(prev.signups.by_country).map(function (r) { return r.country; })));
+    function countryCount(report, code) { var r = report.signups.by_country.find(function (r) { return r.country === code; }); return r ? r.n : 0; }
+    table("Новые водители по рынкам", ["Страна", "Сегодня", "Вчера, те же часы"], countries.map(function (c) { return [country(c), fmt(countryCount(td, c)), fmt(countryCount(prev, c))]; }));
+    table("Ходы по рынкам", ["Страна", "Водителей", "Ходов"], td.activity.by_country.map(function (c) { return [country(c.country), fmt(c.drivers), fmt(c.turns)]; }));
+
+    app.appendChild(el("h2", { text: "Ошибки по часам" }));
+    app.appendChild(hourlyFigure("Ошибки", "errors", false));
+    table("Ошибки по типам", ["Тип", el("span", { class: "cell-number", text: "Ошибок" }), el("span", { class: "cell-number", text: "Водителей" })], td.quality.errors.map(function (e) { return [errorLabel(e.error_type), fmt(e.n), fmt(e.drivers)]; }));
+    table("Исходы ходов", ["Исход", "Ходов", "Доля"], td.quality.outcomes.map(function (o) { return [reportLabel("outcomes", o.outcome), fmt(o.n), Math.round(100 * o.n / (td.activity.turns || 1)) + " %"]; }));
+    table("Тихие действия", ["Действие", "Сборка", "Ходов", "Водителей"], td.quality.silent.map(function (q) { return [reportLabel("actions", q.action), q.app_version || "?", fmt(q.n), fmt(q.drivers)]; }), [1]);
+    table("Пейвол по источникам", ["Источник", "Показов", "Водителей"], td.paywall.by_source.map(function (p) { return [reportLabel("paywallSources", p.source), fmt(p.shown), fmt(p.drivers)]; }));
+    table("Причины ухода с пейвола", ["Причина", "Ответов"], td.paywall.exit_reasons.map(function (r) { return [exitReason(r.reason), fmt(r.n)]; }));
+    table("Пуши по кампаниям", ["Кампания", "Отпр.", "Дост.", "Открыто"], td.pushes.campaigns.map(function (p) { return [p.campaign || "?", fmt(p.sent), fmt(p.delivered), fmt(p.opened)]; }));
+    renderSalesFeedback(td, true);
+
+    app.appendChild(el("h2", { text: "Расходы сегодня" }));
+    app.appendChild(el("p", { class: "sub", text: "Anthropic сообщает расходы только за полные сутки." }));
+    var sp = data.spend, day = data.generated_at.slice(0, 10);
+    if (sp) {
+      var amount = function (map) { return map && map[day] !== undefined ? map[day] : null; };
+      var openai = amount(sp.openai_usd), credits = amount(sp.elevenlabs_credits);
+      app.appendChild(dataTable(["Сервис", "Сегодня"], [
+        ["OpenAI", usd(openai)],
+        ["ElevenLabs", credits === null ? "—" : fmt(credits) + " кр." + (sp.elevenlabs_usd_per_credit == null ? "" : " ≈ " + usd(credits * sp.elevenlabs_usd_per_credit))]
+      ], [1]));
+      app.appendChild(el("p", { class: "sub", text: "Данные расходов на " + timeUtc(sp.read_at) + " UTC." }));
+      var failures = (sp.errors || []).filter(function (e) { return !/^Anthropic:/.test(e); });
+      if (failures.length) app.appendChild(el("p", { class: "sub", text: "Не прочитано: " + failures.join("; ") }));
+    } else app.appendChild(el("p", { class: "sub", text: "Расходы не прочитаны" + (data.spend_error ? ": " + data.spend_error : ".") }));
+    app.appendChild(el("footer", { text: "Сутки UTC. Команда и тестовые аккаунты исключены." }));
   }
 
   function countryN(d, code) { var c = (d.signups_by_country || []).find(function (x) { return x.country === code; }); return c ? c.n : 0; }
@@ -675,7 +795,9 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       return r.json();
     }).then(function (data) {
       if (request !== seq) return;
-      if (!data || !Array.isArray(data.series) || !data.yesterday || !data.today || !data.period) throw new Error("Сервер ответил не отчётом");
+      if (!data || data.days !== days || (days === 0
+        ? !data.today || !data.same_hours_yesterday || !data.hourly || !Array.isArray(data.hourly.today) || data.hourly.today.length !== 24 || !Array.isArray(data.hourly.yesterday) || data.hourly.yesterday.length !== 24
+        : !Array.isArray(data.series) || !data.yesterday || !data.today || !data.period)) throw new Error("Сервер ответил не отчётом");
       state.data = data;
       render(data);
     }).catch(function (e) {
