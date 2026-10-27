@@ -460,6 +460,17 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   }
 
   // ---------- render
+  // VIA-411: current reachability is a snapshot, the funnel uses the selected send window.
+  function pushDelivery(p) {
+    var r = p.reach;
+    var line = fmt(p.sent) + " → APNs " + (p.apns_ok == null ? "?" : fmt(p.apns_ok)) + " → дошло " + fmt(p.delivered) + " → открыли " + fmt(p.opened);
+    if (r) line += " · достижимы " + fmt(r.reachable) + " · выкл. " + fmt(r.notifications_off) + " · удалили (APNs) " + fmt(r.uninstalled) + " · молчат " + fmt(r.silent);
+    app.appendChild(el("p", { text: line }));
+    if (r) app.appendChild(el("p", { class: "sub", text: "Сейчас: без недавней отправки " + fmt(r.no_recent_send) + " · отказали при входе " + fmt(r.onboarding_refused) + ". Молчат — возможно удалили приложение или выключили уведомления." }));
+    app.appendChild(el("p", { class: "sub", text: "APNs — записанные ответы Apple, не доставка на телефон; храним 90 дней, до обновления история неизвестна." }));
+    if (p.apns_failed && p.apns_failed.length) app.appendChild(dataTable(["Отказ APNs", "Попыток"], p.apns_failed.map(function (f) { return [f.reason, fmt(f.n)]; })));
+  }
+
   function render(data) {
     hideTip();
     redrawers = [];
@@ -552,16 +563,18 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 
     // 5. pushes
     app.appendChild(el("h2", { text: "Пуши" }));
+    pushDelivery(period.pushes);
     var pushSeries = [
       { name: "отправлено", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return d.pushes_sent; }) },
+      { name: "дошло", color: "var(--s3)", kind: "line", values: s.map(function (d) { return d.pushes_delivered == null ? null : d.pushes_delivered; }) },
       { name: "открыто", color: "var(--s2)", kind: "line", values: s.map(function (d) { return d.pushes_opened; }) }
     ];
-    app.appendChild(figure("Отправлено и открыто", null, timeChart(days, pushSeries, { label: "Пуши по дням", partialLast: true }), pushSeries, function () {
-      return dataTable(["День", "Отправлено", "Открыто"], s.map(function (d) { return [dayLabel(d.day), fmt(d.pushes_sent), fmt(d.pushes_opened)]; }));
+    app.appendChild(figure("Отправлено, дошло и открыто", null, timeChart(days, pushSeries, { label: "Пуши по дням", partialLast: true }), pushSeries, function () {
+      return dataTable(["День", "Отправлено", "Дошло", "Открыто"], s.map(function (d) { return [dayLabel(d.day), fmt(d.pushes_sent), d.pushes_delivered == null ? "?" : fmt(d.pushes_delivered), fmt(d.pushes_opened)]; }));
     }));
     if (period.pushes.campaigns.length) {
       app.appendChild(el("p", { class: "sub", text: "Пуши по кампаниям за период" }));
-      app.appendChild(dataTable(["Кампания", "Отправлено", "Доставлено", "Открыто"], period.pushes.campaigns.map(function (c) { return [c.campaign, fmt(c.sent), fmt(c.delivered), fmt(c.opened)]; })));
+      app.appendChild(dataTable(["Кампания", "Отправлено", "APNs", "Дошло", "Открыто"], period.pushes.campaigns.map(function (c) { return [c.campaign, fmt(c.sent), c.apns_ok == null ? "?" : fmt(c.apns_ok), fmt(c.delivered), fmt(c.opened)]; })));
     }
 
     // 6. spend
@@ -733,7 +746,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     table("Тихие действия", ["Действие", "Сборка", "Ходов", "Водителей"], td.quality.silent.map(function (q) { return [reportLabel("actions", q.action), q.app_version || "?", fmt(q.n), fmt(q.drivers)]; }), [1]);
     table("Пейвол по источникам", ["Источник", "Показов", "Водителей"], td.paywall.by_source.map(function (p) { return [reportLabel("paywallSources", p.source), fmt(p.shown), fmt(p.drivers)]; }));
     table("Причины ухода с пейвола", ["Причина", "Ответов"], td.paywall.exit_reasons.map(function (r) { return [exitReason(r.reason), fmt(r.n)]; }));
-    table("Пуши по кампаниям", ["Кампания", "Отпр.", "Дост.", "Открыто"], td.pushes.campaigns.map(function (p) { return [p.campaign || "?", fmt(p.sent), fmt(p.delivered), fmt(p.opened)]; }));
+    app.appendChild(el("h2", { text: "Пуши" }));
+    pushDelivery(td.pushes);
+    app.appendChild(hourlyFigure("Дошло по часам отправки", "pushes_delivered", false));
+    table("Пуши по кампаниям", ["Кампания", "Отпр.", "APNs", "Дошло", "Открыто"], td.pushes.campaigns.map(function (p) { return [p.campaign || "?", fmt(p.sent), p.apns_ok == null ? "?" : fmt(p.apns_ok), fmt(p.delivered), fmt(p.opened)]; }));
     renderSalesFeedback(td, periodName);
 
     app.appendChild(el("h2", { text: "Расходы " + periodName }));
