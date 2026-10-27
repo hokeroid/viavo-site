@@ -463,12 +463,20 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   // VIA-411: current reachability is a snapshot, the funnel uses the selected send window.
   function pushDelivery(p) {
     var r = p.reach;
-    var line = fmt(p.sent) + " → APNs " + (p.apns_ok == null ? "?" : fmt(p.apns_ok)) + " → дошло " + fmt(p.delivered) + " → открыли " + fmt(p.opened);
+    var line = (p.tried == null ? "" : "попыток " + fmt(p.tried) + " → ") + "APNs " + fmt(p.apns_ok == null ? p.sent : p.apns_ok) + " → дошло " + fmt(p.delivered) + " → открыли " + fmt(p.opened);
     if (r) line += " · достижимы " + fmt(r.reachable) + " · выкл. " + fmt(r.notifications_off) + " · удалили (APNs) " + fmt(r.uninstalled) + " · молчат " + fmt(r.silent);
     app.appendChild(el("p", { text: line }));
     if (r) app.appendChild(el("p", { class: "sub", text: "Сейчас: без недавней отправки " + fmt(r.no_recent_send) + " · отказали при входе " + fmt(r.onboarding_refused) + ". Молчат — возможно удалили приложение или выключили уведомления." }));
-    app.appendChild(el("p", { class: "sub", text: "APNs — записанные ответы Apple, не доставка на телефон; храним 90 дней, до обновления история неизвестна." }));
+    app.appendChild(el("p", { class: "sub", text: "APNs — отправки, принятые Apple. Дошло — подтверждение с телефона." }));
     if (p.apns_failed && p.apns_failed.length) app.appendChild(dataTable(["Отказ APNs", "Попыток"], p.apns_failed.map(function (f) { return [f.reason, fmt(f.n)]; })));
+  }
+
+  function pushCampaignTable(p) {
+    var tried = p.tried != null;
+    return dataTable(["Кампания"].concat(tried ? ["Попыток"] : [], ["APNs", "Дошло", "Открыто"]), p.campaigns.map(function (c) {
+      return [c.campaign || "?"].concat(tried ? [c.tried == null ? "—" : fmt(c.tried)] : [],
+        [fmt(c.apns_ok == null ? c.sent : c.apns_ok), fmt(c.delivered), fmt(c.opened)]);
+    }));
   }
 
   function render(data) {
@@ -574,7 +582,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     }));
     if (period.pushes.campaigns.length) {
       app.appendChild(el("p", { class: "sub", text: "Пуши по кампаниям за период" }));
-      app.appendChild(dataTable(["Кампания", "Отпр.", "APNs", "Дошло", "Открыто"], period.pushes.campaigns.map(function (c) { return [c.campaign, fmt(c.sent), c.apns_ok == null ? "?" : fmt(c.apns_ok), fmt(c.delivered), fmt(c.opened)]; })));
+      app.appendChild(pushCampaignTable(period.pushes));
     }
 
     // 6. spend
@@ -749,7 +757,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     app.appendChild(el("h2", { text: "Пуши" }));
     pushDelivery(td.pushes);
     app.appendChild(hourlyFigure("Дошло по часам отправки", "pushes_delivered", false));
-    table("Пуши по кампаниям", ["Кампания", "Отпр.", "APNs", "Дошло", "Открыто"], td.pushes.campaigns.map(function (p) { return [p.campaign || "?", fmt(p.sent), p.apns_ok == null ? "?" : fmt(p.apns_ok), fmt(p.delivered), fmt(p.opened)]; }));
+    if (td.pushes.campaigns.length) {
+      app.appendChild(el("p", { class: "sub", text: "Пуши по кампаниям" }));
+      app.appendChild(pushCampaignTable(td.pushes));
+    }
     renderSalesFeedback(td, periodName);
 
     app.appendChild(el("h2", { text: "Расходы " + periodName }));
