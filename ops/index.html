@@ -42,7 +42,7 @@ h2 { font-size: 17px; margin: 22px 0 6px; }
 .sub { min-width: 0; overflow-wrap: anywhere; color: var(--hint); font-size: 13px; margin: 0 0 10px; }
 .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 8px 0 4px; }
 .seg { display: inline-flex; border: 1px solid var(--axis); border-radius: 10px; overflow: hidden; }
-.seg button { background: transparent; color: var(--text); border: 0; padding: 7px 14px; font: inherit; cursor: pointer; }
+.seg button { background: transparent; color: var(--text); border: 0; padding: 7px 10px; font: inherit; cursor: pointer; white-space: nowrap; }
 .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); }
 .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 10px 0; }
 @media (min-width: 520px) { .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
@@ -464,7 +464,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     hideTip();
     redrawers = [];
     clear(app);
-    if (data.days === 0) { renderToday(data); redrawCharts(); return; }
+    if (data.days === 0 || data.days === 1) { renderDay(data); redrawCharts(); return; }
     var allDays = data.series;
     var s = allDays.slice(-data.days);
     var days = s.map(function (d) { return d.day; });
@@ -614,7 +614,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(dataTable(["Тихое действие", "Сборка", "Ходов", "Водителей"], period.quality.silent.map(function (q) { return [reportLabel("actions", q.action), q.app_version, fmt(q.n), fmt(q.drivers)]; })));
     }
 
-    renderSalesFeedback(period, false);
+    renderSalesFeedback(period);
 
     app.appendChild(el("footer", { text: "Счёт по owner_report и owner_report_series (SQL), без модели. Команда и тестовые аккаунты исключены." }));
     redrawCharts();
@@ -623,8 +623,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   function periodSwitch() {
     var row = el("div", { class: "row" });
     var seg = el("div", { class: "seg", role: "group", "aria-label": "Период" });
-    [0, 7, 14, 30].forEach(function (d) {
-      var b = el("button", { type: "button", "aria-pressed": d === state.days ? "true" : "false", text: d === 0 ? "Сегодня" : d + " дн." });
+    [0, 1, 7, 14, 30].forEach(function (d) {
+      var b = el("button", { type: "button", "aria-pressed": d === state.days ? "true" : "false", text: d === 0 ? "Сегодня" : d === 1 ? "Вчера" : d + " д." });
       b.addEventListener("click", function () { if (state.days !== d) load(d); });
       seg.appendChild(b);
     });
@@ -633,19 +633,20 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 
   }
 
-  function renderSalesFeedback(period, todayMode) {
+  function renderSalesFeedback(period, periodName) {
+    periodName = periodName || "за период";
     // tables: sales and feedback of the period
-    app.appendChild(el("h2", { text: todayMode ? "Продажи сегодня" : "Продажи за период" }));
+    app.appendChild(el("h2", { text: "Продажи " + periodName }));
     if (period.sales.buyers.length) {
       var sales = dataTable(["Когда (UTC)", "Кто", "Стр.", "Дн.", "Событие"], period.sales.buyers.slice().reverse().map(function (b) {
         return [dayLabel(b.at) + " " + timeUtc(b.at), b.uid || "?", country(b.country || "unknown"), b.days === null ? "—" : fmt(b.days), el("span", null, [eventName(b.event_type, b.product_id) + ": ", el("span", { class: "product-name", text: productName(b.product_id) })])];
       }), [1, 2, 4]);
       sales.classList.add("sales");
       app.appendChild(sales);
-    } else app.appendChild(el("p", { class: "sub", text: todayMode ? "Продаж сегодня нет." : "Продаж за период нет (события RevenueCat, production)." }));
+    } else app.appendChild(el("p", { class: "sub", text: "Продаж " + periodName + " нет" + (periodName === "за период" ? " (события RevenueCat, production)" : "") + "." }));
     app.appendChild(el("p", { class: "sub", text: "Пакетов " + fmt(period.sales.packs) + " · возвратов " + fmt(period.sales.refunds) + " · подписчиков сейчас " + fmt(period.sales.subscribers) }));
 
-    app.appendChild(el("h2", { text: todayMode ? "Отзывы сегодня" : "Отзывы за период" }));
+    app.appendChild(el("h2", { text: "Отзывы " + periodName }));
     if (period.feedback.latest.length) {
       var ft = dataTable(["Когда", "Вид", "Текст"], period.feedback.latest.map(function (f) {
         var identity = el("span", { class: "identity" }, [el("span", { text: feedbackKind(f.kind) }), el("span", { class: "id", text: f.id })]);
@@ -659,8 +660,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       ft.classList.add("feedback");
       ft.querySelectorAll("td:nth-child(3)").forEach(function (c) { c.classList.add("text"); });
       app.appendChild(ft);
-      app.appendChild(el("p", { class: "sub", text: (todayMode ? "Последние пять; всего сегодня: " : "Последние пять; всего за период: ") + period.feedback.by_kind.map(function (k) { return feedbackKind(k.kind) + " " + k.n; }).join(" · ") }));
-    } else app.appendChild(el("p", { class: "sub", text: todayMode ? "Отзывов сегодня нет." : "Отзывов за период нет." }));
+      app.appendChild(el("p", { class: "sub", text: ("Последние пять; всего " + periodName + ": ") + period.feedback.by_kind.map(function (k) { return feedbackKind(k.kind) + " " + k.n; }).join(" · ") }));
+    } else app.appendChild(el("p", { class: "sub", text: "Отзывов " + periodName + " нет." }));
 
   }
 
@@ -669,57 +670,60 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     return String(h).padStart(2, "0") + ":00–" + String(h + 1).padStart(2, "0") + ":00 UTC";
   }
 
-  function renderToday(data) {
-    var td = data.today, prev = data.same_hours_yesterday;
-    var currentHour = new Date(data.generated_at).getUTCHours();
-    var hours = data.hourly.today, previous = data.hourly.yesterday;
+  function renderDay(data) {
+    var todayMode = data.days === 0, periodName = todayMode ? "сегодня" : "вчера";
+    var td = todayMode ? data.today : data.yesterday, prev = data.same_hours_yesterday;
+    var base = data.base || {};
+    var currentHour = todayMode ? new Date(data.generated_at).getUTCHours() : 23;
+    var hours = todayMode ? data.hourly.today : data.hourly.yesterday;
+    var previous = todayMode ? data.hourly.yesterday : data.hourly.day_before;
     var axis = hours.map(function (h) { return h.hour; });
     var errors = function (r) { return sum(r.quality.errors, function (e) { return e.n; }); };
     var values = function (pick) { return hours.map(function (h, i) { return i <= currentHour ? pick(h) : null; }); };
-    app.appendChild(el("h1", { text: "Viavo · сегодня" }));
-    app.appendChild(el("p", { class: "sub", text: dayLabel(data.generated_at) + " · с 00:00 UTC · водители без команды" }));
+    app.appendChild(el("h1", { text: "Viavo · " + periodName }));
+    app.appendChild(el("p", { class: "sub", text: dayLabel(td.from) + (todayMode ? " · с 00:00 UTC" : " · 00:00–24:00 UTC") + " · водители без команды" }));
     periodSwitch();
-    app.appendChild(el("h2", { text: "Сегодня до " + timeUtc(data.generated_at) + " UTC (в сравнении с теми же часами вчера)" }));
+    app.appendChild(el("h2", { text: todayMode ? "Сегодня до " + timeUtc(data.generated_at) + " UTC (в сравнении с теми же часами вчера)" : "Вчера, " + dayLabel(td.from) + " (сутки UTC, в сравнении со средним за 7 дней до)" }));
     var tiles = el("div", { class: "tiles" });
     [
-      ["Новые водители", td.signups.total, prev.signups.total],
-      ["Активные", td.activity.active_drivers, prev.activity.active_drivers],
-      ["Ходы", td.activity.turns, prev.activity.turns],
-      ["В машине", td.activity.car_drivers, prev.activity.car_drivers],
-      ["Вернулись", td.activity.returning_drivers, prev.activity.returning_drivers],
-      ["Показы пейвола", td.paywall.shown, prev.paywall.shown],
-      ["Пуши", td.pushes.sent, prev.pushes.sent],
-      ["Ошибки", errors(td), errors(prev), false]
-    ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], v[2], null, v[3], true)); });
+      ["Новые водители", td.signups.total, todayMode ? prev.signups.total : base.signups],
+      ["Активные", td.activity.active_drivers, todayMode ? prev.activity.active_drivers : base.active_drivers],
+      ["Ходы", td.activity.turns, todayMode ? prev.activity.turns : base.turns],
+      ["В машине", td.activity.car_drivers, todayMode ? prev.activity.car_drivers : base.car_drivers],
+      ["Вернулись", td.activity.returning_drivers, todayMode ? prev.activity.returning_drivers : base.returning_drivers],
+      ["Показы пейвола", td.paywall.shown, todayMode ? prev.paywall.shown : base.paywall_shown],
+      ["Пуши", td.pushes.sent, todayMode ? prev.pushes.sent : base.pushes_sent],
+      ["Ошибки", errors(td), todayMode ? errors(prev) : base.errors, false]
+    ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], v[2], null, v[3], todayMode)); });
     app.appendChild(tiles);
 
     function hourlyFigure(title, key, split) {
       var todayValues = values(function (h) { return h[key]; });
       var series = split ? [
-        { name: "телефон сегодня", color: "var(--s1)", kind: "bar", stack: true, values: values(function (h) { return h.turns - h.car_turns; }) },
-        { name: "CarPlay сегодня", color: "var(--s2)", kind: "bar", stack: true, values: values(function (h) { return h.car_turns; }) }
-      ] : [{ name: "сегодня", color: "var(--s1)", kind: "bar", values: todayValues }];
+        { name: "телефон " + periodName, color: "var(--s1)", kind: "bar", stack: true, values: values(function (h) { return h.turns - h.car_turns; }) },
+        { name: "CarPlay " + periodName, color: "var(--s2)", kind: "bar", stack: true, values: values(function (h) { return h.car_turns; }) }
+      ] : [{ name: periodName, color: "var(--s1)", kind: "bar", values: todayValues }];
       series.forEach(function (s) { s.legendValue = sum(s.values); });
       var yesterdayValues = previous.map(function (h) { return h[key]; });
-      series.push({ name: "вчера, 24 ч", color: "var(--s3)", kind: "line", strokeWidth: 1.5, markers: false, values: yesterdayValues, legendValue: sum(yesterdayValues) });
-      return figure(title, "Последний столбик — текущий час до " + timeUtc(data.generated_at) + " UTC. Линия — все сутки вчера.",
-        timeChart(axis, series, { hourly: true, partialIndex: currentHour, label: title }), series, function () {
-          return dataTable(split ? ["Час UTC", "Телефон", "CarPlay", "Вчера, всего"] : ["Час UTC", "Сегодня", "Вчера"], hours.map(function (h, i) {
+      series.push({ name: todayMode ? "вчера, 24 ч" : "позавчера, 24 ч", color: "var(--s3)", kind: "line", strokeWidth: 1.5, markers: false, values: yesterdayValues, legendValue: sum(yesterdayValues) });
+      return figure(title, todayMode ? "Последний столбик — текущий час до " + timeUtc(data.generated_at) + " UTC. Линия — все сутки вчера." : "Полные сутки UTC. Линия — позавчера.",
+        timeChart(axis, series, { hourly: true, partialIndex: todayMode ? currentHour : -1, label: title }), series, function () {
+          return dataTable(split ? ["Час UTC", "Телефон", "CarPlay", todayMode ? "Вчера, всего" : "Позавчера, всего"] : ["Час UTC", todayMode ? "Сегодня" : "Вчера", todayMode ? "Вчера" : "Позавчера"], hours.map(function (h, i) {
             return split ? [timeUtc(h.hour), fmt(series[0].values[i]), fmt(series[1].values[i]), fmt(yesterdayValues[i])] : [timeUtc(h.hour), fmt(todayValues[i]), fmt(yesterdayValues[i])];
           }));
         });
     }
     function table(title, headings, rows, textColumns) {
       app.appendChild(el("h2", { text: title }));
-      app.appendChild(rows.length ? dataTable(headings, rows, textColumns) : el("p", { class: "sub", text: "За сегодня нет данных." }));
+      app.appendChild(rows.length ? dataTable(headings, rows, textColumns) : el("p", { class: "sub", text: "За " + periodName + " нет данных." }));
     }
     app.appendChild(el("h2", { text: "Ходы по часам" }));
     app.appendChild(hourlyFigure("Ходы: телефон и CarPlay", "turns", true));
     app.appendChild(el("h2", { text: "Новые водители по часам" }));
     app.appendChild(hourlyFigure("Регистрации", "signups", false));
-    var countries = Array.from(new Set(td.signups.by_country.concat(prev.signups.by_country).map(function (r) { return r.country; })));
+    var countries = Array.from(new Set(td.signups.by_country.concat(todayMode ? prev.signups.by_country : []).map(function (r) { return r.country; })));
     function countryCount(report, code) { var r = report.signups.by_country.find(function (r) { return r.country === code; }); return r ? r.n : 0; }
-    table("Новые водители по рынкам", ["Страна", "Сегодня", "Вчера, те же часы"], countries.map(function (c) { return [country(c), fmt(countryCount(td, c)), fmt(countryCount(prev, c))]; }));
+    table("Новые водители по рынкам", todayMode ? ["Страна", "Сегодня", "Вчера, те же часы"] : ["Страна", "Вчера"], countries.map(function (c) { return todayMode ? [country(c), fmt(countryCount(td, c)), fmt(countryCount(prev, c))] : [country(c), fmt(countryCount(td, c))]; }));
     table("Ходы по рынкам", ["Страна", "Водителей", "Ходов"], td.activity.by_country.map(function (c) { return [country(c.country), fmt(c.drivers), fmt(c.turns)]; }));
 
     app.appendChild(el("h2", { text: "Ошибки по часам" }));
@@ -730,20 +734,26 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     table("Пейвол по источникам", ["Источник", "Показов", "Водителей"], td.paywall.by_source.map(function (p) { return [reportLabel("paywallSources", p.source), fmt(p.shown), fmt(p.drivers)]; }));
     table("Причины ухода с пейвола", ["Причина", "Ответов"], td.paywall.exit_reasons.map(function (r) { return [exitReason(r.reason), fmt(r.n)]; }));
     table("Пуши по кампаниям", ["Кампания", "Отпр.", "Дост.", "Открыто"], td.pushes.campaigns.map(function (p) { return [p.campaign || "?", fmt(p.sent), fmt(p.delivered), fmt(p.opened)]; }));
-    renderSalesFeedback(td, true);
+    renderSalesFeedback(td, periodName);
 
-    app.appendChild(el("h2", { text: "Расходы сегодня" }));
-    app.appendChild(el("p", { class: "sub", text: "Anthropic сообщает расходы только за полные сутки." }));
-    var sp = data.spend, day = data.generated_at.slice(0, 10);
+    app.appendChild(el("h2", { text: "Расходы " + periodName }));
+    if (todayMode) app.appendChild(el("p", { class: "sub", text: "Anthropic сообщает расходы только за полные сутки." }));
+    var sp = data.spend, day = td.from.slice(0, 10);
     if (sp) {
       var amount = function (map) { return map && map[day] !== undefined ? map[day] : null; };
       var openai = amount(sp.openai_usd), credits = amount(sp.elevenlabs_credits);
-      app.appendChild(dataTable(["Сервис", "Сегодня"], [
-        ["OpenAI", usd(openai)],
-        ["ElevenLabs", credits === null ? "—" : fmt(credits) + " кр." + (sp.elevenlabs_usd_per_credit == null ? "" : " ≈ " + usd(credits * sp.elevenlabs_usd_per_credit))]
-      ], [1]));
+      var rows = [["OpenAI", usd(openai)],
+        ["ElevenLabs", credits === null ? "—" : fmt(credits) + " кр." + (sp.elevenlabs_usd_per_credit == null ? "" : " ≈ " + usd(credits * sp.elevenlabs_usd_per_credit))]];
+      if (!todayMode) rows.unshift(["Anthropic", usd(amount(sp.anthropic_usd))]);
+      app.appendChild(dataTable(["Сервис", todayMode ? "Сегодня" : "Вчера"], rows, [1]));
+      if (!todayMode && sp.summary) {
+        var summary = sp.summary, prefix = summary.complete ? "" : "≥ ";
+        app.appendChild(el("p", { class: "sub", text: "Итого: " + (summary.totalUsd === null ? "—" : prefix + usd(summary.totalUsd)) +
+          " · Цена хода: " + (summary.perTurnUsd === null ? "—" : prefix + usd(summary.perTurnUsd, 3)) + " (" + fmt(td.activity.turns) + " ходов за " + dayLabel(td.from) + ")." }));
+        if (summary.elevenLabsUsd === null) app.appendChild(el("p", { class: "sub", text: "ElevenLabs не учтён в сумме и цене хода." }));
+      }
       app.appendChild(el("p", { class: "sub", text: "Данные расходов на " + timeUtc(sp.read_at) + " UTC." }));
-      var failures = (sp.errors || []).filter(function (e) { return !/^Anthropic:/.test(e); });
+      var failures = (sp.errors || []).filter(function (e) { return !todayMode || !/^Anthropic:/.test(e); });
       if (failures.length) app.appendChild(el("p", { class: "sub", text: "Не прочитано: " + failures.join("; ") }));
     } else app.appendChild(el("p", { class: "sub", text: "Расходы не прочитаны" + (data.spend_error ? ": " + data.spend_error : ".") }));
     app.appendChild(el("footer", { text: "Сутки UTC. Команда и тестовые аккаунты исключены." }));
@@ -797,6 +807,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       if (request !== seq) return;
       if (!data || data.days !== days || (days === 0
         ? !data.today || !data.same_hours_yesterday || !data.hourly || !Array.isArray(data.hourly.today) || data.hourly.today.length !== 24 || !Array.isArray(data.hourly.yesterday) || data.hourly.yesterday.length !== 24
+        : days === 1 ? !data.yesterday || !Object.prototype.hasOwnProperty.call(data, "base") || !data.hourly || !Array.isArray(data.hourly.yesterday) || data.hourly.yesterday.length !== 24 || !Array.isArray(data.hourly.day_before) || data.hourly.day_before.length !== 24
         : !Array.isArray(data.series) || !data.yesterday || !data.today || !data.period)) throw new Error("Сервер ответил не отчётом");
       state.data = data;
       render(data);
