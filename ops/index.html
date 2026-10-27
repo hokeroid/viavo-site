@@ -574,7 +574,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     }));
     if (period.pushes.campaigns.length) {
       app.appendChild(el("p", { class: "sub", text: "Пуши по кампаниям за период" }));
-      app.appendChild(dataTable(["Кампания", "Отправлено", "APNs", "Дошло", "Открыто"], period.pushes.campaigns.map(function (c) { return [c.campaign, fmt(c.sent), c.apns_ok == null ? "?" : fmt(c.apns_ok), fmt(c.delivered), fmt(c.opened)]; })));
+      app.appendChild(dataTable(["Кампания", "Отпр.", "APNs", "Дошло", "Открыто"], period.pushes.campaigns.map(function (c) { return [c.campaign, fmt(c.sent), c.apns_ok == null ? "?" : fmt(c.apns_ok), fmt(c.delivered), fmt(c.opened)]; })));
     }
 
     // 6. spend
