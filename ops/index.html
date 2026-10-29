@@ -165,6 +165,25 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     return el("span", null, [label, label === code ? null : el("span", { class: "code", text: " (" + code + ")" })]);
   }
   function sum(arr, pick) { return arr.reduce(function (t, x) { return t + (pick ? pick(x) : x); }, 0); }
+  // The phone's failure reports (VIA-431): "ActionFailure:PLAYBACK_FAILED" → «сбой действия (PLAYBACK_FAILED)».
+  function deviceErrorLabel(code) {
+    var cut = code.search(/[:.]/), base = cut < 0 ? code : code.slice(0, cut), detail = cut < 0 ? "" : code.slice(cut + 1);
+    var label = reportLabel("deviceErrors", base);
+    if (label === base) return code;
+    return detail ? label + " (" + detail + ")" : label;
+  }
+  function deviceFailures(r) { var d = r.quality.device; return d ? d.failed + d.partial : 0; }
+  function deviceRows(r) {
+    var d = r.quality.device;
+    return d ? d.by_action.map(function (a) {
+      return [reportLabel("actions", a.action), fmt(a.n), fmt(a.of), fmt(a.drivers), a.codes.map(function (c) { return deviceErrorLabel(c.code) + " " + fmt(c.n); }).join(", ")];
+    }) : [];
+  }
+  function deviceNote(r) {
+    var d = r.quality.device;
+    return d ? "Всего " + fmt(d.failed + d.partial) + " из " + fmt(d.actions) + " действий" + (d.partial ? ", из них частично " + fmt(d.partial) : "") +
+      " · водителей " + fmt(d.drivers) + " · юнит вернули за " + fmt(d.refunded) + " ходов. Сбой — то, что сам телефон сообщил после действия; исход такого хода в таблице исходов — «сбой на телефоне»." : "";
+  }
   function productName(id) {
     if (id === "app.viavo.drive.plus.monthly") return "Plus, месяц";
     if (id === "app.viavo.drive.plus.yearly") return "Plus, год";
@@ -513,6 +532,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     tiles.appendChild(tile("Показы пейвола", y.paywall.shown, avg(function (d) { return d.paywall_shown; })));
     tiles.appendChild(tile("Пуши", y.pushes.sent, avg(function (d) { return d.pushes_sent; })));
     tiles.appendChild(tile("Ошибки", errorsOf({ errors: y.quality.errors }), avg(errorsOf), null, false));
+    tiles.appendChild(tile("Сбои на телефоне", deviceFailures(y), avg(function (d) { return d.device_failures || 0; }), null, false));
     app.appendChild(tiles);
     app.appendChild(el("p", { class: "sub", text: "Сегодня до " + timeUtc(data.generated_at) + " UTC: новых " + fmt(td.signups.total) + ", активных " + fmt(td.activity.active_drivers) + ", ходов " + fmt(td.activity.turns) + ", в машине " + fmt(td.activity.car_drivers) + ". Подписчиков сейчас " + fmt(y.sales.subscribers) + (y.sales.trials ? ", триал " + fmt(y.sales.trials) : "") + "." }));
 
@@ -638,6 +658,16 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(el("p", { class: "sub", text: "Тихие действия за период" }));
       app.appendChild(dataTable(["Тихое действие", "Сборка", "Ходов", "Водителей"], period.quality.silent.map(function (q) { return [reportLabel("actions", q.action), q.app_version, fmt(q.n), fmt(q.drivers)]; })));
     }
+    var deviceSeries = [{ name: "сбои на телефоне", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return d.device_failures || 0; }) }];
+    if (sum(deviceSeries[0].values) > 0) {
+      app.appendChild(figure("Сбои на телефоне", "Действия, о сбое которых сообщил сам телефон: адрес не найден, музыка не заиграла, приложение не открылось.", timeChart(days, deviceSeries, { label: "Сбои на телефоне по дням", partialLast: true }), deviceSeries, function () {
+        return dataTable(["День", "Сбоев", "Действий"], s.map(function (d) { return [dayLabel(d.day), fmt(d.device_failures || 0), fmt(d.device_actions || 0)]; }));
+      }));
+    }
+    if (deviceRows(period).length) {
+      app.appendChild(el("p", { class: "sub", text: deviceNote(period) }));
+      app.appendChild(dataTable(["Действие", "Сбоев", "Из действий", "Водителей", "Что"], deviceRows(period), [4]));
+    }
 
     renderSalesFeedback(period);
 
@@ -718,7 +748,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       ["Вернулись", td.activity.returning_drivers, todayMode ? prev.activity.returning_drivers : base.returning_drivers],
       ["Показы пейвола", td.paywall.shown, todayMode ? prev.paywall.shown : base.paywall_shown],
       ["Пуши", td.pushes.sent, todayMode ? prev.pushes.sent : base.pushes_sent],
-      ["Ошибки", errors(td), todayMode ? errors(prev) : base.errors, false]
+      ["Ошибки", errors(td), todayMode ? errors(prev) : base.errors, false],
+      ["Сбои на телефоне", deviceFailures(td), todayMode ? deviceFailures(prev) : base.device_failures, false]
     ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], v[2], null, v[3], todayMode)); });
     app.appendChild(tiles);
 
@@ -756,6 +787,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     table("Ошибки по типам", ["Тип", el("span", { class: "cell-number", text: "Ошибок" }), el("span", { class: "cell-number", text: "Водителей" })], td.quality.errors.map(function (e) { return [errorLabel(e.error_type), fmt(e.n), fmt(e.drivers)]; }));
     table("Исходы ходов", ["Исход", "Ходов", "Доля"], td.quality.outcomes.map(function (o) { return [reportLabel("outcomes", o.outcome), fmt(o.n), Math.round(100 * o.n / (td.activity.turns || 1)) + " %"]; }));
     table("Тихие действия", ["Действие", "Сборка", "Ходов", "Водителей"], td.quality.silent.map(function (q) { return [reportLabel("actions", q.action), q.app_version || "?", fmt(q.n), fmt(q.drivers)]; }), [1]);
+    app.appendChild(el("h2", { text: "Сбои на телефоне по часам" }));
+    app.appendChild(hourlyFigure("Сбои на телефоне", "device_failures", false));
+    table("Сбои на телефоне", ["Действие", "Сбоев", "Из действий", "Водителей", "Что"], deviceRows(td), [4]);
+    if (deviceRows(td).length) app.appendChild(el("p", { class: "sub", text: deviceNote(td) }));
     table("Пейвол по источникам", ["Источник", "Показов", "Водителей"], td.paywall.by_source.map(function (p) { return [reportLabel("paywallSources", p.source), fmt(p.shown), fmt(p.drivers)]; }));
     table("Причины ухода с пейвола", ["Причина", "Ответов"], td.paywall.exit_reasons.map(function (r) { return [exitReason(r.reason), fmt(r.n)]; }));
     app.appendChild(el("h2", { text: "Пуши" }));
