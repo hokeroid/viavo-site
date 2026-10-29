@@ -176,7 +176,11 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     if (t === "INITIAL_PURCHASE") return product === "app.viavo.drive.plus.monthly" || product === "app.viavo.drive.plus.yearly" ? "новая подписка" : "покупка";
     if (t === "RENEWAL") return "продление";
     if (t === "NON_RENEWING_PURCHASE") return "покупка";
-    if (t === "CANCELLATION") return "возврат";
+    // owner_report names a refund REFUND; CANCELLATION is renewal turned off (VIA-428).
+    if (t === "REFUND") return "возврат";
+    if (t === "CANCELLATION") return "отмена";
+    if (t === "UNCANCELLATION") return "снова включил продление";
+    if (t === "EXPIRATION") return "пробный истёк без оплаты";
     return t || "неизвестное событие";
   }
 
