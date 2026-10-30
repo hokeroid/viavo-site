@@ -66,6 +66,10 @@ figure svg:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px
 .tbtn { background: transparent; border: 1px solid var(--axis); border-radius: 8px; color: var(--hint); font: inherit; font-size: 12px; padding: 3px 8px; cursor: pointer; white-space: nowrap; }
 .tw { max-width: 100%; overflow-x: auto; }
 .dated th:first-child, .dated td:first-child { min-width: 54px; overflow-wrap: normal; }
+.vheads th:first-child, .vheads td:first-child { min-width: 54px; overflow-wrap: normal; }
+.vheads th { vertical-align: bottom; }
+.vheads th:not(:first-child) { writing-mode: vertical-rl; white-space: nowrap; padding: 6px 3px; }
+.countries td:first-child { overflow-wrap: normal; hyphens: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 6px 0 2px; }
 th, td { overflow-wrap: anywhere; text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--grid); vertical-align: top; }
 .money th, .cell-number, th.short { white-space: nowrap; }
@@ -78,8 +82,8 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .tip .r { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
 .tip .r i { display: inline-block; width: 12px; height: 2px; margin-right: 6px; }
 .tip .r .v { font-weight: 600; }
-.funnel .cty { display: grid; grid-template-columns: 44px minmax(0, 1fr) 40px; gap: 6px 10px; align-items: center; margin: 6px 0; }
-.funnel .cty .name { font-weight: 600; font-size: 13px; }
+.funnel .cty { display: grid; grid-template-columns: 84px minmax(0, 1fr) 40px; gap: 6px 10px; align-items: center; margin: 6px 0; }
+.funnel .cty .name { font-weight: 600; font-size: 13px; line-height: 1.25; hyphens: auto; overflow-wrap: anywhere; }
 .funnel .bars, .funnel .values { display: grid; grid-template-rows: repeat(5, 12px); gap: 3px; }
 .funnel .bar { height: 12px; border-radius: 0 4px 4px 0; position: relative; min-width: 2px; }
 .funnel .values span { font-size: 11px; line-height: 12px; color: var(--hint); white-space: nowrap; text-align: right; }
@@ -153,7 +157,13 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   function usd(n, digits) { return n === null || n === undefined ? "—" : "$" + Number(n).toFixed(digits === undefined ? 2 : digits); }
   function dayLabel(iso) { return iso.slice(8, 10) + "." + iso.slice(5, 7); }
   function timeUtc(iso) { var d = new Date(iso); return String(d.getUTCHours()).padStart(2, "0") + ":" + String(d.getUTCMinutes()).padStart(2, "0"); }
-  function country(code) { return code === "unknown" ? "?" : code; }
+  var REGION_NAMES = (function () { try { return new Intl.DisplayNames(["ru"], { type: "region" }); } catch (e) { return null; } })();
+  // a country in Russian words (VIA-440), «?» when the phone named none; a code the browser doesn't know stays as is
+  function country(code) {
+    if (code === "unknown") return "?";
+    if (code === "US") return "США";
+    try { return (REGION_NAMES && REGION_NAMES.of(code)) || code; } catch (e) { return code; }
+  }
   function feedbackKind(kind) { return kind === "feature" ? "фича" : kind === "bug" ? "баг" : kind === "paywall_exit" ? "пейвол" : kind; }
   function reportLabel(kind, code) {
     var labels = state.data && state.data.labels && state.data.labels[kind];
@@ -303,6 +313,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     var t = el("table");
     if (head[0].indexOf("Когда") === 0) t.classList.add("dated");
     if (head.indexOf("$/ход") >= 0) t.classList.add("money");
+    if (head[0] === "Страна") t.classList.add("countries");
     var tr = el("tr");
     head.forEach(function (h, i) {
       var th = el("th", { class: (rows.length && rows.every(function (r) { return numeric(r[i], i); }) ? "num" : "") + (typeof h === "string" && h.length <= 3 ? " short" : "") });
@@ -540,13 +551,15 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     app.appendChild(el("h2", { text: "Новые водители" }));
     var markets = Object.keys(MARKET_SLOT).filter(function (m) { return m !== "unknown"; });
     var marketSeries = markets.filter(function (m) { return s.some(function (d) { return (d.signups_by_country || []).some(function (c) { return c.country === m && c.n > 0; }); }); })
-      .map(function (m) { return { name: m, color: SLOT_VAR[MARKET_SLOT[m]], kind: "bar", stack: true, values: s.map(function (d) { return countryN(d, m); }) }; });
+      .map(function (m) { return { name: country(m), color: SLOT_VAR[MARKET_SLOT[m]], kind: "bar", stack: true, values: s.map(function (d) { return countryN(d, m); }) }; });
     marketSeries.push({ name: "другие", color: "var(--s8)", kind: "bar", stack: true, values: s.map(function (d) { return sum((d.signups_by_country || []).filter(function (c) { return MARKET_SLOT[c.country] === undefined; }), function (c) { return c.n; }); }) });
     marketSeries.push({ name: "страна неизвестна", color: "var(--other)", kind: "bar", stack: true, values: s.map(function (d) { return countryN(d, "unknown"); }) });
     marketSeries = marketSeries.filter(function (ms) { return sum(ms.values) > 0; });
     app.appendChild(figure("Регистрации по дням и рынкам", "Страна — по последнему ходу водителя с телефона; «?» — телефон страну не назвал (нет доступа к геопозиции или ни одного запроса).",
       timeChart(days, marketSeries, { label: "Регистрации по дням", partialLast: true }), marketSeries, function () {
-        return dataTable(["День"].concat(marketSeries.map(function (ms) { return ms.name === "страна неизвестна" ? "?" : ms.name === "другие" ? "др." : ms.name; })), s.map(function (d, i) { return [dayLabel(d.day)].concat(marketSeries.map(function (ms) { return fmt(ms.values[i]); })); }));
+        var tw = dataTable(["День"].concat(marketSeries.map(function (ms) { return ms.name === "страна неизвестна" ? "?" : ms.name === "другие" ? "др." : ms.name; })), s.map(function (d, i) { return [dayLabel(d.day)].concat(marketSeries.map(function (ms) { return fmt(ms.values[i]); })); }));
+        tw.firstChild.classList.add("vheads"); // country names as column heads stand on their side (VIA-440)
+        return tw;
       }));
 
     // 2. active vs in-car drivers
@@ -844,7 +857,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         values.appendChild(el("span", { text: fmt(f[st[0]]) }));
         bars.appendChild(bar);
       });
-      box.appendChild(el("div", { class: "cty" }, [el("div", { class: "name", text: f.country }), bars, values]));
+      box.appendChild(el("div", { class: "cty" }, [el("div", { class: "name", text: country(f.country) }), bars, values]));
     });
     var legend = stages.map(function (st, i) { return { name: st[1], color: ORDINAL[i] }; });
     var fig = figure("Регистрации → запрос → машина → возврат → подписка", "Всего за 30 дней: " + fmt(total.signups) + " → " + fmt(total.with_requests) + " → " + fmt(total.in_car) + " → " + fmt(total.returned) + " → " + fmt(total.subscribed) + ". Вернулись — запрос через 12 ч и позже после первого. Без «?».",
