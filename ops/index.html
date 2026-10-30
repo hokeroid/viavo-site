@@ -154,7 +154,9 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     if (digits === undefined) digits = Number.isInteger(n) ? 0 : 1;
     return new Intl.NumberFormat("ru-RU", { maximumFractionDigits: digits }).format(n);
   }
-  function usd(n, digits) { return n === null || n === undefined ? "—" : "$" + Number(n).toFixed(digits === undefined ? 2 : digits); }
+  // What «прочее» in the spend holds; the bot says the same (balance-watch/report.ts OTHER_SPEND).
+  var OTHER_SPEND = "eval, реклама, тесты команды, прогрев кэша, новости, переводы, сводки истории и память водителей";
+  function usd(n, digits) { return n === null || n === undefined ? "—" : (n < 0 ? "−$" : "$") + Math.abs(Number(n)).toFixed(digits === undefined ? 2 : digits); }
   function dayLabel(iso) { return iso.slice(8, 10) + "." + iso.slice(5, 7); }
   function timeUtc(iso) { var d = new Date(iso); return String(d.getUTCHours()).padStart(2, "0") + ":" + String(d.getUTCMinutes()).padStart(2, "0"); }
   var REGION_NAMES = (function () { try { return new Intl.DisplayNames(["ru"], { type: "region" }); } catch (e) { return null; } })();
@@ -308,7 +310,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 
   function dataTable(head, rows, textColumns) {
     function numeric(c, i) {
-      return i > 0 && (!textColumns || textColumns.indexOf(i) < 0) && /^(?:(?:≥ )?\$?−?-?\d[\d\s]*(?:[.,]\d+)?(?: %)?|—)$/.test(String(c));
+      return i > 0 && (!textColumns || textColumns.indexOf(i) < 0) && /^(?:(?:≥ )?−?\$?−?-?\d[\d\s]*(?:[.,]\d+)?(?: %)?|—)$/.test(String(c));
     }
     var t = el("table");
     if (head[0].indexOf("Когда") === 0) t.classList.add("dated");
@@ -639,13 +641,24 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         if (spendSeries.every(function (ss) { return ss.values[i] === null; })) return "—";
         return (partial[i] ? "≥ " : "") + usd(total[i]);
       };
-      var perTurn = days.map(function (d, i) { var turns = s[i] ? s[i].turns : 0; var known = sp.anthropic_usd && sp.anthropic_usd[d] !== undefined; return turns > 0 && known ? total[i] / turns : null; });
+      // The drivers' requests and the rest of the bills, per day, as the server split them (VIA-441).
+      var splitOf = function (d) { return sp.split && sp.split[d] ? sp.split[d] : null; };
+      var part = function (value, complete) { return value === null || value === undefined ? "—" : (complete ? "" : "≥ ") + usd(value); };
+      var perTurn = days.map(function (d) { var x = splitOf(d); return x && x.per_turn_usd !== null ? x.per_turn_usd : null; });
       app.appendChild(figure("Расходы по дням, $", "Anthropic и OpenAI — отчёты о расходах по дням (у Anthropic нет текущего дня); ElevenLabs — кредиты по цене плана" + (perCredit === null ? " (цена плана не прочитана, кредиты не в долларах)" : "") + "." + (sp.errors && sp.errors.length ? " Не прочитано: " + sp.errors.join("; ") : ""),
         timeChart(days, spendSeries, { label: "Расходы по дням", fmtValue: function (v) { return usd(v); }, fmtTick: function (v) { return "$" + compact(v); } }), spendSeries, function () {
-          return dataTable(["День", "Anthr.", "OpenAI", "Eleven", "Итого", "$/ход"], days.map(function (d, i) { return [dayLabel(d), usd(spendSeries[0].values[i]), usd(spendSeries[1].values[i]), usd(spendSeries[2].values[i]), totalLabel(i), perTurn[i] === null ? "—" : usd(perTurn[i], 3)]; }));
+          return dataTable(["День", "Anthr.", "OpenAI", "Eleven", "Итого"], days.map(function (d, i) { return [dayLabel(d), usd(spendSeries[0].values[i]), usd(spendSeries[1].values[i]), usd(spendSeries[2].values[i]), totalLabel(i)]; }));
+        }));
+      var splitSeries = [
+        { name: "Ходы водителей", color: "var(--s1)", kind: "bar", stack: true, values: days.map(function (d) { var x = splitOf(d); return x && x.turns_usd !== null ? Math.max(0, x.turns_usd) : null; }) },
+        { name: "Прочее", color: "var(--s4)", kind: "bar", stack: true, values: days.map(function (d) { var x = splitOf(d); return x && x.other_usd !== null ? Math.max(0, x.other_usd) : null; }) }
+      ];
+      app.appendChild(figure("Ходы водителей и прочее, $", "Ходы — что стоили запросы водителей: их токены (ход, заметка к нему, приветствие CarPlay) по ставкам дневного счёта Anthropic и их доля распознавания и озвучки. Прочее — остальное в счетах: " + OTHER_SPEND + ". «≥» — часть счетов не прочитана; сегодня — по ставкам последнего дня со счётом.",
+        timeChart(days, splitSeries, { label: "Ходы и прочее по дням", fmtValue: function (v) { return usd(v); }, fmtTick: function (v) { return "$" + compact(v); } }), splitSeries, function () {
+          return dataTable(["День", "Ходы", "Прочее", "Итого", "$/ход"], days.map(function (d, i) { var x = splitOf(d); return [dayLabel(d), x ? part(x.turns_usd, x.turns_complete) : "—", x ? part(x.other_usd, x.other_complete) : "—", totalLabel(i), perTurn[i] === null ? "—" : (x.turns_complete ? "" : "≥ ") + usd(perTurn[i], 3)]; }));
         }));
       var ptSeries = [{ name: "$ за ход", color: "var(--s1)", kind: "line", values: perTurn }];
-      app.appendChild(figure("Цена одного хода", "Прочитанные расходы дня, делённые на ходы водителей за день (UTC). Дни без отчёта Anthropic пропущены." + (perCredit === null ? " ElevenLabs не учтён: цена плана не прочитана" : ""),
+      app.appendChild(figure("Цена одного хода", "Ходы водителей в долларах, делённые на их ходы за день (UTC); eval, реклама и прочее в неё не входят." + (perCredit === null ? " ElevenLabs не учтён: цена плана не прочитана" : ""),
         timeChart(days, ptSeries, { label: "Цена хода по дням", fmtValue: function (v) { return usd(v, 3); }, fmtTick: function (v) { return "$" + v.toFixed(3); } }), ptSeries, null));
     } else {
       app.appendChild(el("p", { class: "sub", text: "Расходы не прочитаны" + (data.spend_error ? ": " + data.spend_error : ".") }));
@@ -824,11 +837,20 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       var rows = [["OpenAI", usd(openai)],
         ["ElevenLabs", credits === null ? "—" : fmt(credits) + " кр." + (sp.elevenlabs_usd_per_credit == null ? "" : " ≈ " + usd(credits * sp.elevenlabs_usd_per_credit))]];
       if (!todayMode) rows.unshift(["Anthropic", usd(amount(sp.anthropic_usd))]);
+      var summary = !todayMode && sp.summary ? sp.summary : null;
+      if (summary) {
+        // The day's bills split: the drivers' requests, the rest, the price of a turn (VIA-441).
+        var known = function (v) { return v !== null && v !== undefined; };
+        var turnsPrefix = summary.turnsComplete ? "" : "≥ ";
+        rows.push(["Итого", known(summary.totalUsd) ? (summary.complete ? "" : "≥ ") + usd(summary.totalUsd) : "—"],
+          ["Ходы водителей", known(summary.turnsUsd) ? turnsPrefix + usd(summary.turnsUsd) : "—"],
+          ["Прочее", known(summary.otherUsd) ? (summary.otherComplete ? "" : "≥ ") + usd(summary.otherUsd) : "—"],
+          ["Цена хода", known(summary.perTurnUsd) ? turnsPrefix + usd(summary.perTurnUsd, 3) : "—"]);
+      }
       app.appendChild(dataTable(["Сервис", todayMode ? "Сегодня" : "Вчера"], rows, [1]));
-      if (!todayMode && sp.summary) {
-        var summary = sp.summary, prefix = summary.complete ? "" : "≥ ";
-        app.appendChild(el("p", { class: "sub", text: "Итого: " + (summary.totalUsd === null ? "—" : prefix + usd(summary.totalUsd)) +
-          " · Цена хода: " + (summary.perTurnUsd === null ? "—" : prefix + usd(summary.perTurnUsd, 3)) + " (" + fmt(td.activity.turns) + " ходов за " + dayLabel(td.from) + ")." }));
+      if (summary) {
+        app.appendChild(el("p", { class: "sub", text: "Цена хода — ходы водителей, делённые на их " + fmt(td.activity.turns) + " ходов за " + dayLabel(td.from) + ": их токены по ставкам дневного счёта Anthropic и их доля распознавания и озвучки. Прочее — " + OTHER_SPEND + "." + (summary.listPriced ? " Ставки счёта не прочитаны: Anthropic по прейскуранту, он выше счёта." : "") }));
+        if (summary.unpriced && summary.unpriced.length) app.appendChild(el("p", { class: "sub", text: "Нет цены модели " + summary.unpriced.join(", ") + ": её токены не в ходах и не в прочем." }));
         if (summary.elevenLabsUsd === null) app.appendChild(el("p", { class: "sub", text: "ElevenLabs не учтён в сумме и цене хода." }));
       }
       app.appendChild(el("p", { class: "sub", text: "Данные расходов на " + timeUtc(sp.read_at) + " UTC." }));
