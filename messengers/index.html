@@ -18,7 +18,7 @@
 <p>Viavo reads or sends a message only when you ask for it, in the moment you ask, and only what you asked for. Nobody at Viavo reads your chats, and our server keeps no copy of your account access or of your messages. The rest of this page says how that is made true, step by step.</p>
 
 <h2>1. Where the access to your account lives</h2>
-<p>When you connect Telegram (phone number, the code Telegram sends, your two-step password if you have one) or Slack (the usual “Allow” page in your workspace), our server receives the session once, at that moment. It encrypts it with a key that exists only in the server’s secret store, hands the encrypted blob back to your phone and forgets it. There is no table of accounts in our database.</p>
+<p>When you connect Telegram (phone number, the code Telegram sends, your two-step password if you have one) or Slack (the usual “Allow” page in your workspace), our server receives the session once, at that moment. It encrypts it with a key that exists only in the server’s secret store, hands the encrypted blob back to your phone and forgets it. There is no table of accounts in our database. If Telegram asks you to link a login email first, the address you type goes through our server to Telegram and is not kept either.</p>
 <p>Your phone keeps the blob in the iOS Keychain and sends it along with every request you make. The server decrypts it in memory for the few seconds the request takes and drops it again. So:</p>
 <ul>
   <li>a copy of our database contains nothing that opens your Telegram or Slack;</li>
