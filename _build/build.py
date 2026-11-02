@@ -142,9 +142,29 @@ def css(r):
 
 
 JS_VERSION = None
+ANSWER_LINKS = {}  # lang -> [(slug, label)], filled in main() from _build/seo/pages
+# Answer pages go live after the owner's yes (VIA-472/473); VIAVO_ANSWERS=1 builds them for review.
+ANSWERS_LIVE = os.environ.get('VIAVO_ANSWERS') == '1'
 
 
-def head(lang, title, desc, canonical, r, alternates='', og_image=None, og_title=None):
+def auto_lang_script(available):
+    """Root page only: send a visitor whose browser prefers one of our languages to /<lang>/, before anything paints.
+    A language picked by hand (stored by site.js) wins over the browser; English or no match stays on /."""
+    folders = {L[c]['code']: L[c]['folder'] for c in available if L[c]['folder']}
+    js = (
+        "(function(){try{var F=%s,s=localStorage.getItem('viavo-lang');"
+        "if(/[?&]lang=en(&|$)/.test(location.search)){localStorage.setItem('viavo-lang','en');return}"
+        "function pick(t){t=(t||'').toLowerCase();var b=t.split('-')[0];"
+        "if(b==='zh')return /-(tw|hk|mo|hant)/.test(t)?'zh-hant':'zh-hans';"
+        "if(b==='iw')return 'he';if(b==='bs')return 'hr';if(b==='en')return 'en';"
+        "return F[b]?b:null}"
+        "var c=s;if(!c){var ls=navigator.languages||[navigator.language];for(var i=0;i<ls.length;i++){c=pick(ls[i]);if(c)break}}"
+        "if(c&&c!=='en'&&F[c])location.replace(F[c]+'/'+location.hash)}catch(e){}})();"
+    ) % json.dumps(folders, separators=(',', ':'))
+    return f'<script>{js}</script>\n'
+
+
+def head(lang, title, desc, canonical, r, alternates='', og_image=None, og_title=None, early=''):
     li = L[lang]
     preload = ''
     if lang in LATIN_HEADLINES:
@@ -155,7 +175,7 @@ def head(lang, title, desc, canonical, r, alternates='', og_image=None, og_title
 <html lang="{li["hreflang"]}" dir="{li["dir"]}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+{early}<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{canonical}">
@@ -218,11 +238,13 @@ def footer(T, lang, r, available):
     home = r + (L[lang]['folder'] + '/' if L[lang]['folder'] and lang in available else '')
     ru = lang in ('ru', 'uk')
     legal = lambda p: f'{r}{p}/' + ('ru/' if ru and p != 'support' else '')
+    folder = L[lang]['folder'] + '/' if L[lang]['folder'] else ''
+    answers = ''.join(f'<a href="{r}{folder}{slug}/">{e(label)}</a>' for slug, label in ANSWER_LINKS.get(lang, []))
     langs = ''.join(f'<li><a href="{r}{L[c]["folder"] + "/" if L[c]["folder"] else ""}" lang="{L[c]["hreflang"]}">{L[c]["native"]}</a></li>'
                     for c, *_ in LANGS if c in available)
     return f'''<footer class="wrap grid ftr">
 <div class="brand"><a class="logo" href="{home}" aria-label="Viavo">{MARK}<span>viavo</span></a><small>{brandsafe(T["eyebrow"])}</small>{badge(lang, r, "site-" + lang + "-footer").replace("{alt}", e(T["badgeAlt"]))}</div>
-<nav aria-label="{e(T["fPrivacy"])}"><a href="{legal("privacy")}">{e(T["fPrivacy"])}</a><a href="{legal("terms")}">{e(T["fTerms"])}</a><a href="{legal("messengers")}">{e(T["fMessengers"])}</a><a href="{r}support/">{e(T["fSupport"])}</a><a href="{r}press/">{e(T["fPress"])}</a></nav>
+<nav aria-label="{e(T["fPrivacy"])}"><a href="{legal("privacy")}">{e(T["fPrivacy"])}</a><a href="{legal("terms")}">{e(T["fTerms"])}</a><a href="{legal("messengers")}">{e(T["fMessengers"])}</a><a href="{r}support/">{e(T["fSupport"])}</a><a href="{r}press/">{e(T["fPress"])}</a>{answers}</nav>
 <ul class="fl">{langs}</ul>
 <div class="bot"><span>© 2026 Viavo</span><span>{brandsafe(T["tm"])}</span></div>
 </footer>
@@ -264,7 +286,8 @@ def home(lang, T, available):
     alts = ''.join(f'<link rel="alternate" hreflang="{L[c]["hreflang"]}" href="{page_url(c)}">\n' for c, *_ in LANGS if c in available)
     alts += f'<link rel="alternate" hreflang="x-default" href="{page_url("en")}">\n'
     m = T['meta']
-    out = [head(lang, m['title'], m['description'], page_url(lang), r, alts, og_title=m['ogTitle']), '<body>', SYMBOLS,
+    early = auto_lang_script(available) if lang == 'en' else ''
+    out = [head(lang, m['title'], m['description'], page_url(lang), r, alts, og_title=m['ogTitle'], early=early), '<body>', SYMBOLS,
            header(T, lang, r, available)]
     alt_badge = e(T['badgeAlt'])
     q = T['qo'], T['qc']
@@ -289,11 +312,14 @@ def home(lang, T, available):
     rows = ''.join(f'<div class="{"on" if i == 0 else ""}"><b lang="{L[g]["hreflang"]}">{L[g]["native"]}</b><span>{e(names.get(g, L[g]["english"]))}</span></div>'
                    for i, g in enumerate(order))
     general = ''
+    folder_ = L[lang]['folder'] + '/' if L[lang]['folder'] else ''
+    band_more = ''.join(f'<p class="more"><a class="ul" href="{r}{folder_}{slug}/">{e(label)} →</a></p>'
+                        for slug, label in ANSWER_LINKS.get(lang, []) if slug == 'siri')
     if lang in STORY:
         out.append(f'''<section class="band" id="story" data-words='{e(json.dumps(words, ensure_ascii=False))}'><div class="wrap grid">
 <div class="car"><div class="scr">{shots}</div></div>
 <div class="txt"><h2 class="h2">{brandsafe(T["bandPre"])}<span class="w">{e(words[0])}</span>{e(T["bandPost"])} <span class="t">{brandsafe(T["bandTail"])}</span></h2>
-<p class="lead">{brandsafe(T["bandSub"])}</p>
+<p class="lead">{brandsafe(T["bandSub"])}</p>{band_more}
 <div class="gap">{rows}</div></div>
 </div></section>
 ''')
@@ -362,6 +388,9 @@ def home(lang, T, available):
     for i, item in enumerate(T['faqItems']):
         qq, aa = item[0], item[1]
         links = ''
+        if i == 0:
+            links = ''.join(f'<div class="links"><a class="ul" href="{r}{folder_}{slug}/">{e(label)} →</a></div>'
+                            for slug, label in ANSWER_LINKS.get(lang, []) if slug == 'chatgpt-carplay')
         if i == len(T['faqItems']) - 1:
             links = (f'<div class="links"><a class="ul" href="{r}privacy/{"ru/" if ru else ""}">{e(T["lPrivacy"])}</a>'
                      f'<a class="ul" href="{r}messengers/{"ru/" if ru else ""}">{e(T["lMessages"])}</a></div>')
@@ -448,6 +477,130 @@ def not_found(T, available):
     return ''.join(out)
 
 
+# ---------------------------------------------------------------- answer pages (texts from VIA-473)
+# _build/seo/pages/<lang>/<slug>.md: front matter + a small Markdown subset (## headings, paragraphs, - / 1. lists,
+# pipe tables, **bold**, *italic*, [text](url), a bare "[...]" line = the App Store button, <!-- notes --> dropped).
+# The last section made of "**Question?** answer" paragraphs becomes the FAQ (and its FAQPage JSON-LD).
+
+def read_answer(path):
+    text = path.read_text()
+    _, fm, body = text.split('---\n', 2)
+    meta = {}
+    for line in fm.splitlines():
+        if ':' in line and not line.startswith(' '):
+            k, v = line.split(':', 1)
+            v = v.split('   #')[0].strip()
+            meta[k.strip()] = v[1:-1] if len(v) > 1 and v[0] == v[-1] == '"' else v
+    body = re.sub(r'<!--.*?-->', '', body, flags=re.S)
+    return meta, body.strip()
+
+
+def inline(t):
+    t = e(t, quote=False)
+    t = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+    t = re.sub(r'(?<![*\w])\*(?!\s)(.+?)(?<!\s)\*(?![*\w])', r'<em>\1</em>', t)
+    t = re.sub(r'\[([^\]]+)\]\((https?://[^)\s]+)\)', r'<a href="\2">\1</a>', t)
+    return t
+
+
+def answer_blocks(body):
+    blocks, cur = [], []
+    for line in body.splitlines():
+        if not line.strip():
+            if cur: blocks.append(cur); cur = []
+        else:
+            cur.append(line)
+    if cur: blocks.append(cur)
+    return blocks
+
+
+def answer_page(lang, slug, meta, body, T, available, pages):
+    li = L[lang]
+    folder = li['folder']
+    rel_path = (folder + '/' if folder else '') + slug + '/'
+    r = rel(rel_path.count('/'))
+    canonical = f'{BASE_URL}/{rel_path}'
+    same = [c for c in pages.get(slug, []) if c in available]
+    alts = ''
+    if len(same) > 1:
+        alts = ''.join(f'<link rel="alternate" hreflang="{L[c]["hreflang"]}" href="{BASE_URL}/{(L[c]["folder"] + "/" if L[c]["folder"] else "") + slug}/">\n' for c in same)
+        if 'en' in same:
+            alts += f'<link rel="alternate" hreflang="x-default" href="{BASE_URL}/{slug}/">\n'
+    blocks = answer_blocks(body)
+    # split into sections by h2
+    sections, cur = [], {'h2': None, 'blocks': []}
+    for b in blocks:
+        if b[0].startswith('## '):
+            sections.append(cur); cur = {'h2': b[0][3:].strip(), 'blocks': [b[1:]] if len(b) > 1 else []}
+        else:
+            cur['blocks'].append(b)
+    sections.append(cur)
+    is_q = lambda b: len(b) == 1 and re.match(r'^\*\*[^*]+\*\*\s', b[0])
+    faq_idx = max((i for i, sct in enumerate(sections) if sct['h2'] and sum(1 for b in sct['blocks'] if is_q(b)) >= 2), default=None)
+    faq = []
+    out_html = []
+    for i, sct in enumerate(sections):
+        if sct['h2']:
+            out_html.append(f'<h2>{inline(sct["h2"])}</h2>')
+        for b in sct['blocks']:
+            first = b[0]
+            if i == faq_idx and is_q(b):
+                m = re.match(r'^\*\*([^*]+)\*\*\s+(.*)$', first)
+                q_, a_ = m.group(1).strip(), m.group(2).strip()
+                faq.append((q_, a_))
+                out_html.append(f'<div class="qa-item"><h3>{inline(q_)}</h3><p>{inline(a_)}</p></div>')
+            elif all(l.startswith('|') for l in b):
+                rows = [[c.strip() for c in l.strip().strip('|').split('|')] for l in b]
+                head_, body_ = rows[0], [x for x in rows[2:]]
+                th = ''.join(f'<th scope="col">{inline(c)}</th>' for c in head_)
+                trs = ''.join('<tr>' + ''.join((f'<th scope="row">{inline(c)}</th>' if j == 0 else f'<td>{inline(c)}</td>') for j, c in enumerate(x)) + '</tr>' for x in body_)
+                out_html.append(f'<div class="tbl"><table><thead><tr>{th}</tr></thead><tbody>{trs}</tbody></table></div>')
+            elif all(re.match(r'^- ', l) for l in b):
+                out_html.append('<ul>' + ''.join(f'<li>{inline(l[2:])}</li>' for l in b) + '</ul>')
+            elif all(re.match(r'^\d+\. ', l) for l in b):
+                out_html.append('<ol>' + ''.join(f'<li>{inline(re.sub(r"^\d+\. ", "", l))}</li>' for l in b) + '</ol>')
+            elif len(b) == 1 and re.match(r'^\[[^\]]+\]$', first):
+                label = first[1:-1]
+                bimg = lang if exists(f'assets/badges/{lang}.svg') else 'en'
+                out_html.append(f'<p class="ans-cta"><a class="badge" href="{e(store_url(lang, f"{lang}-{slug}"))}"><img src="{r}assets/badges/{bimg}.svg" alt="{e(label)}" width="160" height="54"></a></p>')
+            else:
+                para = ' '.join(b)
+                cls = ' class="short"' if not out_html and para.startswith('**') else (' class="note"' if para.startswith('*') and not para.startswith('**') else '')
+                out_html.append(f'<p{cls}>{inline(para)}</p>')
+    jsonld = ''
+    if faq:
+        plain = lambda t: re.sub(r'\*+', '', t)
+        data = {'@context': 'https://schema.org', '@type': 'FAQPage',
+                'mainEntity': [{'@type': 'Question', 'name': plain(q_), 'acceptedAnswer': {'@type': 'Answer', 'text': plain(a_)}} for q_, a_ in faq]}
+        jsonld = '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace('</', '<\\/') + '</script>\n'
+    page_head = head(lang, meta['title'], meta['description'], canonical, r, alts).replace('<!-- seo:head -->', '<!-- seo:head -->\n' + jsonld)
+    out = [page_head, '<body>', SYMBOLS, header(T, lang, r, available, current_path='')]
+    home_href = r + (folder + '/' if folder else '')
+    out.append(f'''<main id="main" class="answer">
+<div class="wrap ans-head"><p class="eyebrow"><a href="{home_href}">Viavo</a></p><h1>{inline(meta["h1"])}</h1></div>
+<div class="wrap"><article class="prose ans">{"".join(out_html)}</article></div>
+</main>
+''')
+    out.append(footer(T, lang, r, available))
+    out.append('</body>\n</html>\n')
+    return rel_path, typeset(lang, ''.join(out))
+
+
+def answer_index():
+    """{slug: [lang, ...]} and (lang, slug) -> (meta, body) for every answer page."""
+    pages, data = {}, {}
+    for f in sorted((SRC / 'seo/pages').glob('*/*.md')):
+        lang, slug = f.parent.name, f.stem
+        meta, body = read_answer(f)
+        pages.setdefault(slug, []).append(lang)
+        data[(lang, slug)] = (meta, body)
+    return pages, data
+
+
+def answer_label(meta):
+    return meta['title'].split(':')[0].strip()
+
+
 LEGAL_UI = {
     'en': {'privacy': 'Privacy Policy', 'terms': 'Terms', 'messengers': 'How Viavo handles your messages', 'support': 'Support',
            'contents': 'Contents', 'other': 'По-русски'},
@@ -529,6 +682,13 @@ def main():
             content[c] = json.loads(f.read_text())
     en = content['en']
     available = set(content)
+    pages, answers = answer_index() if ANSWERS_LIVE else ({}, {})
+    for (lang_, slug), (meta, _) in answers.items():
+        ANSWER_LINKS.setdefault(lang_, []).append((slug, answer_label(meta)))
+    for (lang_, slug), (meta, body) in answers.items():
+        rel_path, page = answer_page(lang_, slug, meta, body, {**en, **content.get(lang_, {})}, available, pages)
+        (ROOT / rel_path).mkdir(parents=True, exist_ok=True)
+        (ROOT / rel_path / 'index.html').write_text(page)
     (ROOT / 'assets/qr').mkdir(exist_ok=True)
     for c in available:
         (ROOT / f'assets/qr/{c}.svg').write_text(qrcode.svg(qrcode.build(store_url(c, f'site-{c}-qr'))))

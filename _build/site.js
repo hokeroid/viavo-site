@@ -42,6 +42,11 @@
   if (bar && hero && 'IntersectionObserver' in window)
     new IntersectionObserver(([e]) => bar.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(hero);
 
+  // A language picked by hand is remembered, so the root page stops sending this visitor to the browser's language
+  document.querySelectorAll('a[hreflang], .lgrid a, .ftr .fl a').forEach(a => a.addEventListener('click', () => {
+    try { localStorage.setItem('viavo-lang', (a.getAttribute('hreflang') || a.lang || '').toLowerCase().replace('sr-latn', 'sr')); } catch (e) {}
+  }));
+
   // Language menu closes on an outside click or Escape
   const menu = document.querySelector('.lang');
   if (menu) {
