@@ -1,0 +1,55 @@
+# Viavo — every crawler, AI search and assistants included, is welcome.
+
+User-agent: GPTBot
+Allow: /
+Disallow: /ops/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /ops/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /ops/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /ops/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /ops/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /ops/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /ops/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /ops/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /ops/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /ops/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /ops/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /ops/
+
+User-agent: *
+Allow: /
+Disallow: /ops/
+
+Sitemap: https://viavo.app/sitemap.xml

@@ -536,10 +536,16 @@ def main():
         TT = {**en, **T}
         out = ROOT / (L[c]['folder'] or '.') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(typeset(c, home(c, TT, available)))
+        page = typeset(c, home(c, TT, available))
+        jsonld = SRC / 'seo/jsonld' / f'{c}.html'  # schema.org blocks from VIA-473
+        if jsonld.exists():
+            page = page.replace('<!-- seo:head -->', '<!-- seo:head -->\n' + jsonld.read_text().strip(), 1)
+        out.write_text(page)
     (ROOT / 'press').mkdir(exist_ok=True)
     (ROOT / 'press/index.html').write_text(press(en, available))
     (ROOT / '404.html').write_text(not_found(en, available))
+    for f in (SRC / 'seo/root').glob('*'):  # robots.txt, sitemap.xml, llms.txt, IndexNow key — owned by VIA-473
+        (ROOT / f.name).write_bytes(f.read_bytes())
     T = {'en': en, 'ru': {**en, **content.get('ru', {}), **({} if 'ru' in content else LEGAL_FALLBACK_RU)}}
     for path in ('privacy', 'privacy/ru', 'terms', 'terms/ru', 'messengers', 'messengers/ru', 'support'):
         (ROOT / path / 'index.html').write_text(legal(path, T, available))

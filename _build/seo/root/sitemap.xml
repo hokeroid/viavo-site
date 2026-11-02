@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://viavo.app/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/pl/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/it/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/hr/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/uk/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/he/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/ru/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/ar/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/cs/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/de/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/el/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/es/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/fr/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/hi/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/hu/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/id/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/ja/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/ko/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/nl/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/pt/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/ro/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/sr/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/sv/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/th/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/tr/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/vi/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/zh-hans/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/zh-hant/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://viavo.app/it/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/"/>
+    <xhtml:link rel="alternate" hreflang="he" href="https://viavo.app/he/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://viavo.app/ar/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://viavo.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viavo.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viavo.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://viavo.app/hi/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://viavo.app/id/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viavo.app/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viavo.app/ko/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viavo.app/nl/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viavo.app/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/"/>
+    <xhtml:link rel="alternate" hreflang="sr-Latn" href="https://viavo.app/sr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viavo.app/sv/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://viavo.app/th/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://viavo.app/tr/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://viavo.app/vi/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://viavo.app/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://viavo.app/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/press/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://viavo.app/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://viavo.app/privacy/ru/</loc>
+  </url>
+  <url>
+    <loc>https://viavo.app/terms/</loc>
+  </url>
+  <url>
+    <loc>https://viavo.app/terms/ru/</loc>
+  </url>
+  <url>
+    <loc>https://viavo.app/messengers/</loc>
+  </url>
+  <url>
+    <loc>https://viavo.app/messengers/ru/</loc>
+  </url>
+  <url>
+    <loc>https://viavo.app/support/</loc>
+  </url>
+</urlset>
