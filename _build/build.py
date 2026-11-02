@@ -150,7 +150,7 @@ ANSWERS_LIVE = os.environ.get('VIAVO_ANSWERS') == '1'
 def auto_lang_script(available):
     """Root page only: send a visitor whose browser prefers one of our languages to /<lang>/, before anything paints.
     A language picked by hand (stored by site.js) wins over the browser; English or no match stays on /."""
-    folders = {L[c]['code']: L[c]['folder'] for c in available if L[c]['folder']}
+    folders = {L[c]['code']: L[c]['folder'] for c in sorted(available) if L[c]['folder']}
     js = (
         "(function(){try{var F=%s,s=localStorage.getItem('viavo-lang');"
         "if(/[?&]lang=en(&|$)/.test(location.search)){localStorage.setItem('viavo-lang','en');return}"
