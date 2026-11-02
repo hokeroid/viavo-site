@@ -84,8 +84,10 @@ button{font:inherit;color:inherit}
 .hero-shot{margin-top:56px;position:relative;z-index:2;margin-bottom:-300px}
 .hero-shot .glow{position:absolute;inset:6% 4% -4%;background:radial-gradient(closest-side,var(--glow),transparent);filter:blur(48px)}
 .car{position:relative;padding:14px;background:linear-gradient(180deg,#1C1E24,#0F1014);border-radius:30px;border:1px solid rgba(255,255,255,.09);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,var(--shadow)}
-.car .scr{position:relative;aspect-ratio:1920/1080;border-radius:18px;overflow:hidden;background:#232323}
-.car .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
+/* The screen without the CarPlay dock (the left 92 of 1920 px): the button sits at the centre of the remaining area,
+   so it lands exactly in the middle of the frame in every language */
+.car .scr{position:relative;aspect-ratio:1828/1080;border-radius:18px;overflow:hidden;background:#232323}
+.car .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:100% 50%;transition:opacity .3s ease}
 .hero-shot .car{max-width:1084px;margin-inline:auto}
 .hero-shot.solo{margin-bottom:0}
 
@@ -319,8 +321,7 @@ button{font:inherit;color:inherit}
   .badge img{height:48px}
   .hero-shot{margin-top:40px;margin-bottom:-160px}
   .car{padding:8px;border-radius:22px}
-  /* phone: a 10:9 window of the 1920x1080 screen, centred on the CarPlay button, which sits at 52.4% of the width
-     (the dock is on the left); the widest caption (Greek, Russian) is 852 px and fits with ~14% to spare */
+  /* phone: a 10:9 window (1200 px of 1920) centred on the button at x=1006; the widest caption (Greek, 852 px) fits with ~14% to spare */
   .car .scr{aspect-ratio:10/9;border-radius:16px}
   .car .scr img{object-position:56.4% 50%}
   .band{padding-top:calc(160px + var(--pad))}
