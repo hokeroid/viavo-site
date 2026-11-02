@@ -94,6 +94,11 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .feedback .original, .feedback .untranslated { color: var(--hint); font-size: 12px; }
 .feedback .original, .feedback .words { margin-top: 4px; }
 .code { color: var(--hint); font-size: 12px; font-weight: normal; }
+.capped { display: block; color: var(--bad); font-weight: 600; white-space: nowrap; }
+.campaigns tr.name td { border-bottom: 0; padding-bottom: 0; font-weight: 600; overflow-wrap: normal; word-break: normal; }
+.campaigns td.num { white-space: nowrap; }
+.campaigns th, .campaigns td { overflow-wrap: normal; }
+.campaigns th:not(:first-child), .campaigns td:not(:first-child) { text-align: right; }
 .product-name { overflow-wrap: normal; }
 .feedback .identity span { display: block; white-space: nowrap; }
 .feedback .identity .id { color: var(--hint); font-size: 12px; }
@@ -608,6 +613,9 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(el("p", { class: "sub", text: "Причины ухода с пейвола за период: " + period.paywall.exit_reasons.map(function (r) { return exitReason(r.reason) + " " + r.n; }).join(" · ") }));
     }
 
+    // 4a. ads: what Meta spent and the drivers it bought (VIA-490)
+    renderAds(data);
+
     // 5. pushes
     app.appendChild(el("h2", { text: "Пуши" }));
     pushDelivery(period.pushes);
@@ -697,7 +705,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 
     renderSalesFeedback(period);
 
-    app.appendChild(el("footer", { text: "Счёт по owner_report и owner_report_series (SQL), без модели. Команда и тестовые аккаунты исключены." }));
+    app.appendChild(el("footer", { text: "Счёт по owner_report и owner_report_series (SQL), без модели; реклама — Meta Marketing API и owner_ads_funnel. Команда и тестовые аккаунты исключены." }));
     redrawCharts();
   }
 
@@ -744,6 +752,92 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(el("p", { class: "sub", text: ("Последние пять; всего " + periodName + ": ") + period.feedback.by_kind.map(function (k) { return feedbackKind(k.kind) + " " + k.n; }).join(" · ") }));
     } else app.appendChild(el("p", { class: "sub", text: "Отзывов " + periodName + " нет." }));
 
+  }
+
+  // ---------- ads (VIA-490): Meta's spend per country and campaign next to the drivers it bought
+  var AD_STATUS = { ACTIVE: "идёт", PAUSED: "пауза", CAMPAIGN_PAUSED: "пауза", ADSET_PAUSED: "пауза", ARCHIVED: "в архиве", DELETED: "удалена", IN_PROCESS: "обрабатывается", WITH_ISSUES: "с ошибками" };
+  var EUR = (function () { try { return new Intl.NumberFormat("ru-RU", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); } catch (e) { return null; } })();
+  // euros with cents for the tables, whole ones from a thousand up so a phone's table fits («—» when there is no figure);
+  // the € sign stands in the column head
+  function eur(n) {
+    if (n === null || n === undefined || isNaN(n)) return "—";
+    if (Math.abs(n) >= 1000) return fmt(Math.round(n), 0);
+    return EUR ? EUR.format(n) : Number(n).toFixed(2);
+  }
+  function eurTile(n) { return n === null || n === undefined ? "—" : eur(n) + " €"; }
+  function adCountry(code) { return code === "unknown" ? "не указана Meta" : country(code); }
+  function adStatus(c) {
+    var name = c.status === null || c.status === undefined ? "нет в списке" : Object.prototype.hasOwnProperty.call(AD_STATUS, c.status) ? AD_STATUS[c.status] : c.status;
+    return name + (c.stop_time ? ", до " + dayLabel(c.stop_time) : "");
+  }
+  function adLimit(c) {
+    if (c.spend_cap === null || c.spend_cap === undefined) return c.lifetime_spend === null || c.lifetime_spend === undefined ? "—" : el("span", null, [fmt(c.lifetime_spend, 0) + "\u00a0€", el("span", { class: "code", text: " без лимита" })]);
+    // the line may break after the first figure only: «98 / из 100 €»
+    return el("span", null, [fmt(c.lifetime_spend, 0) + " из\u00a0" + fmt(c.spend_cap, 0) + "\u00a0€", c.capped ? el("span", { class: "capped", text: "лимит" }) : null]);
+  }
+  // campaigns: the name on a row of its own across the table, its figures under it in columns
+  function campaignTable(campaigns) {
+    var t = el("table", { class: "campaigns" });
+    var head = el("tr");
+    [["Статус", ""], ["€/день", "num short"], ["€ за период", "num"], ["Устан.", "num"], ["Из лимита", "num"]].forEach(function (h) { head.appendChild(el("th", { class: h[1], text: h[0] })); });
+    t.appendChild(el("thead", null, head));
+    var body = el("tbody");
+    campaigns.forEach(function (c) {
+      body.appendChild(el("tr", { class: "name" }, el("td", { colspan: "5", text: c.name })));
+      var row = el("tr");
+      row.appendChild(el("td", { text: adStatus(c) }));
+      [c.daily_budget === null || c.daily_budget === undefined ? "—" : fmt(c.daily_budget), eur(c.spend), fmt(c.installs)].forEach(function (v) { row.appendChild(el("td", { class: "num", text: v })); });
+      row.appendChild(el("td", null, adLimit(c)));
+      body.appendChild(row);
+    });
+    t.appendChild(body);
+    return el("div", { class: "tw" }, t);
+  }
+  function plainTile(label, value, note) {
+    var t = el("div", { class: "tile" });
+    t.appendChild(el("div", { class: "label", text: label }));
+    t.appendChild(el("div", { class: "value", text: value }));
+    if (note) t.appendChild(el("div", { class: "delta", text: note }));
+    return t;
+  }
+
+  function renderAds(data) {
+    app.appendChild(el("h2", { text: "Реклама" }));
+    var ads = data.ads;
+    if (!ads) {
+      app.appendChild(el("p", { class: "sub", text: "Реклама не прочитана" + (data.ads_error ? ": " + data.ads_error : ".") }));
+      return;
+    }
+    var w = ads.window, t = ads.totals;
+    app.appendChild(el("p", { class: "sub", text: "Meta, кабинет Viavo: " + (w.since === w.until ? dayLabel(w.since) : dayLabel(w.since) + "–" + dayLabel(w.until)) +
+      ", дни по Белграду (остальной отчёт — сутки UTC) · данные Meta на " + timeUtc(ads.read_at) + " UTC" }));
+    var tiles = el("div", { class: "tiles" });
+    tiles.appendChild(plainTile("Потрачено", eurTile(t.spend)));
+    tiles.appendChild(plainTile("Установки (Meta)", fmt(t.installs)));
+    tiles.appendChild(plainTile("Регистрации", fmt(t.signups), "в странах с рекламой"));
+    tiles.appendChild(plainTile("В машине", fmt(t.in_car), "из них хоть раз с CarPlay"));
+    tiles.appendChild(plainTile("€ за водителя в машине", eurTile(t.per_in_car)));
+    tiles.appendChild(plainTile("Покупатели", fmt(t.buyers), "пробных " + fmt(t.trials) + " · Plus " + fmt(t.paid) + " · пакетов " + fmt(t.packs)));
+    tiles.appendChild(plainTile("€ за покупателя", eurTile(t.per_buyer)));
+    app.appendChild(tiles);
+
+    if (ads.by_country.length) {
+      var byCountry = dataTable(["Страна", "Потрачено, €", "Установки", "Регистрации", "В машине", "€ за машину", "Покупатели", "€ за покупателя"], ads.by_country.map(function (c) {
+        return [adCountry(c.country), eur(c.spend), fmt(c.installs), fmt(c.signups), fmt(c.in_car), eur(c.per_in_car), fmt(c.buyers), eur(c.per_buyer)];
+      }));
+      byCountry.firstChild.classList.add("vheads");
+      var buyers = ads.by_country.filter(function (c) { return c.buyers > 0; }).map(function (c) {
+        return adCountry(c.country) + " — пробных " + fmt(c.trials) + ", Plus " + fmt(c.paid) + ", пакетов " + fmt(c.packs);
+      });
+      app.appendChild(figure("По странам", "Регистрации — водители, зарегистрировавшиеся за период в этой стране (страна первого запроса); в машине — те из них, кто сделал хотя бы один запрос из CarPlay; покупатели — пробная неделя, Plus или пакет. Машина и покупки считаются до сегодняшнего дня. Страна становится известна после первого запроса, поэтому регистрации по странам — нижняя граница; у водителей в машине страна известна всегда." +
+        (buyers.length ? " Покупатели: " + buyers.join("; ") + "." : ""), byCountry, null, null));
+    } else app.appendChild(el("p", { class: "sub", text: "За период Meta ничего не потратила." }));
+    var o = ads.organic;
+    if (o && o.signups) app.appendChild(el("p", { class: "sub", text: "Без рекламы: регистраций " + fmt(o.signups) + (o.unknown_signups ? " (из них страна неизвестна — " + fmt(o.unknown_signups) + ", обычно ни одного запроса)" : "") + ", в машине " + fmt(o.in_car) + ", покупателей " + fmt(o.buyers) + ". Это страны, где Meta за период ничего не потратила." }));
+
+    if (ads.campaigns.length) {
+      app.appendChild(figure("Кампании", "Те, что тратили за период или сейчас идут. €/день — бюджет кампании или сумма её активных групп объявлений. Из лимита — потрачено за всё время из лимита расходов кампании; «лимит» — упёрлась: Meta всё ещё пишет «идёт», но не тратит.", campaignTable(ads.campaigns), null, null));
+    }
   }
 
   function hourRange(iso) {
@@ -807,6 +901,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     function countryCount(report, code) { var r = report.signups.by_country.find(function (r) { return r.country === code; }); return r ? r.n : 0; }
     table("Новые водители по рынкам", todayMode ? ["Страна", "Сегодня", "Вчера, те же часы"] : ["Страна", "Вчера"], countries.map(function (c) { return todayMode ? [country(c), fmt(countryCount(td, c)), fmt(countryCount(prev, c))] : [country(c), fmt(countryCount(td, c))]; }));
     table("Ходы по рынкам", ["Страна", "Водителей", "Ходов"], td.activity.by_country.map(function (c) { return [country(c.country), fmt(c.drivers), fmt(c.turns)]; }));
+    renderAds(data);
 
     app.appendChild(el("h2", { text: "Ошибки по часам" }));
     app.appendChild(hourlyFigure("Ошибки", "errors", false));
