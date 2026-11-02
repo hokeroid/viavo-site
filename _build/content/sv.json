@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: AI-röstassistent för CarPlay, på 28 språk",
+  "description": "Tryck och prata fritt. Viavo öppnar rutter med stopp, ringer, skriver meddelanden, spelar musik och radio och svarar högt. 28 språk, alla med naturligt uttal.",
+  "ogTitle": "Säg det på ditt språk. Viavo fixar det."
+ },
+ "qo": "”",
+ "qc": "”",
+ "nFeatures": "Funktioner",
+ "nLanguages": "Språk",
+ "nPress": "Press",
+ "nLangMenu": "Språk",
+ "eyebrow": "AI-assistent för CarPlay",
+ "h1a": "Säg det på ditt språk.",
+ "h1b": "Viavo fixar det.",
+ "sub": "Rutter med stopp på vägen, samtal, meddelanden, musik och radio. Tryck på en knapp och säg det precis som till en människa, på något av 28 språk.",
+ "heroAlt": "Viavo på en CarPlay-skärm",
+ "bandPre": "Siri talar inte ",
+ "bandPost": ".",
+ "bandTail": "Det gör Viavo.",
+ "bandWords": {
+  "pl": "polska",
+  "cs": "tjeckiska",
+  "ro": "rumänska",
+  "el": "grekiska",
+  "hu": "ungerska",
+  "hr": "kroatiska",
+  "sr": "serbiska",
+  "uk": "ukrainska"
+ },
+ "bandSub": "Siri talar inget av de här åtta språken. Viavo talar alla.",
+ "say": "Den svarar inte bara. Den gör jobbet.",
+ "sayLead": "Ett tryck på knappen, så sköter Viavo rutten, ställen längs vägen, musiken, samtalen och meddelandena och svarar högt på dina frågor. Blicken stannar på vägen.",
+ "examples": [
+  "Kör hem, med ett tankstopp",
+  "En bra restaurang på vägen",
+  "Spela något för bilresan",
+  "Vad är nytt i mina chattar?"
+ ],
+ "replies": [
+  "Rutt hem med stopp vid macken på Ringvägen. Cirka 25 minuter med trafiken, så du är hemma till 19.40.",
+  "Längs vägen, om ungefär en timme: Gamla Kvarnen, 4,7 stjärnor, 1 200 omdömen, öppet till kl. 23. Gästerna berömmer den grillade öringen. Ska jag lägga till den som ett stopp?",
+  "Här är något för bilresan: en peppig mix att köra till, 40 låtar. Trevlig resa!",
+  "Tre nya chattar. Anna undrar om du är hemma till åtta. Teamet har flyttat morgondagens samtal till tio. Din bror har skickat bilder från kusten. Vill du svara Anna?"
+ ],
+ "done": [
+  "Rutten öppnas i din navigeringsapp",
+  "Betyg, öppettider och omdömen läses upp",
+  "Spelas i Spotify eller Apple Music",
+  "Läser upp kontentan, du dikterar ett svar"
+ ],
+ "can": "Det här kan Viavo",
+ "groups": [
+  [
+   "På vägen",
+   [
+    "Rutter i din navigeringsapp, med ett stopp på vägen",
+    "Restid med aktuell trafik",
+    "Ställen med betyg, öppettider och omdömen",
+    "Vädret just nu, för veckan och på resmålet"
+   ],
+   "Hinner jag till jobbet till nio?"
+  ],
+  [
+   "Musik och ljud",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Direktsänd radio via kanalnamn eller frekvens",
+    "Vilken låt som spelas på radion",
+    "Poddar i Apple Podcasts"
+   ],
+   "Spela något för bilresan"
+  ],
+  [
+   "Personer och meddelanden",
+   [
+    "Ring en kontakt med namn",
+    "WhatsApp och sms: färdigskrivet på telefonen, du trycker på Skicka",
+    "Telegram och Slack: vad som är nytt, kontentan, ett dikterat svar"
+   ],
+   "Säg till Erik att jag är tio minuter sen"
+  ],
+  [
+   "Planer",
+   [
+    "Påminnelser vid en viss tid eller när du kommer fram",
+    "Din att göra-lista",
+    "Kalender: hör hur dagen ser ut, lägg till, flytta eller ställ in",
+    "Alarm, timrar och snabba anteckningar"
+   ],
+   "Ta mig till nästa möte"
+  ],
+  [
+   "Och mer",
+   [
+    "Svar med webbsökning när det behövs färska uppgifter",
+    "Minne: kommer ihåg, och glömmer när du ber om det",
+    "HomeKit-tillbehör och scener",
+    "Säg appens namn så öppnas den"
+   ],
+   "Öppna Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "En stor knapp på bilens skärm",
+    "Svarar högt",
+    "Inget på bilens skärm kräver att du tittar på telefonen"
+   ],
+   "Upp till sex egna snabbkommandon"
+  ]
+ ],
+ "works": "Fungerar med dina appar",
+ "worksSub": "Och den öppnar andra appar när du säger namnet.",
+ "cats": {
+  "all": "Alla",
+  "nav": "Navigering",
+  "music": "Musik",
+  "radio": "Radio",
+  "msg": "Meddelanden",
+  "home": "Hem och planer"
+ },
+ "appNames": {
+  "Calendar": "Kalender",
+  "Reminders": "Påminnelser"
+ },
+ "langsTitle": "28 språk, alla med naturligt uttal",
+ "legend": "Siri talar det inte",
+ "langNames": {
+  "ar": "Arabiska",
+  "zh-hans": "Kinesiska (förenklad)",
+  "zh-hant": "Kinesiska (traditionell)",
+  "hr": "Kroatiska",
+  "cs": "Tjeckiska",
+  "nl": "Nederländska",
+  "en": "Engelska",
+  "fr": "Franska",
+  "de": "Tyska",
+  "el": "Grekiska",
+  "he": "Hebreiska",
+  "hi": "Hindi",
+  "hu": "Ungerska",
+  "id": "Indonesiska",
+  "it": "Italienska",
+  "ja": "Japanska",
+  "ko": "Koreanska",
+  "pl": "Polska",
+  "pt": "Portugisiska",
+  "ro": "Rumänska",
+  "ru": "Ryska",
+  "sr": "Serbiska",
+  "es": "Spanska",
+  "sv": "Svenska",
+  "th": "Thailändska",
+  "tr": "Turkiska",
+  "uk": "Ukrainska",
+  "vi": "Vietnamesiska"
+ },
+ "steps": "På väg i tre steg",
+ "stepItems": [
+  [
+   "Skaffa Viavo",
+   "Ladda ned den från App Store på din iPhone."
+  ],
+  [
+   "Anslut CarPlay",
+   "Viavo visas på bilens skärm."
+  ],
+  [
+   "Tryck och prata",
+   "En knapp. Säg det precis som till en människa."
+  ]
+ ],
+ "faq": "Frågor",
+ "faqItems": [
+  [
+   "Hur skiljer sig Viavo från ChatGPT eller Gemini i CarPlay?",
+   "ChatGPT och Gemini i CarPlay är byggda för konversation. Viavo gör också det du säger: ringer en kontakt, förbereder ett meddelande i WhatsApp eller sms, spelar musik eller en radiokanal, och med en enda mening öppnar den en rutt med stopp, eller ett ställe längs vägen, i din navigeringsapp."
+  ],
+  [
+   "Vilka språk talar Viavo?",
+   "28: arabiska, engelska, franska, grekiska, hebreiska, hindi, indonesiska, italienska, japanska, kinesiska (förenklad och traditionell), koreanska, kroatiska, nederländska, polska, portugisiska, rumänska, ryska, serbiska, spanska, svenska, thailändska, tjeckiska, turkiska, tyska, ukrainska, ungerska och vietnamesiska. På varje språk finns appens skärmar och en röst med naturligt uttal, kvinnlig eller manlig."
+  ],
+  [
+   "Ersätter Viavo Siri?",
+   "Nej. Viavo är en egen app på din CarPlay-skärm: öppna den och tryck på knappen."
+  ],
+  [
+   "Är det säkert att använda Viavo under körning?",
+   "Viavo är gjord för att blicken ska stanna på vägen: en stor knapp, svaren läses upp, och inget på bilens skärm kräver att du tittar på telefonen."
+  ],
+  [
+   "Måste jag lära mig kommandon?",
+   "Nej. Tryck på knappen och säg det precis som till en människa."
+  ],
+  [
+   "Fungerar Viavo utan CarPlay?",
+   "Ja, på iPhone: samma knapp, och du kan också skriva."
+  ],
+  [
+   "Vilka appar fungerar Viavo med?",
+   "Apple Maps, Google Maps och Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer och Apple Podcasts; Simple Radio, TuneIn och iHeartRadio; WhatsApp, sms, Telegram och Slack; HomeKit, Kalender och Påminnelser. Viavo öppnar också andra appar när du säger namnet."
+  ],
+  [
+   "Vad kostar det?",
+   "Ett nytt konto får 10 gratiskrediter. Viavo Plus, månadsvis eller årsvis, börjar med en gratis provvecka. Priserna finns i App Store, i din valuta."
+  ],
+  [
+   "Vad händer med mina data?",
+   "Allt står i två dokument."
+  ]
+ ],
+ "lPrivacy": "Integritetspolicy",
+ "lMessages": "Så hanterar Viavo dina meddelanden",
+ "cta": "En knapp. Ditt språk. Klart.",
+ "ctaSub": "Ett nytt konto får 10 gratiskrediter.",
+ "fPrivacy": "Integritet",
+ "fTerms": "Villkor",
+ "fMessengers": "Meddelandeappar",
+ "fSupport": "Support",
+ "fPress": "Press",
+ "tm": "Apple, Apple-logotypen, CarPlay, iPhone och Siri är varumärken som tillhör Apple Inc. App Store är ett servicemärke som tillhör Apple Inc.",
+ "badgeAlt": "Hämta i App Store",
+ "scan": "Skanna med din iPhone",
+ "getApp": "Hämta appen",
+ "skip": "Hoppa till innehållet",
+ "close": "Stäng"
+}

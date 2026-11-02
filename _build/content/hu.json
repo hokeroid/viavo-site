@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: AI-hangasszisztens CarPlay-hez, 28 nyelven",
+  "description": "Nyomd meg a gombot, mondd, ahogy szoktad, és a Viavo útvonalat tervez megállóval, telefonál, üzenetet ír, zenét és rádiót indít. 28 nyelven, anyanyelvi hanggal.",
+  "ogTitle": "Mondd el a saját nyelveden. A Viavo elintézi."
+ },
+ "qo": "„",
+ "qc": "”",
+ "nFeatures": "Funkciók",
+ "nLanguages": "Nyelvek",
+ "nPress": "Sajtó",
+ "nLangMenu": "Nyelv",
+ "eyebrow": "AI-asszisztens CarPlay-hez",
+ "h1a": "Mondd el a saját nyelveden.",
+ "h1b": "A Viavo elintézi.",
+ "sub": "Útvonal megállóval, hívások, üzenetek, zene és rádió. Nyomd meg az egyetlen gombot, és mondd úgy, ahogy egy embernek mondanád, a 28 nyelv bármelyikén.",
+ "heroAlt": "A Viavo egy CarPlay-kijelzőn",
+ "bandPre": "A Siri nem beszél ",
+ "bandPost": ".",
+ "bandTail": "A Viavo igen.",
+ "bandWords": {
+  "pl": "lengyelül",
+  "cs": "csehül",
+  "ro": "románul",
+  "el": "görögül",
+  "hu": "magyarul",
+  "hr": "horvátul",
+  "sr": "szerbül",
+  "uk": "ukránul"
+ },
+ "bandSub": "A Siri e nyolc nyelv egyikét sem beszéli. A Viavo mind a nyolcat.",
+ "say": "Nemcsak válaszol. El is intézi.",
+ "sayLead": "Egy gombnyomás, és a Viavo útvonalat tervez, helyet keres útközben, zenét indít, telefonál, üzeneteket kezel, és hangosan válaszol a kérdéseidre, a szemed pedig az úton marad.",
+ "examples": [
+  "Haza, útközben tankolnék",
+  "Van jó étterem útközben?",
+  "Tegyél be valamit az útra",
+  "Mi újság a chatekben?"
+ ],
+ "replies": [
+  "Útvonal haza, tankolással a körgyűrűn lévő benzinkútnál. Forgalommal nagyjából 25 perc, így 19:40-re otthon leszel.",
+  "Útközben, nagyjából egy óra múlva: Öreg Malom Csárda, 4,7-es értékelés 1 200 vélemény alapján, 23:00-ig van nyitva. A vendégek dicsérik a roston sült pisztrángot. Hozzáadjam megállóként?",
+  "Itt egy kis zene az útra: lendületes autós mix, 40 dal. Jó utat!",
+  "Három új chat. Eszter kérdezi, hogy nyolcra otthon leszel-e. A csapat tízre tette át a holnapi hívást. A bátyád fotókat küldött a Balatonról. Válaszolsz Eszternek?"
+ ],
+ "done": [
+  "Az útvonal a navigációdban nyílik meg",
+  "Értékelést, nyitvatartást és véleményeket is felolvas",
+  "A Spotifyban vagy az Apple Musicban szól",
+  "Elmondja a lényeget, a választ pedig lediktálod"
+ ],
+ "can": "Amit a Viavo tud",
+ "groups": [
+  [
+   "Útközben",
+   [
+    "Útvonal a navigációdban, akár egy megállóval is",
+    "Menetidő a forgalommal számolva",
+    "Helyek értékeléssel, nyitvatartással és véleményekkel",
+    "Időjárás most, egész hétre és az úti célodnál"
+   ],
+   "Beérek kilencre dolgozni?"
+  ],
+  [
+   "Zene, rádió, podcastok",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Élő rádió az adó neve vagy frekvenciája alapján",
+    "Megmondja, milyen dal szól éppen a rádióban",
+    "Podcastok az Apple Podcasts appban"
+   ],
+   "Tegyél be valamit az útra"
+  ],
+  [
+   "Emberek és üzenetek",
+   [
+    "Hívd fel bármelyik kontaktodat név szerint",
+    "WhatsApp és SMS: az üzenet készen nyílik meg a telefonodon, csak a Küldésre kell koppintanod",
+    "Telegram és Slack: újdonságok, egy chat lényege, válasz diktálása"
+   ],
+   "Írd meg Petinek, hogy tíz percet késem"
+  ],
+  [
+   "Tervek",
+   [
+    "Emlékeztetők egy adott időpontra vagy arra, amikor megérkezel valahová",
+    "A teendőlistád",
+    "Naptár: meghallgathatod a napi programodat, felvehetsz, áttehetsz vagy törölhetsz egy eseményt",
+    "Ébresztők, időzítők és gyors jegyzetek"
+   ],
+   "Vigyél a következő találkozómra"
+  ],
+  [
+   "És még",
+   [
+    "Válaszok webes kereséssel, ha friss információ kell",
+    "Memória: megjegyzi, amit mondasz, és el is felejti, ha kéred",
+    "HomeKit-kiegészítők és -jelenetek",
+    "Mondd ki egy app nevét, és már nyílik is"
+   ],
+   "Nyisd meg a Waze-t"
+  ],
+  [
+   "CarPlay",
+   [
+    "Egy nagy gomb az autó kijelzőjén",
+    "Hangosan válaszol",
+    "Az autó kijelzőjén semmi sem kéri, hogy a telefonodra nézz"
+   ],
+   "Legfeljebb hat saját gyorsparancs"
+  ]
+ ],
+ "works": "Működik az appjaiddal",
+ "worksSub": "Más appokat pedig név szerint nyit meg.",
+ "cats": {
+  "all": "Összes",
+  "nav": "Navigáció",
+  "music": "Zene",
+  "radio": "Rádió",
+  "msg": "Üzenetek",
+  "home": "Otthon és tervek"
+ },
+ "appNames": {
+  "Calendar": "Naptár",
+  "Reminders": "Emlékeztetők"
+ },
+ "langsTitle": "28 nyelv, mindegyik anyanyelvi hangon",
+ "legend": "A Siri nem beszéli",
+ "langNames": {
+  "ar": "Arab",
+  "zh-hans": "Kínai (egyszerűsített)",
+  "zh-hant": "Kínai (hagyományos)",
+  "hr": "Horvát",
+  "cs": "Cseh",
+  "nl": "Holland",
+  "en": "Angol",
+  "fr": "Francia",
+  "de": "Német",
+  "el": "Görög",
+  "he": "Héber",
+  "hi": "Hindi",
+  "hu": "Magyar",
+  "id": "Indonéz",
+  "it": "Olasz",
+  "ja": "Japán",
+  "ko": "Koreai",
+  "pl": "Lengyel",
+  "pt": "Portugál",
+  "ro": "Román",
+  "ru": "Orosz",
+  "sr": "Szerb",
+  "es": "Spanyol",
+  "sv": "Svéd",
+  "th": "Thai",
+  "tr": "Török",
+  "uk": "Ukrán",
+  "vi": "Vietnámi"
+ },
+ "steps": "Három lépés, és indulhatsz",
+ "stepItems": [
+  [
+   "Töltsd le a Viavót",
+   "Az App Store-ból, az iPhone-odra."
+  ],
+  [
+   "Csatlakoztasd a CarPlay-t",
+   "A Viavo megjelenik az autód kijelzőjén."
+  ],
+  [
+   "Nyomd meg, és beszélj",
+   "Egy gomb. Mondd úgy, ahogy egy embernek mondanád."
+  ]
+ ],
+ "faq": "Gyakori kérdések",
+ "faqItems": [
+  [
+   "Miben más a Viavo, mint a ChatGPT vagy a Gemini a CarPlay-ben?",
+   "A ChatGPT és a Gemini a CarPlay-ben beszélgetésre készült. A Viavo el is intézi, amit mondasz: felhív egy kontaktot, előkészít egy WhatsApp-üzenetet vagy SMS-t, zenét vagy rádióadót indít, egyetlen mondatból pedig megnyitja a navigációdban az útvonalat egy megállóval, vagy egy útba eső helyet."
+  ],
+  [
+   "Milyen nyelveken beszél a Viavo?",
+   "28 nyelvet beszél: angol, arab, cseh, francia, görög, héber, hindi, holland, horvát, indonéz, japán, kínai (egyszerűsített és hagyományos), koreai, lengyel, magyar, német, olasz, orosz, portugál, román, spanyol, svéd, szerb, thai, török, ukrán és vietnámi. Az app felülete mindegyiken elérhető, és mindegyikhez anyanyelvi hang tartozik, női vagy férfi."
+  ],
+  [
+   "Helyettesíti a Sirit?",
+   "Nem. A Viavo önálló app a CarPlay-kijelzőn: nyisd meg, és csak egy gombot kell megnyomnod."
+  ],
+  [
+   "Biztonságos vezetés közben használni?",
+   "A Viavo úgy készült, hogy a szemed az úton maradjon: egy nagy gomb, hangos válaszok, és az autó kijelzőjén semmi sem kéri, hogy a telefonodra nézz."
+  ],
+  [
+   "Meg kell tanulnom parancsokat?",
+   "Nem. Nyomd meg a gombot, és mondd úgy, ahogy egy embernek mondanád."
+  ],
+  [
+   "Működik CarPlay nélkül is?",
+   "Igen, az iPhone-on: ugyanaz az egy gomb, és a kérésedet be is gépelheted."
+  ],
+  [
+   "Milyen appokkal működik?",
+   "Apple Maps, Google Maps és Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer és Apple Podcasts; Simple Radio, TuneIn és iHeartRadio; WhatsApp, SMS, Telegram és Slack; HomeKit, Naptár és Emlékeztetők. Más appokat is megnyit, ha kimondod a nevüket."
+  ],
+  [
+   "Mennyibe kerül?",
+   "Az új fiókhoz 10 ingyenes kredit jár. A Viavo Plus havi vagy éves előfizetés, és egy ingyenes héttel indul. Az árakat az App Store-ban találod, a saját pénznemedben."
+  ],
+  [
+   "Mi történik az adataimmal?",
+   "Mindent leírtunk két dokumentumban."
+  ]
+ ],
+ "lPrivacy": "Adatvédelmi szabályzat",
+ "lMessages": "Hogyan kezeli a Viavo az üzeneteidet",
+ "cta": "Egy gomb. A saját nyelved. Elintézve.",
+ "ctaSub": "Az új fiókhoz 10 ingyenes kredit jár.",
+ "fPrivacy": "Adatvédelem",
+ "fTerms": "Felhasználási feltételek",
+ "fMessengers": "Üzenetküldők",
+ "fSupport": "Támogatás",
+ "fPress": "Sajtó",
+ "tm": "Az Apple, az Apple-logó, a CarPlay, az iPhone és a Siri az Apple Inc. védjegyei. Az App Store az Apple Inc. szolgáltatási védjegye.",
+ "badgeAlt": "Letöltés az App Store-ból",
+ "scan": "Olvasd be az iPhone-oddal",
+ "getApp": "Töltsd le az appot",
+ "skip": "Ugrás a tartalomhoz",
+ "close": "Bezárás"
+}

@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: hlasový AI asistent v češtině pro CarPlay",
+  "description": "Stiskněte tlačítko a mluvte po svém. Viavo otevře trasu se zastávkou, zavolá, napíše zprávu, pustí hudbu i rádio a odpoví nahlas. 28 jazyků s rodilým hlasem.",
+  "ogTitle": "Řekněte to svým jazykem. Viavo to zařídí."
+ },
+ "qo": "„",
+ "qc": "“",
+ "nFeatures": "Funkce",
+ "nLanguages": "Jazyky",
+ "nPress": "Pro média",
+ "nLangMenu": "Jazyk",
+ "eyebrow": "AI asistent pro CarPlay",
+ "h1a": "Řekněte to svým jazykem.",
+ "h1b": "Viavo to zařídí.",
+ "sub": "Trasy se zastávkou po cestě, hovory, zprávy, hudba i rádio. Stiskněte jedno tlačítko a řekněte to kterýmkoli z 28 jazyků, jako byste mluvili s člověkem.",
+ "heroAlt": "Viavo na obrazovce CarPlay",
+ "bandPre": "Siri nemluví ",
+ "bandPost": ".",
+ "bandTail": "Viavo ano.",
+ "bandWords": {
+  "pl": "polsky",
+  "cs": "česky",
+  "ro": "rumunsky",
+  "el": "řecky",
+  "hu": "maďarsky",
+  "hr": "chorvatsky",
+  "sr": "srbsky",
+  "uk": "ukrajinsky"
+ },
+ "bandSub": "Siri nemluví ani jedním z těchto osmi jazyků. Viavo mluví všemi.",
+ "say": "Neodpoví jen slovy. Zařídí to.",
+ "sayLead": "Jedno tlačítko a Viavo vyřeší trasu, místa po cestě, hudbu, hovory, zprávy i vaše otázky. Odpovídá nahlas, takže nespouštíte oči ze silnice.",
+ "examples": [
+  "Domů, cestou na benzinku",
+  "Dobrá restaurace po cestě",
+  "Pusť něco na cestu",
+  "Co je nového v chatech?"
+ ],
+ "replies": [
+  "Trasa domů se zastávkou na benzince u okruhu. S provozem zhruba 25 minut, doma budete v 19:40.",
+  "Po cestě, asi za hodinu: Hospoda U Mlýna, hodnocení 4,7 z 1 200 recenzí, otevřeno do 23:00. Hosté chválí pstruha na grilu. Mám ji přidat jako zastávku?",
+  "Tady je něco na cestu: svižný mix do auta, 40 skladeb. Šťastnou cestu!",
+  "Tři nové chaty. Jana se ptá, jestli budete v osm doma. Tým přesunul zítřejší hovor na desátou. Bratr poslal fotky z Lipna. Odpovíte Janě?"
+ ],
+ "done": [
+  "Trasa se otevře ve vaší navigaci",
+  "Hodnocení, otevírací doba a recenze nahlas",
+  "Hraje ve Spotify nebo v Apple Music",
+  "Shrnutí nahlas, odpověď nadiktujete"
+ ],
+ "can": "Co Viavo umí",
+ "groups": [
+  [
+   "Na cestě",
+   [
+    "Trasy ve vaší navigaci, i se zastávkou po cestě",
+    "Doba jízdy v aktuálním provozu",
+    "Místa s hodnocením, otevírací dobou a recenzemi",
+    "Počasí teď, na celý týden a v cíli"
+   ],
+   "Stihnu to do práce do devíti?"
+  ],
+  [
+   "Hudba a zvuk",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Rádio živě podle názvu stanice nebo frekvence",
+    "Rozpoznání skladby, která hraje v rádiu",
+    "Podcasty v Apple Podcasts"
+   ],
+   "Pusť něco na cestu"
+  ],
+  [
+   "Lidé a zprávy",
+   [
+    "Volání kontaktům podle jména",
+    "WhatsApp a SMS: zpráva se v telefonu otevře připravená, stačí klepnout na Odeslat",
+    "Telegram a Slack: co je nového, shrnutí a nadiktovaná odpověď"
+   ],
+   "Napiš Petrovi, že přijedu o deset minut později"
+  ],
+  [
+   "Plány",
+   [
+    "Připomínky na určitý čas nebo po příjezdu na místo",
+    "Váš seznam úkolů",
+    "Kalendář: přehled vašeho dne, přidání, přesunutí nebo zrušení události",
+    "Budíky, minutky a rychlé poznámky"
+   ],
+   "Naviguj na mou další schůzku"
+  ],
+  [
+   "A další",
+   [
+    "Odpovědi s hledáním na webu, když jsou potřeba čerstvé informace",
+    "Paměť: pamatuje si a na požádání zapomene",
+    "Příslušenství a scény HomeKit",
+    "Stačí říct název aplikace a otevře se"
+   ],
+   "Otevři Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Jedno velké tlačítko na obrazovce auta",
+    "Odpovídá nahlas",
+    "Nic na obrazovce auta po vás nechce, abyste se dívali do telefonu"
+   ],
+   "Až šest vašich rychlých příkazů"
+  ]
+ ],
+ "works": "Funguje s vašimi aplikacemi",
+ "worksSub": "A další aplikace otevře podle názvu.",
+ "cats": {
+  "all": "Vše",
+  "nav": "Navigace",
+  "music": "Hudba",
+  "radio": "Rádio",
+  "msg": "Zprávy",
+  "home": "Domácnost a plány"
+ },
+ "appNames": {
+  "Calendar": "Kalendář",
+  "Reminders": "Připomínky"
+ },
+ "langsTitle": "28 jazyků, každý s rodilým mluvčím",
+ "legend": "Siri tímto jazykem nemluví",
+ "langNames": {
+  "ar": "Arabština",
+  "zh-hans": "Čínština (zjednodušená)",
+  "zh-hant": "Čínština (tradiční)",
+  "hr": "Chorvatština",
+  "cs": "Čeština",
+  "nl": "Nizozemština",
+  "en": "Angličtina",
+  "fr": "Francouzština",
+  "de": "Němčina",
+  "el": "Řečtina",
+  "he": "Hebrejština",
+  "hi": "Hindština",
+  "hu": "Maďarština",
+  "id": "Indonéština",
+  "it": "Italština",
+  "ja": "Japonština",
+  "ko": "Korejština",
+  "pl": "Polština",
+  "pt": "Portugalština",
+  "ro": "Rumunština",
+  "ru": "Ruština",
+  "sr": "Srbština",
+  "es": "Španělština",
+  "sv": "Švédština",
+  "th": "Thajština",
+  "tr": "Turečtina",
+  "uk": "Ukrajinština",
+  "vi": "Vietnamština"
+ },
+ "steps": "Na cestu ve třech krocích",
+ "stepItems": [
+  [
+   "Získejte Viavo",
+   "Stáhněte si ho z App Storu do svého iPhonu."
+  ],
+  [
+   "Připojte CarPlay",
+   "Viavo se objeví na obrazovce vašeho auta."
+  ],
+  [
+   "Klepněte a mluvte",
+   "Jedno tlačítko. Řekněte to, jako byste mluvili s člověkem."
+  ]
+ ],
+ "faq": "Časté otázky",
+ "faqItems": [
+  [
+   "Čím se Viavo liší od ChatGPT nebo Gemini v CarPlay?",
+   "ChatGPT a Gemini jsou v CarPlay určené k rozhovoru. Viavo navíc udělá, co řeknete: zavolá kontaktu, připraví zprávu na WhatsApp nebo SMS, pustí hudbu nebo rádiovou stanici a z jediné věty otevře ve vaší navigaci trasu se zastávkou nebo místo po cestě."
+  ],
+  [
+   "Jakými jazyky Viavo mluví?",
+   "Je jich 28: angličtina, arabština, čeština, čínština (zjednodušená i tradiční), francouzština, hebrejština, hindština, chorvatština, indonéština, italština, japonština, korejština, maďarština, němčina, nizozemština, polština, portugalština, rumunština, ruština, řečtina, srbština, španělština, švédština, thajština, turečtina, ukrajinština a vietnamština. V každém z nich jsou obrazovky aplikace i hlas rodilého mluvčího, ženský nebo mužský."
+  ],
+  [
+   "Nahrazuje Viavo Siri?",
+   "Ne. Viavo je samostatná aplikace na obrazovce CarPlay: otevřete ji a stiskněte jedno tlačítko."
+  ],
+  [
+   "Dá se Viavo bezpečně používat za jízdy?",
+   "Viavo je navržené tak, abyste nespouštěli oči ze silnice: jedno velké tlačítko, odpovědi nahlas a nic na obrazovce auta po vás nechce, abyste se dívali do telefonu."
+  ],
+  [
+   "Musím se učit nějaké příkazy?",
+   "Ne. Stiskněte jedno tlačítko a řekněte to, jako byste mluvili s člověkem."
+  ],
+  [
+   "Funguje i bez CarPlay?",
+   "Ano, na iPhonu: stejné jedno tlačítko a požadavek můžete také napsat."
+  ],
+  [
+   "S jakými aplikacemi Viavo funguje?",
+   "Apple Maps, Google Maps a Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer a Apple Podcasts; Simple Radio, TuneIn a iHeartRadio; WhatsApp, SMS, Telegram a Slack; HomeKit, Kalendář a Připomínky. Další aplikace otevře podle názvu."
+  ],
+  [
+   "Kolik to stojí?",
+   "Nový účet dostane 10 kreditů zdarma. Viavo Plus, měsíční nebo roční, začíná týdnem zdarma. Ceny najdete v App Storu ve své měně."
+  ],
+  [
+   "Co se děje s mými daty?",
+   "Všechno najdete ve dvou dokumentech."
+  ]
+ ],
+ "lPrivacy": "Zásady ochrany osobních údajů",
+ "lMessages": "Jak Viavo zachází s vašimi zprávami",
+ "cta": "Jedno tlačítko. Váš jazyk. Hotovo.",
+ "ctaSub": "Nový účet dostane 10 kreditů zdarma.",
+ "fPrivacy": "Ochrana soukromí",
+ "fTerms": "Podmínky použití",
+ "fMessengers": "Komunikátory",
+ "fSupport": "Podpora",
+ "fPress": "Pro média",
+ "tm": "Apple, logo Apple, CarPlay, iPhone a Siri jsou ochranné známky společnosti Apple Inc. App Store je známka služby společnosti Apple Inc.",
+ "badgeAlt": "Stáhnout v App Store",
+ "scan": "Naskenujte iPhonem",
+ "getApp": "Stáhnout aplikaci",
+ "skip": "Přeskočit na obsah",
+ "close": "Zavřít"
+}

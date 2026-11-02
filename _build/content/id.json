@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: asisten suara AI untuk CarPlay, dalam 28 bahasa",
+  "description": "Satu tombol, bicara seperti biasa. Viavo membuka rute dengan tempat singgah, menelepon, mengirim pesan, memutar musik dan radio, dan menjawab dengan suara.",
+  "ogTitle": "Ucapkan dalam bahasa Anda. Viavo kerjakan."
+ },
+ "qo": "“",
+ "qc": "”",
+ "nFeatures": "Fitur",
+ "nLanguages": "Bahasa",
+ "nPress": "Pers",
+ "nLangMenu": "Bahasa",
+ "eyebrow": "Asisten AI untuk CarPlay",
+ "h1a": "Ucapkan dalam bahasa Anda.",
+ "h1b": "Viavo kerjakan.",
+ "sub": "Rute dengan tempat singgah, panggilan, pesan, musik, dan radio. Tekan satu tombol dan ucapkan seperti saat bicara dengan orang lain, dalam salah satu dari 28 bahasa.",
+ "heroAlt": "Viavo di layar CarPlay",
+ "bandPre": "Siri tidak bisa berbahasa ",
+ "bandPost": ".",
+ "bandTail": "Viavo bisa.",
+ "bandWords": {
+  "pl": "Polandia",
+  "cs": "Ceko",
+  "ro": "Rumania",
+  "el": "Yunani",
+  "hu": "Hungaria",
+  "hr": "Kroasia",
+  "sr": "Serbia",
+  "uk": "Ukraina"
+ },
+ "bandSub": "Siri tidak bisa satu pun dari delapan bahasa ini. Viavo bisa semuanya.",
+ "say": "Bukan sekadar menjawab. Viavo langsung bertindak.",
+ "sayLead": "Cukup satu tombol, dan Viavo mengurus rute, tempat singgah di jalan, musik, telepon, pesan, dan pertanyaan Anda dengan suara, jadi mata tetap fokus ke jalan.",
+ "examples": [
+  "Pulang, mampir isi bensin dulu",
+  "Restoran enak di jalan",
+  "Putar lagu buat di jalan",
+  "Ada kabar apa di obrolanku?"
+ ],
+ "replies": [
+  "Rute pulang, mampir dulu di SPBU Jalan Lingkar. Sekitar 25 menit dengan lalu lintas saat ini, jadi Anda tiba di rumah pukul 19.40.",
+  "Di rute Anda, sekitar sejam lagi: Rumah Makan Kincir Tua, bintang 4,7 dari 1.200 ulasan, buka sampai pukul 23.00. Pengunjung memuji gurame bakarnya. Mau saya tambahkan sebagai tempat singgah?",
+  "Ini musik untuk di jalan: mix berkendara yang ceria, 40 lagu. Selamat menikmati perjalanan!",
+  "Ada tiga obrolan baru. Sari bertanya apakah Anda sudah di rumah sebelum jam delapan. Tim memindahkan rapat besok ke jam sepuluh. Kakak Anda mengirim foto dari pantai. Mau membalas Sari?"
+ ],
+ "done": [
+  "Rute terbuka di aplikasi navigasi Anda",
+  "Rating, jam buka, dan ulasan, dibacakan",
+  "Diputar di Spotify atau Apple Music",
+  "Dengar intinya, diktekan balasan"
+ ],
+ "can": "Yang bisa dilakukan Viavo",
+ "groups": [
+  [
+   "Di jalan",
+   [
+    "Rute di aplikasi navigasi Anda, bisa sekalian mampir di jalan",
+    "Waktu tempuh sesuai kondisi lalu lintas",
+    "Tempat dengan rating, jam buka, dan ulasan",
+    "Cuaca saat ini, seminggu ke depan, dan di tujuan"
+   ],
+   "Aku bisa sampai kantor sebelum jam sembilan?"
+  ],
+  [
+   "Musik dan audio",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Radio langsung lewat nama stasiun atau frekuensinya",
+    "Judul lagu yang sedang diputar di radio",
+    "Podcast di Apple Podcasts"
+   ],
+   "Putar lagu buat di jalan"
+  ],
+  [
+   "Orang dan pesan",
+   [
+    "Telepon kontak cukup dengan menyebut namanya",
+    "WhatsApp dan SMS: pesan siap di ponsel, tinggal ketuk Kirim",
+    "Telegram dan Slack: kabar terbaru, inti obrolan, balasan lewat dikte"
+   ],
+   "Bilang ke Budi aku telat sepuluh menit"
+  ],
+  [
+   "Rencana",
+   [
+    "Pengingat pada jam tertentu atau saat Anda tiba",
+    "Daftar tugas Anda",
+    "Kalender: dengarkan jadwal hari ini, tambah, pindahkan, atau batalkan acara",
+    "Alarm, timer, dan catatan cepat"
+   ],
+   "Antar aku ke rapat berikutnya"
+  ],
+  [
+   "Dan lainnya",
+   [
+    "Jawaban dengan pencarian web untuk info terbaru",
+    "Memori: mengingat, dan melupakan saat diminta",
+    "Aksesori dan skena HomeKit",
+    "Sebut nama aplikasi untuk membukanya"
+   ],
+   "Buka Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Satu tombol besar di layar mobil",
+    "Menjawab dengan suara",
+    "Tidak ada apa pun di layar mobil yang meminta Anda melihat ponsel"
+   ],
+   "Hingga enam perintah cepat buatan Anda sendiri"
+  ]
+ ],
+ "works": "Bekerja dengan aplikasi Anda",
+ "worksSub": "Aplikasi lain juga bisa dibuka, cukup sebut namanya.",
+ "cats": {
+  "all": "Semua",
+  "nav": "Navigasi",
+  "music": "Musik",
+  "radio": "Radio",
+  "msg": "Pesan",
+  "home": "Rumah dan rencana"
+ },
+ "appNames": {
+  "Calendar": "Kalender",
+  "Reminders": "Pengingat"
+ },
+ "langsTitle": "28 bahasa, masing-masing dengan suara penutur asli",
+ "legend": "Siri tidak bisa bahasa ini",
+ "langNames": {
+  "ar": "Arab",
+  "zh-hans": "Tionghoa (Sederhana)",
+  "zh-hant": "Tionghoa (Tradisional)",
+  "hr": "Kroasia",
+  "cs": "Ceko",
+  "nl": "Belanda",
+  "en": "Inggris",
+  "fr": "Prancis",
+  "de": "Jerman",
+  "el": "Yunani",
+  "he": "Ibrani",
+  "hi": "Hindi",
+  "hu": "Hungaria",
+  "id": "Indonesia",
+  "it": "Italia",
+  "ja": "Jepang",
+  "ko": "Korea",
+  "pl": "Polandia",
+  "pt": "Portugis",
+  "ro": "Rumania",
+  "ru": "Rusia",
+  "sr": "Serbia",
+  "es": "Spanyol",
+  "sv": "Swedia",
+  "th": "Thai",
+  "tr": "Turki",
+  "uk": "Ukraina",
+  "vi": "Vietnam"
+ },
+ "steps": "Tiga langkah, siap berangkat",
+ "stepItems": [
+  [
+   "Dapatkan Viavo",
+   "Unduh dari App Store di iPhone Anda."
+  ],
+  [
+   "Hubungkan CarPlay",
+   "Viavo muncul di layar mobil Anda."
+  ],
+  [
+   "Tekan dan bicara",
+   "Satu tombol. Ucapkan seperti saat bicara dengan orang lain."
+  ]
+ ],
+ "faq": "Pertanyaan",
+ "faqItems": [
+  [
+   "Apa bedanya Viavo dengan ChatGPT atau Gemini di CarPlay?",
+   "ChatGPT dan Gemini di CarPlay dibuat untuk mengobrol. Viavo juga menjalankan apa yang Anda ucapkan: menelepon kontak, menyiapkan pesan WhatsApp atau SMS, memutar musik atau stasiun radio, dan cukup dengan satu kalimat membuka rute dengan tempat singgah, atau tempat di sepanjang jalan, di aplikasi navigasi Anda."
+  ],
+  [
+   "Viavo bisa berbahasa apa saja?",
+   "28 bahasa: Arab, Belanda, Ceko, Hindi, Hungaria, Ibrani, Indonesia, Inggris, Italia, Jepang, Jerman, Korea, Kroasia, Polandia, Portugis, Prancis, Rumania, Rusia, Serbia, Spanyol, Swedia, Thai, Tionghoa (Sederhana dan Tradisional), Turki, Ukraina, Vietnam, dan Yunani. Setiap bahasa punya tampilan aplikasinya sendiri dan suara penutur asli, wanita atau pria."
+  ],
+  [
+   "Apakah Viavo menggantikan Siri?",
+   "Tidak. Viavo adalah aplikasi tersendiri di layar CarPlay Anda: buka, lalu tekan satu tombol."
+  ],
+  [
+   "Apakah aman dipakai saat menyetir?",
+   "Viavo dirancang agar mata Anda tetap tertuju ke jalan: satu tombol besar, jawaban dengan suara, dan tidak ada apa pun di layar mobil yang meminta Anda melihat ponsel."
+  ],
+  [
+   "Apakah saya perlu menghafal perintah?",
+   "Tidak. Tekan satu tombol dan ucapkan seperti saat bicara dengan orang lain."
+  ],
+  [
+   "Apakah bisa dipakai tanpa CarPlay?",
+   "Bisa, di iPhone: dengan satu tombol yang sama, dan Anda juga bisa mengetik."
+  ],
+  [
+   "Bekerja dengan aplikasi apa saja?",
+   "Apple Maps, Google Maps, dan Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer, dan Apple Podcasts; Simple Radio, TuneIn, dan iHeartRadio; WhatsApp, SMS, Telegram, dan Slack; HomeKit, Kalender, dan Pengingat. Viavo juga bisa membuka aplikasi lain, cukup sebut namanya."
+  ],
+  [
+   "Berapa biayanya?",
+   "Akun baru mendapat 10 kredit gratis. Viavo Plus, bulanan atau tahunan, diawali seminggu uji coba gratis. Harganya tercantum di App Store, dalam mata uang Anda."
+  ],
+  [
+   "Bagaimana dengan data saya?",
+   "Semuanya dijelaskan dalam dua dokumen."
+  ]
+ ],
+ "lPrivacy": "Kebijakan Privasi",
+ "lMessages": "Cara Viavo menangani pesan Anda",
+ "cta": "Satu tombol. Bahasa Anda. Beres.",
+ "ctaSub": "Akun baru mendapat 10 kredit gratis.",
+ "fPrivacy": "Privasi",
+ "fTerms": "Ketentuan",
+ "fMessengers": "Messenger",
+ "fSupport": "Dukungan",
+ "fPress": "Pers",
+ "tm": "Apple, logo Apple, CarPlay, iPhone, dan Siri adalah merek dagang Apple Inc. App Store adalah merek layanan Apple Inc.",
+ "badgeAlt": "Unduh di App Store",
+ "scan": "Pindai dengan iPhone Anda",
+ "getApp": "Dapatkan aplikasinya",
+ "skip": "Langsung ke konten",
+ "close": "Tutup"
+}

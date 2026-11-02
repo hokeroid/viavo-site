@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: glasovni AI asistent na hrvatskom za CarPlay",
+  "description": "Pritisni jedan gumb i reci što trebaš. Viavo otvara rutu sa stankom, zove, piše poruke, pušta glazbu i radio te odgovara naglas na 28 jezika, izvornim glasom.",
+  "ogTitle": "Reci na svom jeziku. Viavo to obavi."
+ },
+ "qo": "„",
+ "qc": "“",
+ "nFeatures": "Mogućnosti",
+ "nLanguages": "Jezici",
+ "nPress": "Za medije",
+ "nLangMenu": "Jezik",
+ "eyebrow": "AI asistent za CarPlay",
+ "h1a": "Reci na svom jeziku.",
+ "h1b": "Viavo to obavi.",
+ "sub": "Rute s usputnim zaustavljanjem, pozivi, poruke, glazba i radio. Pritisni jedan gumb i reci što trebaš na bilo kojem od 28 jezika, kao da razgovaraš s čovjekom.",
+ "heroAlt": "Viavo na zaslonu CarPlaya",
+ "bandPre": "Siri ne govori ",
+ "bandPost": ".",
+ "bandTail": "Viavo govori.",
+ "bandWords": {
+  "pl": "poljski",
+  "cs": "češki",
+  "ro": "rumunjski",
+  "el": "grčki",
+  "hu": "mađarski",
+  "hr": "hrvatski",
+  "sr": "srpski",
+  "uk": "ukrajinski"
+ },
+ "bandSub": "Siri ne govori nijedan od ovih osam jezika. Viavo govori svih osam.",
+ "say": "Ne samo da odgovori, nego to i obavi.",
+ "sayLead": "Jedan gumb i Viavo preuzima rutu, mjesta usput, glazbu, pozive, poruke i tvoja pitanja te odgovara naglas, a pogled ti ostaje na cesti.",
+ "examples": [
+  "Kući, uz stanku na benzinskoj",
+  "Dobar restoran usput",
+  "Pusti nešto za put",
+  "Što ima novo u porukama?"
+ ],
+ "replies": [
+  "Ruta do kuće sa stankom na benzinskoj postaji na obilaznici. Uz promet oko 25 minuta, pa ćete kući stići u 19:40.",
+  "Usput, za otprilike sat vremena: Konoba Stari mlin, ocjena 4,7 na temelju 1.200 recenzija, radi do 23 sata. Gosti hvale pastrvu sa žara. Dodati je kao stajanje?",
+  "Evo nečega za put: razigrani miks za vožnju, 40 pjesama. Ugodna vožnja!",
+  "Tri nova razgovora. Ivana pita hoćete li biti doma do osam. Tim je sutrašnji poziv pomaknuo na deset. Brat vam je poslao fotografije s mora. Želite li odgovoriti Ivani?"
+ ],
+ "done": [
+  "Ruta se otvara u tvojoj navigaciji",
+  "Ocjene, radno vrijeme i recenzije naglas",
+  "Svira u Spotifyju ili Apple Musicu",
+  "Pročita sažetak, a ti izdiktiraš odgovor"
+ ],
+ "can": "Što Viavo zna",
+ "groups": [
+  [
+   "Na cesti",
+   [
+    "Ruta u tvojoj navigaciji, može i s usputnim zaustavljanjem",
+    "Trajanje vožnje uz trenutačni promet",
+    "Mjesta s ocjenama, radnim vremenom i recenzijama",
+    "Vrijeme sada, prognoza za tjedan i vrijeme na odredištu"
+   ],
+   "Hoću li stići na posao do devet?"
+  ],
+  [
+   "Glazba i zvuk",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Radio uživo po nazivu postaje ili frekvenciji",
+    "Koja pjesma svira na radiju",
+    "Podcasti u aplikaciji Apple Podcasts"
+   ],
+   "Pusti nešto za put"
+  ],
+  [
+   "Ljudi i poruke",
+   [
+    "Pozivi kontaktima po imenu",
+    "WhatsApp i SMS: poruka se otvara spremna na mobitelu, samo dodirneš Pošalji",
+    "Telegram i Slack: što je novo, sažetak i odgovor koji izdiktiraš"
+   ],
+   "Javi Ivanu da kasnim deset minuta"
+  ],
+  [
+   "Planovi",
+   [
+    "Podsjetnici u zadano vrijeme ili kad negdje stigneš",
+    "Tvoj popis zadataka",
+    "Kalendar: poslušaj što te danas čeka, dodaj, pomakni ili otkaži događaj",
+    "Alarmi, timeri i brze bilješke"
+   ],
+   "Vodi me na sljedeći sastanak"
+  ],
+  [
+   "I još",
+   [
+    "Odgovori uz pretraživanje interneta kad su potrebni svježi podaci",
+    "Pamćenje: pamti, a zaboravlja kad to zatražiš",
+    "HomeKit uređaji i scene",
+    "Izgovori naziv aplikacije i otvorit će se"
+   ],
+   "Otvori Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Jedan veliki gumb na zaslonu automobila",
+    "Odgovara naglas",
+    "Ništa na zaslonu automobila ne traži da gledaš u mobitel"
+   ],
+   "Do šest tvojih brzih naredbi"
+  ]
+ ],
+ "works": "Radi s tvojim aplikacijama",
+ "worksSub": "A druge aplikacije otvara po nazivu.",
+ "cats": {
+  "all": "Sve",
+  "nav": "Navigacija",
+  "music": "Glazba",
+  "radio": "Radio",
+  "msg": "Poruke",
+  "home": "Dom i planovi"
+ },
+ "appNames": {
+  "Calendar": "Kalendar",
+  "Reminders": "Podsjetnici"
+ },
+ "langsTitle": "28 jezika, u svakom izvorni glas",
+ "legend": "Siri ga ne govori",
+ "langNames": {
+  "ar": "Arapski",
+  "zh-hans": "Kineski (pojednostavljeni)",
+  "zh-hant": "Kineski (tradicionalni)",
+  "hr": "Hrvatski",
+  "cs": "Češki",
+  "nl": "Nizozemski",
+  "en": "Engleski",
+  "fr": "Francuski",
+  "de": "Njemački",
+  "el": "Grčki",
+  "he": "Hebrejski",
+  "hi": "Hindski",
+  "hu": "Mađarski",
+  "id": "Indonezijski",
+  "it": "Talijanski",
+  "ja": "Japanski",
+  "ko": "Korejski",
+  "pl": "Poljski",
+  "pt": "Portugalski",
+  "ro": "Rumunjski",
+  "ru": "Ruski",
+  "sr": "Srpski",
+  "es": "Španjolski",
+  "sv": "Švedski",
+  "th": "Tajlandski",
+  "tr": "Turski",
+  "uk": "Ukrajinski",
+  "vi": "Vijetnamski"
+ },
+ "steps": "Na put u tri koraka",
+ "stepItems": [
+  [
+   "Nabavi Viavo",
+   "Preuzmi ga iz App Storea na svoj iPhone."
+  ],
+  [
+   "Spoji CarPlay",
+   "Viavo se pojavljuje na zaslonu tvog automobila."
+  ],
+  [
+   "Pritisni i govori",
+   "Jedan gumb. Reci što trebaš, kao da razgovaraš s čovjekom."
+  ]
+ ],
+ "faq": "Pitanja",
+ "faqItems": [
+  [
+   "Po čemu se Viavo razlikuje od ChatGPT-a ili Geminija u CarPlayu?",
+   "ChatGPT i Gemini u CarPlayu stvoreni su za razgovor. Viavo ono što kažeš i obavi: nazove kontakt, pripremi poruku za WhatsApp ili SMS, pusti glazbu ili radiopostaju, a iz jedne rečenice otvori u tvojoj navigaciji rutu s usputnim zaustavljanjem ili mjesto uz put."
+  ],
+  [
+   "Koje jezike Viavo govori?",
+   "Viavo govori 28 jezika: arapski, češki, engleski, francuski, grčki, hebrejski, hindski, hrvatski, indonezijski, japanski, kineski (pojednostavljeni i tradicionalni), korejski, mađarski, nizozemski, njemački, poljski, portugalski, rumunjski, ruski, srpski, španjolski, švedski, tajlandski, talijanski, turski, ukrajinski i vijetnamski. Za svaki jezik tu su zasloni aplikacije i izvorni glas, ženski ili muški."
+  ],
+  [
+   "Zamjenjuje li Viavo Siri?",
+   "Ne. Viavo je zasebna aplikacija na zaslonu CarPlaya: otvori je i pritisni jedan gumb."
+  ],
+  [
+   "Je li ga sigurno koristiti dok voziš?",
+   "Viavo je napravljen da ti pogled ostane na cesti: jedan veliki gumb, odgovori naglas i ništa na zaslonu automobila ne traži da gledaš u mobitel."
+  ],
+  [
+   "Trebam li učiti naredbe?",
+   "Ne. Pritisni jedan gumb i reci što trebaš, kao da razgovaraš s čovjekom."
+  ],
+  [
+   "Radi li i bez CarPlaya?",
+   "Da, na iPhoneu: isti jedan gumb, a zahtjev možeš i utipkati."
+  ],
+  [
+   "S kojim aplikacijama radi?",
+   "Apple Maps, Google Maps i Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer i Apple Podcasts; Simple Radio, TuneIn i iHeartRadio; WhatsApp, SMS, Telegram i Slack; HomeKit, Kalendar i Podsjetnici. Otvara i druge aplikacije po nazivu."
+  ],
+  [
+   "Koliko košta?",
+   "Novi račun dobiva 10 besplatnih kredita. Pretplata na Viavo Plus, mjesečna ili godišnja, počinje besplatnim tjednom. Cijene su u App Storeu, u tvojoj valuti."
+  ],
+  [
+   "Što se događa s mojim podacima?",
+   "Sve je opisano u dva dokumenta."
+  ]
+ ],
+ "lPrivacy": "Pravila o privatnosti",
+ "lMessages": "Kako Viavo postupa s tvojim porukama",
+ "cta": "Jedan gumb. Tvoj jezik. Gotovo.",
+ "ctaSub": "Novi račun dobiva 10 besplatnih kredita.",
+ "fPrivacy": "Privatnost",
+ "fTerms": "Uvjeti korištenja",
+ "fMessengers": "Messengeri",
+ "fSupport": "Podrška",
+ "fPress": "Za medije",
+ "tm": "Apple, logotip Apple, CarPlay, iPhone i Siri zaštitni su znakovi tvrtke Apple Inc. App Store je uslužni znak tvrtke Apple Inc.",
+ "badgeAlt": "Preuzmi u App Storeu",
+ "scan": "Skeniraj iPhoneom",
+ "getApp": "Preuzmi aplikaciju",
+ "skip": "Preskoči na sadržaj",
+ "close": "Zatvori"
+}

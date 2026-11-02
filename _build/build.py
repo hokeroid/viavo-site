@@ -243,6 +243,18 @@ def hero_screen(lang):
     return 'carplay-en-idle'
 
 
+# Czech and Slovak typesetting keeps one-letter words (v, k, s, z, a, i, o, u) with the next word.
+NBSP_LANGS = {'cs'}
+
+
+def typeset(lang, page):
+    if lang not in NBSP_LANGS:
+        return page
+    headpart, body = page.split('</head>', 1)
+    fix = lambda m: re.sub(r'(?<=[\s(>])([vkszaiouVKSZAIOU]) ', '\\1\u00a0', m.group(0))
+    return headpart + '</head>' + re.sub(r'>[^<]+<', fix, body)
+
+
 def home(lang, T, available):
     depth = 1 if L[lang]['folder'] else 0
     r = rel(depth)
@@ -399,6 +411,24 @@ def press(T, available):
     return ''.join(out)
 
 
+def not_found(T, available):
+    """GitHub Pages serves /404.html for unknown paths at any depth, so its links are absolute."""
+    r = BASE_URL + '/'
+    page_head = head('en', 'Page not found · Viavo', T['meta']['description'], BASE_URL + '/', r)
+    page_head = page_head.replace(f'<link rel="canonical" href="{BASE_URL}/">\n', '<meta name="robots" content="noindex">\n')
+    out = [page_head, '<body>', SYMBOLS,
+           header(T, 'en', r, available)]
+    out.append(f'''<main id="main"><section class="hero" style="padding-block:120px"><div class="wrap">
+<p class="eyebrow">404</p><h1 class="h1"><span>This page took a wrong turn.</span></h1>
+<p class="lead">The address may have changed when the site moved. Start from the home page or pick your language below.</p>
+<div class="cta-row"><a class="btn-store" style="height:48px;padding:0 24px;font-size:16px" href="{r}">Viavo home</a></div>
+</div></section></main>
+''')
+    out.append(footer(T, 'en', r, available))
+    out.append('</body>\n</html>\n')
+    return ''.join(out)
+
+
 LEGAL_UI = {
     'en': {'privacy': 'Privacy Policy', 'terms': 'Terms', 'messengers': 'How Viavo handles your messages', 'support': 'Support',
            'contents': 'Contents', 'other': 'По-русски'},
@@ -487,9 +517,10 @@ def main():
         TT = {**en, **T}
         out = ROOT / (L[c]['folder'] or '.') / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(home(c, TT, available))
+        out.write_text(typeset(c, home(c, TT, available)))
     (ROOT / 'press').mkdir(exist_ok=True)
     (ROOT / 'press/index.html').write_text(press(en, available))
+    (ROOT / '404.html').write_text(not_found(en, available))
     T = {'en': en, 'ru': {**en, **content.get('ru', {}), **({} if 'ru' in content else LEGAL_FALLBACK_RU)}}
     for path in ('privacy', 'privacy/ru', 'terms', 'terms/ru', 'messengers', 'messengers/ru', 'support'):
         (ROOT / path / 'index.html').write_text(legal(path, T, available))

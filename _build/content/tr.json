@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: CarPlay için yapay zekâlı sesli asistan, 28 dilde",
+  "description": "Tek düğmeye basın, kendi sözlerinizle söyleyin. Viavo molalı rota açar, arar, mesaj yazar, müzik ve radyo çalar, sesli yanıtlar. 28 dil, her birinde doğal ses.",
+  "ogTitle": "Kendi sözlerinizle söyleyin. Viavo halleder."
+ },
+ "qo": "“",
+ "qc": "”",
+ "nFeatures": "Özellikler",
+ "nLanguages": "Diller",
+ "nPress": "Basın",
+ "nLangMenu": "Dil",
+ "eyebrow": "CarPlay için yapay zekâ asistanı",
+ "h1a": "Kendi sözlerinizle söyleyin.",
+ "h1b": "Viavo halleder.",
+ "sub": "Molalı rotalar, aramalar, mesajlar, müzik ve radyo. Tek düğmeye basın ve bir insana nasıl söylerseniz öyle söyleyin, 28 dilin herhangi birinde.",
+ "heroAlt": "CarPlay ekranında Viavo",
+ "bandPre": "Siri ",
+ "bandPost": " konuşmuyor.",
+ "bandTail": "Viavo konuşuyor.",
+ "bandWords": {
+  "pl": "Lehçe",
+  "cs": "Çekçe",
+  "ro": "Rumence",
+  "el": "Yunanca",
+  "hu": "Macarca",
+  "hr": "Hırvatça",
+  "sr": "Sırpça",
+  "uk": "Ukraynaca"
+ },
+ "bandSub": "Siri bu sekiz dilin hiçbirini konuşmuyor. Viavo hepsini konuşuyor.",
+ "say": "Yanıt vermekle kalmaz. İşi yapar.",
+ "sayLead": "Tek düğme yeter: Viavo rotayı, yol üstündeki yerleri, müziği, aramaları, mesajları ve sorularınızı sesli olarak halleder, gözleriniz yoldan ayrılmaz.",
+ "examples": [
+  "Eve gidelim, benzin de alalım",
+  "Yol üstünde iyi bir restoran",
+  "Yol için bir şeyler çal",
+  "Sohbetlerimde yeni ne var?"
+ ],
+ "replies": [
+  "Eve rota hazır, çevre yolundaki benzin istasyonunda bir molayla. Trafikle yaklaşık 25 dakika, yani 19.40'ta evde olursunuz.",
+  "Yolunuz üzerinde, yaklaşık bir saat sonra: Eski Değirmen Lokantası, 1.200 yorumda 4,7 puan, 23.00'e kadar açık. Izgara alabalığı çok övülüyor. Mola olarak ekleyeyim mi?",
+  "Yol için bir şeyler: enerjik bir sürüş listesi, 40 şarkı. İyi yolculuklar!",
+  "Üç yeni sohbet var. Elif, sekize kadar evde olup olmayacağınızı soruyor. Ekip yarınki görüşmeyi saat ona aldı. Kardeşiniz sahilden fotoğraf gönderdi. Elif'e cevap yazalım mı?"
+ ],
+ "done": [
+  "Rota, navigasyon uygulamanızda açılır",
+  "Puanlar, saatler ve yorumlar sesli",
+  "Spotify'da ya da Apple Music'te çalar",
+  "Özeti dinleyin, yanıtı dikte edin"
+ ],
+ "can": "Viavo neler yapabilir",
+ "groups": [
+  [
+   "Yolda",
+   [
+    "Navigasyon uygulamanızda rota, isterseniz yol üstünde bir molayla",
+    "Trafiğe göre yolculuk süresi",
+    "Puanları, çalışma saatleri ve yorumlarıyla mekânlar",
+    "Şu anki hava durumu, haftalık tahmin ve gideceğiniz yerin havası"
+   ],
+   "İşe dokuza yetişir miyim?"
+  ],
+  [
+   "Müzik ve ses",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "İstasyon adıyla ya da frekansıyla canlı radyo",
+    "Radyoda çalan şarkının adı",
+    "Apple Podcasts'te podcast'ler"
+   ],
+   "Yol için bir şeyler çal"
+  ],
+  [
+   "Kişiler ve mesajlar",
+   [
+    "Rehberdeki bir kişiyi adıyla arama",
+    "WhatsApp ve SMS: mesaj telefonda hazır açılır, Gönder'e dokunmanız yeterli",
+    "Telegram ve Slack: yenilikler, sohbetin özeti, dikte ettiğiniz yanıt"
+   ],
+   "Mehmet'e on dakika gecikeceğimi söyle"
+  ],
+  [
+   "Planlar",
+   [
+    "Belirli bir saatte ya da bir yere vardığınızda anımsatıcılar",
+    "Yapılacaklar listeniz",
+    "Takvim: gününüzün özeti, etkinlik ekleme, taşıma ya da iptal etme",
+    "Alarmlar, zamanlayıcılar ve hızlı notlar"
+   ],
+   "Sonraki toplantıma gidelim"
+  ],
+  [
+   "Ve dahası",
+   [
+    "Web'de arayıp güncel bilgiyle yanıtlar",
+    "Hafıza: hatırlar, istediğinizde unutur",
+    "HomeKit aksesuarları ve sahneleri",
+    "Uygulamanın adını söyleyin, açılsın"
+   ],
+   "Waze'i aç"
+  ],
+  [
+   "CarPlay",
+   [
+    "Araç ekranında tek büyük düğme",
+    "Sesli yanıt verir",
+    "Araç ekranındaki hiçbir şey telefonunuza bakmanızı istemez"
+   ],
+   "En fazla altı hızlı komutunuz"
+  ]
+ ],
+ "works": "Uygulamalarınızla çalışır",
+ "worksSub": "Başka uygulamaları da adını söylediğinizde açar.",
+ "cats": {
+  "all": "Tümü",
+  "nav": "Navigasyon",
+  "music": "Müzik",
+  "radio": "Radyo",
+  "msg": "Mesajlar",
+  "home": "Ev ve planlar"
+ },
+ "appNames": {
+  "Calendar": "Takvim",
+  "Reminders": "Anımsatıcılar"
+ },
+ "langsTitle": "28 dil, her birinde doğal bir ses",
+ "legend": "Siri bu dili konuşmuyor",
+ "langNames": {
+  "ar": "Arapça",
+  "zh-hans": "Çince (Basitleştirilmiş)",
+  "zh-hant": "Çince (Geleneksel)",
+  "hr": "Hırvatça",
+  "cs": "Çekçe",
+  "nl": "Felemenkçe",
+  "en": "İngilizce",
+  "fr": "Fransızca",
+  "de": "Almanca",
+  "el": "Yunanca",
+  "he": "İbranice",
+  "hi": "Hintçe",
+  "hu": "Macarca",
+  "id": "Endonezce",
+  "it": "İtalyanca",
+  "ja": "Japonca",
+  "ko": "Korece",
+  "pl": "Lehçe",
+  "pt": "Portekizce",
+  "ro": "Rumence",
+  "ru": "Rusça",
+  "sr": "Sırpça",
+  "es": "İspanyolca",
+  "sv": "İsveççe",
+  "th": "Tayca",
+  "tr": "Türkçe",
+  "uk": "Ukraynaca",
+  "vi": "Vietnamca"
+ },
+ "steps": "Yola çıkmak için üç adım",
+ "stepItems": [
+  [
+   "Viavo'yu yükleyin",
+   "iPhone'unuza App Store'dan indirin."
+  ],
+  [
+   "CarPlay'e bağlayın",
+   "Viavo, aracınızın ekranında görünür."
+  ],
+  [
+   "Basın ve konuşun",
+   "Tek düğme. Bir insana nasıl söylerseniz öyle söyleyin."
+  ]
+ ],
+ "faq": "Sorular",
+ "faqItems": [
+  [
+   "Viavo'nun CarPlay'deki ChatGPT ya da Gemini'den farkı ne?",
+   "CarPlay'deki ChatGPT ve Gemini sohbet için tasarlandı. Viavo ise sohbetle kalmaz, söylediğinizi yapar: bir kişiyi arar, WhatsApp ya da SMS mesajı hazırlar, müzik ya da bir radyo istasyonu çalar ve tek bir cümleyle navigasyon uygulamanızda molalı bir rota ya da yol üstündeki bir yeri açar."
+  ],
+  [
+   "Viavo hangi dilleri konuşuyor?",
+   "28 dil: Almanca, Arapça, Çekçe, Çince (Basitleştirilmiş ve Geleneksel), Endonezce, Felemenkçe, Fransızca, Hırvatça, Hintçe, İbranice, İngilizce, İspanyolca, İsveççe, İtalyanca, Japonca, Korece, Lehçe, Macarca, Portekizce, Rumence, Rusça, Sırpça, Tayca, Türkçe, Ukraynaca, Vietnamca ve Yunanca. Her dilde uygulamanın ekranları ve anadili gibi konuşan bir ses var, kadın ya da erkek."
+  ],
+  [
+   "Siri'nin yerini mi alıyor?",
+   "Hayır. Viavo, CarPlay ekranınızda ayrı bir uygulama: açın ve tek düğmeye basın."
+  ],
+  [
+   "Sürüş sırasında kullanmak güvenli mi?",
+   "Viavo, gözleriniz yolda kalsın diye tasarlandı: tek büyük düğme, sesli yanıtlar ve araç ekranında telefonunuza bakmanızı isteyen hiçbir şey yok."
+  ],
+  [
+   "Komut ezberlemem gerekiyor mu?",
+   "Hayır. Tek düğmeye basın ve bir insana nasıl söylerseniz öyle söyleyin."
+  ],
+  [
+   "CarPlay olmadan çalışır mı?",
+   "Evet, iPhone'da: aynı tek düğme, isterseniz yazarak da kullanabilirsiniz."
+  ],
+  [
+   "Hangi uygulamalarla çalışır?",
+   "Apple Maps, Google Maps ve Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer ve Apple Podcasts; Simple Radio, TuneIn ve iHeartRadio; WhatsApp, SMS, Telegram ve Slack; HomeKit, Takvim ve Anımsatıcılar. Başka uygulamaları da adını söylediğinizde açar."
+  ],
+  [
+   "Ücreti ne kadar?",
+   "Yeni bir hesap 10 ücretsiz krediyle başlar. Aylık ya da yıllık Viavo Plus'ın ilk haftası ücretsiz. Fiyatlar App Store'da, kendi para biriminizde."
+  ],
+  [
+   "Verilerime ne oluyor?",
+   "Hepsi iki belgede anlatılıyor."
+  ]
+ ],
+ "lPrivacy": "Gizlilik Politikası",
+ "lMessages": "Viavo mesajlarınızı nasıl işler",
+ "cta": "Tek düğme. Kendi sözleriniz. İş tamam.",
+ "ctaSub": "Yeni bir hesap 10 ücretsiz krediyle başlar.",
+ "fPrivacy": "Gizlilik",
+ "fTerms": "Koşullar",
+ "fMessengers": "Mesajlaşma",
+ "fSupport": "Destek",
+ "fPress": "Basın",
+ "tm": "Apple, Apple logosu, CarPlay, iPhone ve Siri, Apple Inc.'in ticari markalarıdır. App Store, Apple Inc.'in hizmet markasıdır.",
+ "badgeAlt": "App Store'dan İndirin",
+ "scan": "iPhone'unuzla okutun",
+ "getApp": "Uygulamayı indirin",
+ "skip": "İçeriğe geç",
+ "close": "Kapat"
+}

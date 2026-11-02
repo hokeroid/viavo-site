@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: Trợ lý ảo AI cho CarPlay, 28 ngôn ngữ, có tiếng Việt",
+  "description": "Nhấn nút, nói theo cách của bạn. Viavo mở lộ trình kèm điểm dừng, gọi điện, nhắn tin, bật nhạc và radio, trả lời thành tiếng. 28 ngôn ngữ, đều có giọng bản ngữ.",
+  "ogTitle": "Nói bằng tiếng của bạn. Viavo lo phần còn lại."
+ },
+ "qo": "“",
+ "qc": "”",
+ "nFeatures": "Tính năng",
+ "nLanguages": "Ngôn ngữ",
+ "nPress": "Báo chí",
+ "nLangMenu": "Ngôn ngữ",
+ "eyebrow": "Trợ lý AI cho CarPlay",
+ "h1a": "Nói bằng tiếng của bạn.",
+ "h1b": "Viavo lo phần còn lại.",
+ "sub": "Lộ trình kèm điểm dừng, cuộc gọi, tin nhắn, nhạc và radio. Nhấn một nút và nói như khi trò chuyện với người thật, bằng một trong 28 ngôn ngữ.",
+ "heroAlt": "Viavo trên màn hình CarPlay",
+ "bandPre": "Siri không nói được ",
+ "bandPost": ".",
+ "bandTail": "Viavo thì có.",
+ "bandWords": {
+  "pl": "tiếng Ba Lan",
+  "cs": "tiếng Séc",
+  "ro": "tiếng Romania",
+  "el": "tiếng Hy Lạp",
+  "hu": "tiếng Hungary",
+  "hr": "tiếng Croatia",
+  "sr": "tiếng Serbia",
+  "uk": "tiếng Ukraina"
+ },
+ "bandSub": "Siri không nói được tiếng nào trong tám thứ tiếng này. Viavo nói được tất cả.",
+ "say": "Không chỉ trả lời. Mà còn làm giúp bạn.",
+ "sayLead": "Chỉ một nút bấm, Viavo lo lộ trình, điểm dừng dọc đường, nhạc, cuộc gọi, tin nhắn và trả lời câu hỏi của bạn bằng giọng nói, để mắt bạn luôn nhìn đường.",
+ "examples": [
+  "Về nhà, ghé đổ xăng nhé",
+  "Nhà hàng ngon trên đường đi",
+  "Bật nhạc cho chuyến đi",
+  "Có tin nhắn gì mới không?"
+ ],
+ "replies": [
+  "Lộ trình về nhà, ghé cây xăng trên đường Vành Đai. Tính cả kẹt xe thì mất khoảng 25 phút, nên bạn sẽ về đến nhà lúc 19:40.",
+  "Trên đường đi, khoảng một tiếng nữa: quán Cối Xay Gió, 4,7 sao từ 1.200 lượt đánh giá, mở cửa đến 23:00. Thực khách khen món cá hồi nướng. Thêm quán này làm điểm dừng nhé?",
+  "Đây là nhạc cho chuyến đi: một playlist sôi động để lái xe, 40 bài. Chúc bạn đi đường vui vẻ!",
+  "Có ba cuộc trò chuyện mới. Lan hỏi bạn có về nhà trước tám giờ không. Nhóm đã dời cuộc gọi ngày mai sang mười giờ. Anh trai bạn gửi ảnh chụp ở biển. Bạn có muốn trả lời Lan không?"
+ ],
+ "done": [
+  "Lộ trình mở trong ứng dụng dẫn đường của bạn",
+  "Đọc to đánh giá, giờ mở cửa và nhận xét",
+  "Phát trên Spotify hoặc Apple Music",
+  "Nghe ý chính, nói để trả lời"
+ ],
+ "can": "Viavo làm được gì",
+ "groups": [
+  [
+   "Trên đường",
+   [
+    "Chỉ đường trong ứng dụng dẫn đường của bạn, kèm điểm dừng dọc đường",
+    "Thời gian di chuyển theo tình hình giao thông",
+    "Địa điểm kèm đánh giá, giờ mở cửa và nhận xét",
+    "Thời tiết hiện tại, cả tuần và ở điểm đến"
+   ],
+   "Tôi có kịp đến công ty trước 9 giờ không?"
+  ],
+  [
+   "Nhạc, radio và podcast",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Radio trực tiếp theo tên đài hoặc tần số",
+    "Tên bài hát đang phát trên radio",
+    "Podcast trên Apple Podcasts"
+   ],
+   "Bật nhạc cho chuyến đi"
+  ],
+  [
+   "Liên lạc và tin nhắn",
+   [
+    "Gọi cho người trong danh bạ chỉ bằng cách nói tên",
+    "WhatsApp và SMS: tin nhắn được soạn sẵn trên điện thoại, bạn chỉ cần chạm Gửi",
+    "Telegram và Slack: có gì mới, tóm tắt ý chính, đọc chính tả tin trả lời"
+   ],
+   "Nhắn Minh là tôi đến muộn mười phút"
+  ],
+  [
+   "Kế hoạch",
+   [
+    "Lời nhắc theo giờ hoặc khi bạn đến nơi",
+    "Danh sách việc cần làm của bạn",
+    "Lịch: nghe lịch trong ngày, thêm, dời hoặc hủy sự kiện",
+    "Báo thức, hẹn giờ và ghi chú nhanh"
+   ],
+   "Đưa tôi đến cuộc họp tiếp theo"
+  ],
+  [
+   "Và còn nữa",
+   [
+    "Trả lời có tìm kiếm trên web khi cần thông tin mới nhất",
+    "Ghi nhớ: nhớ những gì bạn kể và quên khi bạn yêu cầu",
+    "Phụ kiện và cảnh HomeKit",
+    "Nói tên ứng dụng để mở"
+   ],
+   "Mở Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Một nút lớn trên màn hình xe",
+    "Trả lời thành tiếng",
+    "Không có gì trên màn hình xe bắt bạn phải nhìn vào điện thoại"
+   ],
+   "Tối đa sáu lệnh nhanh của riêng bạn"
+  ]
+ ],
+ "works": "Hoạt động với các ứng dụng của bạn",
+ "worksSub": "Và mở cả ứng dụng khác khi bạn nói tên.",
+ "cats": {
+  "all": "Tất cả",
+  "nav": "Dẫn đường",
+  "music": "Âm nhạc",
+  "radio": "Radio",
+  "msg": "Tin nhắn",
+  "home": "Nhà và kế hoạch"
+ },
+ "appNames": {
+  "Calendar": "Lịch",
+  "Reminders": "Lời nhắc"
+ },
+ "langsTitle": "28 ngôn ngữ, đều có giọng bản ngữ",
+ "legend": "Siri không nói được tiếng này",
+ "langNames": {
+  "ar": "Tiếng Ả Rập",
+  "zh-hans": "Tiếng Trung (Giản thể)",
+  "zh-hant": "Tiếng Trung (Phồn thể)",
+  "hr": "Tiếng Croatia",
+  "cs": "Tiếng Séc",
+  "nl": "Tiếng Hà Lan",
+  "en": "Tiếng Anh",
+  "fr": "Tiếng Pháp",
+  "de": "Tiếng Đức",
+  "el": "Tiếng Hy Lạp",
+  "he": "Tiếng Do Thái",
+  "hi": "Tiếng Hindi",
+  "hu": "Tiếng Hungary",
+  "id": "Tiếng Indonesia",
+  "it": "Tiếng Ý",
+  "ja": "Tiếng Nhật",
+  "ko": "Tiếng Hàn",
+  "pl": "Tiếng Ba Lan",
+  "pt": "Tiếng Bồ Đào Nha",
+  "ro": "Tiếng Romania",
+  "ru": "Tiếng Nga",
+  "sr": "Tiếng Serbia",
+  "es": "Tiếng Tây Ban Nha",
+  "sv": "Tiếng Thụy Điển",
+  "th": "Tiếng Thái",
+  "tr": "Tiếng Thổ Nhĩ Kỳ",
+  "uk": "Tiếng Ukraina",
+  "vi": "Tiếng Việt"
+ },
+ "steps": "Ba bước là lên đường",
+ "stepItems": [
+  [
+   "Cài Viavo",
+   "Tải ứng dụng từ App Store về iPhone của bạn."
+  ],
+  [
+   "Kết nối CarPlay",
+   "Viavo hiện trên màn hình xe của bạn."
+  ],
+  [
+   "Nhấn và nói",
+   "Một nút bấm. Cứ nói như khi trò chuyện với người thật."
+  ]
+ ],
+ "faq": "Câu hỏi thường gặp",
+ "faqItems": [
+  [
+   "Viavo khác gì ChatGPT hay Gemini trên CarPlay?",
+   "ChatGPT và Gemini trên CarPlay được thiết kế để trò chuyện. Viavo còn làm theo lời bạn nói: gọi cho một liên hệ, soạn sẵn tin nhắn WhatsApp hoặc SMS, phát nhạc hay một đài radio, và chỉ từ một câu nói là mở lộ trình kèm điểm dừng, hoặc một địa điểm dọc đường, trong ứng dụng dẫn đường của bạn."
+  ],
+  [
+   "Viavo nói được những ngôn ngữ nào?",
+   "28 ngôn ngữ: tiếng Ả Rập, Anh, Ba Lan, Bồ Đào Nha, Croatia, Do Thái, Đức, Hà Lan, Hàn, Hindi, Hungary, Hy Lạp, Indonesia, Nga, Nhật, Pháp, Romania, Séc, Serbia, Tây Ban Nha, Thái, Thổ Nhĩ Kỳ, Thụy Điển, Trung (giản thể và phồn thể), Ukraina, Việt và Ý. Ngôn ngữ nào cũng có giao diện ứng dụng và giọng bản ngữ, giọng nữ hoặc giọng nam."
+  ],
+  [
+   "Viavo có thay thế Siri không?",
+   "Không. Viavo là một ứng dụng riêng trên màn hình CarPlay của bạn: mở ứng dụng và nhấn một nút."
+  ],
+  [
+   "Dùng Viavo khi đang lái xe có an toàn không?",
+   "Viavo được thiết kế để mắt bạn luôn nhìn đường: một nút lớn, trả lời thành tiếng, và không có gì trên màn hình xe bắt bạn phải nhìn vào điện thoại."
+  ],
+  [
+   "Tôi có cần học thuộc lệnh không?",
+   "Không. Nhấn một nút và nói như khi trò chuyện với người thật."
+  ],
+  [
+   "Không có CarPlay thì có dùng được không?",
+   "Có, trên iPhone: vẫn một nút bấm đó, và bạn cũng có thể gõ."
+  ],
+  [
+   "Viavo hoạt động với những ứng dụng nào?",
+   "Apple Maps, Google Maps và Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer và Apple Podcasts; Simple Radio, TuneIn và iHeartRadio; WhatsApp, SMS, Telegram và Slack; HomeKit, Lịch và Lời nhắc. Viavo cũng mở các ứng dụng khác khi bạn nói tên."
+  ],
+  [
+   "Viavo giá bao nhiêu?",
+   "Tài khoản mới được tặng 10 credit miễn phí. Viavo Plus, theo tháng hoặc theo năm, bắt đầu với một tuần dùng thử miễn phí. Giá hiển thị trên App Store, theo đơn vị tiền tệ của bạn."
+  ],
+  [
+   "Dữ liệu của tôi được xử lý thế nào?",
+   "Mọi thứ đều có trong hai tài liệu."
+  ]
+ ],
+ "lPrivacy": "Chính sách quyền riêng tư",
+ "lMessages": "Cách Viavo xử lý tin nhắn của bạn",
+ "cta": "Một nút bấm. Tiếng của bạn. Thế là xong.",
+ "ctaSub": "Tài khoản mới được tặng 10 credit miễn phí.",
+ "fPrivacy": "Quyền riêng tư",
+ "fTerms": "Điều khoản",
+ "fMessengers": "Ứng dụng nhắn tin",
+ "fSupport": "Hỗ trợ",
+ "fPress": "Báo chí",
+ "tm": "Apple, logo Apple, CarPlay, iPhone và Siri là nhãn hiệu của Apple Inc. App Store là nhãn hiệu dịch vụ của Apple Inc.",
+ "badgeAlt": "Tải về trên App Store",
+ "scan": "Quét mã bằng iPhone",
+ "getApp": "Tải ứng dụng",
+ "skip": "Chuyển đến nội dung",
+ "close": "Đóng"
+}

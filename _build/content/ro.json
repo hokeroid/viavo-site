@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: asistent vocal cu AI pentru CarPlay, în limba română",
+  "description": "Apăsați un buton și spuneți-o cum vă vine. Viavo deschide trasee cu oprire, sună, scrie mesaje, pune muzică și radio și răspunde cu voce tare. 28 de limbi.",
+  "ogTitle": "Spuneți-o în limba dvs. Viavo face restul."
+ },
+ "qo": "„",
+ "qc": "”",
+ "nFeatures": "Funcții",
+ "nLanguages": "Limbi",
+ "nPress": "Presă",
+ "nLangMenu": "Limbă",
+ "eyebrow": "Asistent cu AI pentru CarPlay",
+ "h1a": "Spuneți-o în limba dvs.",
+ "h1b": "Viavo face restul.",
+ "sub": "Trasee cu o oprire pe drum, apeluri, mesaje, muzică și radio. Apăsați un singur buton și spuneți ce vă trebuie, așa cum i-ați spune unui om, în oricare dintre cele 28 de limbi.",
+ "heroAlt": "Viavo pe un ecran CarPlay",
+ "bandPre": "Siri nu vorbește ",
+ "bandPost": ".",
+ "bandTail": "Viavo, da.",
+ "bandWords": {
+  "pl": "poloneză",
+  "cs": "cehă",
+  "ro": "română",
+  "el": "greacă",
+  "hu": "maghiară",
+  "hr": "croată",
+  "sr": "sârbă",
+  "uk": "ucraineană"
+ },
+ "bandSub": "Siri nu vorbește niciuna dintre aceste opt limbi. Viavo le vorbește pe toate.",
+ "say": "Nu doar răspunde. Acționează.",
+ "sayLead": "Un buton, iar Viavo se ocupă de traseu, locuri pe drum, muzică, apeluri și mesaje și vă răspunde la întrebări cu voce tare, ca să nu luați ochii de pe șosea.",
+ "examples": [
+  "Acasă, cu oprire la benzinărie",
+  "Un restaurant bun pe drum",
+  "Pune ceva pentru drum",
+  "Ce e nou în conversații?"
+ ],
+ "replies": [
+  "Traseu spre casă, cu oprire la benzinăria de pe centură. Cu traficul de acum, cam 25 de minute, deci ajungeți acasă la 19:40.",
+  "Pe drum, cam peste o oră: Hanul Morii, nota 4,7 din 1.200 de recenzii, deschis până la 23:00. Clienții laudă păstrăvul la grătar. Să-l adaug ca oprire?",
+  "Iată ceva pentru drum: un mix energic pentru condus, 40 de piese. Drum bun!",
+  "Trei conversații noi. Ioana întreabă dacă ajungeți acasă până la opt. Echipa a mutat apelul de mâine la ora zece. Fratele dumneavoastră a trimis poze de la mare. Îi răspundeți Ioanei?"
+ ],
+ "done": [
+  "Traseul se deschide în navigația dvs.",
+  "Evaluări, program, recenzii, cu voce tare",
+  "Pornește în Spotify sau Apple Music",
+  "Aflați esențialul, dictați un răspuns"
+ ],
+ "can": "Ce poate face Viavo",
+ "groups": [
+  [
+   "Pe drum",
+   [
+    "Trasee în aplicația dvs. de navigație, cu o oprire pe parcurs",
+    "Durata drumului în funcție de trafic",
+    "Locuri cu evaluări, program și recenzii",
+    "Vremea acum, pentru toată săptămâna și la destinație"
+   ],
+   "Ajung la serviciu până la nouă?"
+  ],
+  [
+   "Muzică și sunet",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Radio în direct, după numele postului sau frecvență",
+    "Numele melodiei care se aude la radio",
+    "Podcasturi în Apple Podcasts"
+   ],
+   "Pune ceva pentru drum"
+  ],
+  [
+   "Oameni și mesaje",
+   [
+    "Apelarea unui contact după nume",
+    "WhatsApp și SMS: mesajul se deschide gata scris pe telefon, rămâne doar să atingeți Trimite",
+    "Telegram și Slack: ce e nou, esența unei conversații, un răspuns dictat"
+   ],
+   "Spune-i lui Petru că întârzii zece minute"
+  ],
+  [
+   "Planuri",
+   [
+    "Mementouri la o anumită oră sau când ajungeți undeva",
+    "Lista dvs. de sarcini",
+    "Calendar: aflați ce aveți azi, adăugați, mutați sau anulați un eveniment",
+    "Alarme, temporizatoare și notițe rapide"
+   ],
+   "Du-mă la următoarea întâlnire"
+  ],
+  [
+   "Și altele",
+   [
+    "Răspunsuri cu căutare pe web, pentru informații actuale",
+    "Memorie: ține minte și uită când îi cereți",
+    "Accesorii și scene HomeKit",
+    "Spuneți numele unei aplicații și se deschide"
+   ],
+   "Deschide Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Un buton mare pe ecranul mașinii",
+    "Răspunsuri cu voce tare",
+    "Nimic de pe ecranul mașinii nu vă cere să vă uitați în telefon"
+   ],
+   "Până la șase comenzi rapide ale dvs."
+  ]
+ ],
+ "works": "Funcționează cu aplicațiile dvs.",
+ "worksSub": "Și deschide alte aplicații după nume.",
+ "cats": {
+  "all": "Toate",
+  "nav": "Navigație",
+  "music": "Muzică",
+  "radio": "Radio",
+  "msg": "Mesaje",
+  "home": "Casă și planuri"
+ },
+ "appNames": {
+  "Calendar": "Calendar",
+  "Reminders": "Mementouri"
+ },
+ "langsTitle": "28 de limbi, o voce nativă pentru fiecare",
+ "legend": "Siri nu o vorbește",
+ "langNames": {
+  "ar": "Arabă",
+  "zh-hans": "Chineză (simplificată)",
+  "zh-hant": "Chineză (tradițională)",
+  "hr": "Croată",
+  "cs": "Cehă",
+  "nl": "Neerlandeză",
+  "en": "Engleză",
+  "fr": "Franceză",
+  "de": "Germană",
+  "el": "Greacă",
+  "he": "Ebraică",
+  "hi": "Hindi",
+  "hu": "Maghiară",
+  "id": "Indoneziană",
+  "it": "Italiană",
+  "ja": "Japoneză",
+  "ko": "Coreeană",
+  "pl": "Poloneză",
+  "pt": "Portugheză",
+  "ro": "Română",
+  "ru": "Rusă",
+  "sr": "Sârbă",
+  "es": "Spaniolă",
+  "sv": "Suedeză",
+  "th": "Thailandeză",
+  "tr": "Turcă",
+  "uk": "Ucraineană",
+  "vi": "Vietnameză"
+ },
+ "steps": "Trei pași și porniți la drum",
+ "stepItems": [
+  [
+   "Instalați Viavo",
+   "Descărcați aplicația din App Store pe iPhone."
+  ],
+  [
+   "Conectați CarPlay",
+   "Viavo apare pe ecranul mașinii."
+  ],
+  [
+   "Apăsați și vorbiți",
+   "Un singur buton. Spuneți ce vă trebuie, așa cum i-ați spune unui om."
+  ]
+ ],
+ "faq": "Întrebări",
+ "faqItems": [
+  [
+   "Prin ce diferă Viavo de ChatGPT sau Gemini în CarPlay?",
+   "ChatGPT și Gemini în CarPlay sunt gândite pentru conversație. Viavo și face ce îi spuneți: sună un contact, pregătește un mesaj pe WhatsApp sau SMS, pune muzică sau un post de radio și, dintr-o singură frază, deschide în aplicația dvs. de navigație un traseu cu o oprire sau un loc de pe drum."
+  ],
+  [
+   "Ce limbi vorbește Viavo?",
+   "28: arabă, cehă, chineză (simplificată și tradițională), coreeană, croată, ebraică, engleză, franceză, germană, greacă, hindi, indoneziană, italiană, japoneză, maghiară, neerlandeză, poloneză, portugheză, română, rusă, sârbă, spaniolă, suedeză, thailandeză, turcă, ucraineană și vietnameză. Pentru fiecare limbă, ecranele aplicației și o voce de vorbitor nativ, feminină sau masculină."
+  ],
+  [
+   "Viavo înlocuiește Siri?",
+   "Nu. Viavo este o aplicație separată pe ecranul CarPlay: deschideți-o și apăsați un singur buton."
+  ],
+  [
+   "Se poate folosi în siguranță la volan?",
+   "Viavo e gândit ca să nu luați ochii de pe drum: un buton mare, răspunsuri cu voce tare, iar pe ecranul mașinii nimic nu vă cere să vă uitați în telefon."
+  ],
+  [
+   "Trebuie să învăț comenzi?",
+   "Nu. Apăsați un singur buton și spuneți ce vă trebuie, așa cum i-ați spune unui om."
+  ],
+  [
+   "Funcționează și fără CarPlay?",
+   "Da, pe iPhone: același buton, iar dacă preferați, puteți și să scrieți."
+  ],
+  [
+   "Cu ce aplicații funcționează?",
+   "Apple Maps, Google Maps și Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer și Apple Podcasts; Simple Radio, TuneIn și iHeartRadio; WhatsApp, SMS, Telegram și Slack; HomeKit, Calendar și Mementouri. Deschide și alte aplicații după nume."
+  ],
+  [
+   "Cât costă?",
+   "Un cont nou primește 10 credite gratuite. Viavo Plus, cu plată lunară sau anuală, începe cu o săptămână gratuită. Prețurile le găsiți în App Store, în moneda dvs."
+  ],
+  [
+   "Ce se întâmplă cu datele mele?",
+   "Totul este explicat în două documente."
+  ]
+ ],
+ "lPrivacy": "Politica de confidențialitate",
+ "lMessages": "Cum gestionează Viavo mesajele dvs.",
+ "cta": "Un buton. Limba dvs. Gata.",
+ "ctaSub": "Un cont nou primește 10 credite gratuite.",
+ "fPrivacy": "Confidențialitate",
+ "fTerms": "Termeni",
+ "fMessengers": "Mesagerie",
+ "fSupport": "Asistență",
+ "fPress": "Presă",
+ "tm": "Apple, sigla Apple, CarPlay, iPhone și Siri sunt mărci comerciale ale Apple Inc. App Store este o marcă de servicii a Apple Inc.",
+ "badgeAlt": "Descarcă din App Store",
+ "scan": "Scanați cu iPhone-ul",
+ "getApp": "Descărcați aplicația",
+ "skip": "Salt la conținut",
+ "close": "Închideți"
+}

@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: asystent głosowy AI do CarPlay, w 28 językach",
+  "description": "Naciśnij i mów po swojemu. Viavo otwiera trasy z przystankiem, dzwoni, pisze wiadomości, włącza muzykę i radio, odpowiada na głos. 28 języków z rodzimą wymową.",
+  "ogTitle": "Powiedz to w swoim języku. Viavo to zrobi."
+ },
+ "qo": "„",
+ "qc": "”",
+ "nFeatures": "Funkcje",
+ "nLanguages": "Języki",
+ "nPress": "Dla mediów",
+ "nLangMenu": "Język",
+ "eyebrow": "Asystent AI do CarPlay",
+ "h1a": "Powiedz to w swoim języku.",
+ "h1b": "Viavo to zrobi.",
+ "sub": "Trasy z przystankiem po drodze, połączenia, wiadomości, muzyka i radio. Naciśnij jeden przycisk i mów jak do człowieka, w dowolnym z 28 języków.",
+ "heroAlt": "Viavo na ekranie CarPlay",
+ "bandPre": "Siri nie mówi ",
+ "bandPost": ".",
+ "bandTail": "Viavo – tak.",
+ "bandWords": {
+  "pl": "po polsku",
+  "cs": "po czesku",
+  "ro": "po rumuńsku",
+  "el": "po grecku",
+  "hu": "po węgiersku",
+  "hr": "po chorwacku",
+  "sr": "po serbsku",
+  "uk": "po ukraińsku"
+ },
+ "bandSub": "Siri nie mówi w żadnym z tych ośmiu języków. Viavo mówi we wszystkich.",
+ "say": "Nie tylko odpowiada. Robi to, o co prosisz.",
+ "sayLead": "Jeden przycisk i Viavo zajmie się trasą, miejscami po drodze, muzyką, połączeniami i wiadomościami, a na pytania odpowie na głos. Ty patrzysz tylko na drogę.",
+ "examples": [
+  "Do domu, z postojem na stacji",
+  "Dobra restauracja po drodze",
+  "Puść coś na drogę",
+  "Co nowego na czatach?"
+ ],
+ "replies": [
+  "Otwieram trasę do domu z postojem na stacji przy obwodnicy. Jazda zajmie teraz około 25 minut, w domu będziesz o 19:40.",
+  "Po drodze, za godzinę jazdy: Karczma Pod Młynem w Myślenicach, ocena 4,7 na podstawie 1200 opinii, otwarte do 23:00. Goście chwalą pierogi i żurek. Dodać ją jako przystanek?",
+  "Puszczam energiczny miks do jazdy, 40 utworów. Szerokiej drogi!",
+  "Nowe wiadomości w trzech czatach. Kasia pyta, czy będziesz w domu o ósmej. Zespół przełożył jutrzejsze spotkanie na dziesiątą. Brat przysłał zdjęcia z Mazur. Odpowiesz Kasi?"
+ ],
+ "done": [
+  "Trasa otwiera się w Twojej nawigacji",
+  "Oceny, godziny otwarcia i opinie na głos",
+  "Muzyka gra w Spotify lub Apple Music",
+  "Streszcza na głos, Ty dyktujesz odpowiedź"
+ ],
+ "can": "Co potrafi Viavo",
+ "groups": [
+  [
+   "W drodze",
+   [
+    "Trasy w Twojej nawigacji, także z przystankiem po drodze",
+    "Czas dojazdu przy obecnym ruchu",
+    "Miejsca z ocenami, godzinami otwarcia i opiniami",
+    "Pogoda teraz, na cały tydzień i w miejscu docelowym"
+   ],
+   "Zdążę do pracy na dziewiątą?"
+  ],
+  [
+   "Muzyka i dźwięk",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Radio na żywo po nazwie stacji lub częstotliwości",
+    "Tytuł utworu, który leci w radiu",
+    "Podcasty w Apple Podcasts"
+   ],
+   "Puść coś na drogę"
+  ],
+  [
+   "Ludzie i wiadomości",
+   [
+    "Dzwonienie do kontaktów po imieniu",
+    "WhatsApp i SMS: wiadomość gotowa na telefonie, wystarczy stuknąć Wyślij",
+    "Telegram i Slack: co nowego, streszczenie czatu, dyktowanie odpowiedzi"
+   ],
+   "Napisz Piotrkowi, że spóźnię się dziesięć minut"
+  ],
+  [
+   "Plany",
+   [
+    "Przypomnienia o wybranej porze albo po dotarciu na miejsce",
+    "Twoja lista zadań",
+    "Kalendarz: plan dnia na głos, dodawanie, przenoszenie i odwoływanie wydarzeń",
+    "Budziki, minutniki i szybkie notatki"
+   ],
+   "Prowadź na następne spotkanie"
+  ],
+  [
+   "I więcej",
+   [
+    "Odpowiedzi z wyszukiwaniem w internecie, gdy potrzebne są świeże informacje",
+    "Pamięć: zapamiętuje, a na Twoją prośbę zapomina",
+    "Akcesoria i sceny HomeKit",
+    "Powiedz nazwę aplikacji, a Viavo ją otworzy"
+   ],
+   "Otwórz Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Jeden duży przycisk na ekranie samochodu",
+    "Odpowiada na głos",
+    "Nic na ekranie samochodu nie każe Ci patrzeć w telefon"
+   ],
+   "Do sześciu własnych szybkich poleceń"
+  ]
+ ],
+ "works": "Działa z Twoimi aplikacjami",
+ "worksSub": "A inne aplikacje otwiera po nazwie.",
+ "cats": {
+  "all": "Wszystkie",
+  "nav": "Nawigacja",
+  "music": "Muzyka",
+  "radio": "Radio",
+  "msg": "Wiadomości",
+  "home": "Dom i plany"
+ },
+ "appNames": {
+  "Calendar": "Kalendarz",
+  "Reminders": "Przypomnienia"
+ },
+ "langsTitle": "28 języków, każdy z rodzimą wymową",
+ "legend": "Siri nie mówi w tym języku",
+ "langNames": {
+  "ar": "Arabski",
+  "zh-hans": "Chiński (uproszczony)",
+  "zh-hant": "Chiński (tradycyjny)",
+  "hr": "Chorwacki",
+  "cs": "Czeski",
+  "nl": "Niderlandzki",
+  "en": "Angielski",
+  "fr": "Francuski",
+  "de": "Niemiecki",
+  "el": "Grecki",
+  "he": "Hebrajski",
+  "hi": "Hindi",
+  "hu": "Węgierski",
+  "id": "Indonezyjski",
+  "it": "Włoski",
+  "ja": "Japoński",
+  "ko": "Koreański",
+  "pl": "Polski",
+  "pt": "Portugalski",
+  "ro": "Rumuński",
+  "ru": "Rosyjski",
+  "sr": "Serbski",
+  "es": "Hiszpański",
+  "sv": "Szwedzki",
+  "th": "Tajski",
+  "tr": "Turecki",
+  "uk": "Ukraiński",
+  "vi": "Wietnamski"
+ },
+ "steps": "Trzy kroki i w drogę",
+ "stepItems": [
+  [
+   "Pobierz Viavo",
+   "Zainstaluj aplikację z App Store na iPhonie."
+  ],
+  [
+   "Połącz z CarPlay",
+   "Viavo pojawi się na ekranie samochodu."
+  ],
+  [
+   "Naciśnij i mów",
+   "Jeden przycisk. Mów jak do człowieka."
+  ]
+ ],
+ "faq": "Pytania",
+ "faqItems": [
+  [
+   "Czym Viavo różni się od ChatGPT czy Gemini w CarPlay?",
+   "ChatGPT i Gemini w CarPlay są stworzone do rozmowy. Viavo także robi to, o co prosisz: dzwoni do kontaktu, przygotowuje wiadomość WhatsApp lub SMS, włącza muzykę albo stację radiową, a jedno zdanie wystarczy, by otworzył w Twojej nawigacji trasę z przystankiem lub miejsce po drodze."
+  ],
+  [
+   "W jakich językach mówi Viavo?",
+   "28: angielski, arabski, chiński (uproszczony i tradycyjny), chorwacki, czeski, francuski, grecki, hebrajski, hindi, hiszpański, indonezyjski, japoński, koreański, niderlandzki, niemiecki, polski, portugalski, rosyjski, rumuński, serbski, szwedzki, tajski, turecki, ukraiński, węgierski, wietnamski i włoski. W każdym są ekrany aplikacji i głos z rodzimą wymową, kobiecy lub męski."
+  ],
+  [
+   "Czy Viavo zastępuje Siri?",
+   "Nie. Viavo to osobna aplikacja na ekranie CarPlay: otwórz ją i naciśnij jeden przycisk."
+  ],
+  [
+   "Czy korzystanie z Viavo w czasie jazdy jest bezpieczne?",
+   "Viavo powstał z myślą o jeździe bez odrywania wzroku od drogi: jeden duży przycisk, odpowiedzi na głos, a nic na ekranie samochodu nie każe Ci patrzeć w telefon."
+  ],
+  [
+   "Czy muszę uczyć się komend?",
+   "Nie. Naciśnij jeden przycisk i mów jak do człowieka."
+  ],
+  [
+   "Czy Viavo działa bez CarPlay?",
+   "Tak, na iPhonie: ten sam jeden przycisk, a prośbę możesz też wpisać."
+  ],
+  [
+   "Z jakimi aplikacjami współpracuje Viavo?",
+   "Apple Maps, Google Maps i Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer i Apple Podcasts; Simple Radio, TuneIn i iHeartRadio; WhatsApp, SMS, Telegram i Slack; HomeKit, Kalendarz i Przypomnienia. Otwiera też inne aplikacje po nazwie."
+  ],
+  [
+   "Ile kosztuje Viavo?",
+   "Nowe konto otrzymuje 10 darmowych kredytów. Subskrypcja Viavo Plus, miesięczna lub roczna, zaczyna się od darmowego tygodnia. Ceny znajdziesz w App Store, w swojej walucie."
+  ],
+  [
+   "Co dzieje się z moimi danymi?",
+   "Wszystko opisaliśmy w dwóch dokumentach."
+  ]
+ ],
+ "lPrivacy": "Polityka prywatności",
+ "lMessages": "Jak Viavo obchodzi się z Twoimi wiadomościami",
+ "cta": "Jeden przycisk. Twój język. Gotowe.",
+ "ctaSub": "Nowe konto otrzymuje 10 darmowych kredytów.",
+ "fPrivacy": "Prywatność",
+ "fTerms": "Warunki",
+ "fMessengers": "Komunikatory",
+ "fSupport": "Pomoc",
+ "fPress": "Dla mediów",
+ "tm": "Apple, logo Apple, CarPlay, iPhone i Siri są znakami towarowymi firmy Apple Inc. App Store jest znakiem usługowym firmy Apple Inc.",
+ "badgeAlt": "Pobierz z App Store",
+ "scan": "Zeskanuj iPhone’em",
+ "getApp": "Pobierz aplikację",
+ "skip": "Przejdź do treści",
+ "close": "Zamknij"
+}

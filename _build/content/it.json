@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Viavo: assistente vocale IA per CarPlay, in 28 lingue",
-  "description": "Premi un pulsante e dillo a modo tuo. Viavo apre percorsi con una tappa, chiama, scrive messaggi, mette musica e radio e risponde a voce. 28 lingue, ognuna con voce madrelingua.",
+  "description": "Premi un tasto e dillo a modo tuo. Viavo apre percorsi con tappa, chiama, scrive messaggi, mette musica e radio e risponde a voce. 28 lingue, voci madrelingua.",
   "ogTitle": "Dillo a modo tuo. Viavo lo fa."
  },
  "qo": "«",
@@ -29,7 +29,7 @@
   "uk": "ucraino"
  },
  "bandSub": "Siri non parla nessuna di queste otto lingue. Viavo le parla tutte.",
- "say": "Non si limita a rispondere. Lo fa.",
+ "say": "Non si limita a rispondere. Passa ai fatti.",
  "sayLead": "Un pulsante e Viavo, a voce, si occupa di percorso, tappe lungo il tragitto, musica, chiamate e messaggi, e risponde alle tue domande. Tu tieni gli occhi sulla strada.",
  "examples": [
   "A casa, passando dal benzinaio",
@@ -75,7 +75,7 @@
    "Persone e messaggi",
    [
     "Chiamare un contatto per nome",
-    "WhatsApp e SMS: pronti sul telefono, basta toccare Invia",
+    "WhatsApp e SMS: il messaggio è pronto sul telefono, basta toccare Invia",
     "Telegram e Slack: le novità, il riassunto, una risposta dettata"
    ],
    "Di’ a Marco che tardo dieci minuti"
@@ -85,7 +85,7 @@
    [
     "Promemoria a un’ora precisa o quando arrivi",
     "La tua lista di cose da fare",
-    "Calendario: ascolta la tua giornata, aggiungi, sposta o annulla",
+    "Calendario: ascolta gli impegni del giorno, aggiungi, sposta o annulla",
     "Sveglie, timer e note veloci"
    ],
    "Portami al prossimo appuntamento"
@@ -203,7 +203,7 @@
   ],
   [
    "Quanto costa?",
-   "Ogni nuovo account riceve 10 crediti gratuiti. Viavo Plus, mensile o annuale, inizia con una settimana di prova gratuita. I prezzi sono su App Store, nella tua valuta."
+   "Ogni nuovo account riceve 10 crediti gratuiti. Viavo Plus, mensile o annuale, inizia con una settimana di prova gratuita. Trovi i prezzi su App Store, nella tua valuta."
   ],
   [
    "Che fine fanno i miei dati?",

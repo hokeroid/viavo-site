@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: KI-Sprachassistent für CarPlay, in 28 Sprachen",
+  "description": "Drück die Taste und sag es mit deinen Worten. Viavo öffnet Routen mit Zwischenstopp, ruft an, schreibt, spielt Musik und Radio und antwortet laut. 28 Sprachen.",
+  "ogTitle": "Sag’s mit deinen Worten. Viavo erledigt’s."
+ },
+ "qo": "„",
+ "qc": "“",
+ "nFeatures": "Funktionen",
+ "nLanguages": "Sprachen",
+ "nPress": "Presse",
+ "nLangMenu": "Sprache",
+ "eyebrow": "KI-Assistent für CarPlay",
+ "h1a": "Sag’s mit deinen Worten.",
+ "h1b": "Viavo erledigt’s.",
+ "sub": "Routen mit Zwischenstopp, Anrufe, Nachrichten, Musik und Radio. Drück die Taste und sprich wie mit einem Menschen, in einer von 28 Sprachen.",
+ "heroAlt": "Viavo auf einem CarPlay-Display",
+ "bandPre": "Siri spricht kein ",
+ "bandPost": ".",
+ "bandTail": "Viavo schon.",
+ "bandWords": {
+  "pl": "Polnisch",
+  "cs": "Tschechisch",
+  "ro": "Rumänisch",
+  "el": "Griechisch",
+  "hu": "Ungarisch",
+  "hr": "Kroatisch",
+  "sr": "Serbisch",
+  "uk": "Ukrainisch"
+ },
+ "bandSub": "Siri spricht keine dieser acht Sprachen. Viavo spricht sie alle.",
+ "say": "Nicht nur Antworten, sondern Taten.",
+ "sayLead": "Eine Taste, und Viavo kümmert sich um Route, Orte unterwegs, Musik, Anrufe, Nachrichten und deine Fragen, ganz per Sprache. Dein Blick bleibt auf der Straße.",
+ "examples": [
+  "Fahr nach Hause mit Tankstopp",
+  "Ein gutes Restaurant unterwegs",
+  "Spiel was für die Fahrt",
+  "Was gibt’s Neues in den Chats?"
+ ],
+ "replies": [
+  "Route nach Hause mit Tankstopp an der Ringstraße. Mit Verkehr etwa 25 Minuten, Sie sind also um 19:40 Uhr zu Hause.",
+  "Unterwegs, in etwa einer Stunde: Gasthaus Zur Alten Mühle, 4,7 Sterne bei 1.200 Bewertungen, geöffnet bis 23 Uhr. Gelobt wird die Forelle vom Grill. Als Zwischenstopp hinzufügen?",
+  "Hier etwas für unterwegs: ein schwungvoller Fahrmix mit 40 Songs. Gute Fahrt!",
+  "Drei neue Chats. Lena fragt, ob Sie bis acht zu Hause sind. Das Team hat das Meeting morgen auf zehn verlegt. Ihr Bruder hat Fotos vom Meer geschickt. Möchten Sie Lena antworten?"
+ ],
+ "done": [
+  "Die Route öffnet sich in deinem Navi",
+  "Bewertungen, Öffnungszeiten und Rezensionen, vorgelesen",
+  "Läuft in Spotify oder Apple Music",
+  "Liest das Wichtigste vor, du diktierst die Antwort"
+ ],
+ "can": "Was Viavo kann",
+ "groups": [
+  [
+   "Unterwegs",
+   [
+    "Routen in deinem Navi, auch mit Zwischenstopp",
+    "Fahrzeit bei aktueller Verkehrslage",
+    "Orte mit Bewertungen, Öffnungszeiten und Rezensionen",
+    "Das Wetter jetzt, für die Woche und an deinem Ziel"
+   ],
+   "Schaffe ich es bis neun zur Arbeit?"
+  ],
+  [
+   "Musik und Audio",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Live-Radio nach Sendername oder Frequenz",
+    "Welcher Song gerade im Radio läuft",
+    "Podcasts in Apple Podcasts"
+   ],
+   "Spiel was für die Fahrt"
+  ],
+  [
+   "Menschen und Nachrichten",
+   [
+    "Kontakte per Namen anrufen",
+    "WhatsApp und SMS: startklar auf dem iPhone, du tippst nur noch auf Senden",
+    "Telegram und Slack: Neuigkeiten, das Wichtigste, Antworten diktieren"
+   ],
+   "Sag Peter, ich komme zehn Minuten später"
+  ],
+  [
+   "Planung",
+   [
+    "Erinnerungen zu einer Uhrzeit oder wenn du ankommst",
+    "Deine To-do-Liste",
+    "Kalender: deinen Tag vorlesen lassen, Termine eintragen, verschieben oder absagen",
+    "Wecker, Timer und schnelle Notizen"
+   ],
+   "Bring mich zu meinem nächsten Termin"
+  ],
+  [
+   "Und mehr",
+   [
+    "Antworten mit Websuche, wenn aktuelle Fakten gefragt sind",
+    "Gedächtnis: merkt sich Dinge und vergisst sie auf Wunsch",
+    "HomeKit-Geräte und -Szenen",
+    "Sag den Namen einer App und sie öffnet sich"
+   ],
+   "Öffne Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Eine große Taste auf dem Autodisplay",
+    "Antwortet laut",
+    "Nichts auf dem Autodisplay verlangt, dass du aufs iPhone schaust"
+   ],
+   "Bis zu sechs eigene Schnellbefehle"
+  ]
+ ],
+ "works": "Funktioniert mit deinen Apps",
+ "worksSub": "Und andere Apps öffnet Viavo, wenn du ihren Namen sagst.",
+ "cats": {
+  "all": "Alle",
+  "nav": "Navigation",
+  "music": "Musik",
+  "radio": "Radio",
+  "msg": "Nachrichten",
+  "home": "Zuhause und Planung"
+ },
+ "appNames": {
+  "Calendar": "Kalender",
+  "Reminders": "Erinnerungen"
+ },
+ "langsTitle": "28 Sprachen, jede mit muttersprachlicher Stimme",
+ "legend": "Siri spricht sie nicht",
+ "langNames": {
+  "ar": "Arabisch",
+  "zh-hans": "Chinesisch (vereinfacht)",
+  "zh-hant": "Chinesisch (traditionell)",
+  "hr": "Kroatisch",
+  "cs": "Tschechisch",
+  "nl": "Niederländisch",
+  "en": "Englisch",
+  "fr": "Französisch",
+  "de": "Deutsch",
+  "el": "Griechisch",
+  "he": "Hebräisch",
+  "hi": "Hindi",
+  "hu": "Ungarisch",
+  "id": "Indonesisch",
+  "it": "Italienisch",
+  "ja": "Japanisch",
+  "ko": "Koreanisch",
+  "pl": "Polnisch",
+  "pt": "Portugiesisch",
+  "ro": "Rumänisch",
+  "ru": "Russisch",
+  "sr": "Serbisch",
+  "es": "Spanisch",
+  "sv": "Schwedisch",
+  "th": "Thailändisch",
+  "tr": "Türkisch",
+  "uk": "Ukrainisch",
+  "vi": "Vietnamesisch"
+ },
+ "steps": "In drei Schritten startklar",
+ "stepItems": [
+  [
+   "Viavo holen",
+   "Lade die App aus dem App Store auf dein iPhone."
+  ],
+  [
+   "CarPlay verbinden",
+   "Viavo erscheint auf dem Display deines Autos."
+  ],
+  [
+   "Drücken und sprechen",
+   "Eine Taste. Sag es so, wie du es einem Menschen sagen würdest."
+  ]
+ ],
+ "faq": "Häufige Fragen",
+ "faqItems": [
+  [
+   "Was unterscheidet Viavo von ChatGPT oder Gemini in CarPlay?",
+   "ChatGPT und Gemini sind in CarPlay fürs Gespräch gemacht. Viavo setzt auch um, was du sagst: Es ruft einen Kontakt an, bereitet eine WhatsApp-Nachricht oder SMS vor, spielt Musik oder einen Radiosender und öffnet mit einem einzigen Satz eine Route mit Zwischenstopp oder einen Ort unterwegs in deinem Navi."
+  ],
+  [
+   "Welche Sprachen spricht Viavo?",
+   "28: Arabisch, Chinesisch (vereinfacht und traditionell), Deutsch, Englisch, Französisch, Griechisch, Hebräisch, Hindi, Indonesisch, Italienisch, Japanisch, Koreanisch, Kroatisch, Niederländisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Schwedisch, Serbisch, Spanisch, Thailändisch, Tschechisch, Türkisch, Ukrainisch, Ungarisch und Vietnamesisch. In jeder Sprache gibt es die App-Oberfläche und eine muttersprachliche Stimme, weiblich oder männlich."
+  ],
+  [
+   "Ersetzt Viavo Siri?",
+   "Nein. Viavo ist eine eigene App auf deinem CarPlay-Display: Öffne sie und drück die Taste."
+  ],
+  [
+   "Kann ich Viavo während der Fahrt sicher nutzen?",
+   "Viavo ist dafür gemacht, dass dein Blick auf der Straße bleibt: eine große Taste, laut gesprochene Antworten und nichts auf dem Autodisplay, wofür du aufs iPhone schauen musst."
+  ],
+  [
+   "Muss ich Befehle lernen?",
+   "Nein. Drück die Taste und sag es so, wie du es einem Menschen sagen würdest."
+  ],
+  [
+   "Funktioniert Viavo auch ohne CarPlay?",
+   "Ja, auf dem iPhone: dieselbe Taste, und Anfragen kannst du auch eintippen."
+  ],
+  [
+   "Mit welchen Apps funktioniert Viavo?",
+   "Apple Maps, Google Maps und Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer und Apple Podcasts; Simple Radio, TuneIn und iHeartRadio; WhatsApp, SMS, Telegram und Slack; HomeKit, Kalender und Erinnerungen. Andere Apps öffnet Viavo, wenn du ihren Namen sagst."
+  ],
+  [
+   "Was kostet Viavo?",
+   "Jeder neue Account startet mit 10 Gratis-Credits. Viavo Plus, monatlich oder jährlich, beginnt mit einer kostenlosen Testwoche. Die Preise findest du im App Store, in deiner Währung."
+  ],
+  [
+   "Was passiert mit meinen Daten?",
+   "Das steht alles in zwei Dokumenten."
+  ]
+ ],
+ "lPrivacy": "Datenschutzerklärung",
+ "lMessages": "Wie Viavo mit deinen Nachrichten umgeht",
+ "cta": "Eine Taste. Deine Worte. Erledigt.",
+ "ctaSub": "Jeder neue Account startet mit 10 Gratis-Credits.",
+ "fPrivacy": "Datenschutz",
+ "fTerms": "Nutzungsbedingungen",
+ "fMessengers": "Messenger",
+ "fSupport": "Support",
+ "fPress": "Presse",
+ "tm": "Apple, das Apple Logo, CarPlay, iPhone und Siri sind Marken der Apple Inc. App Store ist eine Dienstleistungsmarke der Apple Inc.",
+ "badgeAlt": "Laden im App Store",
+ "scan": "Mit dem iPhone scannen",
+ "getApp": "App laden",
+ "skip": "Zum Inhalt springen",
+ "close": "Schließen"
+}

@@ -1,0 +1,228 @@
+{
+ "meta": {
+  "title": "Viavo: AI-spraakassistent voor CarPlay, in 28 talen",
+  "description": "Druk op één knop en zeg het op jouw manier. Viavo opent routes met een tussenstop, belt, stuurt berichten, zet muziek en radio op en antwoordt hardop. 28 talen.",
+  "ogTitle": "Zeg het op jouw manier. Viavo doet het."
+ },
+ "qo": "„",
+ "qc": "”",
+ "nFeatures": "Functies",
+ "nLanguages": "Talen",
+ "nPress": "Pers",
+ "nLangMenu": "Taal",
+ "eyebrow": "AI-assistent voor CarPlay",
+ "h1a": "Zeg het op jouw manier.",
+ "h1b": "Viavo doet het.",
+ "sub": "Routes met een tussenstop, bellen, berichten, muziek en radio. Druk op één knop en zeg het zoals je het tegen iemand zou zeggen, in een van de 28 talen.",
+ "heroAlt": "Viavo op een CarPlay-scherm",
+ "bandPre": "Siri spreekt geen ",
+ "bandPost": ".",
+ "bandTail": "Viavo wel.",
+ "bandWords": {
+  "pl": "Pools",
+  "cs": "Tsjechisch",
+  "ro": "Roemeens",
+  "el": "Grieks",
+  "hu": "Hongaars",
+  "hr": "Kroatisch",
+  "sr": "Servisch",
+  "uk": "Oekraïens"
+ },
+ "bandSub": "Siri spreekt geen van deze acht talen. Viavo spreekt ze allemaal.",
+ "say": "Viavo antwoordt niet alleen, maar regelt het ook.",
+ "sayLead": "Eén druk op de knop en Viavo regelt je route, plekken onderweg, muziek, gesprekken en berichten, en beantwoordt je vragen hardop. Zo houd je je ogen op de weg.",
+ "examples": [
+  "Naar huis, met een tankstop",
+  "Een goed restaurant onderweg",
+  "Zet iets op voor de rit",
+  "Wat is er nieuw in mijn chats?"
+ ],
+ "replies": [
+  "Route naar huis, met een stop bij het tankstation aan de ring. Met het verkeer ongeveer 25 minuten, dus je bent om 19.40 uur thuis.",
+  "Onderweg, over ongeveer een uur: Herberg De Oude Molen, 4,7 sterren op basis van 1.200 reviews, open tot 23.00 uur. Gasten zijn lovend over de gegrilde forel. Zal ik die als tussenstop toevoegen?",
+  "Iets voor onderweg: een vrolijke mix voor in de auto, 40 nummers. Fijne rit!",
+  "Drie nieuwe chats. Anna vraagt of je om acht uur thuis bent. Het team heeft de call van morgen naar tien uur verzet. Je broer heeft foto’s van de kust gestuurd. Wil je Anna antwoorden?"
+ ],
+ "done": [
+  "De route opent in je navigatie-app",
+  "Sterren, openingstijden en reviews, hardop",
+  "Speelt af in Spotify of Apple Music",
+  "Hoor de kern, dicteer een antwoord"
+ ],
+ "can": "Wat Viavo kan",
+ "groups": [
+  [
+   "Onderweg",
+   [
+    "Routes in je navigatie-app, ook met een tussenstop",
+    "Reistijd met het actuele verkeer",
+    "Plekken met beoordelingen, openingstijden en reviews",
+    "Het weer nu, voor de week en op je bestemming"
+   ],
+   "Ben ik om negen uur op mijn werk?"
+  ],
+  [
+   "Muziek en geluid",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Liveradio op zendernaam of frequentie",
+    "Welk nummer er op de radio speelt",
+    "Podcasts in Apple Podcasts"
+   ],
+   "Zet iets op voor de rit"
+  ],
+  [
+   "Mensen en berichten",
+   [
+    "Een contact op naam bellen",
+    "WhatsApp en sms: kant-en-klaar op je telefoon, je tikt alleen nog op Stuur",
+    "Telegram en Slack: wat er nieuw is, de kern, een gedicteerd antwoord"
+   ],
+   "Zeg tegen Piet dat ik tien minuten te laat ben"
+  ],
+  [
+   "Planning",
+   [
+    "Herinneringen op een tijdstip of als je ergens aankomt",
+    "Je takenlijst",
+    "Agenda: hoor wat je vandaag hebt staan, voeg afspraken toe, verzet of annuleer ze",
+    "Wekkers, timers en snelle notities"
+   ],
+   "Breng me naar mijn volgende afspraak"
+  ],
+  [
+   "En meer",
+   [
+    "Antwoorden met een webzoekopdracht voor actuele informatie",
+    "Geheugen: Viavo onthoudt dingen en vergeet ze als je daarom vraagt",
+    "HomeKit-accessoires en -scènes",
+    "Zeg de naam van een app en die opent"
+   ],
+   "Open Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Eén grote knop op het autoscherm",
+    "Antwoordt hardop",
+    "Niets op het autoscherm vraagt je om naar je telefoon te kijken"
+   ],
+   "Tot zes eigen snelle opdrachten"
+  ]
+ ],
+ "works": "Werkt met je apps",
+ "worksSub": "En andere apps opent Viavo gewoon op naam.",
+ "cats": {
+  "all": "Alle",
+  "nav": "Navigatie",
+  "music": "Muziek",
+  "radio": "Radio",
+  "msg": "Berichten",
+  "home": "Thuis en planning"
+ },
+ "appNames": {
+  "Calendar": "Agenda",
+  "Reminders": "Herinneringen"
+ },
+ "langsTitle": "28 talen, elk met een moedertaalstem",
+ "legend": "Siri spreekt deze taal niet",
+ "langNames": {
+  "ar": "Arabisch",
+  "zh-hans": "Chinees (vereenvoudigd)",
+  "zh-hant": "Chinees (traditioneel)",
+  "hr": "Kroatisch",
+  "cs": "Tsjechisch",
+  "nl": "Nederlands",
+  "en": "Engels",
+  "fr": "Frans",
+  "de": "Duits",
+  "el": "Grieks",
+  "he": "Hebreeuws",
+  "hi": "Hindi",
+  "hu": "Hongaars",
+  "id": "Indonesisch",
+  "it": "Italiaans",
+  "ja": "Japans",
+  "ko": "Koreaans",
+  "pl": "Pools",
+  "pt": "Portugees",
+  "ro": "Roemeens",
+  "ru": "Russisch",
+  "sr": "Servisch",
+  "es": "Spaans",
+  "sv": "Zweeds",
+  "th": "Thai",
+  "tr": "Turks",
+  "uk": "Oekraïens",
+  "vi": "Vietnamees"
+ },
+ "steps": "In drie stappen op weg",
+ "stepItems": [
+  [
+   "Installeer Viavo",
+   "Download de app uit de App Store op je iPhone."
+  ],
+  [
+   "Verbind met CarPlay",
+   "Viavo verschijnt op het scherm van je auto."
+  ],
+  [
+   "Druk en praat",
+   "Eén knop. Zeg het zoals je het tegen iemand zou zeggen."
+  ]
+ ],
+ "faq": "Vragen",
+ "faqItems": [
+  [
+   "Wat is het verschil tussen Viavo en ChatGPT of Gemini in CarPlay?",
+   "ChatGPT en Gemini in CarPlay zijn gemaakt om mee te praten. Viavo doet ook echt wat je zegt: het belt een contact, zet een WhatsApp- of sms-bericht klaar, speelt muziek of een radiozender af en opent met één zin een route met een tussenstop, of een plek onderweg, in je navigatie-app."
+  ],
+  [
+   "Welke talen spreekt Viavo?",
+   "28: Arabisch, Chinees (vereenvoudigd en traditioneel), Duits, Engels, Frans, Grieks, Hebreeuws, Hindi, Hongaars, Indonesisch, Italiaans, Japans, Koreaans, Kroatisch, Nederlands, Oekraïens, Pools, Portugees, Roemeens, Russisch, Servisch, Spaans, Thai, Tsjechisch, Turks, Vietnamees en Zweeds. In elke taal: de schermen van de app en een moedertaalstem, een vrouwen- of mannenstem."
+  ],
+  [
+   "Vervangt Viavo Siri?",
+   "Nee. Viavo is een aparte app op je CarPlay-scherm: open de app en druk op één knop."
+  ],
+  [
+   "Is het veilig tijdens het rijden?",
+   "Viavo is gemaakt om je ogen op de weg te houden: één grote knop, gesproken antwoorden en niets op het autoscherm dat je vraagt om naar je telefoon te kijken."
+  ],
+  [
+   "Moet ik opdrachten leren?",
+   "Nee. Druk op één knop en zeg het zoals je het tegen iemand zou zeggen."
+  ],
+  [
+   "Werkt het zonder CarPlay?",
+   "Ja, op de iPhone: met dezelfde knop, en je kunt ook typen."
+  ],
+  [
+   "Met welke apps werkt Viavo?",
+   "Apple Maps, Google Maps en Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer en Apple Podcasts; Simple Radio, TuneIn en iHeartRadio; WhatsApp, sms, Telegram en Slack; HomeKit, Agenda en Herinneringen. Andere apps opent Viavo op naam."
+  ],
+  [
+   "Wat kost het?",
+   "Elk nieuw account krijgt 10 gratis credits. Viavo Plus, per maand of per jaar, begint met een gratis proefweek. De prijzen staan in de App Store, in je eigen valuta."
+  ],
+  [
+   "Wat gebeurt er met mijn gegevens?",
+   "Dat staat allemaal in twee documenten."
+  ]
+ ],
+ "lPrivacy": "Privacybeleid",
+ "lMessages": "Hoe Viavo met je berichten omgaat",
+ "cta": "Eén knop. Jouw woorden. Geregeld.",
+ "ctaSub": "Elk nieuw account krijgt 10 gratis credits.",
+ "fPrivacy": "Privacy",
+ "fTerms": "Voorwaarden",
+ "fMessengers": "Berichtenapps",
+ "fSupport": "Ondersteuning",
+ "fPress": "Pers",
+ "tm": "Apple, het Apple-logo, CarPlay, iPhone en Siri zijn handelsmerken van Apple Inc. App Store is een dienstmerk van Apple Inc.",
+ "badgeAlt": "Download in de App Store",
+ "scan": "Scan met je iPhone",
+ "getApp": "Download de app",
+ "skip": "Ga naar de inhoud",
+ "close": "Sluit"
+}
