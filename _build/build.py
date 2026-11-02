@@ -23,7 +23,7 @@ import qr as qrcode  # noqa: E402  _build/qr.py
 # One place for the address: canonical, hreflang and og:url must be absolute, so a new domain is this one line.
 BASE_URL = os.environ.get('VIAVO_BASE_URL', 'https://hokeroid.github.io/viavo-site').rstrip('/')
 APP_ID = '6761760437'
-PT = ''  # App Store Connect provider token for campaign links (App Analytics → Campaigns); empty until set
+PT = '127870899'  # App Store Connect provider token (providerId) for campaign links, from VIA-474; clicks show in ASC → Analytics → Campaigns
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / '_build'
@@ -198,14 +198,14 @@ def header(T, lang, r, available, here=None, current_path=''):
 <nav class="nav" aria-label="Viavo"><a href="{home}#features">{e(T["nFeatures"])}</a><a href="{home}#languages">{e(T["nLanguages"])}</a><a href="{r}press/"{press_cur}>{e(T["nPress"])}</a></nav>
 <div class="hdr-r">
 <details class="lang"><summary aria-label="{e(T["nLangMenu"])}"><span>{L[lang]["native"]}</span><span class="chev"></span></summary><ul>{"".join(items)}</ul></details>
-<a class="btn-store" href="{store_url(lang)}">App Store</a>
+<a class="btn-store" href="{e(store_url(lang))}">App Store</a>
 </div></div></header>
 '''
 
 
 def badge(lang, r, campaign=None, cls='badge'):
     b = lang if exists(f'assets/badges/{lang}.svg') else 'en'
-    return f'<a class="{cls}" href="{store_url(lang, campaign)}"><img src="{r}assets/badges/{b}.svg" alt="{{alt}}" width="160" height="54"></a>'
+    return f'<a class="{cls}" href="{e(store_url(lang, campaign))}"><img src="{r}assets/badges/{b}.svg" alt="{{alt}}" width="160" height="54"></a>'
 
 
 def qr(lang, T, r):
