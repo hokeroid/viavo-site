@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import qr as qrcode  # noqa: E402  _build/qr.py
 
 # One place for the address: canonical, hreflang and og:url must be absolute, so a new domain is this one line.
-BASE_URL = os.environ.get('VIAVO_BASE_URL', 'https://hokeroid.github.io/viavo-site').rstrip('/')
+BASE_URL = os.environ.get('VIAVO_BASE_URL', 'https://viavo.app').rstrip('/')
 APP_ID = '6761760437'
 PT = '127870899'  # App Store Connect provider token (providerId) for campaign links, from VIA-474; clicks show in ASC → Analytics → Campaigns
 
