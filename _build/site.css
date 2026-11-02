@@ -216,9 +216,20 @@ button{font:inherit;color:inherit}
 
 /* press */
 .press .h1{font-size:88px}
-.press .hero .lead{margin:32px 0 0;max-width:800px;color:var(--text);font-size:24px}
-.facts{margin-top:56px;row-gap:0}
+.press .why .txt{grid-column:1/span 7}
+.press .why .txt .lead+.lead{margin-top:20px}
+.press .why .h2{margin-bottom:24px}
+.vid{grid-column:9/span 4;margin:0;display:flex;flex-direction:column;gap:12px}
+.vid video{width:100%;height:auto;border-radius:28px;background:#000;box-shadow:0 0 0 1px var(--line),var(--shadow)}
+.vid figcaption{font-size:14px;color:var(--cap)}
+.says{margin:40px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}
+.says li{padding:20px 24px;border-radius:20px;background:var(--surface);border:1px solid var(--line-soft);display:flex;flex-direction:column;gap:8px}
+.says q{quotes:var(--q);font-family:var(--fh);font-weight:600;font-size:21px;line-height:1.3;color:var(--amber)}
+.says span{color:var(--sec);font-size:16px}
+.zips{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .facts .h2{grid-column:1/-1;margin-bottom:40px}
+.press .hero .lead{margin:32px 0 0;max-width:800px;color:var(--text);font-size:24px}
+.facts{row-gap:0}
 .fact{grid-column:span 4;padding:20px 0 28px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
 .fact>span{font-size:14px;color:var(--cap)}
 .fact b{font-family:var(--fh);font-weight:600;font-size:22px;line-height:1.3}
@@ -346,6 +357,8 @@ button{font:inherit;color:inherit}
   .mbar .t{flex:1;font-weight:600;font-size:15px;line-height:1.3}
   .mbar .badge img{height:40px}
   .press .h1{font-size:48px}
+  .vid{margin-top:32px;max-width:280px}
+  .says{grid-template-columns:1fr}
   .press .lead{font-size:19px}
   .fact b{font-size:19px}
   .tw a{font-size:14px}

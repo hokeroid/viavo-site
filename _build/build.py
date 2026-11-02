@@ -394,23 +394,32 @@ def press(T, available):
     mark = f'<img src="{r}assets/press/viavo-mark.svg" alt="" width="64" height="64" loading="lazy">'
     wm_d = f'<img src="{r}assets/press/viavo-wordmark-light.png" alt="" width="110" height="59" loading="lazy">'
     wm_l = f'<img src="{r}assets/press/viavo-wordmark-dark.png" alt="" width="110" height="59" loading="lazy">'
-    assets = (f'<div class="asset"><div class="t"><b>App icon</b><span>PNG · 1024 px</span></div><div class="tw">'
-              f'{tile(r + "assets/press/viavo-app-icon-1024.png", icon, "On dark", "dk")}{tile(r + "assets/press/viavo-app-icon-1024.png", icon, "On light", "lt")}</div></div>'
-              f'<div class="asset"><div class="t"><b>Mark</b><span>SVG</span></div><div class="tw">'
-              f'{tile(r + "assets/press/viavo-mark.svg", mark, "On dark", "dk")}{tile(r + "assets/press/viavo-mark.svg", mark, "On light", "lt")}</div></div>'
+    assets = (f'<div class="asset"><div class="t"><b>App icon</b><span>PNG · SVG</span></div><div class="tw">'
+              f'{tile(r + "assets/press/viavo-app-icon-1024.png", icon, "PNG 1024 px", "dk")}{tile(r + "assets/press/viavo-app-icon.svg", icon, "SVG", "lt")}</div></div>'
+              f'<div class="asset"><div class="t"><b>Mark</b><span>SVG · PNG</span></div><div class="tw">'
+              f'{tile(r + "assets/press/viavo-mark.svg", mark, "SVG", "dk")}{tile(r + "assets/press/viavo-mark-1024.png", mark, "PNG 1024 px", "lt")}</div></div>'
               f'<div class="asset"><div class="t"><b>Wordmark</b><span>PNG</span></div><div class="tw">'
               f'{tile(r + "assets/press/viavo-wordmark-light.png", wm_d, "On dark", "dk")}{tile(r + "assets/press/viavo-wordmark-dark.png", wm_l, "On light", "lt")}</div></div>')
     cps = ''.join(f'<div class="shot cp"><a class="im" href="{r}assets/press/{f}.png" download>{picture(f, (1080,), "(max-width:760px) 100vw, 384px", label, r, 1920, 1080)}</a>'
                   f'<div class="row"><span>{e(label)}</span><span>PNG</span></div></div>' for f, label in p['carplay'])
     ips = ''.join(f'<div class="shot ip"><a class="im" href="{r}assets/press/{f}.png" download>{picture(f, (660,), "(max-width:760px) 50vw, 180px", label, r, 1320, 2868)}</a>'
                   f'<div class="row"><span>{e(label)}</span></div></div>' for f, label in p['phone'])
+    says = ''.join(f'<li><q>{e(q_)}</q><span>{brandsafe(res)}</span></li>' for q_, res in p['says'])
+    zips = ''.join(f'<a class="pill" href="{r}assets/press/viavo-screens-{c}.zip" download lang="{L[c]["hreflang"]}">{e(n)} <span style="color:var(--cap)">ZIP</span></a>'
+                   for c, n in p['shotsLangs'])
+    why = ''.join(f'<p class="lead">{brandsafe(x)}</p>' for x in p['why'])
     out.append(f'''<main id="main" class="press">
 <section class="hero" style="text-align:start"><div class="wrap">
-<h1 class="h1">{e(p["title"])}</h1><p class="lead">{brandsafe(p["about"])}</p>
-<div class="grid facts"><h2 class="h2" style="margin-top:96px">{e(p["factsTitle"])}</h2>{facts}</div>
+<h1 class="h1">{e(p["title"])}</h1><p class="lead intro">{brandsafe(p["lead"])}</p>
 </div></section>
+<section class="sec"><div class="wrap grid why"><div class="txt"><h2 class="h2">{e(p["whyTitle"])}</h2>{why}</div>
+<figure class="vid"><video controls preload="none" playsinline poster="{r}assets/press/viavo-preview-en-poster.jpg" width="886" height="1920"><source src="{r}assets/press/viavo-preview-en.mp4" type="video/mp4"></video>
+<figcaption><a class="ul" href="{r}assets/press/viavo-preview-en.mp4" download>{e(p["videoTitle"])}</a> · {e(p["videoCaption"])}</figcaption></figure></div></section>
+<section class="sec"><div class="wrap"><h2 class="h2">{e(p["saysTitle"])}</h2><ul class="says" style="--q:'\u201c' '\u201d'">{says}</ul><p class="lead" style="margin-top:24px">{brandsafe(p["saysNote"])}</p></div></section>
+<section class="sec"><div class="wrap grid facts"><h2 class="h2">{e(p["factsTitle"])}</h2>{facts}</div></section>
 <section class="sec"><div class="wrap grid kit"><div class="hd"><h2 class="h2">{e(p["logosTitle"])}</h2><a class="pill" href="{r}assets/press/viavo-press-kit.zip" download><svg width="18" height="18" style="fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round" aria-hidden="true"><use href="#i-down"/></svg>{e(p["zip"])}</a></div>{assets}</div></section>
 <section class="sec shots"><div class="wrap grid"><h2 class="h2" style="grid-column:1/-1">{e(p["shotsTitle"])}</h2>
+<p class="cap">{e(p["shotsLangsNote"])}</p><div class="zips">{zips}</div>
 <p class="cap">CarPlay · 1920 × 1080 PNG</p>{cps}<p class="cap">iPhone · 1320 × 2868 PNG</p>{ips}</div></section>
 <section class="contact"><div class="wrap"><h2 class="h2">{e(p["contactTitle"])}</h2><p class="lead">{brandsafe(p["contact"])}</p>
 <a class="mail" href="{r}support/">{e(p["contactLink"])}</a></div></section>

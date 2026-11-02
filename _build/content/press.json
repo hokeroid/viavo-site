@@ -1,6 +1,39 @@
 {
- "title": "Press kit",
- "about": "Viavo is an AI voice assistant for drivers on iPhone and CarPlay. Press one button and say what you need, in any of 28 languages, and Viavo does it and answers out loud: a route with a stop on the way, places along the route, music and radio, calls and messages.",
+ "title": "Viavo for press",
+ "lead": "Viavo is a tap-to-talk AI voice assistant for drivers on iPhone and CarPlay. Press one button on the car screen, say what you need in your own words, and Viavo does it and answers out loud, with a native voice, in 28 languages.",
+ "whyTitle": "Why it exists",
+ "why": [
+  "Siri on CarPlay still doesn’t speak Polish, Czech, Romanian, Greek, Hungarian, Croatian, Serbian or Ukrainian. Drivers there either talk to their car in English or don’t talk to it at all. The chatbot apps that came to CarPlay mostly talk: in ZDNET’s test, ChatGPT and Perplexity couldn’t place a call, send a message or play music. Viavo speaks all of these languages and twenty more, understands everyday speech rather than fixed commands, and does the task.",
+  "Viavo is made by a small team in Serbia."
+ ],
+ "saysTitle": "What drivers say to it",
+ "says": [
+  [
+   "Take me home, with a stop for gas",
+   "The route opens in Apple Maps, Google Maps or Waze."
+  ],
+  [
+   "A good restaurant on the way, in about an hour",
+   "Places with ratings, opening hours and reviews."
+  ],
+  [
+   "Will I make it by nine?",
+   "Travel time with traffic."
+  ],
+  [
+   "Play something for the road",
+   "Apple Music, Spotify, YouTube Music or Deezer; live radio by name."
+  ],
+  [
+   "What’s new in my chats?",
+   "The gist of Telegram and Slack, read a message, dictate a reply; WhatsApp and SMS messages open ready to send."
+  ],
+  [
+   "Remind me to call the bank when I get to the office",
+   "Reminders, calendar, alarms, notes."
+  ]
+ ],
+ "saysNote": "And any question, with a web search for fresh facts.",
  "factsTitle": "Facts",
  "facts": [
   [
@@ -13,11 +46,11 @@
   ],
   [
    "Platforms",
-   "iPhone and CarPlay"
+   "iPhone (iOS 17 or later) and CarPlay"
   ],
   [
    "Languages",
-   "28, with a native voice in each"
+   "28, a native female or male voice in each"
   ],
   [
    "Siri doesn’t speak, Viavo does",
@@ -25,12 +58,57 @@
   ],
   [
    "Price",
-   "10 free credits, then Viavo Plus, monthly or yearly, with a free week"
+   "Free to try: 10 free credits, then a free week of Viavo Plus (monthly or yearly subscription)"
   ]
  ],
+ "videoTitle": "App preview",
+ "videoCaption": "25 seconds, English, 886 × 1920 MP4",
  "logosTitle": "Logos and icon",
  "zip": "All assets (ZIP)",
  "shotsTitle": "Screenshots",
+ "shotsLangs": [
+  [
+   "en",
+   "English"
+  ],
+  [
+   "pl",
+   "Polski"
+  ],
+  [
+   "it",
+   "Italiano"
+  ],
+  [
+   "cs",
+   "Čeština"
+  ],
+  [
+   "el",
+   "Ελληνικά"
+  ],
+  [
+   "he",
+   "עברית"
+  ],
+  [
+   "hr",
+   "Hrvatski"
+  ],
+  [
+   "hu",
+   "Magyar"
+  ],
+  [
+   "ro",
+   "Română"
+  ],
+  [
+   "uk",
+   "Українська"
+  ]
+ ],
+ "shotsLangsNote": "CarPlay 1920 × 1080 and iPhone 1320 × 2868, PNG, one ZIP per language",
  "carplay": [
   [
    "carplay-en-idle",
