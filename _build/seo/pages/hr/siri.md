@@ -67,33 +67,3 @@ U novembru 2026. Siri ne govori srpski: srpskog nema na spisku jezika koje Siri 
 **Radi li Viavo i bez CarPlaya?** Da, i na samom iPhoneu, primjerice kad je mobitel u držaču.
 
 **Je li Viavo besplatan?** Dobivaš 10 besplatnih kredita i besplatan tjedan Viavo Plusa. Zatim se Viavo Plus plaća mjesečnom ili godišnjom pretplatom.
-
-<!--
-Комментарий для владельца (не для публикации).
-
-Что адаптировано относительно мастера (template-siri.md):
-- Краткий ответ: первые два предложения — формулировка «hr» из facts-2026-11.md, переведена близко к тексту; «As of November 2026» → «U studenom 2026.». Третье предложение — про Viavo, как в мастере; «the way you're used to» передано как «svojim riječima» (своими словами), чтобы не писать мужской род «kako si navikao».
-- Обращение на «ti», как в приложении и в тексте стора (app_hr.arb, hr.json).
-- Пункт про чат-боты: в мастере «в тесте ZDNET ни один из них…», но ZDNET проверял только ChatGPT и Perplexity, Claude там не было. Написал точно: «ni ChatGPT ni Perplexity», добавил дату теста (svibanj 2026.).
-- «Apple says it has no timeline» → «zasad nema predviđenog roka» (пока нет намеченного срока).
-- Таблица: строка про Siri и WhatsApp/SMS вместо «dictation goes through Siri» сказана понятнее: «сообщения диктуются Siri, а она не понимает хорватский». Viavo/голос: «glasom izvornog govornika» — формулировка из app_hr.arb. Названия приложений не склоняю («u aplikaciji Apple Maps…», как в hr.json).
-- Кнопка на руле — «tipka na upravljaču» (так пишет хорватская автопресса; «volan» разговорнее). Кнопка на экране — «gumb», как в приложении.
-- Примеры — дословно из app_hr.arb (capabilityNavigateExample2, PlaceExample2, MusicExample3, TextsExample1, RouteTimeExample2); в сербском абзаце — два примера из app_sr_Latn.arb.
-- Сербский абзац (экавица, латиница): формулировка «sr» из facts, затем Viavo «bilo da pričaš ekavski ili ijekavski»; «CarPlay-u», «komande», «tastatura», как в app_sr_Latn.arb. Ключи: «Siri na srpskom» (заголовок), «Siri ne govori srpski», «glasovni asistent koji govori i srpski».
-- FAQ: пять вопросов. Добавлен пятый — «Читает ли Siri в CarPlay сообщения по-хорватски?»: Siri — нет хорватского голоса (безопасная формулировка из facts, без «читает английским голосом»); Viavo читает Telegram и Slack и принимает надиктованный ответ, а WhatsApp/SMS готовит к нажатию «Отправить» (всё из hr.json).
-- Ключи: «Siri na hrvatskom» (title, H1), «Ima li Siri na hrvatskom» (H1), «Siri ne govori hrvatski», «glasovni asistent na hrvatskom» (подводка к таблице).
-- Не сказано: что Siri читает английским голосом; что CarPlay официально поддерживается в Хорватии или Сербии; ничего про Gemini. Поставщики ИИ Viavo не названы.
-
-Сомнения:
-- Title ровно 65 символов, на пределе.
-- «Chatbots понимают хорватский и отвечают вслух по-хорватски» — утверждение мастера, отдельного источника в facts на это нет.
-- «Viavo говорит по-сербски, экавицей и иекавицей» — из задания; в коде (driver_language.ts, turn_report.ts) ответ подстраивается под формы водителя (VIA-417).
-- Кнопка «[Preuzmi u App Storeu]» без ссылки, как в задании; по мастеру ссылка — витрина hr с ct=hr-siri, для сербских читателей отдельной ссылки на витрину rs нет.
-- Попутно: в описании стора hr.json одна строка на «vi» («Izgovorite naziv aplikacije… čut ćete to»), всё остальное на «ti».
-
-Перевод на русский:
-- Title: «Siri на хорватском в машине: положение дел в ноябре 2026 года и чем пользоваться»
-- H1: «Есть ли Siri на хорватском? Пока нет. Вот что работает в машине уже сегодня»
-- Краткий ответ: «В ноябре 2026 года Siri не говорит по-хорватски: хорватского нет в списке языков, которые поддерживает Siri, поэтому в CarPlay она принимает команды только на другом языке, например на английском, и у неё нет хорватского голоса, чтобы прочитать тебе сообщения вслух. Хорватский можно диктовать с клавиатуры iPhone, но новая Siri AI недоступна на iPhone в ЕС, и хорватского среди её языков нет. В машине уже сейчас можно говорить по-хорватски с Viavo: нажми одну кнопку на экране машины и своими словами скажи, что нужно, а Viavo откроет маршрут в твоём навигаторе, включит музыку, позвонит контакту и подготовит сообщение, а ответит вслух по-хорватски.»
-Ревью фактов 2026-11-02: что исправлено и что осталось открытым — в pages/review-2026-11-02.md. Главное: подтверждено только, что ChatGPT понимает язык и отвечает на нём голосом; Claude и Perplexity этого не приписывается (у Perplexity в таблице «не подтверждено»), колонка чат-ботов переименована в «ChatGPT и Perplexity (тест ZDNET)». Оговорка «bilo da pričaš ekavski ili ijekavski» снята: её нет в тексте стора.
--->

@@ -65,29 +65,3 @@ Pět příkladů přímo z aplikace:
 **Přečte mi Viavo zprávy nahlas česky?** Z Telegramu a Slacku ano: řekne vám, co je nového, shrne chat, přečte zprávu a odpověď mu nadiktujete. Zprávu pro WhatsApp nebo SMS Viavo připraví a otevře v telefonu, odešlete ji jedním klepnutím.
 
 **Je Viavo zdarma?** Nový účet dostane 10 kreditů a týden Viavo Plus zdarma. Potom je Viavo Plus měsíční nebo roční předplatné.
-
-<!--
-Что адаптировано относительно мастера (template-siri.md):
-- Title начинается с главного запроса «Siri česky v autě»; «where things stand in November 2026, and what works now» передано как «stav v listopadu 2026 a co funguje už teď» (60 знаков). Description 139 знаков, в нём «hlasový asistent v češtině».
-- H1 начинается с «Umí Siri česky?»: «umí siri česky» — реальная подсказка Google (keywords.md, cs (a)); «mluví» оставлено для FAQ «Kdy bude Siri mluvit česky?» (запрос «kdy bude siri mluvit česky»).
-- Короткий ответ — cs-формулировка из facts-2026-11.md без изменений смысла. Чтобы «Siri» не повторялась три раза в одном предложении, подлежащее держится местоимением («mezi jejími jazyky», «přijímá»). Про голос: «nemá český hlas, kterým by vám zprávy přečetla nahlas» — не сказано, каким голосом Siri читает.
-- Viavo не склоняется: «s aplikací Viavo», «na něj» (средний род, как в cs.json: «Viavo je», «aby vás Viavo slyšelo»).
-- ZDNET: в мастере «none of them» после ChatGPT, Claude, Perplexity; ZDNET тестировал только ChatGPT и Perplexity, поэтому в тексте названы именно они. В таблице колонка чат-ботов осталась как в мастере.
-- В пункте про диктовку убрано «кроме сербского» (к cs не относится).
-- Перед таблицей одна строка с запросом «který hlasový asistent umí česky» (из keywords.md (d)).
-- Пятый вопрос FAQ «Přečte mi Viavo zprávy nahlas česky?» добавлен, потому что страница строится на том, что Siri не читает чешские сообщения. Ответ только из cs.json: Telegram и Slack (новое, сводка, чтение, диктовка ответа), WhatsApp/SMS — готовое сообщение в телефоне и одно нажатие.
-- «Hey Siri» оставлено по-английски: чешской фразы у Siri нет.
-- Gemini не упоминается: по facts его статус в CarPlay и языки неясны (не писать ни «есть», ни «нет»).
-- Ссылка «[Stáhnout v App Store]» без URL; по мастеру ведёт в чешский стор с ct=cs-siri (записано в front-matter: store: cz, ct: cs-siri). В тексте «z App Storu» склоняется, как пишет чешская техпресса; на кнопке несклоняемая форма, как было задано.
-
-Сомнения:
-- Строки таблицы «Chatboti … rozumí česky / odpovídá nahlas česky: Ano» взяты из мастера; в facts-2026-11.md чешский у ChatGPT, Claude и Perplexity отдельно не проверен.
-- Неразрывные пробелы после однобуквенных предлогов (v, k, s, z, a, i) по чешской типографике нужны при вёрстке; в markdown их нет, их стоит ставить в шаблоне сайта.
-- «Stáhnout v App Store» — проверить по официальному чешскому бейджу Apple, если кнопка будет бейджем, а не текстом.
-
-Переводы на русский:
-- Title: «Siri по-чешски в машине: положение дел в ноябре 2026 и что работает уже сейчас»
-- H1: «Умеет ли Siri по-чешски? Пока нет. Вот что работает в машине уже сегодня»
-- Короткий ответ: «По состоянию на ноябрь 2026 Siri не говорит по-чешски: чешского нет среди её языков, поэтому в CarPlay она принимает команды только на другом языке, например на английском, и у неё нет чешского голоса, которым она прочла бы вам сообщения вслух. Диктовать по-чешски можно на клавиатуре iPhone, но новая Siri AI на iPhone в ЕС недоступна, и чешского среди её языков нет. В машине уже сейчас можно объясниться по-чешски с приложением Viavo: достаточно нажать на экране CarPlay одну кнопку и говорить так, как вы привыкли. Viavo откроет маршрут, включит музыку, позвонит или подготовит сообщение и ответит вам вслух по-чешски.»
-Ревью фактов 2026-11-02: что исправлено и что осталось открытым — в pages/review-2026-11-02.md. Главное: подтверждено только, что ChatGPT понимает язык и отвечает на нём голосом; Claude и Perplexity этого не приписывается (у Perplexity в таблице «не подтверждено»), колонка чат-ботов переименована в «ChatGPT и Perplexity (тест ZDNET)».
--->
