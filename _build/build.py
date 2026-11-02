@@ -62,6 +62,9 @@ LANGS = [
 ]
 L = {x[0]: dict(zip(('code', 'folder', 'hreflang', 'native', 'english', 'dir', 'cc', 'og'), x)) for x in LANGS}
 GAP = ['pl', 'cs', 'ro', 'el', 'hu', 'hr', 'sr', 'uk']  # Siri does not speak these (apple.com feature availability, VIA-466)
+# Pages that open with the Siri band (their language has no Siri, or the global English page). Elsewhere Siri speaks the
+# reader's language, so a general, smaller band about the eight sits further down, without a screen.
+STORY = set(GAP) | {'en'}
 LATIN_HEADLINES = {'en', 'hr', 'cs', 'nl', 'fr', 'de', 'hu', 'id', 'it', 'pl', 'pt', 'ro', 'sr', 'es', 'sv', 'tr', 'vi'}
 
 APPS = [
@@ -273,7 +276,7 @@ def home(lang, T, available):
 <h1 class="h1"><span>{brandsafe(T["h1a"])}</span><span class="b">{brandsafe(T["h1b"])}</span></h1>
 <p class="lead">{brandsafe(T["sub"])}</p>
 <div class="cta-row">{badge(lang, r, f"site-{lang}-hero").replace("{alt}", alt_badge)}{qr(lang, T, r)}</div>
-<div class="hero-shot"><div class="glow"></div><div class="car"><div class="scr">{picture(hero_screen(lang), (1080, 1920), "(max-width:760px) 230vw, 1060px", T["heroAlt"], r, 1920, 1080, eager=True)}</div></div></div>
+<div class="hero-shot{"" if lang in STORY else " solo"}"><div class="glow"></div><div class="car"><div class="scr">{picture(hero_screen(lang), (1080, 1920), "(max-width:760px) 230vw, 1060px", T["heroAlt"], r, 1920, 1080, eager=True)}</div></div></div>
 </div></section>
 ''')
 
@@ -285,13 +288,19 @@ def home(lang, T, available):
     names = T.get('langNames') or {}
     rows = ''.join(f'<div class="{"on" if i == 0 else ""}"><b lang="{L[g]["hreflang"]}">{L[g]["native"]}</b><span>{e(names.get(g, L[g]["english"]))}</span></div>'
                    for i, g in enumerate(order))
-    out.append(f'''<section class="band" id="story" data-words='{e(json.dumps(words, ensure_ascii=False))}'><div class="wrap grid">
+    general = ''
+    if lang in STORY:
+        out.append(f'''<section class="band" id="story" data-words='{e(json.dumps(words, ensure_ascii=False))}'><div class="wrap grid">
 <div class="car"><div class="scr">{shots}</div></div>
 <div class="txt"><h2 class="h2">{brandsafe(T["bandPre"])}<span class="w">{e(words[0])}</span>{e(T["bandPost"])} <span class="t">{brandsafe(T["bandTail"])}</span></h2>
 <p class="lead">{brandsafe(T["bandSub"])}</p>
 <div class="gap">{rows}</div></div>
 </div></section>
 ''')
+    else:
+        plain = rows.replace('<div class="on">', '<div>')
+        general = (f'<section class="sec band-g" id="story"><div class="wrap"><h2 class="h2">{brandsafe(T["bandSub"])}</h2>'
+                   f'<div class="gap">{plain}</div></div></section>\n')
 
     # it does it
     pl = phone_lang(lang)
@@ -313,6 +322,7 @@ def home(lang, T, available):
         cards += (f'<div class="card"><div class="ico"><svg aria-hidden="true"><use href="#i-{GROUP_ICONS[i]}"/></svg></div>'
                   f'<div class="in"><h3>{brandsafe(title)}</h3><ul>{lis}</ul><p class="eg">{brandsafe(egt)}</p></div></div>')
     out.append(f'<section class="sec" id="features"><div class="wrap grid cards"><h2 class="h2">{brandsafe(T["can"])}</h2>{cards}</div></section>\n')
+    out.append(general)
 
     # works with
     chips = ''.join(f'<button type="button" data-cat="{c}" aria-pressed="{"true" if c == "all" else "false"}">{e(T["cats"][c])}</button>'

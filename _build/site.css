@@ -87,6 +87,7 @@ button{font:inherit;color:inherit}
 .car .scr{position:relative;aspect-ratio:1920/1080;border-radius:18px;overflow:hidden;background:#232323}
 .car .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .3s ease}
 .hero-shot .car{max-width:1084px;margin-inline:auto}
+.hero-shot.solo{margin-bottom:0}
 
 /* Siri band */
 .band{background:var(--surface);padding:calc(300px + var(--pad)) 0 var(--pad)}
@@ -104,6 +105,9 @@ button{font:inherit;color:inherit}
 .gap .on{border-color:var(--text)}
 .gap .on b{color:var(--text)}
 
+.band-g .h2{max-width:820px}
+.band-g .gap{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px}
+.band-g .gap b{color:var(--text)}
 /* does it */
 .say .grid{align-items:start}
 .say .txt{grid-column:1/span 6}
@@ -311,6 +315,8 @@ button{font:inherit;color:inherit}
   .band .car{order:2;width:100%;margin:28px 0 0}
   .band .txt{padding:0}
   .gap{margin-top:28px;order:3}
+  .band-g .gap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-shot.solo{margin-bottom:0}
   .say .lead,.ex .rep{max-width:none}
   .ex q{font-size:20px}
   .say .ph{margin-top:40px}
