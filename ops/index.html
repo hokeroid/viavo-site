@@ -113,6 +113,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 (function () {
   "use strict";
   var API = "https://mjepxubktjnrkliidnzj.supabase.co/functions/v1/balance-watch/report";
+  // VIA-492: the site viavo.app doesn't count visits from a browser that opened this report (the owner's own).
+  try { window.localStorage.setItem("viavo_team", "1"); } catch (e) { /* storage off: visits from here count */ }
   var tg = window.Telegram && window.Telegram.WebApp;
   var initData = tg && tg.initData ? tg.initData : "";
   var app = document.getElementById("app");
@@ -520,6 +522,59 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     }));
   }
 
+  // ---------- the site viavo.app (VIA-492)
+  var SOURCE_GROUPS = { search: "Поиск", ai: "Нейронки", social: "Соцсети и мессенджеры", appstore: "App Store", sites: "Другие сайты", direct: "Прямые" };
+  var DEVICES = { mobile: "Телефон", tablet: "Планшет", desktop: "Компьютер", unknown: "?" };
+  // mode: "today" | "yesterday" | "period"; s: the period's series days (period mode)
+  function renderSite(data, mode, s) {
+    app.appendChild(el("h2", { text: "Сайт viavo.app" }));
+    var site = data.site;
+    var r = site && (mode === "period" ? site.period : mode === "today" ? site.today : site.yesterday);
+    if (!r) {
+      app.appendChild(el("p", { class: "sub", text: "Визиты сайта не прочитаны" + (data.site_error ? ": " + data.site_error : "") + "." }));
+      return;
+    }
+    var todayMode = mode === "today", base = site.base || null;
+    var tiles = el("div", { class: "tiles" });
+    [["Визиты", r.visits, base && base.visits], ["Просмотры", r.pageviews, base && base.pageviews], ["В App Store", r.appstore_clicks, base && base.appstore_clicks]]
+      .forEach(function (v) {
+        var t = tile(v[0], v[1], mode === "period" ? undefined : v[2], null, true, todayMode);
+        if (mode === "period") t.lastChild.textContent = "за период";
+        tiles.appendChild(t);
+      });
+    app.appendChild(tiles);
+    app.appendChild(el("p", { class: "sub", text: "Без кук и IP: визит — открытая вкладка; страна — по часовому поясу браузера; источник — откуда пришли на первую страницу визита. Визиты из этого браузера не считаются." }));
+    if (mode === "period" && site.series) {
+      var days = s.map(function (d) { return d.day; });
+      var byDay = {};
+      site.series.forEach(function (d) { byDay[d.day] = d; });
+      var pick = function (key) { return days.map(function (d) { return byDay[d] ? byDay[d][key] : 0; }); };
+      var siteSeries = [
+        { name: "визиты", color: "var(--s1)", kind: "bar", values: pick("visits") },
+        { name: "в App Store", color: "var(--s2)", kind: "line", values: pick("appstore_clicks") }
+      ];
+      app.appendChild(figure("Визиты и переходы в App Store по дням", null, timeChart(days, siteSeries, { label: "Сайт по дням", partialLast: true }), siteSeries, function () {
+        return dataTable(["День", "Визиты", "Просмотры", "В App Store"], days.map(function (d) { var x = byDay[d] || {}; return [dayLabel(d), fmt(x.visits || 0), fmt(x.pageviews || 0), fmt(x.appstore_clicks || 0)]; }));
+      }));
+    }
+    var empty = function (rows, headings) { return rows.length ? dataTable(headings, rows, [2]) : el("p", { class: "sub", text: "Нет данных." }); };
+    app.appendChild(el("p", { class: "sub", text: "Откуда пришли" }));
+    app.appendChild(empty((r.sources || []).map(function (g) {
+      return [SOURCE_GROUPS[g.group] || g.group, fmt(g.visits), g.group === "direct" ? "" : g.names.map(function (n) { return n.name + " " + n.visits; }).join(" · ")];
+    }), ["Источник", "Визиты", "Кто именно"]));
+    app.appendChild(el("p", { class: "sub", text: "Языки страниц" }));
+    app.appendChild(empty(r.by_lang.map(function (l) { return [l.lang === "unknown" ? "?" : l.lang, fmt(l.visits), fmt(l.pageviews)]; }), ["Язык", "Визиты", "Просмотры"]));
+    app.appendChild(el("p", { class: "sub", text: "Страны и устройства" }));
+    app.appendChild(empty(r.by_country.map(function (c) { return [country(c.country), fmt(c.visits)]; }), ["Страна", "Визиты"]));
+    app.appendChild(empty(r.by_device.map(function (d) { return [DEVICES[d.device] || d.device, fmt(d.visits)]; }), ["Устройство", "Визиты"]));
+    app.appendChild(el("p", { class: "sub", text: "Страницы" }));
+    app.appendChild(empty(r.pages.map(function (p) { return [p.path, fmt(p.pageviews), fmt(p.visits)]; }), ["Страница", "Просмотры", "Визиты"]));
+    if (r.appstore_by_ct.length) {
+      app.appendChild(el("p", { class: "sub", text: "Нажали «App Store» — с какой кнопки (ct)" }));
+      app.appendChild(dataTable(["Кнопка", "Нажатий"], r.appstore_by_ct.map(function (a) { return [a.ct === "unknown" ? "?" : a.ct, fmt(a.clicks)]; })));
+    }
+  }
+
   function render(data) {
     hideTip();
     redrawers = [];
@@ -631,6 +686,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(el("p", { class: "sub", text: "Пуши по кампаниям за период" }));
       app.appendChild(pushCampaignTable(period.pushes));
     }
+
+    renderSite(data, "period", s);
 
     // 6. spend
     app.appendChild(el("h2", { text: "Расходы" }));
@@ -921,6 +978,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(el("p", { class: "sub", text: "Пуши по кампаниям" }));
       app.appendChild(pushCampaignTable(td.pushes));
     }
+    renderSite(data, todayMode ? "today" : "yesterday");
     renderSalesFeedback(td, periodName);
 
     app.appendChild(el("h2", { text: "Расходы " + periodName }));
