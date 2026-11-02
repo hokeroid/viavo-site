@@ -1,0 +1,198 @@
+{
+ "meta": {
+  "title": "Viavo: AI voice assistant for CarPlay, in 28 languages",
+  "description": "Press one button and say it your way. Viavo opens routes with a stop, calls, messages, plays music and radio, and answers out loud. 28 languages, a native voice in each.",
+  "ogTitle": "Say it in your language. Viavo gets it done.",
+  "pressTitle": "Press kit · Viavo",
+  "pressDescription": "Facts, logos, the app icon and real CarPlay and iPhone screenshots of Viavo, the AI voice assistant for CarPlay."
+ },
+ "qo": "“",
+ "qc": "”",
+ "nFeatures": "Features",
+ "nLanguages": "Languages",
+ "nPress": "Press",
+ "nLangMenu": "Language",
+ "eyebrow": "AI assistant for CarPlay",
+ "h1a": "Say it in your language.",
+ "h1b": "Viavo gets it done.",
+ "sub": "Routes with a stop, calls, messages, music and radio. Press one button and say it the way you would to a person, in any of 28 languages.",
+ "heroAlt": "Viavo on a CarPlay screen",
+ "bandPre": "Siri doesn’t speak ",
+ "bandPost": ".",
+ "bandTail": "Viavo does.",
+ "bandWords": {
+  "pl": "Polish",
+  "cs": "Czech",
+  "ro": "Romanian",
+  "el": "Greek",
+  "hu": "Hungarian",
+  "hr": "Croatian",
+  "sr": "Serbian",
+  "uk": "Ukrainian"
+ },
+ "bandSub": "Siri doesn’t speak any of these eight. Viavo speaks all of them.",
+ "say": "It doesn’t just answer. It does it.",
+ "sayLead": "One button, and Viavo handles the route, places on the way, music, calls, messages and your questions out loud, so your eyes stay on the road.",
+ "examples": [
+  "Take me home, with a stop for gas",
+  "A good restaurant on the way",
+  "Play something for the road",
+  "What’s new in my chats?"
+ ],
+ "replies": [
+  "Route home with a stop at the gas station on Ring Road. About 25 minutes with traffic, so you’ll be home by 7:40.",
+  "On your way, about an hour from now: Old Mill Tavern, 4.7 stars from 1,200 reviews, open until 11 pm. Reviewers praise the grilled trout. Shall I add it as a stop?",
+  "Here’s something for the road: an upbeat driving mix, 40 songs. Enjoy the ride.",
+  "Three new chats. Anna asks if you’ll be home by eight. The team moved tomorrow’s call to ten. Your brother sent photos from the coast. Want to reply to Anna?"
+ ],
+ "done": [
+  "The route opens in your navigator",
+  "Ratings, hours and reviews, out loud",
+  "Plays in Spotify or Apple Music",
+  "Reads the gist, you dictate a reply"
+ ],
+ "can": "What Viavo can do",
+ "groups": [
+  [
+   "On the road",
+   [
+    "Routes in your navigator, with a stop on the way",
+    "Travel time with traffic",
+    "Places with ratings, hours and reviews",
+    "Weather now, for the week, at your destination"
+   ],
+   "Will I get to work by nine?"
+  ],
+  [
+   "Music and listening",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Live radio by station name or frequency",
+    "The name of the song on the radio",
+    "Podcasts in Apple Podcasts"
+   ],
+   "Play something for the road"
+  ],
+  [
+   "People and messages",
+   [
+    "Call a contact by name",
+    "WhatsApp and SMS: ready on your phone, you tap Send",
+    "Telegram and Slack: what’s new, the gist, a dictated reply"
+   ],
+   "Tell Pete I’ll be ten minutes late"
+  ],
+  [
+   "Plans",
+   [
+    "Reminders at a time or when you arrive",
+    "Your to-do list",
+    "Calendar: hear your day, add, move or cancel",
+    "Alarms, timers and quick notes"
+   ],
+   "Take me to my next meeting"
+  ],
+  [
+   "And more",
+   [
+    "Answers with a web search for fresh facts",
+    "Memory: it remembers, and forgets when you ask",
+    "HomeKit accessories and scenes",
+    "Say an app’s name and it opens"
+   ],
+   "Open Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "One big button on the car screen",
+    "Answers out loud",
+    "Nothing on the car screen asks you to look at your phone"
+   ],
+   "Up to six of your own quick commands"
+  ]
+ ],
+ "works": "Works with your apps",
+ "worksSub": "And it opens other apps by name.",
+ "cats": {
+  "all": "All",
+  "nav": "Navigation",
+  "music": "Music",
+  "radio": "Radio",
+  "msg": "Messages",
+  "home": "Home and plans"
+ },
+ "appNames": {},
+ "langsTitle": "28 languages, a native voice in each",
+ "legend": "Siri doesn’t speak it",
+ "langNames": {},
+ "steps": "Three steps to the road",
+ "stepItems": [
+  [
+   "Get Viavo",
+   "Download it from the App Store on your iPhone."
+  ],
+  [
+   "Connect CarPlay",
+   "Viavo appears on your car’s screen."
+  ],
+  [
+   "Press and speak",
+   "One button. Say it the way you’d say it to a person."
+  ]
+ ],
+ "faq": "Questions",
+ "faqItems": [
+  [
+   "How is Viavo different from ChatGPT or Gemini in CarPlay?",
+   "ChatGPT and Gemini in CarPlay are built for conversation. Viavo also acts on what you say: it calls a contact, prepares a WhatsApp or SMS message, plays music or a radio station, and from one sentence opens a route with a stop, or a place along the way, in your navigator."
+  ],
+  [
+   "Which languages does Viavo speak?",
+   "28: Arabic, Chinese (Simplified and Traditional), Croatian, Czech, Dutch, English, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Romanian, Russian, Serbian, Spanish, Swedish, Thai, Turkish, Ukrainian and Vietnamese. In each one, the app’s screens and a native voice, a woman’s or a man’s."
+  ],
+  [
+   "Does it replace Siri?",
+   "No. Viavo is its own app on your CarPlay screen: open it and press one button."
+  ],
+  [
+   "Is it safe to use while driving?",
+   "Viavo is made for eyes on the road: one big button, answers out loud, and nothing on the car screen asks you to look at your phone."
+  ],
+  [
+   "Do I need to learn commands?",
+   "No. Press one button and say it the way you’d say it to a person."
+  ],
+  [
+   "Does it work without CarPlay?",
+   "Yes, on iPhone: the same one button, and you can also type."
+  ],
+  [
+   "Which apps does it work with?",
+   "Apple Maps, Google Maps and Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer and Apple Podcasts; Simple Radio, TuneIn and iHeartRadio; WhatsApp, SMS, Telegram and Slack; HomeKit, Calendar and Reminders. It also opens other apps by name."
+  ],
+  [
+   "How much does it cost?",
+   "A new account gets 10 free credits. Viavo Plus, monthly or yearly, starts with a free week. Prices are in the App Store, in your currency."
+  ],
+  [
+   "What happens to my data?",
+   "It’s all in two documents."
+  ]
+ ],
+ "lPrivacy": "Privacy Policy",
+ "lMessages": "How Viavo handles your messages",
+ "cta": "One button. Your language. Done.",
+ "ctaSub": "A new account gets 10 free credits.",
+ "fPrivacy": "Privacy",
+ "fTerms": "Terms",
+ "fMessengers": "Messengers",
+ "fSupport": "Support",
+ "fPress": "Press",
+ "tm": "Apple, the Apple logo, CarPlay, iPhone and Siri are trademarks of Apple Inc. App Store is a service mark of Apple Inc.",
+ "badgeAlt": "Download on the App Store",
+ "scan": "Scan with your iPhone",
+ "getApp": "Get the app",
+ "skip": "Skip to content",
+ "close": "Close"
+}

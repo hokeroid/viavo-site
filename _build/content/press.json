@@ -1,0 +1,77 @@
+{
+ "title": "Press kit",
+ "about": "Viavo is an AI voice assistant for drivers on iPhone and CarPlay. Press one button and say what you need, in any of 28 languages, and Viavo does it and answers out loud: a route with a stop on the way, places along the route, music and radio, calls and messages.",
+ "factsTitle": "Facts",
+ "facts": [
+  [
+   "Available since",
+   "October 2026"
+  ],
+  [
+   "Languages",
+   "28, with a native voice in each"
+  ],
+  [
+   "Platforms",
+   "iPhone and CarPlay"
+  ],
+  [
+   "Siri doesn’t speak, Viavo does",
+   "Polish, Czech, Romanian, Greek, Hungarian, Croatian, Serbian, Ukrainian"
+  ],
+  [
+   "Price",
+   "10 free credits, then Viavo Plus, monthly or yearly, with a free week"
+  ],
+  [
+   "App Store",
+   "apps.apple.com/app/id6761760437"
+  ]
+ ],
+ "logosTitle": "Logos and icon",
+ "zip": "All assets (ZIP)",
+ "shotsTitle": "Screenshots",
+ "carplay": [
+  [
+   "carplay-en-idle",
+   "English"
+  ],
+  [
+   "carplay-pl-listening",
+   "Polski"
+  ],
+  [
+   "carplay-he-night-speaking",
+   "עברית"
+  ]
+ ],
+ "phone": [
+  [
+   "phone-en-home",
+   "Home"
+  ],
+  [
+   "phone-en-route",
+   "Route"
+  ],
+  [
+   "phone-en-places",
+   "Places"
+  ],
+  [
+   "phone-en-music",
+   "Music"
+  ],
+  [
+   "phone-en-messages",
+   "Messages"
+  ],
+  [
+   "phone-en-capabilities",
+   "What I can do"
+  ]
+ ],
+ "contactTitle": "Contact",
+ "contact": "Questions, interviews or other materials: write to us through the support page.",
+ "contactLink": "Support page →"
+}
