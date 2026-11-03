@@ -270,7 +270,7 @@ def phone_lang(lang):
 
 # The hero's "it's done" card: a real CarPlay frame in the speaking state, with the driver's phrase, Viavo's reply (the text
 # the real app said, from the copy) and what happened. Shown only where carplay-<lang>-speaking exists; HERO_TALK=0 hides it.
-HERO_TALK = os.environ.get('HERO_TALK', '0') == '1'  # on after the owner's yes
+HERO_TALK = os.environ.get('HERO_TALK', '1') == '1'  # owner's yes 2026-11-03
 
 
 def speaking_screen(lang):
