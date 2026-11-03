@@ -143,8 +143,8 @@ def css(r):
 
 JS_VERSION = None
 ANSWER_LINKS = {}  # lang -> [(slug, label)], filled in main() from _build/seo/pages
-# Answer pages go live after the owner's yes (VIA-472/473); VIAVO_ANSWERS=1 builds them for review.
-ANSWERS_LIVE = os.environ.get('VIAVO_ANSWERS') == '1'
+# Answer pages (VIA-473), live since the owner's yes on 2026-11-03; VIAVO_ANSWERS=0 builds without them.
+ANSWERS_LIVE = os.environ.get('VIAVO_ANSWERS', '1') == '1'
 
 
 def auto_lang_script(available):

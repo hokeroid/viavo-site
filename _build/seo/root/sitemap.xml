@@ -929,6 +929,97 @@
     <lastmod>2026-11-02</lastmod>
   </url>
   <url>
+    <loc>https://viavo.app/pl/siri/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/siri/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/siri/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/siri/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/siri/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/siri/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/cs/siri/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/siri/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/siri/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/siri/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/siri/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/siri/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/ro/siri/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/siri/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/siri/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/siri/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/siri/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/siri/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/el/siri/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/siri/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/siri/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/siri/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/siri/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/siri/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/hu/siri/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/siri/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/siri/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/siri/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/siri/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/siri/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/hr/siri/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/siri/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/siri/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/siri/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/siri/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/siri/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/uk/siri/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viavo.app/pl/siri/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://viavo.app/cs/siri/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://viavo.app/ro/siri/"/>
+    <xhtml:link rel="alternate" hreflang="el" href="https://viavo.app/el/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://viavo.app/hu/siri/"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://viavo.app/hr/siri/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://viavo.app/uk/siri/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/chatgpt-carplay/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/chatgpt-carplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/chatgpt-carplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/chatgpt-carplay/"/>
+  </url>
+  <url>
+    <loc>https://viavo.app/ru/chatgpt-carplay/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viavo.app/chatgpt-carplay/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://viavo.app/ru/chatgpt-carplay/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viavo.app/chatgpt-carplay/"/>
+  </url>
+  <url>
     <loc>https://viavo.app/privacy/</loc>
   </url>
   <url>

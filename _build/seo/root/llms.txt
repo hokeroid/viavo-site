@@ -11,6 +11,9 @@ Key facts:
 
 ## Pages
 - [Viavo — home (English)](https://viavo.app/): what Viavo does, languages, how to start
+- [ChatGPT in CarPlay: what it can and can't do](https://viavo.app/chatgpt-carplay/): chatbots in CarPlay talk but don't start routes, music, calls or messages; what Viavo does instead
+- [ChatGPT в CarPlay (по-русски)](https://viavo.app/ru/chatgpt-carplay/)
+- Siri doesn't speak these languages (as of November 2026) — what works in the car instead: [Polski](https://viavo.app/pl/siri/), [Čeština](https://viavo.app/cs/siri/), [Română](https://viavo.app/ro/siri/), [Ελληνικά](https://viavo.app/el/siri/), [Magyar](https://viavo.app/hu/siri/), [Hrvatski / Srpski](https://viavo.app/hr/siri/), [Українська](https://viavo.app/uk/siri/)
 - [Press](https://viavo.app/press/): facts, logos, screenshots
 - [Privacy policy](https://viavo.app/privacy/): what is processed and stored
 - [Terms of use](https://viavo.app/terms/)
