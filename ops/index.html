@@ -210,8 +210,9 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     if (Object.prototype.hasOwnProperty.call(packs, id)) return "пакет " + packs[id] + " кредитов";
     return "неизв. продукт";
   }
+  // A sale by its event type: a ping without a billing row (before 28.10, when the free week began), so a Plus start may have been either.
   function eventName(t, product) {
-    if (t === "INITIAL_PURCHASE") return product === "app.viavo.drive.plus.monthly" || product === "app.viavo.drive.plus.yearly" ? "новая подписка" : "покупка";
+    if (t === "INITIAL_PURCHASE") return product === "app.viavo.drive.plus.monthly" || product === "app.viavo.drive.plus.yearly" ? "новая подписка или пробный" : "покупка";
     if (t === "RENEWAL") return "продление";
     if (t === "NON_RENEWING_PURCHASE") return "покупка";
     // owner_report names a refund REFUND; CANCELLATION is renewal turned off (VIA-428).
@@ -221,6 +222,24 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     if (t === "EXPIRATION") return "пробный истёк без оплаты";
     return t || "неизвестное событие";
   }
+  // VIA-502: a pinged sale by its kind (owner_sale_kind on the billing row), else by its event type.
+  function saleEventName(row) {
+    if (row.kind) { var label = reportLabel("saleEvents", row.kind); if (label !== row.kind) return label; }
+    return eventName(row.event_type, row.product_id);
+  }
+  // Sales by kind (VIA-502): the kinds from billing events, packs and refunds from unit_purchases; the bot's order
+  // (balance-watch report.ts SALE_LINE). The rare ones show only when the window or its comparison had any.
+  var SALE_MAIN = ["trial_started", "trial_converted", "paid_started", "renewal", "packs", "trial_cancelled", "cancelled", "refunds"];
+  var SALE_RARE = ["trial_expired", "uncancelled", "trial_refused", "billing_failed", "promo"];
+  // fewer is better for these; promo (free access) is neither
+  var SALE_FEWER_BETTER = { trial_cancelled: true, cancelled: true, refunds: true, trial_expired: true, trial_refused: true, billing_failed: true };
+  // a count of `key` in owner_report's sales or a series day: undefined when the server sent no kinds
+  function saleCount(x, key) {
+    if (key === "packs" || key === "refunds") return x[key];
+    return x.kinds ? x.kinds[key] || 0 : undefined;
+  }
+  function saleLabel(key) { var label = reportLabel("saleKinds", key); return label.charAt(0).toUpperCase() + label.slice(1); }
+  function stamp(iso) { return dayLabel(iso) + " " + timeUtc(iso) + " UTC"; }
 
   // ---------- theme
   function applyScheme() {
@@ -485,17 +504,19 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     return out;
   }
 
-  // ---------- KPI tiles: yesterday against the average of the seven days before it
+  // ---------- KPI tiles: yesterday against the average of the seven days before it, today against the same hours
+  // of yesterday (todayMode true), a period against the window of the same hours before it (todayMode "previous")
   function tile(label, value, base, fmtFn, upIsGood, todayMode) {
     var t = el("div", { class: "tile" });
     t.appendChild(el("div", { class: "label", text: label }));
     t.appendChild(el("div", { class: "value", text: fmtFn ? fmtFn(value) : fmt(value) }));
     var d = el("div", { class: "delta" });
-    if (base === null || base === undefined || !(base > 0)) d.textContent = base === 0 ? (value > 0 ? "раньше 0" : "• 0, как раньше") : "нет базы";
+    var previous = todayMode === "previous";
+    if (base === null || base === undefined || !(base > 0)) d.textContent = base === 0 ? (value > 0 ? "раньше 0" : "• 0, как раньше") : previous ? "без сравнения" : "нет базы";
     else {
       var pct = Math.round(((value - base) / base) * 100);
       var arrow = pct > 10 ? "▲" : pct < -10 ? "▼" : "•";
-      d.textContent = arrow + " " + (pct > 0 ? "+" : "") + pct + (todayMode ? " % к " : " % к ср. ") + (fmtFn ? fmtFn(base) : fmt(base, todayMode ? 0 : 1)) + (todayMode ? " вчера" : "");
+      d.textContent = arrow + " " + (pct > 0 ? "+" : "") + pct + (previous ? " % · было " : todayMode ? " % к " : " % к ср. ") + (fmtFn ? fmtFn(base) : fmt(base, todayMode ? 0 : 1)) + (todayMode && !previous ? " вчера" : "");
       if (Math.abs(pct) > 10) d.classList.add((pct > 0) === (upIsGood !== false) ? "up" : "down");
     }
     t.appendChild(d);
@@ -520,6 +541,55 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       return [c.campaign || "?"].concat(tried ? [c.tried == null ? "—" : fmt(c.tried)] : [],
         [fmt(c.apns_ok == null ? c.sent : c.apns_ok), fmt(c.delivered), fmt(c.opened)]);
     }));
+  }
+
+  // ---------- sales by kind (VIA-502), in every mode right under the headline tiles. mode: "today" (against the
+  // same hours of yesterday), "yesterday" (the seven days before, per day), "period" (the window of the same hours before)
+  function saleTile(label, value, base, mode, fewerBetter) {
+    var t = el("div", { class: "tile" });
+    t.appendChild(el("div", { class: "label", text: label }));
+    t.appendChild(el("div", { class: "value", text: fmt(value) }));
+    var d = el("div", { class: "delta" });
+    if (base === null || base === undefined) d.textContent = "без сравнения";
+    else {
+      // small counts: the base as a number, no percentage
+      d.textContent = (value > base ? "▲ " : value < base ? "▼ " : "• ") + (mode === "yesterday" ? "ср. " + fmt(base, 1) + " в день" : mode === "today" ? "вчера " + fmt(base) : "было " + fmt(base));
+      if (value !== base && fewerBetter !== null) d.classList.add((value > base) !== fewerBetter ? "up" : "down");
+    }
+    t.appendChild(d);
+    return t;
+  }
+  function renderSales(data, mode) {
+    var r = mode === "period" ? data.period : mode === "today" ? data.today : data.yesterday, s = r.sales;
+    var cmp = mode === "period" ? data.previous : mode === "today" ? data.same_hours_yesterday : data.base;
+    // the comparison's sales: a report's, or the bot's seven-day baseline (kinds, packs and refunds per day)
+    var base = !cmp ? null : mode === "yesterday" ? cmp : cmp.sales;
+    var since = s.billing_since || null, baseFrom = cmp ? cmp.from || null : null;
+    var windowEarly = !!(since && Date.parse(r.from) < Date.parse(since));
+    var baseEarly = !!(since && base && base.kinds && baseFrom && Date.parse(baseFrom) < Date.parse(since));
+    // billing events began at `since`: a comparison that starts before it holds too few trials and payments
+    var kindsBase = base && base.kinds && baseFrom && !baseEarly ? base.kinds : null;
+    app.appendChild(el("h2", { text: "Продажи" }));
+    if (s.kinds) {
+      var tiles = el("div", { class: "tiles" });
+      SALE_MAIN.concat(SALE_RARE).forEach(function (key) {
+        var value = saleCount(s, key);
+        var b = key === "packs" || key === "refunds" ? (base ? base[key] : undefined) : kindsBase ? kindsBase[key] || 0 : undefined;
+        if (SALE_MAIN.indexOf(key) < 0 && !(value > 0) && !(b > 0)) return;
+        tiles.appendChild(saleTile(saleLabel(key), value, b, mode, key === "promo" ? null : !!SALE_FEWER_BETTER[key]));
+      });
+      app.appendChild(tiles);
+    } else app.appendChild(el("p", { class: "sub", text: "Сервер ещё не делит продажи на пробные и оплаты: события продаж — в таблице ниже." }));
+    app.appendChild(el("p", { text: "Подписчиков сейчас " + fmt(s.subscribers) + " · на пробном " + fmt(s.trials) }));
+    if (s.kinds) {
+      var notes = ["В плитках — водители, каждый один раз на вид; пакеты и возвраты — штуки. Отмена подписки — выключено продление, доступ до конца оплаченного срока."];
+      if (windowEarly || baseEarly) {
+        notes.push("Пробные и оплаты различаются с " + stamp(since) + (windowEarly && baseEarly ? ": раньше этого в плитках они не посчитаны, сравнения по ним нет"
+          : windowEarly ? ": раньше этого в плитках они не посчитаны" : ": сравнение захватывает время раньше, поэтому по ним его нет") +
+          ". Пакеты и возвраты считаются всегда.");
+      }
+      app.appendChild(el("p", { class: "sub", text: notes.join(" ") }));
+    }
   }
 
   // ---------- the site viavo.app (VIA-492)
@@ -583,31 +653,35 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     var allDays = data.series;
     var s = allDays.slice(-data.days);
     var days = s.map(function (d) { return d.day; });
-    var y = data.yesterday, td = data.today, period = data.period;
-    var yIdx = allDays.length - 2;
-    var baseDays = yIdx > 0 ? allDays.slice(Math.max(0, yIdx - 7), yIdx) : [];
-    var avg = function (pick) { return baseDays.length ? sum(baseDays, pick) / baseDays.length : null; };
-    var errorsOf = function (d) { return sum(d.errors || [], function (e) { return e.n; }); };
+    var td = data.today, period = data.period, prev = data.previous || null;
+    var errorsOf = function (r) { return sum(r.quality.errors, function (e) { return e.n; }); };
 
     app.appendChild(el("h1", { text: "Viavo · отчёт за " + data.days + " дней" }));
-    app.appendChild(el("p", { class: "sub", text: "Сутки UTC · данные на " + timeUtc(data.generated_at) + " UTC, " + dayLabel(data.generated_at) + " · вчера: " + dayLabel(y.from) + " · водители без команды" }));
+    app.appendChild(el("p", { class: "sub", text: "Сутки UTC · данные на " + timeUtc(data.generated_at) + " UTC, " + dayLabel(data.generated_at) + " · водители без команды" }));
 
     periodSwitch();
 
-    // tiles: yesterday vs the seven days before
-    app.appendChild(el("h2", { text: "Вчера, " + dayLabel(y.from) + " (в сравнении со средним за " + baseDays.length + " дней до)" }));
+    // VIA-502: the period's own summary against the window of the same length and hours right before it
+    // (an older server sends no `previous`: the tiles stand without a comparison)
+    app.appendChild(el("h2", { text: data.days + " дней: " + dayLabel(period.from) + " – " + dayLabel(period.to) + " (сегодня до " + timeUtc(period.to) + " UTC)" +
+      (prev ? " — в сравнении с " + dayLabel(prev.from) + " – " + dayLabel(prev.to) + " до того же часа" : "") }));
     var tiles = el("div", { class: "tiles" });
-    tiles.appendChild(tile("Новые водители", y.signups.total, avg(function (d) { return d.signups; })));
-    tiles.appendChild(tile("Активные", y.activity.active_drivers, avg(function (d) { return d.active_drivers; })));
-    tiles.appendChild(tile("Ходы", y.activity.turns, avg(function (d) { return d.turns; })));
-    tiles.appendChild(tile("В машине", y.activity.car_drivers, avg(function (d) { return d.car_drivers; })));
-    tiles.appendChild(tile("Вернулись", y.activity.returning_drivers, avg(function (d) { return d.returning_drivers; })));
-    tiles.appendChild(tile("Показы пейвола", y.paywall.shown, avg(function (d) { return d.paywall_shown; })));
-    tiles.appendChild(tile("Пуши", y.pushes.sent, avg(function (d) { return d.pushes_sent; })));
-    tiles.appendChild(tile("Ошибки", errorsOf({ errors: y.quality.errors }), avg(errorsOf), null, false));
-    tiles.appendChild(tile("Сбои на телефоне", deviceFailures(y), avg(function (d) { return d.device_failures || 0; }), null, false));
+    [
+      ["Новые водители", period.signups.total, prev && prev.signups.total],
+      ["Активные", period.activity.active_drivers, prev && prev.activity.active_drivers],
+      ["Ходы", period.activity.turns, prev && prev.activity.turns],
+      ["В машине", period.activity.car_drivers, prev && prev.activity.car_drivers],
+      // over a period: active drivers who signed up before it, not drivers who came back
+      ["Активные, пришли до периода", period.activity.returning_drivers, prev && prev.activity.returning_drivers],
+      ["Показы пейвола", period.paywall.shown, prev && prev.paywall.shown],
+      ["Пуши", period.pushes.sent, prev && prev.pushes.sent],
+      ["Ошибки", errorsOf(period), prev && errorsOf(prev), false],
+      ["Сбои на телефоне", deviceFailures(period), prev && deviceFailures(prev), false]
+    ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], prev ? v[2] : undefined, null, v[3], "previous")); });
     app.appendChild(tiles);
-    app.appendChild(el("p", { class: "sub", text: "Сегодня до " + timeUtc(data.generated_at) + " UTC: новых " + fmt(td.signups.total) + ", активных " + fmt(td.activity.active_drivers) + ", ходов " + fmt(td.activity.turns) + ", в машине " + fmt(td.activity.car_drivers) + ". Подписчиков сейчас " + fmt(y.sales.subscribers) + (y.sales.trials ? ", триал " + fmt(y.sales.trials) : "") + "." }));
+    app.appendChild(el("p", { class: "sub", text: "Водители — каждый один раз за период. Сегодня до " + timeUtc(data.generated_at) + " UTC: новых " + fmt(td.signups.total) + ", активных " + fmt(td.activity.active_drivers) + ", ходов " + fmt(td.activity.turns) + ", в машине " + fmt(td.activity.car_drivers) + "." }));
+
+    renderSales(data, "period");
 
     // 1. signups by market
     app.appendChild(el("h2", { text: "Новые водители" }));
@@ -647,23 +721,35 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     app.appendChild(el("h2", { text: "Воронка по странам, 30 дней" }));
     app.appendChild(funnelFigure(period.retention));
 
-    // 4. paywall and subscribers
-    app.appendChild(el("h2", { text: "Пейвол и подписки" }));
+    // 4. paywall and sales per day
+    app.appendChild(el("h2", { text: "Пейвол и продажи по дням" }));
     var pwSeries = [
       { name: "показы пейвола", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return d.paywall_shown; }) },
       { name: "покупки (событие в приложении)", color: "var(--s2)", kind: "line", values: s.map(function (d) { return d.purchases; }) }
     ];
-    app.appendChild(figure("Показы пейвола и покупки", "Покупки — событие purchase из приложения; подписки по RevenueCat ниже.", timeChart(days, pwSeries, { label: "Пейвол по дням", partialLast: true }), pwSeries, function () {
+    app.appendChild(figure("Показы пейвола и покупки", "Покупки — событие purchase из приложения: всё, что приложение назвало покупкой, пробный тоже. Пробные и оплаты по App Store — ниже.", timeChart(days, pwSeries, { label: "Пейвол по дням", partialLast: true }), pwSeries, function () {
       return dataTable(["День", "Показы", "Покупки"], s.map(function (d) { return [dayLabel(d.day), fmt(d.paywall_shown), fmt(d.purchases)]; }));
     }));
-    var subSeries = [
-      { name: "новые подписки", color: "var(--s2)", kind: "bar", values: s.map(function (d) { return d.new_subscriptions; }) },
-      { name: "продления", color: "var(--s3)", kind: "bar", values: s.map(function (d) { return d.renewals; }) }
-    ];
-    app.appendChild(figure("Подписки: новые и продления", "События RevenueCat (production). Сейчас подписчиков " + fmt(td.sales.subscribers) + ", триал " + fmt(td.sales.trials) + ".",
-      timeChart(days, subSeries, { label: "Подписчики по дням", partialLast: true }), subSeries, function () {
-        return dataTable(["День", "Plus с ходом", "Новые", "Продления", "Пакеты", "Возвраты"], s.map(function (d) { return [dayLabel(d.day), fmt(d.plus_drivers), fmt(d.new_subscriptions), fmt(d.renewals), fmt(d.packs), fmt(d.refunds)]; }));
-      }));
+    // VIA-502: trials and payments per day by kind; an older server's days have no kinds and get no chart
+    if (s.length && s.every(function (d) { return d.kinds; })) {
+      var kindSum = function (d, keys) { return sum(keys, function (k) { return saleCount(d, k); }); };
+      var saleSeries = [
+        { name: "пробных начато", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return saleCount(d, "trial_started"); }) },
+        { name: "оплаты", color: "var(--s3)", kind: "bar", values: s.map(function (d) { return kindSum(d, ["paid_started", "trial_converted", "renewal"]); }) },
+        { name: "отмены", color: "var(--s2)", kind: "line", values: s.map(function (d) { return kindSum(d, ["trial_cancelled", "cancelled"]); }) }
+      ];
+      var saleColumns = SALE_MAIN.concat(SALE_RARE.filter(function (k) { return s.some(function (d) { return saleCount(d, k) > 0; }); }));
+      var since = period.sales.billing_since;
+      app.appendChild(figure("Пробные и оплаты по дням", "События App Store из RevenueCat (production), водители — каждый один раз на вид за день. Оплаты — новые платные подписки, оплаты после пробного и продления; отмены — пробного и подписки (продление выключено)." +
+        (since && Date.parse(days[0] + "T00:00:00Z") < Date.parse(since) ? " Виды различаются с " + stamp(since) + ": до этого — нули." : ""),
+        timeChart(days, saleSeries, { label: "Пробные и оплаты по дням", partialLast: true }), saleSeries, function () {
+          var tw = dataTable(["День"].concat(saleColumns.map(saleLabel), ["Plus с ходом"]), s.map(function (d) {
+            return [dayLabel(d.day)].concat(saleColumns.map(function (k) { return fmt(saleCount(d, k)); }), [fmt(d.plus_drivers)]);
+          }));
+          tw.firstChild.classList.add("vheads");
+          return tw;
+        }));
+    } else app.appendChild(el("p", { class: "sub", text: "Пробные и оплаты по дням появятся после обновления сервера." }));
     if (period.paywall.exit_reasons.length) {
       app.appendChild(el("p", { class: "sub", text: "Причины ухода с пейвола за период: " + period.paywall.exit_reasons.map(function (r) { return exitReason(r.reason) + " " + r.n; }).join(" · ") }));
     }
@@ -781,16 +867,20 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 
   function renderSalesFeedback(period, periodName) {
     periodName = periodName || "за период";
-    // tables: sales and feedback of the period
-    app.appendChild(el("h2", { text: "Продажи " + periodName }));
+    // tables: sales events and feedback of the period, each sale by its kind (VIA-502)
+    app.appendChild(el("h2", { text: "События продаж " + periodName }));
     if (period.sales.buyers.length) {
       var sales = dataTable(["Когда (UTC)", "Кто", "Стр.", "Дн.", "Событие"], period.sales.buyers.slice().reverse().map(function (b) {
-        return [dayLabel(b.at) + " " + timeUtc(b.at), b.uid || "?", country(b.country || "unknown"), b.days === null ? "—" : fmt(b.days), el("span", null, [eventName(b.event_type, b.product_id) + ": ", el("span", { class: "product-name", text: productName(b.product_id) })])];
+        return [dayLabel(b.at) + " " + timeUtc(b.at), b.uid || "?", country(b.country || "unknown"), b.days === null ? "—" : fmt(b.days), el("span", null, [saleEventName(b) + ": ", el("span", { class: "product-name", text: productName(b.product_id) })])];
       }), [1, 2, 4]);
       sales.classList.add("sales");
       app.appendChild(sales);
-    } else app.appendChild(el("p", { class: "sub", text: "Продаж " + periodName + " нет" + (periodName === "за период" ? " (события RevenueCat, production)" : "") + "." }));
-    app.appendChild(el("p", { class: "sub", text: "Пакетов " + fmt(period.sales.packs) + " · возвратов " + fmt(period.sales.refunds) + " · подписчиков сейчас " + fmt(period.sales.subscribers) }));
+      var since = period.sales.billing_since, unknown = period.sales.buyers.some(function (b) { return !b.kind && b.event_type === "INITIAL_PURCHASE" && /^app\.viavo\.drive\.plus\./.test(b.product_id || ""); });
+      var tableNotes = (period.sales.buyers.length >= 20 ? ["Последние 20 событий."] : []).concat(unknown && since ? ["«Новая подписка или пробный» — до " + stamp(since) + " их не различали."] : []);
+      if (tableNotes.length) app.appendChild(el("p", { class: "sub", text: tableNotes.join(" ") }));
+    } else app.appendChild(el("p", { class: "sub", text: "Событий продаж " + periodName + " нет" + (periodName === "за период" ? " (события RevenueCat, production)" : "") + "." }));
+    // an older server: the tiles above are missing, so the counts stay here
+    if (!period.sales.kinds) app.appendChild(el("p", { class: "sub", text: "Пакетов " + fmt(period.sales.packs) + " · возвратов " + fmt(period.sales.refunds) + " · подписчиков сейчас " + fmt(period.sales.subscribers) }));
 
     app.appendChild(el("h2", { text: "Отзывы " + periodName }));
     if (period.feedback.latest.length) {
@@ -929,6 +1019,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       ["Сбои на телефоне", deviceFailures(td), todayMode ? deviceFailures(prev) : base.device_failures, false]
     ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], v[2], null, v[3], todayMode)); });
     app.appendChild(tiles);
+    renderSales(data, todayMode ? "today" : "yesterday");
 
     function hourlyFigure(title, key, split) {
       var todayValues = values(function (h) { return h[key]; });
