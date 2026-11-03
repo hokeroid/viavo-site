@@ -159,7 +159,7 @@ def auto_lang_script(available):
         "if(b==='iw')return 'he';if(b==='bs')return 'hr';if(b==='en')return 'en';"
         "return F[b]?b:null}"
         "var c=s;if(!c){var ls=navigator.languages||[navigator.language];for(var i=0;i<ls.length;i++){c=pick(ls[i]);if(c)break}}"
-        "if(c&&c!=='en'&&F[c])location.replace(F[c]+'/'+location.hash)}catch(e){}})();"
+        "if(c&&c!=='en'&&F[c])location.replace(F[c]+'/'+location.search+location.hash)}catch(e){}})();"
     ) % json.dumps(folders, separators=(',', ':'))
     return f'<script>{js}</script>\n'
 
