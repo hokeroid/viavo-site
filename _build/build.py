@@ -659,7 +659,8 @@ def legal(path, T, available):
     alts = ''
     if base != 'support':
         alts = (f'<link rel="alternate" hreflang="en" href="{BASE_URL}/{base}/">\n'
-                f'<link rel="alternate" hreflang="ru" href="{BASE_URL}/{base}/ru/">\n')
+                f'<link rel="alternate" hreflang="ru" href="{BASE_URL}/{base}/ru/">\n'
+                f'<link rel="alternate" hreflang="x-default" href="{BASE_URL}/{base}/">\n')
     TT = T[lang] if lang in T else T['en']
     desc = re.sub(r'<[^>]+>', '', meta)[:155] if meta else title
     out = [head(lang, title, desc, canonical, r, alts, og_image=f'{BASE_URL}/assets/og/en.jpg'), '<body>', SYMBOLS,
