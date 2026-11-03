@@ -159,7 +159,14 @@ def auto_lang_script(available):
         "if(b==='iw')return 'he';if(b==='bs')return 'hr';if(b==='en')return 'en';"
         "return F[b]?b:null}"
         "var c=s;if(!c){var ls=navigator.languages||[navigator.language];for(var i=0;i<ls.length;i++){c=pick(ls[i]);if(c)break}}"
-        "if(c&&c!=='en'&&F[c])location.replace(F[c]+'/'+location.search+location.hash)}catch(e){}})();"
+        "if(c&&c!=='en'&&F[c]){try{if(localStorage.getItem('viavo_team')!=='1'&&!navigator.webdriver){"
+        "var id=sessionStorage.getItem('viavo_s');if(!id){var u=crypto.getRandomValues(new Uint8Array(16)),t='';"
+        "for(var k=0;k<16;k++)t+=String.fromCharCode(u[k]);id=btoa(t).replace(/\\+/g,'-').replace(/\\//g,'_').replace(/=+$/,'');sessionStorage.setItem('viavo_s',id)}"
+        "var Q=new URLSearchParams(location.search);navigator.sendBeacon('https://mjepxubktjnrkliidnzj.supabase.co/functions/v1/site-hit',"
+        "new Blob([JSON.stringify({e:'lang_auto',p:location.pathname,l:'en',s:id,r:document.referrer,us:Q.get('utm_source')||'',"
+        "um:Q.get('utm_medium')||'',uc:Q.get('utm_campaign')||'',ct:'',tz:Intl.DateTimeFormat().resolvedOptions().timeZone||'',"
+        "bl:navigator.language||''})],{type:'text/plain'}))}}catch(x){}"
+        "location.replace(F[c]+'/'+location.search+location.hash)}}catch(e){}})();"
     ) % json.dumps(folders, separators=(',', ':'))
     return f'<script>{js}</script>\n'
 

@@ -2,6 +2,31 @@
 (() => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Visits, counted on our own server without cookies (VIA-492): a random id for this tab only, no IP kept.
+  const HIT = 'https://mjepxubktjnrkliidnzj.supabase.co/functions/v1/site-hit';
+  const hit = (e, ct) => {
+    try {
+      if (localStorage.getItem('viavo_team') === '1' || navigator.webdriver) return;
+      let s = sessionStorage.getItem('viavo_s');
+      if (!s) {
+        const b = crypto.getRandomValues(new Uint8Array(16));
+        s = btoa(String.fromCharCode(...b)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        sessionStorage.setItem('viavo_s', s);
+      }
+      const q = new URLSearchParams(location.search);
+      const body = JSON.stringify({ e, p: location.pathname, l: document.documentElement.lang, s, r: document.referrer,
+        us: q.get('utm_source') || '', um: q.get('utm_medium') || '', uc: q.get('utm_campaign') || '', ct: ct || '',
+        tz: Intl.DateTimeFormat().resolvedOptions().timeZone || '', bl: navigator.language || '' });
+      if (!(navigator.sendBeacon && navigator.sendBeacon(HIT, new Blob([body], { type: 'text/plain' }))))
+        fetch(HIT, { method: 'POST', keepalive: true, mode: 'cors', body }).catch(() => {});
+    } catch (e) {}
+  };
+  hit('pageview');
+  document.addEventListener('click', ev => {
+    const a = ev.target.closest && ev.target.closest('a[href*="apps.apple.com"]');
+    if (a) { try { hit('appstore_click', new URL(a.href).searchParams.get('ct')); } catch (e) {} }
+  });
+
   // Siri band: the language word and the real CarPlay screen change together every 3.5 s
   const band = document.querySelector('.band');
   if (band && !reduced) {
@@ -45,6 +70,7 @@
   // A language picked by hand is remembered, so the root page stops sending this visitor to the browser's language
   document.querySelectorAll('a[hreflang], .lgrid a, .ftr .fl a').forEach(a => a.addEventListener('click', () => {
     try { localStorage.setItem('viavo-lang', (a.getAttribute('hreflang') || a.lang || '').toLowerCase().replace('sr-latn', 'sr')); } catch (e) {}
+    hit('lang_switch');
   }));
 
   // Language menu closes on an outside click or Escape
