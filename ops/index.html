@@ -219,7 +219,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     if (t === "REFUND") return "возврат";
     if (t === "CANCELLATION") return "отмена";
     if (t === "UNCANCELLATION") return "снова включил продление";
-    if (t === "EXPIRATION") return "пробный истёк без оплаты";
+    // only a trial's EXPIRATION is pinged; without a kind it is a cancelled trial's end (VIA-502), or from before kinds
+    if (t === "EXPIRATION") return "пробный закончился";
     return t || "неизвестное событие";
   }
   // VIA-502: a pinged sale by its kind (owner_sale_kind on the billing row), else by its event type.
