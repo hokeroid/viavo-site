@@ -5,7 +5,7 @@ path: /hr/siri/
 title: "Siri na hrvatskom u autu: stanje u studenom 2026. i što koristiti"
 description: "Siri još ne govori hrvatski. Što to znači u CarPlayu i kako već danas u autu na hrvatskom glasom otvoriti rutu, pustiti glazbu i obaviti poziv."
 h1: "Ima li Siri na hrvatskom? Još nema. Evo što u autu radi već danas"
-updated: 2026-11-02
+updated: 2026-11-03
 sources: pages/facts-2026-11.md, pages/template-siri.md, mobile/store/metadata/hr.json, mobile/lib/l10n/app_hr.arb, app_sr_Latn.arb
 covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri hrvatski", "siri na hrvatskom", "ima li siri na hrvatskom", "glasovni asistent na hrvatskom", "siri srpski", "siri na srpskom", "glasovni asistent na srpskom"
 ---
@@ -50,7 +50,7 @@ U novembru 2026. Siri ne govori srpski: srpskog nema na spisku jezika koje Siri 
 
 ## Kako početi
 
-1. Instaliraj Viavo iz App Storea. Novi račun dobiva 10 besplatnih kredita, a Viavo Plus prvi tjedan isprobavaš besplatno.
+1. Instaliraj Viavo iz App Storea. Isprobaj ga besplatno: novi račun dobiva besplatne kredite ili besplatan tjedan usluge Viavo Plus, i uz mjesečnu i uz godišnju pretplatu (jedan tjedan po osobi).
 2. Spoji iPhone s autom (kabelom ili bežičnim CarPlayem) i na zaslonu automobila dodirni Viavo.
 3. Govori hrvatski kao i inače. Viavo odgovara na jeziku kojim mu se obraćaš, pa ne trebaš ništa podešavati. Zasloni aplikacije prikazuju se na jeziku tvog iPhonea.
 
@@ -66,4 +66,4 @@ U novembru 2026. Siri ne govori srpski: srpskog nema na spisku jezika koje Siri 
 
 **Radi li Viavo i bez CarPlaya?** Da, i na samom iPhoneu, primjerice kad je mobitel u držaču.
 
-**Je li Viavo besplatan?** Dobivaš 10 besplatnih kredita i besplatan tjedan Viavo Plusa. Zatim se Viavo Plus plaća mjesečnom ili godišnjom pretplatom.
+**Je li Viavo besplatan?** Možeš ga isprobati besplatno: novi račun dobiva besplatne kredite ili besplatan tjedan usluge Viavo Plus (jedan tjedan po osobi). Zatim se Viavo Plus plaća mjesečnom ili godišnjom pretplatom.

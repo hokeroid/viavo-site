@@ -5,7 +5,7 @@ path: /chatgpt-carplay/   # en lives at the root; other languages at /<lang>/cha
 title: "ChatGPT in CarPlay: what it can't do, and an assistant that can"
 description: "ChatGPT and other chatbots now talk in CarPlay, but in a hands-on test ChatGPT and Perplexity didn't play music, call or text. Viavo does, in 28 languages."
 h1: "ChatGPT in CarPlay: what it can do, what it can't, and what does the rest"
-updated: 2026-11-02
+updated: 2026-11-03
 sources: pages/facts-2026-11.md (every claim about other products is there with a URL and the date it was read)
 covers: Q1, Q2, Q3, Q10, Q14; keywords "chatgpt carplay", "ai assistant carplay", "siri alternative carplay"
 ---
@@ -47,7 +47,7 @@ What Viavo doesn't do: the steering-wheel button and "Hey Siri" stay with Siri, 
 
 ## How to try it
 
-1. Install Viavo from the App Store. A new account gets 10 free credits, and the first week of Viavo Plus is free.
+1. Install Viavo from the App Store. Try it for free: a new account starts with free credits or a free week of Viavo Plus, on the monthly or the yearly plan (one free week per person).
 2. Connect your iPhone to CarPlay and tap Viavo on the car screen.
 3. Say what you need: "Take me home", "Play something for the road", "What's new in my chats?"
 
@@ -61,7 +61,7 @@ What Viavo doesn't do: the steering-wheel button and "Hey Siri" stay with Siri, 
 
 **Does Viavo replace Siri?** Not entirely. The steering-wheel button and "Hey Siri" stay with Siri. Viavo is one tap on the car screen, and after that you talk normally.
 
-**Is Viavo free?** You get 10 free credits and a free week of Viavo Plus. After that, Viavo Plus is a monthly or yearly subscription.
+**Is Viavo free?** You can try it for free: a new account starts with free credits or a free week of Viavo Plus (one free week per person). After that, Viavo Plus is a monthly or yearly subscription.
 
 **Which languages?** 28, each with a native voice, including eight that Siri doesn't speak: Polish, Czech, Romanian, Greek, Hungarian, Croatian, Serbian and Ukrainian.
 

@@ -5,7 +5,7 @@ path: /cs/siri/
 title: "Siri česky v autě: stav v listopadu 2026 a co funguje už teď"
 description: "Siri zatím česky nemluví. Co to znamená v CarPlay a který hlasový asistent v češtině vám v autě už dnes otevře trasu, pustí hudbu a zavolá."
 h1: "Umí Siri česky? Zatím ne. Tohle v autě funguje už dnes"
-updated: 2026-11-02
+updated: 2026-11-03
 sources: pages/facts-2026-11.md (every claim about Siri and the chatbots is there with a URL and the date it was read); Viavo claims from mobile/store/metadata/cs.json
 covers: keywords "siri česky", "umí siri česky", "kdy bude siri česky", "siri v češtině", "siri čeština", "hlasový asistent v češtině", "který hlasový asistent umí česky", "hey siri česky"
 store: cz
@@ -48,7 +48,7 @@ Pět příkladů přímo z aplikace:
 
 ## Jak začít
 
-1. Stáhněte si Viavo z App Storu. Nový účet dostane 10 kreditů zdarma a první týden Viavo Plus neplatíte.
+1. Stáhněte si Viavo z App Storu. Vyzkoušejte zdarma: nový účet dostane na začátek buď bezplatné kredity, nebo týden Viavo Plus zdarma, a to u měsíčního i ročního předplatného (jeden bezplatný týden na osobu).
 2. Připojte iPhone ke CarPlay a na obrazovce auta klepněte na Viavo.
 3. Mluvte česky tak, jak jste zvyklí. Viavo odpovídá v jazyce, kterým na něj mluvíte, takže není co nastavovat; obrazovky aplikace se řídí jazykem iPhonu.
 
@@ -64,4 +64,4 @@ Pět příkladů přímo z aplikace:
 
 **Přečte mi Viavo zprávy nahlas česky?** Z Telegramu a Slacku ano: řekne vám, co je nového, shrne chat, přečte zprávu a odpověď mu nadiktujete. Zprávu pro WhatsApp nebo SMS Viavo připraví a otevře v telefonu, odešlete ji jedním klepnutím.
 
-**Je Viavo zdarma?** Nový účet dostane 10 kreditů a týden Viavo Plus zdarma. Potom je Viavo Plus měsíční nebo roční předplatné.
+**Je Viavo zdarma?** Vyzkoušet ho můžete zdarma: nový účet dostane na začátek buď bezplatné kredity, nebo týden Viavo Plus zdarma (jeden bezplatný týden na osobu). Potom je Viavo Plus měsíční nebo roční předplatné.

@@ -5,7 +5,7 @@ path: /hu/siri/
 title: "Magyar Siri az autóban: mikor lesz, és mi működik addig?"
 description: "2026 novemberében a Siri még nem tud magyarul. Mit jelent ez a CarPlay-ben, és hogyan irányíthatod már ma magyarul a navigációt, a zenét és a hívásokat?"
 h1: "Tud magyarul a Siri? Még nem. De az autóban már most beszélhetsz magyarul"
-updated: 2026-11-02
+updated: 2026-11-03
 sources: pages/facts-2026-11.md (every claim about Siri, Siri AI and the chatbots is there with a URL and the date it was read)
 ---
 
@@ -45,7 +45,7 @@ Ha magyar hangasszisztenst keresel az autóba, ez a helyzet 2026 novemberében:
 
 ## Így kezdheted el
 
-1. Töltsd le a Viavót az App Store-ból. Az új fiókhoz 10 ingyenes kredit jár, a Viavo Plus első hete pedig ingyenes.
+1. Töltsd le a Viavót az App Store-ból. Próbáld ki ingyen: az új fiók ingyenes kreditekkel vagy a Viavo Plus ingyenes próbahetével indul; a próbahét a havi és az éves előfizetésnél is jár (személyenként egyszer).
 2. Csatlakoztasd az iPhone-t az autóhoz, és a CarPlay-kijelzőn koppints a Viavóra.
 3. Beszélj hozzá magyarul, a saját szavaiddal. A Viavo azon a nyelven válaszol, amelyen megszólítod, így semmit sem kell beállítanod; az app felülete az iPhone nyelvét követi.
 
@@ -61,4 +61,4 @@ Ha magyar hangasszisztenst keresel az autóba, ez a helyzet 2026 novemberében:
 
 **Felolvassa a Viavo a magyar üzeneteimet?** Telegramon és Slacken igen: elmondja, mi újság, összefoglalja egy chat lényegét, felolvas egy üzenetet, és a választ is lediktálhatod. WhatsAppon és SMS-ben megírja, amit mondasz, az elküldés pedig egy koppintás a telefonon.
 
-**Ingyenes a Viavo?** Kipróbálni igen: 10 ingyenes kredit jár, és egy hétig a Viavo Plus is ingyenes. Utána a Viavo Plus havi vagy éves előfizetés.
+**Ingyenes a Viavo?** Kipróbálni igen: az új fiók ingyenes kreditekkel vagy a Viavo Plus ingyenes próbahetével indul; a próbahét személyenként egyszer jár. Utána a Viavo Plus havi vagy éves előfizetés.

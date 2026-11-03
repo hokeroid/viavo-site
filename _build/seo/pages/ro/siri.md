@@ -5,7 +5,7 @@ path: /ro/siri/
 title: "Siri în română în mașină: ce există și ce merge (noiembrie 2026)"
 description: "Siri nu vorbește încă română. Ce înseamnă asta în CarPlay și cum folosiți azi, la volan, un asistent vocal în limba română."
 h1: "Siri vorbește română? Încă nu. Iată ce puteți folosi azi în mașină"
-updated: 2026-11-02
+updated: 2026-11-03
 sources: pages/facts-2026-11.md, pages/template-siri.md, mobile/store/metadata/ro.json, mobile/lib/l10n/app_ro.arb
 covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri in romana", "exista siri in romana", "siri vorbeste romana", "siri limba romana", "asistent vocal in limba romana", "asistent vocal masina"
 cta: App Store, Romania store, ct=ro-siri
@@ -47,7 +47,7 @@ Cinci exemple reale din aplicație:
 
 ## Cum începeți
 
-1. Instalați Viavo din App Store. Un cont nou primește 10 credite gratuite, iar prima săptămână de Viavo Plus este gratuită.
+1. Instalați Viavo din App Store. Încercați-l fără niciun cost: un cont nou începe cu credite gratuite sau cu o săptămână de probă gratuită pentru Viavo Plus (doar una de persoană), atât la abonamentul lunar, cât și la cel anual.
 2. Conectați iPhone-ul la CarPlay și atingeți Viavo pe ecranul mașinii.
 3. Vorbiți românește, ca de obicei. Viavo răspunde în limba în care îi vorbiți, așa că nu e nevoie să configurați nimic; ecranele aplicației sunt în limba iPhone-ului.
 
@@ -63,4 +63,4 @@ Cinci exemple reale din aplicație:
 
 **Viavo funcționează și fără CarPlay?** Da, direct pe iPhone, de exemplu cu telefonul prins într-un suport auto.
 
-**Viavo este gratuit?** Un cont nou primește 10 credite gratuite și o săptămână gratuită de Viavo Plus. După aceea, Viavo Plus este un abonament lunar sau anual.
+**Viavo este gratuit?** Îl puteți încerca fără niciun cost: un cont nou începe cu credite gratuite sau cu o săptămână de probă gratuită pentru Viavo Plus (doar una de persoană). După aceea, Viavo Plus este un abonament lunar sau anual.

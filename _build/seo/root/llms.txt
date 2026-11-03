@@ -4,7 +4,7 @@
 
 Key facts:
 - Platforms: iPhone (iOS 17 or later) and Apple CarPlay. App Store: https://apps.apple.com/app/id6761760437
-- Price: free to download; the first week of Viavo Plus is free (one per account), then a monthly or yearly subscription.
+- Price: free to try: a new account starts with free credits or a free week of Viavo Plus, on the monthly or the yearly plan (one free week per person); then a monthly or yearly subscription.
 - How it starts: one big button on the CarPlay screen, no wake word; the steering-wheel voice button stays with Siri.
 - Works with Apple Maps, Google Maps, Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer; Simple Radio, TuneIn, iHeartRadio.
 - Made by a small team in Serbia.

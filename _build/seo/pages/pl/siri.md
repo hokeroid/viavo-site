@@ -5,7 +5,7 @@ path: /pl/siri/
 title: "Siri po polsku w samochodzie: stan na listopad 2026 i co zamiast"
 description: "Czy Siri mówi po polsku? Jeszcze nie. Wyjaśniamy, co to oznacza w CarPlay i jak już dziś rozmawiać po polsku z asystentem głosowym w samochodzie."
 h1: "Czy Siri mówi po polsku? Jeszcze nie. Co działa w samochodzie już dziś"
-updated: 2026-11-02
+updated: 2026-11-03
 sources: pages/facts-2026-11.md (each claim about Siri, CarPlay and the chatbots, with a URL and the date it was read); example phrases from mobile/lib/l10n/app_pl.arb; Viavo claims from mobile/store/metadata/pl.json
 ---
 
@@ -43,7 +43,7 @@ Szukasz asystenta głosowego po polsku do samochodu? Tak to wygląda w listopad
 
 ## Jak zacząć
 
-1. Pobierz Viavo z App Store. Nowe konto dostaje 10 darmowych kredytów, a pierwszy tydzień Viavo Plus jest bezpłatny.
+1. Pobierz Viavo z App Store. Wypróbuj za darmo: nowe konto dostaje na start darmowe kredyty albo darmowy tydzień Viavo Plus, zarówno w planie miesięcznym, jak i rocznym (jeden tydzień na osobę).
 2. Podłącz iPhone’a do samochodu, kablem albo przez bezprzewodowy CarPlay, i stuknij Viavo na ekranie auta. Ikona często jest na ostatniej stronie aplikacji.
 3. Mów po polsku swoimi słowami, bez uczenia się komend. Viavo odpowiada w języku, w którym do niego mówisz, więc niczego nie trzeba ustawiać. Ekrany aplikacji są w języku Twojego iPhone’a.
 
@@ -59,4 +59,4 @@ Szukasz asystenta głosowego po polsku do samochodu? Tak to wygląda w listopad
 
 **Czy Viavo działa bez CarPlay?** Tak, także na samym iPhonie, na przykład w uchwycie na telefon.
 
-**Czy z Viavo można korzystać za darmo?** Na początek tak: dostajesz 10 darmowych kredytów i bezpłatny tydzień Viavo Plus. Potem Viavo Plus to subskrypcja miesięczna lub roczna.
+**Czy z Viavo można korzystać za darmo?** Na początek tak: nowe konto dostaje darmowe kredyty albo darmowy tydzień Viavo Plus (jeden tydzień na osobę). Potem Viavo Plus to subskrypcja miesięczna lub roczna.
