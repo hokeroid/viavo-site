@@ -268,6 +268,18 @@ def phone_lang(lang):
     return lang if exists(f'assets/img/phone-{lang}-route-660.webp') else 'en'
 
 
+# The hero's "it's done" card: a real CarPlay frame in the speaking state, with the driver's phrase, Viavo's reply (the text
+# the real app said, from the copy) and what happened. Shown only where carplay-<lang>-speaking exists; HERO_TALK=0 hides it.
+HERO_TALK = os.environ.get('HERO_TALK', '0') == '1'  # on after the owner's yes
+
+
+def speaking_screen(lang):
+    for k in (f'carplay-{lang}-speaking', f'carplay-{lang}-night-speaking'):
+        if exists(f'assets/img/{k}-1080.webp'):
+            return k
+    return None
+
+
 def hero_screen(lang):
     for k in (f'carplay-{lang}-idle', f'carplay-{lang}-night-speaking', f'carplay-{lang}-listening'):
         if exists(f'assets/img/{k}-1080.webp'):
@@ -300,13 +312,19 @@ def home(lang, T, available):
     q = T['qo'], T['qc']
 
     # hero
+    talk = speaking_screen(lang) if HERO_TALK else None
+    talk_card = ''
+    if talk:
+        talk_card = (f'<div class="talk" style="--q:\'{q[0]}\' \'{q[1]}\'"><p class="drv"><q>{e(T["examples"][0])}</q></p>'
+                     f'<p class="via"><span class="who">Viavo</span>{brandsafe(T["replies"][0])}</p>'
+                     f'<p class="done"><svg aria-hidden="true"><use href="#i-road"/></svg><span>{brandsafe(T["done"][0])}</span></p></div>')
     out.append(f'''<main id="main">
 <section class="hero" id="top"><div class="wrap">
 <p class="eyebrow">{brandsafe(T["eyebrow"])}</p>
 <h1 class="h1"><span>{brandsafe(T["h1a"])}</span><span class="b">{brandsafe(T["h1b"])}</span></h1>
 <p class="lead">{brandsafe(T["sub"])}</p>
 <div class="cta-row">{badge(lang, r, f"site-{lang}-hero").replace("{alt}", alt_badge)}{qr(lang, T, r)}</div>
-<div class="hero-shot{"" if lang in STORY else " solo"}"><div class="glow"></div><div class="car"><div class="scr">{picture(hero_screen(lang), (1080, 1920), "(max-width:760px) 230vw, 1060px", T["heroAlt"], r, 1920, 1080, eager=True)}</div></div></div>
+<div class="hero-shot{"" if lang in STORY else " solo"}{" talking" if talk else ""}"><div class="glow"></div><div class="car"><div class="scr">{picture(talk or hero_screen(lang), (1080, 1920), "(max-width:760px) 230vw, 1060px", T["heroAlt"], r, 1920, 1080, eager=True)}</div></div>{talk_card}</div>
 </div></section>
 ''')
 

@@ -91,6 +91,16 @@ button{font:inherit;color:inherit}
 .hero-shot .car{max-width:1084px;margin-inline:auto}
 .hero-shot.solo{margin-bottom:0}
 
+/* the "it's done" card next to the hero's CarPlay screen */
+.hero-shot .car{position:relative}
+.talk{position:absolute;z-index:3;bottom:-36px;inset-inline-end:calc(50% - 600px);width:400px;padding:22px 24px;text-align:start;
+  background:color-mix(in srgb,var(--surface) 88%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.talk .drv q{quotes:var(--q);font-family:var(--fh);font-weight:600;font-size:19px;line-height:1.3;color:var(--amber)}
+.talk .via{font-size:15px;line-height:1.5;color:var(--ice)}
+.talk .who{display:block;margin-bottom:2px;font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:13px;letter-spacing:.02em}
+.talk .done{align-self:flex-start;display:flex;align-items:center;gap:8px;padding:6px 12px 6px 10px;border-radius:10px;background:var(--surface-hi);color:var(--sec);font-weight:500;font-size:14px}
+.talk .done svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 /* Siri band */
 .band{background:var(--surface);padding:calc(300px + var(--pad)) 0 var(--pad)}
 .band .grid{align-items:center}
@@ -339,6 +349,8 @@ button{font:inherit;color:inherit}
   .cta-row{margin-top:28px}
   .badge img{height:48px}
   .hero-shot{margin-top:40px;margin-bottom:-160px}
+  .talk{position:relative;inset:auto;width:auto;margin:14px 0 0;padding:18px 20px}
+  .talk .drv q{font-size:17px}
   .car{padding:8px;border-radius:22px}
   /* phone: a 10:9 window (1200 px of 1920) centred on the button at x=1006; the widest caption (Greek, 852 px) fits with ~14% to spare */
   .car .scr{aspect-ratio:10/9;border-radius:16px}
