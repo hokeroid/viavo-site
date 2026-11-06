@@ -13,11 +13,12 @@
   <nav><a href="../privacy/">Privacy</a> &nbsp;·&nbsp; <a href="../support/">Support</a> &nbsp;·&nbsp; <a href="ru/">Русский</a></nav>
 </header>
 <h1>How Viavo handles your messages</h1>
-<p class="meta">Telegram and Slack in Viavo. Updated 11 October 2026. This page explains the mechanics; the <a href="../privacy/">Privacy Policy</a> is the binding document.</p>
+<p class="meta">Message and email connections. Updated 6 November 2026. This page explains the mechanics; the <a href="../privacy/">Privacy Policy</a> is the binding document.</p>
 
-<p>Viavo reads or sends a message only when you ask for it, in the moment you ask, and only what you asked for. Nobody at Viavo reads your chats, and our server keeps no copy of your account access or of your messages. The rest of this page says how that is made true, step by step.</p>
+<p>Telegram and Slack are read when you ask; their fetched source messages are not retained on Viavo’s server after the request is processed. The assistant’s retelling enters conversation history. Email and notification automations work differently, as explained separately below.</p>
+<p><strong>Availability on 6 November 2026.</strong> Email reading is prepared for a new app release and is being verified. Notification and background-send automations are in closed testing; public setup templates for SMS/iMessage, WhatsApp and Viber are not available yet. Describing their data handling does not mean these features are available in the App Store or operational on your phone.</p>
 
-<h2>1. Where the access to your account lives</h2>
+<h2>1. Telegram and Slack: account access</h2>
 <p>When you connect Telegram (phone number, the code Telegram sends, your two-step password if you have one) or Slack (the usual “Allow” page in your workspace), our server receives the session once, at that moment. It encrypts it with a key that exists only in the server’s secret store, hands the encrypted blob back to your phone and forgets it. There is no table of accounts in our database. If Telegram asks you to link a login email first, the address you type goes through our server to Telegram and is not kept either.</p>
 <p>Your phone keeps the blob in the iOS Keychain and sends it along with every request you make. The server decrypts it in memory for the few seconds the request takes and drops it again. So:</p>
 <ul>
@@ -25,9 +26,9 @@
   <li>your phone alone, without the server’s key, holds nothing usable either;</li>
   <li>the access is per phone: a new phone means connecting again, and nothing follows you around.</li>
 </ul>
-<p>In Telegram, Viavo appears in Settings → Devices as a signed-in device, and you can end it from there at any time. In Slack, it is listed under your workspace’s apps. “Disconnect” in Viavo does both: forgets the blob on the phone and signs the session out.</p>
+<p>In Telegram, Viavo appears in Settings → Devices as a signed-in device, and you can end it from there at any time. In Slack, it is listed under your workspace’s apps. “Disconnect” in Viavo removes the blob on the phone and requests sign-out from the provider. If the provider is unavailable, end the session in its settings.</p>
 
-<h2>2. What happens when you ask</h2>
+<h2>2. Telegram and Slack: reading and sending</h2>
 <ol>
   <li>You say, for example, “what did Anna write?”. Your words become text (by ElevenLabs’ speech recognition, or on the phone if you chose on-device recognition).</li>
   <li>The language model (Anthropic’s Claude) decides what is needed: find the chat named Anna, read its unread messages.</li>
@@ -38,9 +39,9 @@
 <p>Sending works the same way in reverse. Viavo sends only the message you dictated, to the one chat you named, and by default it first reads the recipient and the text back and waits for your “yes”. You can switch that confirmation off per account in Settings. It never sends to several chats at once and never adds anything you did not say.</p>
 <p>Viavo does not mark chats as read behind your back. A chat is marked read only when you ask, or when you turn on “Mark as read” for that account.</p>
 
-<h2>3. What is kept and what is not</h2>
+<h2>3. Telegram and Slack: storage</h2>
 <table>
-<tr><th>Not kept anywhere</th><th>Kept, like any conversation with Viavo</th></tr>
+<tr><th>Not retained on Viavo’s server after the request</th><th>Kept, like any conversation with Viavo</th></tr>
 <tr>
 <td>The messages fetched from the messenger. The audio of voice messages. Your session or token (the server never stores it). The list of your chats and contacts in the messenger.</td>
 <td>The text of what you asked and the text of the assistant’s spoken reply. When the assistant retells a message to you, that retelling is part of its reply and is kept for 7 days as the day’s conversation, as described in the <a href="../privacy/">Privacy Policy</a> (section 5), so you can follow up with “reply to her”. Daily summaries and the long-term memory are built from those replies; memory can be turned off and any fact deleted in Settings → Memory.</td>
@@ -48,25 +49,39 @@
 </table>
 <p>Our technical logs record the type of request, how long it took, how many accounts were connected and whether a message was sent. They do not contain message text, chat names or contact names.</p>
 
-<h2>4. Who sees what</h2>
+<h2>4. Who processes text</h2>
 <table>
 <tr><th>Who</th><th>What they receive</th></tr>
 <tr><td>Telegram, Slack</td><td>The same requests your own Telegram or Slack app would make, from your own account. Viavo uses the official Telegram API with its own application identifier, and a Slack user token with the permissions listed on the “Allow” page.</td></tr>
-<tr><td>Anthropic (Claude)</td><td>Your request and the text of the messages that were fetched to answer it, together with the day’s recent conversation. Anthropic processes it to produce the reply and does not use it to train models.</td></tr>
-<tr><td>OpenAI</td><td>The audio of voice messages, to turn them into text.</td></tr>
+<tr><td>Anthropic (Claude)</td><td>Your request and message, email or saved notification text selected for the answer, with the applicable conversation context. Anthropic processes it to produce the reply and does not use it to train models.</td></tr>
+<tr><td>OpenAI</td><td>Voice-message audio for transcription; answer text when providing backup speech.</td></tr>
+<tr><td>ElevenLabs</td><td>Your recorded request for speech recognition; answer text when providing speech.</td></tr>
 <tr><td>Microsoft (Azure Speech)</td><td>The text of the spoken reply.</td></tr>
-<tr><td>Supabase</td><td>Our server runs there (EU, Ireland). It passes the data through as described above and stores what section 3 lists.</td></tr>
+<tr><td>Supabase</td><td>Our server runs there (EU, Ireland). It passes the data through as described above and stores the data described in sections 3, 6 and 7.</td></tr>
 </table>
 <p>Before any of this happens, the Messengers screen asks you to agree to the text of your messages being sent to these providers. Until you do, no messenger can be connected.</p>
 
-<h2>5. Your controls</h2>
+<h2>5. Telegram and Slack: controls</h2>
 <ul>
   <li><strong>The consent switch</strong> on the Messengers screen: off means nothing is connected and nothing is sent.</li>
   <li><strong>Confirm before sending</strong>, per account: Viavo reads the message back and asks before sending.</li>
   <li><strong>Mark as read</strong>, per account: off by default.</li>
-  <li><strong>Disconnect</strong>: forgets the account on the phone and signs it out at Telegram or Slack. You can also end the session from inside Telegram or Slack.</li>
+  <li><strong>Disconnect</strong>: removes access from the phone and requests sign-out at Telegram or Slack. You can also end the session from inside Telegram or Slack.</li>
   <li><strong>Delete account</strong> in Viavo Settings removes everything we keep for you.</li>
 </ul>
+<h2>6. Email: reading on request</h2>
+<p>In a version that offers this feature, after consenting to text processing you can connect a personal Gmail, iCloud or Yahoo account with an app password. Only supported addresses at those providers and certificate-verified encrypted IMAP connections are accepted. Custom or work servers, access to the entire Mail app, email sending and attachments are not supported.</p>
+<p>The address and app password pass through our server during connection. The server encrypts the credentials; the encrypted blob stays in your phone’s Keychain and accompanies a request. The server uses credentials in memory and does not keep them in its database. Disconnecting removes the blob from the phone but does not revoke the provider’s app password: revoke it in your email account’s settings.</p>
+<p>When you ask, the server finds unread or recent mail, optionally by sender or subject, and fetches up to five messages per request. Long text is bounded and truncation is reported; attachments and external HTML resources are not downloaded. Reading leaves unread status unchanged by default. If you separately enable marking mail as read, it applies to successfully fetched messages; it does not confirm that the phone has finished speaking their text.</p>
+<p>Our server, the language model and the speech service listed in section 4 process the selected text. The email provider receives login details and reading requests; its copies of your mail remain with it. Email text and its spoken retelling do not enter Viavo’s persisted conversation history, daily summaries, diagnostic samples or analytics templates. Instead of that turn’s text, we keep a service marker, bounded message-selection identifiers and safe error information; an encrypted cursor for the next page expires after 30 minutes. No retention by Viavo does not mean no processing by the listed providers.</p>
+
+<h2>7. Notification and send automations: closed testing</h2>
+<p>Incoming notifications and sending require separate setup for each available channel. Until a public template for that connection is released, it cannot be installed through Viavo. Incoming notifications require separate consent to background transfer and storage: the ordinary Telegram or Slack connection consent is not enough.</p>
+<p>An iPhone automation you configure can forward only new notifications available to it: source, sender information, title, preview text, time and service identifiers. It does not open entire chat histories, attachments or a reliable read status. Previews can be truncated or hidden by phone settings; if no notification arrives or the automation does not run, Viavo receives no message. The phone keeps events awaiting upload in protected app storage: at most 100 events and 2 MB, dropping events older than 7 days during queue maintenance. The access credential stays in Keychain; the server stores its hash and a connection record with your consent.</p>
+<p>Events containing preview text are stored by Supabase in the EU (Ireland) and available for reading for 7 days after notification capture. When you ask, selected text goes to the language model and the reply to the speech service; that retelling enters the normal 7-day conversation history, its summaries and, with Memory on, remembered facts. Reading covers only saved events and does not guarantee a complete chat search. Observed sender names and addresses are stored for recipient selection; cleanup removes them after 90 days without new events. Recipient names you confirm are removed with the associated sender or connection.</p>
+<p>If sending is separately offered and configured, Viavo first asks you to confirm a specific recipient and exact text. This is a separate private send, not a reconstruction of the original chat or group from a notification. The server creates a job that the phone can retrieve once within 5 minutes. Recipient and text are cleared from the server on the first retrieval, cancellation or expiry processing; scheduled cleanup deletes the status record after 7 days. The phone passes the recipient and text to the selected messaging service through the configured automation. Completion of the phone action does not prove delivery or reading; without confirmation the outcome can remain unknown.</p>
+<p>Expiry prevents further event reading or job retrieval. Scheduled cleanup physically deletes expired events, old senders and jobs; it is configured hourly where the database scheduler is enabled and may run after expiry. Pausing stops intake and clears the channel’s phone queue but does not delete events already stored on the server. Disconnecting deletes the connection and its events, senders, recipient names and jobs. Previously composed conversation history is managed separately under the <a href="../privacy/">Privacy Policy</a>. You can also disable the automation in Shortcuts.</p>
+
 <p>Questions or doubts: the <a href="../support/">Support page</a>.</p>
 
 <footer>© 2026 Viavo</footer>
