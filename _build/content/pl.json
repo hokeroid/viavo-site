@@ -75,7 +75,8 @@
    "Ludzie i wiadomości",
    [
     "Dzwonienie do kontaktów po imieniu",
-    "WhatsApp i SMS: wiadomość gotowa na telefonie, wystarczy stuknąć Wyślij",
+    "WhatsApp: czytanie i wysyłanie głosem w nadchodzącej wersji",
+    "SMS: wiadomość gotowa na telefonie, wystarczy stuknąć Wyślij",
     "Telegram i Slack: co nowego, streszczenie czatu, dyktowanie odpowiedzi"
    ],
    "Napisz Piotrkowi, że spóźnię się dziesięć minut"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Czym Viavo różni się od ChatGPT czy Gemini w CarPlay?",
-   "ChatGPT i Gemini w CarPlay są stworzone do rozmowy. Viavo także robi to, o co prosisz: dzwoni do kontaktu, przygotowuje wiadomość WhatsApp lub SMS, włącza muzykę albo stację radiową, a jedno zdanie wystarczy, by otworzył w Twojej nawigacji trasę z przystankiem lub miejsce po drodze."
+   "ChatGPT i Gemini w CarPlay są stworzone do rozmowy. Viavo także robi to, o co prosisz: dzwoni do kontaktu, przygotowuje wiadomość SMS, włącza muzykę albo stację radiową, a jedno zdanie wystarczy, by otworzył w Twojej nawigacji trasę z przystankiem lub miejsce po drodze."
   ],
   [
    "W jakich językach mówi Viavo?",
@@ -206,6 +207,10 @@
    "Wypróbuj Viavo za darmo: nowe konto dostaje na start darmowe kredyty albo darmowy tydzień Viavo Plus, zarówno w planie miesięcznym, jak i rocznym (jeden tydzień na osobę). Jeśli anulujesz subskrypcję w okresie próbnym, dostęp od razu wygaśnie. Ceny znajdziesz w App Store, w swojej walucie."
   ],
   [
+   "Jak WhatsApp działa z Viavo?",
+   "Wkrótce w Viavo 1.0.11 na iOS 27 lub nowszym. Obecna wersja w App Store, 1.0.9, nie zawiera tej konfiguracji. Poproś Viavo o przeczytanie powiadomień WhatsApp otrzymanych po konfiguracji. Dostępne są tylko podglądy powiadomień, nie wcześniejsze czaty ani załączniki; tekst może być niepełny. Wysyłanie wymaga osobnej zgody oraz potwierdzenia odbiorcy i tekstu."
+  ],
+  [
    "Co dzieje się z moimi danymi?",
    "Wszystko opisaliśmy w dwóch dokumentach."
   ]
@@ -224,5 +229,12 @@
  "scan": "Zeskanuj iPhone’em",
  "getApp": "Pobierz aplikację",
  "skip": "Przejdź do treści",
- "close": "Zamknij"
+ "close": "Zamknij",
+ "whatsapp": {
+  "title": "Jak WhatsApp działa z Viavo?",
+  "availability": "Wkrótce w Viavo 1.0.11 na iOS 27 lub nowszym. Obecna wersja w App Store, 1.0.9, nie zawiera tej konfiguracji.",
+  "receive": "Poproś Viavo o przeczytanie powiadomień WhatsApp otrzymanych po konfiguracji. Dostępne są tylko podglądy powiadomień, nie wcześniejsze czaty ani załączniki; tekst może być niepełny.",
+  "send": "Wysyłanie wymaga osobnej zgody oraz potwierdzenia odbiorcy i tekstu. Tylko wiadomości prywatne do osób jednoznacznie rozpoznanych na podstawie powiadomień odebranych przez tę instalację Viavo. Sam kontakt w telefonie nie wystarczy. Dostawa nie jest gwarantowana; nadal można przygotować wiadomość na telefonie.",
+  "setup": "Na postoju otwórz WhatsApp w ustawieniach Viavo lub podczas pierwszej konfiguracji i wybierz Połącz. Dodaj skrót odbierania, włącz jego automatyzację, uruchom raz i udziel wymaganych uprawnień. Jeśli chcesz wysyłać, skonfiguruj to osobno i tak samo aktywuj skrót wysyłania. Skróty automatycznie trafiają do folderu Viavo."
+ }
 }

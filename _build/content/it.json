@@ -75,7 +75,8 @@
    "Persone e messaggi",
    [
     "Chiamare un contatto per nome",
-    "WhatsApp e SMS: il messaggio è pronto sul telefono, basta toccare Invia",
+    "WhatsApp: lettura e invio a voce nella prossima versione",
+    "SMS: il messaggio è pronto sul telefono, basta toccare Invia",
     "Telegram e Slack: le novità, il riassunto, una risposta dettata"
    ],
    "Di’ a Marco che tardo dieci minuti"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Che differenza c’è tra Viavo e ChatGPT o Gemini in CarPlay?",
-   "ChatGPT e Gemini in CarPlay sono fatti per conversare. Viavo, in più, fa quello che chiedi: chiama un contatto, prepara un messaggio WhatsApp o SMS, mette musica o una radio e, con una sola frase, apre nel tuo navigatore un percorso con una tappa o un posto lungo la strada."
+   "ChatGPT e Gemini in CarPlay sono fatti per conversare. Viavo, in più, fa quello che chiedi: chiama un contatto, prepara un SMS, mette musica o una radio e, con una sola frase, apre nel tuo navigatore un percorso con una tappa o un posto lungo la strada."
   ],
   [
    "Quali lingue parla Viavo?",
@@ -206,6 +207,10 @@
    "Prova Viavo gratis: ogni nuovo account inizia con crediti gratuiti o con una settimana di prova gratuita di Viavo Plus, valida sia per l’abbonamento mensile sia per quello annuale (una sola a persona). Se disdici durante la settimana di prova, l’accesso termina subito. Trovi i prezzi su App Store, nella tua valuta."
   ],
   [
+   "Come funziona WhatsApp con Viavo?",
+   "In arrivo con Viavo 1.0.11 su iOS 27 o successivo. La versione attuale sull’App Store, 1.0.9, non include questa configurazione. Chiedi a Viavo di leggere le notifiche WhatsApp ricevute dopo la configurazione. Legge solo le anteprime disponibili, non le vecchie chat o gli allegati; il testo può essere incompleto. L’invio richiede un consenso separato e la conferma del destinatario e del testo."
+  ],
+  [
    "Che fine fanno i miei dati?",
    "È tutto scritto in due documenti."
   ]
@@ -224,5 +229,12 @@
  "scan": "Inquadra con il tuo iPhone",
  "getApp": "Scarica l’app",
  "skip": "Vai al contenuto",
- "close": "Chiudi"
+ "close": "Chiudi",
+ "whatsapp": {
+  "title": "Come funziona WhatsApp con Viavo?",
+  "availability": "In arrivo con Viavo 1.0.11 su iOS 27 o successivo. La versione attuale sull’App Store, 1.0.9, non include questa configurazione.",
+  "receive": "Chiedi a Viavo di leggere le notifiche WhatsApp ricevute dopo la configurazione. Legge solo le anteprime disponibili, non le vecchie chat o gli allegati; il testo può essere incompleto.",
+  "send": "L’invio richiede un consenso separato e la conferma del destinatario e del testo. Solo messaggi privati a persone identificate senza ambiguità dalle notifiche ricevute da questa installazione di Viavo. Un contatto del telefono non basta. La consegna non è garantita; la bozza sul telefono resta un’alternativa.",
+  "setup": "Da fermo, apri WhatsApp nelle impostazioni di Viavo o durante la configurazione iniziale e tocca Connetti. Aggiungi il comando di ricezione, attiva la sua automazione, eseguilo una volta e consenti l’accesso richiesto. Se vuoi inviare, configura l’invio separatamente e attiva il relativo comando nello stesso modo. I comandi vengono raggruppati automaticamente nella cartella Viavo."
+ }
 }

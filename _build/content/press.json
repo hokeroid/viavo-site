@@ -26,7 +26,7 @@
   ],
   [
    "What’s new in my chats?",
-   "The gist of Telegram and Slack, read a message, dictate a reply; WhatsApp and SMS messages open ready to send."
+   "Telegram and Slack: read, summarize and dictate a reply. WhatsApp notification reading and separate private sending arrive in Viavo 1.0.11 on iOS 27 or later; the current App Store version 1.0.9 lacks native setup. Only received notification previews and unambiguously observed recipients are supported, with confirmation and no delivery guarantee. Phone drafts, including SMS, remain available."
   ],
   [
    "Remind me to call the bank when I get to the office",

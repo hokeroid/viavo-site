@@ -75,7 +75,8 @@
    "Liên lạc và tin nhắn",
    [
     "Gọi cho người trong danh bạ chỉ bằng cách nói tên",
-    "WhatsApp và SMS: tin nhắn được soạn sẵn trên điện thoại, bạn chỉ cần chạm Gửi",
+    "WhatsApp: đọc và gửi bằng giọng nói trong phiên bản sắp tới",
+    "SMS: tin nhắn được soạn sẵn trên điện thoại, bạn chỉ cần chạm Gửi",
     "Telegram và Slack: có gì mới, tóm tắt ý chính, đọc chính tả tin trả lời"
    ],
    "Nhắn Minh là tôi đến muộn mười phút"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Viavo khác gì ChatGPT hay Gemini trên CarPlay?",
-   "ChatGPT và Gemini trên CarPlay được thiết kế để trò chuyện. Viavo còn làm theo lời bạn nói: gọi cho một liên hệ, soạn sẵn tin nhắn WhatsApp hoặc SMS, phát nhạc hay một đài radio, và chỉ từ một câu nói là mở lộ trình kèm điểm dừng, hoặc một địa điểm dọc đường, trong ứng dụng dẫn đường của bạn."
+   "ChatGPT và Gemini trên CarPlay được thiết kế để trò chuyện. Viavo còn làm theo lời bạn nói: gọi cho một liên hệ, soạn sẵn tin nhắn SMS, phát nhạc hay một đài radio, và chỉ từ một câu nói là mở lộ trình kèm điểm dừng, hoặc một địa điểm dọc đường, trong ứng dụng dẫn đường của bạn."
   ],
   [
    "Viavo nói được những ngôn ngữ nào?",
@@ -206,6 +207,10 @@
    "Trải nghiệm Viavo miễn phí: tài khoản mới được tặng credit miễn phí hoặc một tuần dùng thử Viavo Plus miễn phí, áp dụng cho cả gói tháng lẫn gói năm (mỗi người chỉ được dùng thử một lần). Nếu hủy trong tuần dùng thử, bạn sẽ mất quyền truy cập ngay. Giá hiển thị trên App Store, theo đơn vị tiền tệ của bạn."
   ],
   [
+   "WhatsApp hoạt động với Viavo như thế nào?",
+   "Sắp có trong Viavo 1.0.11 trên iOS 27 trở lên. Phiên bản App Store hiện tại, 1.0.9, chưa có phần thiết lập này. Yêu cầu Viavo đọc thông báo WhatsApp nhận được sau khi thiết lập. Chỉ nội dung xem trước có sẵn được đọc, không phải lịch sử trò chuyện hay tệp đính kèm; văn bản có thể không đầy đủ. Gửi tin cần sự đồng ý riêng và xác nhận người nhận cùng nội dung."
+  ],
+  [
    "Dữ liệu của tôi được xử lý thế nào?",
    "Mọi thứ đều có trong hai tài liệu."
   ]
@@ -224,5 +229,12 @@
  "scan": "Quét mã bằng iPhone",
  "getApp": "Tải ứng dụng",
  "skip": "Chuyển đến nội dung",
- "close": "Đóng"
+ "close": "Đóng",
+ "whatsapp": {
+  "title": "WhatsApp hoạt động với Viavo như thế nào?",
+  "availability": "Sắp có trong Viavo 1.0.11 trên iOS 27 trở lên. Phiên bản App Store hiện tại, 1.0.9, chưa có phần thiết lập này.",
+  "receive": "Yêu cầu Viavo đọc thông báo WhatsApp nhận được sau khi thiết lập. Chỉ nội dung xem trước có sẵn được đọc, không phải lịch sử trò chuyện hay tệp đính kèm; văn bản có thể không đầy đủ.",
+  "send": "Gửi tin cần sự đồng ý riêng và xác nhận người nhận cùng nội dung. Chỉ gửi tin riêng cho người được xác định rõ từ thông báo mà bản cài đặt Viavo này đã nhận. Chỉ có liên hệ trong danh bạ là chưa đủ. Không đảm bảo tin được giao; bản nháp trên điện thoại vẫn là phương án dự phòng.",
+  "setup": "Khi đã đỗ xe, mở WhatsApp trong Cài đặt Viavo hoặc lúc thiết lập ban đầu rồi chạm Kết nối. Thêm phím tắt nhận tin, bật tự động hóa, chạy một lần và cho phép quyền truy cập được yêu cầu. Nếu muốn gửi tin, hãy thiết lập riêng và kích hoạt phím tắt đó tương tự. Các phím tắt tự động được gom vào thư mục Viavo."
+ }
 }

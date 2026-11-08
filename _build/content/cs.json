@@ -75,7 +75,8 @@
    "Lidé a zprávy",
    [
     "Volání kontaktům podle jména",
-    "WhatsApp a SMS: zpráva se v telefonu otevře připravená, stačí klepnout na Odeslat",
+    "WhatsApp: čtení a odesílání hlasem v připravované verzi",
+    "SMS: zpráva se v telefonu otevře připravená, stačí klepnout na Odeslat",
     "Telegram a Slack: co je nového, shrnutí a nadiktovaná odpověď"
    ],
    "Napiš Petrovi, že přijedu o deset minut později"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Čím se Viavo liší od ChatGPT nebo Gemini v CarPlay?",
-   "ChatGPT a Gemini jsou v CarPlay určené k rozhovoru. Viavo navíc udělá, co řeknete: zavolá kontaktu, připraví zprávu na WhatsApp nebo SMS, pustí hudbu nebo rádiovou stanici a z jediné věty otevře ve vaší navigaci trasu se zastávkou nebo místo po cestě."
+   "ChatGPT a Gemini jsou v CarPlay určené k rozhovoru. Viavo navíc udělá, co řeknete: zavolá kontaktu, připraví zprávu SMS, pustí hudbu nebo rádiovou stanici a z jediné věty otevře ve vaší navigaci trasu se zastávkou nebo místo po cestě."
   ],
   [
    "Jakými jazyky Viavo mluví?",
@@ -206,6 +207,10 @@
    "Vyzkoušejte Viavo zdarma: nový účet dostane na začátek buď bezplatné kredity, nebo týden Viavo Plus zdarma, a to u měsíčního i ročního předplatného (jeden bezplatný týden na osobu). Pokud předplatné během bezplatného týdne zrušíte, přístup okamžitě skončí. Ceny najdete v App Storu ve své měně."
   ],
   [
+   "Jak funguje WhatsApp s Viavo?",
+   "Přichází ve Viavo 1.0.11 pro iOS 27 a novější. Aktuální verze v App Store, 1.0.9, toto nastavení neobsahuje. Požádejte Viavo o přečtení oznámení WhatsApp přijatých po nastavení. Čte pouze dostupné náhledy oznámení, ne starší chaty ani přílohy; text může být neúplný. Odesílání vyžaduje samostatný souhlas a potvrzení příjemce i textu."
+  ],
+  [
    "Co se děje s mými daty?",
    "Všechno najdete ve dvou dokumentech."
   ]
@@ -224,5 +229,12 @@
  "scan": "Naskenujte iPhonem",
  "getApp": "Stáhnout aplikaci",
  "skip": "Přeskočit na obsah",
- "close": "Zavřít"
+ "close": "Zavřít",
+ "whatsapp": {
+  "title": "Jak funguje WhatsApp s Viavo?",
+  "availability": "Přichází ve Viavo 1.0.11 pro iOS 27 a novější. Aktuální verze v App Store, 1.0.9, toto nastavení neobsahuje.",
+  "receive": "Požádejte Viavo o přečtení oznámení WhatsApp přijatých po nastavení. Čte pouze dostupné náhledy oznámení, ne starší chaty ani přílohy; text může být neúplný.",
+  "send": "Odesílání vyžaduje samostatný souhlas a potvrzení příjemce i textu. Jen soukromé zprávy lidem jednoznačně určeným z oznámení přijatých touto instalací Viavo. Samotný kontakt v telefonu nestačí. Doručení není zaručeno; koncept v telefonu zůstává náhradní možností.",
+  "setup": "Při stání otevřete WhatsApp v nastavení Viavo nebo při prvním spuštění a klepněte na Připojit. Přidejte zkratku pro příjem, zapněte její automatizaci, jednou ji spusťte a povolte požadovaný přístup. Odesílání nastavte zvlášť, pokud ho chcete, a jeho zkratku aktivujte stejně. Zkratky se automaticky seskupí do složky Viavo."
+ }
 }

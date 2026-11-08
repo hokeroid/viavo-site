@@ -75,7 +75,8 @@
    "Oameni și mesaje",
    [
     "Apelarea unui contact după nume",
-    "WhatsApp și SMS: mesajul se deschide gata scris pe telefon, rămâne doar să atingeți Trimite",
+    "WhatsApp: citire și trimitere vocală în versiunea viitoare",
+    "SMS: mesajul se deschide gata scris pe telefon, rămâne doar să atingeți Trimite",
     "Telegram și Slack: ce e nou, esența unei conversații, un răspuns dictat"
    ],
    "Spune-i lui Petru că întârzii zece minute"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Prin ce diferă Viavo de ChatGPT sau Gemini în CarPlay?",
-   "ChatGPT și Gemini în CarPlay sunt gândite pentru conversație. Viavo și face ce îi spuneți: sună un contact, pregătește un mesaj pe WhatsApp sau SMS, pune muzică sau un post de radio și, dintr-o singură frază, deschide în aplicația dvs. de navigație un traseu cu o oprire sau un loc de pe drum."
+   "ChatGPT și Gemini în CarPlay sunt gândite pentru conversație. Viavo și face ce îi spuneți: sună un contact, pregătește un SMS, pune muzică sau un post de radio și, dintr-o singură frază, deschide în aplicația dvs. de navigație un traseu cu o oprire sau un loc de pe drum."
   ],
   [
    "Ce limbi vorbește Viavo?",
@@ -206,6 +207,10 @@
    "Încercați Viavo fără niciun cost: un cont nou începe cu credite gratuite sau cu o săptămână de probă gratuită pentru Viavo Plus (doar una de persoană), atât la abonamentul lunar, cât și la cel anual. Dacă anulați abonamentul în săptămâna de probă, accesul se încheie imediat. Prețurile le găsiți în App Store, în moneda dvs."
   ],
   [
+   "Cum funcționează WhatsApp cu Viavo?",
+   "În curând în Viavo 1.0.11 pe iOS 27 sau ulterior. Versiunea actuală din App Store, 1.0.9, nu include această configurare. Cereți Viavo să citească notificările WhatsApp primite după configurare. Sunt disponibile doar previzualizările notificărilor, nu conversațiile vechi sau atașamentele; textul poate fi incomplet. Trimiterea necesită acord separat și confirmarea destinatarului și a textului."
+  ],
+  [
    "Ce se întâmplă cu datele mele?",
    "Totul este explicat în două documente."
   ]
@@ -224,5 +229,12 @@
  "scan": "Scanați cu iPhone-ul",
  "getApp": "Descărcați aplicația",
  "skip": "Salt la conținut",
- "close": "Închideți"
+ "close": "Închideți",
+ "whatsapp": {
+  "title": "Cum funcționează WhatsApp cu Viavo?",
+  "availability": "În curând în Viavo 1.0.11 pe iOS 27 sau ulterior. Versiunea actuală din App Store, 1.0.9, nu include această configurare.",
+  "receive": "Cereți Viavo să citească notificările WhatsApp primite după configurare. Sunt disponibile doar previzualizările notificărilor, nu conversațiile vechi sau atașamentele; textul poate fi incomplet.",
+  "send": "Trimiterea necesită acord separat și confirmarea destinatarului și a textului. Doar mesaje private către persoane identificate fără ambiguitate din notificările primite de această instalare Viavo. Un contact în telefon nu este suficient. Livrarea nu este garantată; ciorna pe telefon rămâne o alternativă.",
+  "setup": "Când sunteți parcat, deschideți WhatsApp din setările Viavo sau la prima configurare și apăsați Conectare. Adăugați scurtătura de primire, activați automatizarea, rulați-o o dată și permiteți accesul cerut. Configurați trimiterea separat dacă o doriți și activați la fel scurtătura ei. Scurtăturile sunt grupate automat în dosarul Viavo."
+ }
 }

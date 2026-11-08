@@ -371,6 +371,7 @@ button{font:inherit;color:inherit}
   .cards .h2{margin-bottom:4px}
   .cards{gap:16px}
   .works .apps{margin-top:28px}
+  #whatsapp .prose{margin-top:24px}
   .tiles{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:12px;row-gap:24px}
   .tiles li{align-items:center;text-align:center;font-size:12px}
   .lgrid{margin-top:28px;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}

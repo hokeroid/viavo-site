@@ -75,7 +75,8 @@
    "Kişiler ve mesajlar",
    [
     "Rehberdeki bir kişiyi adıyla arama",
-    "WhatsApp ve SMS: mesaj telefonda hazır açılır, Gönder'e dokunmanız yeterli",
+    "WhatsApp: sonraki sürümde sesle okuma ve gönderme",
+    "SMS: mesaj telefonda hazır açılır, Gönder'e dokunmanız yeterli",
     "Telegram ve Slack: yenilikler, sohbetin özeti, dikte ettiğiniz yanıt"
    ],
    "Mehmet'e on dakika gecikeceğimi söyle"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Viavo'nun CarPlay'deki ChatGPT ya da Gemini'den farkı ne?",
-   "CarPlay'deki ChatGPT ve Gemini sohbet için tasarlandı. Viavo ise sohbetle kalmaz, söylediğinizi yapar: bir kişiyi arar, WhatsApp ya da SMS mesajı hazırlar, müzik ya da bir radyo istasyonu çalar ve tek bir cümleyle navigasyon uygulamanızda molalı bir rota ya da yol üstündeki bir yeri açar."
+   "CarPlay'deki ChatGPT ve Gemini sohbet için tasarlandı. Viavo ise sohbetle kalmaz, söylediğinizi yapar: bir kişiyi arar, SMS mesajı hazırlar, müzik ya da bir radyo istasyonu çalar ve tek bir cümleyle navigasyon uygulamanızda molalı bir rota ya da yol üstündeki bir yeri açar."
   ],
   [
    "Viavo hangi dilleri konuşuyor?",
@@ -206,6 +207,10 @@
    "Viavo'yu ücretsiz deneyin: Yeni bir hesap ücretsiz kredilerle ya da Viavo Plus'ın ücretsiz deneme haftasıyla başlar; deneme haftası hem aylık hem de yıllık planda geçerlidir (kişi başına bir kez). Deneme süresi içinde iptal ederseniz erişiminiz hemen sona erer. Fiyatlar App Store'da, kendi para biriminizde."
   ],
   [
+   "WhatsApp, Viavo ile nasıl çalışır?",
+   "iOS 27 veya üzeri için Viavo 1.0.11 ile geliyor. App Store’daki mevcut 1.0.9 sürümünde bu kurulum yoktur. Viavo’dan kurulumdan sonra aldığı WhatsApp bildirimlerini okumasını isteyin. Yalnızca mevcut bildirim önizlemeleri okunur; eski sohbetlere veya eklere erişilmez. Metin eksik olabilir. Gönderme için ayrı izin, alıcı ve metin onayı gerekir."
+  ],
+  [
    "Verilerime ne oluyor?",
    "Hepsi iki belgede anlatılıyor."
   ]
@@ -224,5 +229,12 @@
  "scan": "iPhone'unuzla okutun",
  "getApp": "Uygulamayı indirin",
  "skip": "İçeriğe geç",
- "close": "Kapat"
+ "close": "Kapat",
+ "whatsapp": {
+  "title": "WhatsApp, Viavo ile nasıl çalışır?",
+  "availability": "iOS 27 veya üzeri için Viavo 1.0.11 ile geliyor. App Store’daki mevcut 1.0.9 sürümünde bu kurulum yoktur.",
+  "receive": "Viavo’dan kurulumdan sonra aldığı WhatsApp bildirimlerini okumasını isteyin. Yalnızca mevcut bildirim önizlemeleri okunur; eski sohbetlere veya eklere erişilmez. Metin eksik olabilir.",
+  "send": "Gönderme için ayrı izin, alıcı ve metin onayı gerekir. Yalnızca bu Viavo kurulumunun aldığı bildirimlerden açıkça tanımlanan kişilere özel mesaj gönderilebilir. Telefon rehberinde kayıtlı olmak tek başına yetmez. Teslimat garanti edilmez; telefondaki taslaklar alternatif olarak kullanılabilir.",
+  "setup": "Park halindeyken Viavo Ayarları’nda veya ilk kurulumda WhatsApp’ı açıp Bağlan’a dokunun. Alma kestirmesini ekleyin, otomasyonunu açın, bir kez çalıştırın ve istenen erişime izin verin. Göndermek de istiyorsanız ayrıca kurun ve kestirmesini aynı şekilde etkinleştirin. Kestirmeler otomatik olarak Viavo klasöründe toplanır."
+ }
 }

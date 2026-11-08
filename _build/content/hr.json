@@ -75,7 +75,8 @@
    "Ljudi i poruke",
    [
     "Pozivi kontaktima po imenu",
-    "WhatsApp i SMS: poruka se otvara spremna na mobitelu, samo dodirneš Pošalji",
+    "WhatsApp: čitanje i slanje glasom u nadolazećoj verziji",
+    "SMS: poruka se otvara spremna na mobitelu, samo dodirneš Pošalji",
     "Telegram i Slack: što je novo, sažetak i odgovor koji izdiktiraš"
    ],
    "Javi Ivanu da kasnim deset minuta"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Po čemu se Viavo razlikuje od ChatGPT-a ili Geminija u CarPlayu?",
-   "ChatGPT i Gemini u CarPlayu stvoreni su za razgovor. Viavo ono što kažeš i obavi: nazove kontakt, pripremi poruku za WhatsApp ili SMS, pusti glazbu ili radiopostaju, a iz jedne rečenice otvori u tvojoj navigaciji rutu s usputnim zaustavljanjem ili mjesto uz put."
+   "ChatGPT i Gemini u CarPlayu stvoreni su za razgovor. Viavo ono što kažeš i obavi: nazove kontakt, pripremi poruku za SMS, pusti glazbu ili radiopostaju, a iz jedne rečenice otvori u tvojoj navigaciji rutu s usputnim zaustavljanjem ili mjesto uz put."
   ],
   [
    "Koje jezike Viavo govori?",
@@ -206,6 +207,10 @@
    "Isprobaj Viavo besplatno: novi račun dobiva besplatne kredite ili besplatan tjedan usluge Viavo Plus, i uz mjesečnu i uz godišnju pretplatu (jedan tjedan po osobi). Ako u tom tjednu otkažeš pretplatu, pristup odmah prestaje. Cijene su u App Storeu, u tvojoj valuti."
   ],
   [
+   "Kako WhatsApp radi s Viavom?",
+   "Dolazi u Viavu 1.0.11 na iOS-u 27 ili novijem. Trenutačna verzija u App Storeu, 1.0.9, nema ovu postavku. Zatraži da Viavo pročita obavijesti WhatsAppa primljene nakon postavljanja. Dostupni su samo pregledi obavijesti, ne stari razgovori ni privici; tekst može biti nepotpun. Slanje traži zaseban pristanak i potvrdu primatelja i teksta."
+  ],
+  [
    "Što se događa s mojim podacima?",
    "Sve je opisano u dva dokumenta."
   ]
@@ -224,5 +229,12 @@
  "scan": "Skeniraj iPhoneom",
  "getApp": "Preuzmi aplikaciju",
  "skip": "Preskoči na sadržaj",
- "close": "Zatvori"
+ "close": "Zatvori",
+ "whatsapp": {
+  "title": "Kako WhatsApp radi s Viavom?",
+  "availability": "Dolazi u Viavu 1.0.11 na iOS-u 27 ili novijem. Trenutačna verzija u App Storeu, 1.0.9, nema ovu postavku.",
+  "receive": "Zatraži da Viavo pročita obavijesti WhatsAppa primljene nakon postavljanja. Dostupni su samo pregledi obavijesti, ne stari razgovori ni privici; tekst može biti nepotpun.",
+  "send": "Slanje traži zaseban pristanak i potvrdu primatelja i teksta. Samo privatne poruke osobama nedvosmisleno prepoznatima iz obavijesti koje je ova instalacija Viava primila. Sam kontakt u mobitelu nije dovoljan. Dostava nije zajamčena; nacrt na mobitelu ostaje zamjenska mogućnost.",
+  "setup": "Dok si parkiran, otvori WhatsApp u postavkama Viava ili pri prvom pokretanju i dodirni Poveži. Dodaj prečac za primanje, uključi njegovu automatizaciju, pokreni ga jednom i dopusti traženi pristup. Ako želiš slati, postavi to zasebno i jednako aktiviraj prečac za slanje. Prečaci se automatski grupiraju u mapu Viavo."
+ }
 }

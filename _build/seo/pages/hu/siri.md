@@ -5,7 +5,7 @@ path: /hu/siri/
 title: "Magyar Siri az autóban: mikor lesz, és mi működik addig?"
 description: "2026 novemberében a Siri még nem tud magyarul. Mit jelent ez a CarPlay-ben, és hogyan irányíthatod már ma magyarul a navigációt, a zenét és a hívásokat?"
 h1: "Tud magyarul a Siri? Még nem. De az autóban már most beszélhetsz magyarul"
-updated: 2026-11-03
+updated: 2026-11-08
 sources: pages/facts-2026-11.md (every claim about Siri, Siri AI and the chatbots is there with a URL and the date it was read)
 ---
 
@@ -30,8 +30,21 @@ Ha magyar hangasszisztenst keresel az autóba, ez a helyzet 2026 novemberében:
 | Útvonalat tervez az Apple Térképekben, a Google Térképben vagy a Waze-ben | Igen, de más nyelven kell kérni | A ChatGPT nem; a Perplexity az Apple Térképekben igen | Igen, abban a navigációs appban, amelyet használsz |
 | Zenét indít az Apple Musicban, a Spotifyban vagy a YouTube Musicban | Igen, de más nyelven kell kérni | Nem | Igen |
 | Felhív egy kontaktot | Igen, de más nyelven kell kérni | Nem | Igen |
-| Magyar üzenet WhatsAppon vagy SMS-ben | Nem: a diktálás a Sirin keresztül megy | Nem | Az üzenet készen nyílik meg a telefonon, csak a Küldésre kell koppintanod |
+| SMS | Nem: a diktálás a Sirin keresztül megy | Nem | Az üzenet készen nyílik meg a telefonon, csak a Küldésre kell koppintanod |
+| WhatsApp | — | — | WhatsApp: felolvasás és küldés hanggal a következő verzióban. A Viavo 1.0.11-ben érkezik, iOS 27 vagy újabb rendszeren. Az App Store jelenlegi, 1.0.9-es verziója nem tartalmazza ezt a beállítást. |
 | Elindítható a kormányon lévő gombbal | Igen | Nem | Nem: egy koppintással indul az autó kijelzőjén |
+
+## Hogyan működik a WhatsApp a Viavóval?
+
+A Viavo 1.0.11-ben érkezik, iOS 27 vagy újabb rendszeren. Az App Store jelenlegi, 1.0.9-es verziója nem tartalmazza ezt a beállítást.
+
+Kérd meg a Viavót, hogy olvassa fel a beállítás óta érkezett WhatsApp-értesítéseket. Csak az elérhető értesítési előnézeteket olvassa, korábbi csevegéseket és mellékleteket nem; a szöveg hiányos lehet.
+
+A küldéshez külön hozzájárulás, valamint a címzett és a szöveg megerősítése kell. Csak privát üzenetek küldhetők azoknak, akiket a Viavo ezen telepítése által fogadott értesítések egyértelműen azonosítanak. Egy telefonos névjegy önmagában nem elég. A kézbesítés nem garantált; a telefonon megnyitott piszkozat továbbra is használható.
+
+Parkolás közben nyisd meg a WhatsAppot a Viavo beállításaiban vagy az első beállításkor, és koppints a Csatlakozásra. Add hozzá a fogadó parancsot, kapcsold be az automatizálását, futtasd egyszer, és engedélyezd a kért hozzáférést. Ha küldeni is szeretnél, azt külön állítsd be, és ugyanígy aktiváld a küldő parancsot. A parancsok automatikusan a Viavo mappába kerülnek.
+
+[Hogyan kezeli a Viavo az üzeneteidet](https://viavo.app/messengers/)
 
 ## Próbáld ki magyarul
 
@@ -59,6 +72,6 @@ Ha magyar hangasszisztenst keresel az autóba, ez a helyzet 2026 novemberében:
 
 **Működik a Viavo CarPlay nélkül is?** Igen, az iPhone-on is, például telefontartóban.
 
-**Felolvassa a Viavo a magyar üzeneteimet?** Telegramon és Slacken igen: elmondja, mi újság, összefoglalja egy chat lényegét, felolvas egy üzenetet, és a választ is lediktálhatod. WhatsAppon és SMS-ben megírja, amit mondasz, az elküldés pedig egy koppintás a telefonon.
+**Felolvassa a Viavo a magyar üzeneteimet?** Telegramon és Slacken igen: elmondja, mi újság, összefoglalja egy chat lényegét, felolvas egy üzenetet, és a választ is lediktálhatod. SMS-ben megírja, amit mondasz, az elküldés pedig egy koppintás a telefonon.
 
 **Ingyenes a Viavo?** Kipróbálni igen: az új fiók ingyenes kreditekkel vagy a Viavo Plus ingyenes próbahetével indul; a próbahét személyenként egyszer jár. Utána a Viavo Plus havi vagy éves előfizetés.

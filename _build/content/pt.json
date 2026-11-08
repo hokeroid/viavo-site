@@ -75,7 +75,8 @@
    "Pessoas e mensagens",
    [
     "Ligar para um contato pelo nome",
-    "WhatsApp e SMS: a mensagem abre pronta no celular, é só tocar em Enviar",
+    "WhatsApp: leitura e envio por voz na próxima versão",
+    "SMS: a mensagem abre pronta no celular, é só tocar em Enviar",
     "Telegram e Slack: novidades, o resumo e uma resposta ditada"
    ],
    "Fala para o Pedro que vou atrasar dez minutos"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Qual a diferença entre o Viavo e o ChatGPT ou o Gemini no CarPlay?",
-   "O ChatGPT e o Gemini no CarPlay foram feitos para conversar. O Viavo também faz o que você pede: liga para um contato, prepara uma mensagem de WhatsApp ou SMS, toca música ou uma rádio e, com uma só frase, abre no seu app de navegação uma rota com parada ou um lugar no caminho."
+   "O ChatGPT e o Gemini no CarPlay foram feitos para conversar. O Viavo também faz o que você pede: liga para um contato, prepara um SMS, toca música ou uma rádio e, com uma só frase, abre no seu app de navegação uma rota com parada ou um lugar no caminho."
   ],
   [
    "Quais idiomas o Viavo fala?",
@@ -206,6 +207,10 @@
    "Experimente o Viavo de graça: toda conta nova começa com créditos grátis ou com uma semana de teste grátis do Viavo Plus, tanto no plano mensal quanto no anual (só uma semana por pessoa). Se você cancelar durante o teste, perde o acesso na hora. Os preços estão na App Store, na sua moeda."
   ],
   [
+   "Como o WhatsApp funciona com o Viavo?",
+   "Chega no Viavo 1.0.11 para iOS 27 ou posterior. A versão atual da App Store, 1.0.9, não inclui essa configuração. Peça ao Viavo para ler notificações do WhatsApp recebidas após a configuração. Ele lê apenas as prévias disponíveis, não conversas antigas nem anexos; o texto pode estar incompleto. O envio exige consentimento separado e confirmação do destinatário e do texto."
+  ],
+  [
    "O que acontece com os meus dados?",
    "Está tudo em dois documentos."
   ]
@@ -224,5 +229,12 @@
  "scan": "Escaneie com o seu iPhone",
  "getApp": "Baixar o app",
  "skip": "Pular para o conteúdo",
- "close": "Fechar"
+ "close": "Fechar",
+ "whatsapp": {
+  "title": "Como o WhatsApp funciona com o Viavo?",
+  "availability": "Chega no Viavo 1.0.11 para iOS 27 ou posterior. A versão atual da App Store, 1.0.9, não inclui essa configuração.",
+  "receive": "Peça ao Viavo para ler notificações do WhatsApp recebidas após a configuração. Ele lê apenas as prévias disponíveis, não conversas antigas nem anexos; o texto pode estar incompleto.",
+  "send": "O envio exige consentimento separado e confirmação do destinatário e do texto. Apenas mensagens privadas para pessoas identificadas sem ambiguidade pelas notificações recebidas por esta instalação do Viavo. Um contato do celular não basta. A entrega não é garantida; rascunhos no celular continuam sendo uma alternativa.",
+  "setup": "Com o carro estacionado, abra WhatsApp nos ajustes do Viavo ou na configuração inicial e toque em Conectar. Adicione o atalho de recebimento, ative sua automação, execute uma vez e permita o acesso solicitado. Se quiser enviar, configure o envio separadamente e ative esse atalho da mesma forma. Os atalhos são agrupados automaticamente na pasta Viavo."
+ }
 }

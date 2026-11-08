@@ -75,7 +75,8 @@
    "Orang dan pesan",
    [
     "Telepon kontak cukup dengan menyebut namanya",
-    "WhatsApp dan SMS: pesan siap di ponsel, tinggal ketuk Kirim",
+    "WhatsApp: baca dan kirim dengan suara di versi mendatang",
+    "SMS: pesan siap di ponsel, tinggal ketuk Kirim",
     "Telegram dan Slack: kabar terbaru, inti obrolan, balasan lewat dikte"
    ],
    "Bilang ke Budi aku telat sepuluh menit"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Apa bedanya Viavo dengan ChatGPT atau Gemini di CarPlay?",
-   "ChatGPT dan Gemini di CarPlay dibuat untuk mengobrol. Viavo juga menjalankan apa yang Anda ucapkan: menelepon kontak, menyiapkan pesan WhatsApp atau SMS, memutar musik atau stasiun radio, dan cukup dengan satu kalimat membuka rute dengan tempat singgah, atau tempat di sepanjang jalan, di aplikasi navigasi Anda."
+   "ChatGPT dan Gemini di CarPlay dibuat untuk mengobrol. Viavo juga menjalankan apa yang Anda ucapkan: menelepon kontak, menyiapkan pesan SMS, memutar musik atau stasiun radio, dan cukup dengan satu kalimat membuka rute dengan tempat singgah, atau tempat di sepanjang jalan, di aplikasi navigasi Anda."
   ],
   [
    "Viavo bisa berbahasa apa saja?",
@@ -206,6 +207,10 @@
    "Coba Viavo gratis: akun baru mendapat kredit gratis atau uji coba Viavo Plus gratis selama seminggu, berlaku baik untuk paket bulanan maupun tahunan (satu kali per orang). Jika Anda membatalkan langganan selama masa uji coba, akses Anda langsung berakhir. Harganya tercantum di App Store, dalam mata uang Anda."
   ],
   [
+   "Bagaimana WhatsApp bekerja dengan Viavo?",
+   "Hadir di Viavo 1.0.11 pada iOS 27 atau lebih baru. Versi App Store saat ini, 1.0.9, belum menyertakan pengaturan ini. Minta Viavo membacakan notifikasi WhatsApp yang diterima setelah pengaturan. Hanya pratinjau notifikasi yang tersedia yang dibaca, bukan chat lama atau lampiran; teks bisa tidak lengkap. Pengiriman memerlukan persetujuan terpisah serta konfirmasi penerima dan teks."
+  ],
+  [
    "Bagaimana dengan data saya?",
    "Semuanya dijelaskan dalam dua dokumen."
   ]
@@ -224,5 +229,12 @@
  "scan": "Pindai dengan iPhone Anda",
  "getApp": "Dapatkan aplikasinya",
  "skip": "Langsung ke konten",
- "close": "Tutup"
+ "close": "Tutup",
+ "whatsapp": {
+  "title": "Bagaimana WhatsApp bekerja dengan Viavo?",
+  "availability": "Hadir di Viavo 1.0.11 pada iOS 27 atau lebih baru. Versi App Store saat ini, 1.0.9, belum menyertakan pengaturan ini.",
+  "receive": "Minta Viavo membacakan notifikasi WhatsApp yang diterima setelah pengaturan. Hanya pratinjau notifikasi yang tersedia yang dibaca, bukan chat lama atau lampiran; teks bisa tidak lengkap.",
+  "send": "Pengiriman memerlukan persetujuan terpisah serta konfirmasi penerima dan teks. Hanya pesan pribadi kepada orang yang diidentifikasi dengan jelas dari notifikasi yang diterima instalasi Viavo ini. Kontak telepon saja tidak cukup. Pengantaran tidak dijamin; draf di ponsel tetap tersedia sebagai alternatif.",
+  "setup": "Saat parkir, buka WhatsApp di Pengaturan Viavo atau saat penyiapan awal, lalu ketuk Hubungkan. Tambahkan pintasan penerimaan, aktifkan otomatisasinya, jalankan sekali dan izinkan akses yang diminta. Jika ingin mengirim, atur secara terpisah dan aktifkan pintasannya dengan cara yang sama. Pintasan otomatis dikelompokkan dalam folder Viavo."
+ }
 }

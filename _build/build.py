@@ -370,8 +370,10 @@ def home(lang, T, available):
     for i, (title, points, eg) in enumerate(T['groups']):
         egt = eg if GROUP_ICONS[i] == 'carplay' else q[0] + eg + q[1]
         lis = ''.join(f'<li>{brandsafe(p)}</li>' for p in points)
+        more = (f'<p class="more"><a class="ul" href="#whatsapp">{brandsafe(T["whatsapp"]["title"])} →</a></p>'
+                if GROUP_ICONS[i] == 'people' else '')
         cards += (f'<div class="card"><div class="ico"><svg aria-hidden="true"><use href="#i-{GROUP_ICONS[i]}"/></svg></div>'
-                  f'<div class="in"><h3>{brandsafe(title)}</h3><ul>{lis}</ul><p class="eg">{brandsafe(egt)}</p></div></div>')
+                  f'<div class="in"><h3>{brandsafe(title)}</h3><ul>{lis}</ul>{more}<p class="eg">{brandsafe(egt)}</p></div></div>')
     out.append(f'<section class="sec" id="features"><div class="wrap grid cards"><h2 class="h2">{brandsafe(T["can"])}</h2>{cards}</div></section>\n')
     out.append(general)
 
@@ -384,8 +386,17 @@ def home(lang, T, available):
             src = f'{r}assets/img/app-{APP_ICON[n]}-112.webp' if n in APP_ICON else f'{r}assets/img/app-sms.svg'
             tiles += f'<li data-cat="{cat}"><img src="{src}" alt="" width="56" height="56" loading="lazy">{e(T["appNames"].get(n, n))}</li>'
     out.append(f'''<section class="sec works" id="works"><div class="wrap grid">
-<div class="txt"><h2 class="h2">{brandsafe(T["works"])}</h2><p class="lead">{brandsafe(T["worksSub"])}</p></div>
+<div class="txt"><h2 class="h2">{brandsafe(T["works"])}</h2><p class="lead">{brandsafe(T["worksSub"])}</p><p class="more"><a class="ul" href="#whatsapp">{brandsafe(T["whatsapp"]["title"])} →</a></p></div>
 <div class="apps"><div class="chips">{chips}</div><ul class="tiles">{tiles}</ul></div>
+</div></section>
+''')
+
+    # WhatsApp availability and setup, localized alongside the feature and FAQ copy.
+    wa = T['whatsapp']
+    out.append(f'''<section class="sec works" id="whatsapp"><div class="wrap grid">
+<div class="txt"><h2 class="h2">{brandsafe(wa["title"])}</h2><p class="lead">{brandsafe(wa["availability"])}</p></div>
+<div class="prose"><p>{brandsafe(wa["receive"])}</p><p>{brandsafe(wa["send"])}</p><p>{brandsafe(wa["setup"])}</p>
+<p><a href="{r}messengers/{"ru/" if lang in ('ru', 'uk') else ""}">{e(T["lMessages"])}</a></p></div>
 </div></section>
 ''')
 
@@ -419,6 +430,8 @@ def home(lang, T, available):
         if i == len(T['faqItems']) - 1:
             links = (f'<div class="links"><a class="ul" href="{r}privacy/{"ru/" if ru else ""}">{e(T["lPrivacy"])}</a>'
                      f'<a class="ul" href="{r}messengers/{"ru/" if ru else ""}">{e(T["lMessages"])}</a></div>')
+        if qq == T['whatsapp']['title']:
+            links = f'<div class="links"><a class="ul" href="#whatsapp">{brandsafe(qq)} →</a></div>'
         qas += f'<details{" open" if i == 0 else ""}><summary><span>{brandsafe(qq)}</span><span class="pm" aria-hidden="true"></span></summary><div class="a"><p>{brandsafe(aa)}</p>{links}</div></details>'
     out.append(f'<section class="sec faq" id="faq"><div class="wrap grid"><h2 class="h2">{brandsafe(T["faq"])}</h2><div class="qa">{qas}</div></div></section>\n')
 

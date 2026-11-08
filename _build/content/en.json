@@ -77,7 +77,8 @@
    "People and messages",
    [
     "Call a contact by name",
-    "WhatsApp and SMS: ready on your phone, you tap Send",
+    "WhatsApp: read and send by voice in the upcoming release",
+    "SMS: ready on your phone, you tap Send",
     "Telegram and Slack: what’s new, the gist, a dictated reply"
    ],
    "Tell Pete I’ll be ten minutes late"
@@ -145,7 +146,7 @@
  "faqItems": [
   [
    "How is Viavo different from ChatGPT or Gemini in CarPlay?",
-   "ChatGPT and Gemini in CarPlay are built for conversation. Viavo also acts on what you say: it calls a contact, prepares a WhatsApp or SMS message, plays music or a radio station, and from one sentence opens a route with a stop, or a place along the way, in your navigator."
+   "ChatGPT and Gemini in CarPlay are built for conversation. Viavo also acts on what you say: it calls a contact, prepares an SMS message, plays music or a radio station, and from one sentence opens a route with a stop, or a place along the way, in your navigator."
   ],
   [
    "Which languages does Viavo speak?",
@@ -176,6 +177,10 @@
    "Try Viavo for free: a new account starts with free credits or a free week of Viavo Plus, on the monthly or the yearly plan (one free week per person). If you cancel during the free week, access ends right away. Prices are in the App Store, in your currency."
   ],
   [
+   "How does WhatsApp work with Viavo?",
+   "Coming in Viavo 1.0.11 on iOS 27 or later. The current App Store version, 1.0.9, does not include this setup. Ask Viavo to read WhatsApp notifications received after setup. Only available notification previews are read, not past chats or attachments; previews can be incomplete. Sending needs separate opt-in and confirmation of the recipient and text."
+  ],
+  [
    "What happens to my data?",
    "It’s all in two documents."
   ]
@@ -194,5 +199,12 @@
  "scan": "Scan with your iPhone",
  "getApp": "Get the app",
  "skip": "Skip to content",
- "close": "Close"
+ "close": "Close",
+ "whatsapp": {
+  "title": "How does WhatsApp work with Viavo?",
+  "availability": "Coming in Viavo 1.0.11 on iOS 27 or later. The current App Store version, 1.0.9, does not include this setup.",
+  "receive": "Ask Viavo to read WhatsApp notifications received after setup. Only available notification previews are read, not past chats or attachments; previews can be incomplete.",
+  "send": "Sending needs separate opt-in and confirmation of the recipient and text. Private messages only, to unambiguously identified people whose notifications Viavo has received on this installation. A phone contact alone is not enough. Delivery is not guaranteed; phone drafts remain a fallback.",
+  "setup": "While parked, open WhatsApp in Viavo Settings or onboarding and tap Connect. Add the receiving shortcut, enable its automation, then run it once and allow the requested access. Set up sending separately if you want it. Follow the same activation steps for that shortcut. Setup groups the shortcuts in the Viavo folder automatically."
+ }
 }

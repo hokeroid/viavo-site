@@ -75,7 +75,8 @@
    "Emberek és üzenetek",
    [
     "Hívd fel bármelyik kontaktodat név szerint",
-    "WhatsApp és SMS: az üzenet készen nyílik meg a telefonodon, csak a Küldésre kell koppintanod",
+    "WhatsApp: felolvasás és küldés hanggal a következő verzióban",
+    "SMS: az üzenet készen nyílik meg a telefonodon, csak a Küldésre kell koppintanod",
     "Telegram és Slack: újdonságok, egy chat lényege, válasz diktálása"
    ],
    "Írd meg Petinek, hogy tíz percet késem"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Miben más a Viavo, mint a ChatGPT vagy a Gemini a CarPlay-ben?",
-   "A ChatGPT és a Gemini a CarPlay-ben beszélgetésre készült. A Viavo el is intézi, amit mondasz: felhív egy kontaktot, előkészít egy WhatsApp-üzenetet vagy SMS-t, zenét vagy rádióadót indít, egyetlen mondatból pedig megnyitja a navigációdban az útvonalat egy megállóval, vagy egy útba eső helyet."
+   "A ChatGPT és a Gemini a CarPlay-ben beszélgetésre készült. A Viavo el is intézi, amit mondasz: felhív egy kontaktot, előkészít egy SMS-t, zenét vagy rádióadót indít, egyetlen mondatból pedig megnyitja a navigációdban az útvonalat egy megállóval, vagy egy útba eső helyet."
   ],
   [
    "Milyen nyelveken beszél a Viavo?",
@@ -206,6 +207,10 @@
    "Próbáld ki ingyen a Viavót: az új fiók ingyenes kreditekkel vagy a Viavo Plus ingyenes próbahetével indul; a próbahét a havi és az éves előfizetésnél is jár (személyenként egyszer). Ha a próbahét alatt lemondod, a hozzáférés azonnal megszűnik. Az árakat az App Store-ban találod, a saját pénznemedben."
   ],
   [
+   "Hogyan működik a WhatsApp a Viavóval?",
+   "A Viavo 1.0.11-ben érkezik, iOS 27 vagy újabb rendszeren. Az App Store jelenlegi, 1.0.9-es verziója nem tartalmazza ezt a beállítást. Kérd meg a Viavót, hogy olvassa fel a beállítás óta érkezett WhatsApp-értesítéseket. Csak az elérhető értesítési előnézeteket olvassa, korábbi csevegéseket és mellékleteket nem; a szöveg hiányos lehet. A küldéshez külön hozzájárulás, valamint a címzett és a szöveg megerősítése kell."
+  ],
+  [
    "Mi történik az adataimmal?",
    "Mindent leírtunk két dokumentumban."
   ]
@@ -224,5 +229,12 @@
  "scan": "Olvasd be az iPhone-oddal",
  "getApp": "Töltsd le az appot",
  "skip": "Ugrás a tartalomhoz",
- "close": "Bezárás"
+ "close": "Bezárás",
+ "whatsapp": {
+  "title": "Hogyan működik a WhatsApp a Viavóval?",
+  "availability": "A Viavo 1.0.11-ben érkezik, iOS 27 vagy újabb rendszeren. Az App Store jelenlegi, 1.0.9-es verziója nem tartalmazza ezt a beállítást.",
+  "receive": "Kérd meg a Viavót, hogy olvassa fel a beállítás óta érkezett WhatsApp-értesítéseket. Csak az elérhető értesítési előnézeteket olvassa, korábbi csevegéseket és mellékleteket nem; a szöveg hiányos lehet.",
+  "send": "A küldéshez külön hozzájárulás, valamint a címzett és a szöveg megerősítése kell. Csak privát üzenetek küldhetők azoknak, akiket a Viavo ezen telepítése által fogadott értesítések egyértelműen azonosítanak. Egy telefonos névjegy önmagában nem elég. A kézbesítés nem garantált; a telefonon megnyitott piszkozat továbbra is használható.",
+  "setup": "Parkolás közben nyisd meg a WhatsAppot a Viavo beállításaiban vagy az első beállításkor, és koppints a Csatlakozásra. Add hozzá a fogadó parancsot, kapcsold be az automatizálását, futtasd egyszer, és engedélyezd a kért hozzáférést. Ha küldeni is szeretnél, azt külön állítsd be, és ugyanígy aktiváld a küldő parancsot. A parancsok automatikusan a Viavo mappába kerülnek."
+ }
 }

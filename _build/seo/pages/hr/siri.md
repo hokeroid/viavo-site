@@ -5,7 +5,7 @@ path: /hr/siri/
 title: "Siri na hrvatskom u autu: stanje u studenom 2026. i što koristiti"
 description: "Siri još ne govori hrvatski. Što to znači u CarPlayu i kako već danas u autu na hrvatskom glasom otvoriti rutu, pustiti glazbu i obaviti poziv."
 h1: "Ima li Siri na hrvatskom? Još nema. Evo što u autu radi već danas"
-updated: 2026-11-03
+updated: 2026-11-08
 sources: pages/facts-2026-11.md, pages/template-siri.md, mobile/store/metadata/hr.json, mobile/lib/l10n/app_hr.arb, app_sr_Latn.arb
 covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri hrvatski", "siri na hrvatskom", "ima li siri na hrvatskom", "glasovni asistent na hrvatskom", "siri srpski", "siri na srpskom", "glasovni asistent na srpskom"
 ---
@@ -31,8 +31,21 @@ Viavo je glasovni asistent na hrvatskom za iPhone i CarPlay. Usporedba sa Siri i
 | Otvara rutu u aplikaciji Apple Maps, Google Maps ili Waze | Da, uz naredbe na drugom jeziku | ChatGPT ne; Perplexity da, u aplikaciji Apple Maps | Da, u navigaciji koju koristiš |
 | Pušta glazbu u aplikaciji Apple Music, Spotify ili YouTube Music | Da, uz naredbe na drugom jeziku | Ne | Da |
 | Zove kontakt | Da, uz naredbe na drugom jeziku | Ne | Da |
-| WhatsApp ili SMS na hrvatskom | Ne: poruke se diktiraju Siri, a ona ne razumije hrvatski | Ne | Poruka se otvara spremna na mobitelu, samo dodirneš Pošalji |
+| SMS | Ne: poruke se diktiraju Siri, a ona ne razumije hrvatski | Ne | Poruka se otvara spremna na mobitelu, samo dodirneš Pošalji |
+| WhatsApp | — | — | WhatsApp: čitanje i slanje glasom u nadolazećoj verziji. Dolazi u Viavu 1.0.11 na iOS-u 27 ili novijem. Trenutačna verzija u App Storeu, 1.0.9, nema ovu postavku. |
 | Pokreće se tipkom na upravljaču | Da | Ne | Ne: jedan gumb na zaslonu automobila |
+
+## Kako WhatsApp radi s Viavom?
+
+Dolazi u Viavu 1.0.11 na iOS-u 27 ili novijem. Trenutačna verzija u App Storeu, 1.0.9, nema ovu postavku.
+
+Zatraži da Viavo pročita obavijesti WhatsAppa primljene nakon postavljanja. Dostupni su samo pregledi obavijesti, ne stari razgovori ni privici; tekst može biti nepotpun.
+
+Slanje traži zaseban pristanak i potvrdu primatelja i teksta. Samo privatne poruke osobama nedvosmisleno prepoznatima iz obavijesti koje je ova instalacija Viava primila. Sam kontakt u mobitelu nije dovoljan. Dostava nije zajamčena; nacrt na mobitelu ostaje zamjenska mogućnost.
+
+Dok si parkiran, otvori WhatsApp u postavkama Viava ili pri prvom pokretanju i dodirni Poveži. Dodaj prečac za primanje, uključi njegovu automatizaciju, pokreni ga jednom i dopusti traženi pristup. Ako želiš slati, postavi to zasebno i jednako aktiviraj prečac za slanje. Prečaci se automatski grupiraju u mapu Viavo.
+
+[Kako Viavo postupa s tvojim porukama](https://viavo.app/messengers/)
 
 ## Isprobaj na hrvatskom
 
@@ -62,7 +75,7 @@ U novembru 2026. Siri ne govori srpski: srpskog nema na spisku jezika koje Siri 
 
 **Mogu li Viavo pokretati tipkom na upravljaču?** Ne. Tipku na upravljaču i „Hey Siri“ Apple zadržava za Siri. Viavo se pokreće jednim dodirom na zaslonu automobila.
 
-**Čita li Siri u CarPlayu poruke na hrvatskom?** Na hrvatskom ne može jer Siri nema hrvatski glas. Viavo hrvatskim glasom čita poruke iz Telegrama i Slacka, a odgovor mu možeš izdiktirati. Za WhatsApp i SMS Viavo priprema poruku: otvara se spremna na mobitelu, samo dodirneš Pošalji.
+**Čita li Siri u CarPlayu poruke na hrvatskom?** Na hrvatskom ne može jer Siri nema hrvatski glas. Viavo hrvatskim glasom čita poruke iz Telegrama i Slacka, a odgovor mu možeš izdiktirati. Za SMS Viavo priprema poruku: otvara se spremna na mobitelu, samo dodirneš Pošalji.
 
 **Radi li Viavo i bez CarPlaya?** Da, i na samom iPhoneu, primjerice kad je mobitel u držaču.
 

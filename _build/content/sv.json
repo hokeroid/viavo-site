@@ -75,7 +75,8 @@
    "Personer och meddelanden",
    [
     "Ring en kontakt med namn",
-    "WhatsApp och sms: färdigskrivet på telefonen, du trycker på Skicka",
+    "WhatsApp: uppläsning och röststyrd sändning i nästa version",
+    "Sms: färdigskrivet på telefonen, du trycker på Skicka",
     "Telegram och Slack: vad som är nytt, kontentan, ett dikterat svar"
    ],
    "Säg till Erik att jag är tio minuter sen"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Hur skiljer sig Viavo från ChatGPT eller Gemini i CarPlay?",
-   "ChatGPT och Gemini i CarPlay är byggda för konversation. Viavo gör också det du säger: ringer en kontakt, förbereder ett meddelande i WhatsApp eller sms, spelar musik eller en radiokanal, och med en enda mening öppnar den en rutt med stopp, eller ett ställe längs vägen, i din navigeringsapp."
+   "ChatGPT och Gemini i CarPlay är byggda för konversation. Viavo gör också det du säger: ringer en kontakt, förbereder ett sms, spelar musik eller en radiokanal, och med en enda mening öppnar den en rutt med stopp, eller ett ställe längs vägen, i din navigeringsapp."
   ],
   [
    "Vilka språk talar Viavo?",
@@ -206,6 +207,10 @@
    "Prova Viavo gratis: varje nytt konto börjar med gratiskrediter eller en gratis provvecka med Viavo Plus, oavsett om du väljer månads- eller årsprenumeration (en gång per person). Om du avslutar under provveckan upphör åtkomsten direkt. Priserna finns i App Store, i din valuta."
   ],
   [
+   "Hur fungerar WhatsApp med Viavo?",
+   "Kommer i Viavo 1.0.11 på iOS 27 eller senare. Den nuvarande App Store-versionen, 1.0.9, innehåller inte den här inställningen. Be Viavo läsa WhatsApp-notiser som tagits emot efter att funktionen ställts in. Bara tillgängliga förhandsvisningar läses, inte gamla chattar eller bilagor; texten kan vara ofullständig. Att skicka kräver separat samtycke och bekräftelse av mottagare och text."
+  ],
+  [
    "Vad händer med mina data?",
    "Allt står i två dokument."
   ]
@@ -224,5 +229,12 @@
  "scan": "Skanna med din iPhone",
  "getApp": "Hämta appen",
  "skip": "Hoppa till innehållet",
- "close": "Stäng"
+ "close": "Stäng",
+ "whatsapp": {
+  "title": "Hur fungerar WhatsApp med Viavo?",
+  "availability": "Kommer i Viavo 1.0.11 på iOS 27 eller senare. Den nuvarande App Store-versionen, 1.0.9, innehåller inte den här inställningen.",
+  "receive": "Be Viavo läsa WhatsApp-notiser som tagits emot efter att funktionen ställts in. Bara tillgängliga förhandsvisningar läses, inte gamla chattar eller bilagor; texten kan vara ofullständig.",
+  "send": "Att skicka kräver separat samtycke och bekräftelse av mottagare och text. Bara privata meddelanden till personer som entydigt identifierats genom notiser som den här Viavo-installationen tagit emot. En telefonkontakt räcker inte. Leverans garanteras inte; utkast på telefonen finns kvar som alternativ.",
+  "setup": "När du står parkerad, öppna WhatsApp i Viavos inställningar eller under första konfigurationen och tryck på Anslut. Lägg till mottagningsgenvägen, aktivera dess automatisering, kör den en gång och tillåt den åtkomst som begärs. Ställ in sändning separat om du vill och aktivera den genvägen på samma sätt. Genvägarna samlas automatiskt i mappen Viavo."
+ }
 }

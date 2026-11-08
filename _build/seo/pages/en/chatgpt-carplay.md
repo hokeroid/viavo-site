@@ -5,7 +5,7 @@ path: /chatgpt-carplay/   # en lives at the root; other languages at /<lang>/cha
 title: "ChatGPT in CarPlay: what it can't do, and an assistant that can"
 description: "ChatGPT and other chatbots now talk in CarPlay, but in a hands-on test ChatGPT and Perplexity didn't play music, call or text. Viavo does, in 28 languages."
 h1: "ChatGPT in CarPlay: what it can do, what it can't, and what does the rest"
-updated: 2026-11-03
+updated: 2026-11-08
 sources: pages/facts-2026-11.md (every claim about other products is there with a URL and the date it was read)
 covers: Q1, Q2, Q3, Q10, Q14; keywords "chatgpt carplay", "ai assistant carplay", "siri alternative carplay"
 ---
@@ -37,13 +37,26 @@ Tap one button on the car screen and say it the way you'd say it to a person, in
 | Music in Apple Music, Spotify, YouTube Music, Amazon Music, Deezer | No | Yes: an artist, an album, a playlist or a mood |
 | Live radio by name or frequency | No | Yes, in Apple Music, Simple Radio, TuneIn or iHeartRadio |
 | Call a contact | No | Yes |
-| WhatsApp or SMS | No | The message opens ready on your phone; you tap Send |
+| SMS | No | The message opens ready on your phone; you tap Send |
+| WhatsApp | — | WhatsApp: read and send by voice in the upcoming release. Coming in Viavo 1.0.11 on iOS 27 or later. The current App Store version, 1.0.9, does not include this setup. |
 | Telegram and Slack: what's new, read, reply | No | Yes |
 | Reminders, calendar, alarms | No | Yes |
 | Remembers what you tell it | Its own memory | Yes, and forgets when you ask |
 | A native voice in Polish, Czech, Romanian, Greek, Hungarian, Croatian, Serbian, Ukrainian | — | Yes, 28 languages in all |
 
-What Viavo doesn't do: the steering-wheel button and "Hey Siri" stay with Siri, so Viavo starts with one tap on the car screen. A WhatsApp or SMS message waits for your tap on the phone. YouTube videos start on the phone, not on the car screen.
+What Viavo doesn't do: the steering-wheel button and "Hey Siri" stay with Siri, so Viavo starts with one tap on the car screen. An SMS draft waits for your tap on the phone. YouTube videos start on the phone, not on the car screen.
+
+## How does WhatsApp work with Viavo?
+
+Coming in Viavo 1.0.11 on iOS 27 or later. The current App Store version, 1.0.9, does not include this setup.
+
+Ask Viavo to read WhatsApp notifications received after setup. Only available notification previews are read, not past chats or attachments; previews can be incomplete.
+
+Sending needs separate opt-in and confirmation of the recipient and text. Private messages only, to unambiguously identified people whose notifications Viavo has received on this installation. A phone contact alone is not enough. Delivery is not guaranteed; phone drafts remain a fallback.
+
+While parked, open WhatsApp in Viavo Settings or onboarding and tap Connect. Add the receiving shortcut, enable its automation, then run it once and allow the requested access. Set up sending separately if you want it. Follow the same activation steps for that shortcut. Setup groups the shortcuts in the Viavo folder automatically.
+
+[How Viavo handles your messages](https://viavo.app/messengers/)
 
 ## How to try it
 
@@ -57,7 +70,7 @@ What Viavo doesn't do: the steering-wheel button and "Hey Siri" stay with Siri, 
 
 **Can ChatGPT in CarPlay start navigation?** No. OpenAI says it can't access maps or your location or control other apps. Viavo opens the route in the navigator you use.
 
-**Can ChatGPT in CarPlay send a WhatsApp message or play Spotify?** No. Viavo prepares the WhatsApp or SMS message and opens it on your phone for one tap, and plays music in the app you use.
+**Can ChatGPT in CarPlay send a WhatsApp message or play Spotify?** No. Viavo plays music in the app you use. WhatsApp reading and sending arrive in Viavo 1.0.11 on iOS 27 or later, with separate setup and recipient limits described above. Phone drafts remain available.
 
 **Does Viavo replace Siri?** Not entirely. The steering-wheel button and "Hey Siri" stay with Siri. Viavo is one tap on the car screen, and after that you talk normally.
 

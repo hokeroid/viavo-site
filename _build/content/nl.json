@@ -75,7 +75,8 @@
    "Mensen en berichten",
    [
     "Een contact op naam bellen",
-    "WhatsApp en sms: kant-en-klaar op je telefoon, je tikt alleen nog op Stuur",
+    "WhatsApp: voorlezen en versturen met je stem in de volgende versie",
+    "Sms: kant-en-klaar op je telefoon, je tikt alleen nog op Stuur",
     "Telegram en Slack: wat er nieuw is, de kern, een gedicteerd antwoord"
    ],
    "Zeg tegen Piet dat ik tien minuten te laat ben"
@@ -175,7 +176,7 @@
  "faqItems": [
   [
    "Wat is het verschil tussen Viavo en ChatGPT of Gemini in CarPlay?",
-   "ChatGPT en Gemini in CarPlay zijn gemaakt om mee te praten. Viavo doet ook echt wat je zegt: het belt een contact, zet een WhatsApp- of sms-bericht klaar, speelt muziek of een radiozender af en opent met één zin een route met een tussenstop, of een plek onderweg, in je navigatie-app."
+   "ChatGPT en Gemini in CarPlay zijn gemaakt om mee te praten. Viavo doet ook echt wat je zegt: het belt een contact, zet een sms-bericht klaar, speelt muziek of een radiozender af en opent met één zin een route met een tussenstop, of een plek onderweg, in je navigatie-app."
   ],
   [
    "Welke talen spreekt Viavo?",
@@ -206,6 +207,10 @@
    "Probeer Viavo gratis: elk nieuw account begint met gratis credits of een gratis proefweek van Viavo Plus, zowel bij het maand- als bij het jaarabonnement (één proefweek per persoon). Zeg je tijdens die week op, dan stopt je toegang meteen. De prijzen staan in de App Store, in je eigen valuta."
   ],
   [
+   "Hoe werkt WhatsApp met Viavo?",
+   "Komt in Viavo 1.0.11 op iOS 27 of nieuwer. De huidige App Store-versie, 1.0.9, bevat deze instelling nog niet. Vraag Viavo om WhatsApp-meldingen voor te lezen die na het instellen zijn ontvangen. Alleen beschikbare meldingsvoorbeelden worden gelezen, geen oude chats of bijlagen; de tekst kan onvolledig zijn. Versturen vereist aparte toestemming en bevestiging van ontvanger en tekst."
+  ],
+  [
    "Wat gebeurt er met mijn gegevens?",
    "Dat staat allemaal in twee documenten."
   ]
@@ -224,5 +229,12 @@
  "scan": "Scan met je iPhone",
  "getApp": "Download de app",
  "skip": "Ga naar de inhoud",
- "close": "Sluit"
+ "close": "Sluit",
+ "whatsapp": {
+  "title": "Hoe werkt WhatsApp met Viavo?",
+  "availability": "Komt in Viavo 1.0.11 op iOS 27 of nieuwer. De huidige App Store-versie, 1.0.9, bevat deze instelling nog niet.",
+  "receive": "Vraag Viavo om WhatsApp-meldingen voor te lezen die na het instellen zijn ontvangen. Alleen beschikbare meldingsvoorbeelden worden gelezen, geen oude chats of bijlagen; de tekst kan onvolledig zijn.",
+  "send": "Versturen vereist aparte toestemming en bevestiging van ontvanger en tekst. Alleen privéberichten aan mensen die eenduidig zijn herkend uit meldingen die deze Viavo-installatie ontving. Alleen een telefooncontact is niet genoeg. Bezorging is niet gegarandeerd; een concept op je telefoon blijft een alternatief.",
+  "setup": "Open terwijl je geparkeerd staat WhatsApp in de Viavo-instellingen of tijdens de eerste configuratie en tik op Verbinden. Voeg de ontvangstopdracht toe, schakel de automatisering in, voer de opdracht eenmaal uit en geef de gevraagde toegang. Stel versturen desgewenst apart in en activeer die opdracht op dezelfde manier. De opdrachten komen automatisch in de map Viavo."
+ }
 }

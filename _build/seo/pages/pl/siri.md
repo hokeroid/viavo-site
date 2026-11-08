@@ -5,7 +5,7 @@ path: /pl/siri/
 title: "Siri po polsku w samochodzie: stan na listopad 2026 i co zamiast"
 description: "Czy Siri mówi po polsku? Jeszcze nie. Wyjaśniamy, co to oznacza w CarPlay i jak już dziś rozmawiać po polsku z asystentem głosowym w samochodzie."
 h1: "Czy Siri mówi po polsku? Jeszcze nie. Co działa w samochodzie już dziś"
-updated: 2026-11-03
+updated: 2026-11-08
 sources: pages/facts-2026-11.md (each claim about Siri, CarPlay and the chatbots, with a URL and the date it was read); example phrases from mobile/lib/l10n/app_pl.arb; Viavo claims from mobile/store/metadata/pl.json
 ---
 
@@ -30,8 +30,21 @@ Szukasz asystenta głosowego po polsku do samochodu? Tak to wygląda w listopad
 | Otwiera trasę w Apple Maps, Google Maps lub Waze | Tak, ale nie po polsku | ChatGPT nie; Perplexity w Apple Maps | Tak, w Twojej nawigacji |
 | Włącza muzykę w Apple Music, Spotify, YouTube Music | Tak, ale nie po polsku | Nie | Tak |
 | Dzwoni do kontaktu | Tak, ale nie po polsku | Nie | Tak |
-| WhatsApp lub SMS po polsku | Nie: dyktowania po polsku nie przyjmie | Nie | Wiadomość otwiera się gotowa na telefonie, wystarczy stuknąć Wyślij |
+| SMS | Nie: dyktowania po polsku nie przyjmie | Nie | Wiadomość otwiera się gotowa na telefonie, wystarczy stuknąć Wyślij |
+| WhatsApp | — | — | WhatsApp: czytanie i wysyłanie głosem w nadchodzącej wersji. Wkrótce w Viavo 1.0.11 na iOS 27 lub nowszym. Obecna wersja w App Store, 1.0.9, nie zawiera tej konfiguracji. |
 | Włącza się przyciskiem na kierownicy | Tak | Nie | Nie: jeden przycisk na ekranie samochodu |
+
+## Jak WhatsApp działa z Viavo?
+
+Wkrótce w Viavo 1.0.11 na iOS 27 lub nowszym. Obecna wersja w App Store, 1.0.9, nie zawiera tej konfiguracji.
+
+Poproś Viavo o przeczytanie powiadomień WhatsApp otrzymanych po konfiguracji. Dostępne są tylko podglądy powiadomień, nie wcześniejsze czaty ani załączniki; tekst może być niepełny.
+
+Wysyłanie wymaga osobnej zgody oraz potwierdzenia odbiorcy i tekstu. Tylko wiadomości prywatne do osób jednoznacznie rozpoznanych na podstawie powiadomień odebranych przez tę instalację Viavo. Sam kontakt w telefonie nie wystarczy. Dostawa nie jest gwarantowana; nadal można przygotować wiadomość na telefonie.
+
+Na postoju otwórz WhatsApp w ustawieniach Viavo lub podczas pierwszej konfiguracji i wybierz Połącz. Dodaj skrót odbierania, włącz jego automatyzację, uruchom raz i udziel wymaganych uprawnień. Jeśli chcesz wysyłać, skonfiguruj to osobno i tak samo aktywuj skrót wysyłania. Skróty automatycznie trafiają do folderu Viavo.
+
+[Jak Viavo obchodzi się z Twoimi wiadomościami](https://viavo.app/messengers/)
 
 ## Spróbuj powiedzieć
 
@@ -53,7 +66,7 @@ Szukasz asystenta głosowego po polsku do samochodu? Tak to wygląda w listopad
 
 **Kiedy Siri zacznie mówić po polsku?** Nie wiadomo. Apple nie podał daty, a dla nowej Siri AI nie ma nawet terminu udostępnienia w UE. Sprawdzamy stronę apple.com/ios/feature-availability i zaktualizujemy ten tekst, gdy coś się zmieni. Ostatnie sprawdzenie: 2 listopada 2026.
 
-**Czy CarPlay przeczyta mi SMS-a po polsku?** Nie przez Siri: nie ma ona polskiego głosu, więc nie przeczyta go po polsku. Viavo po polsku odczytuje na głos wiadomości z Telegrama i Slacka, streszcza czaty i pozwala podyktować odpowiedź. Przy SMS-ach i WhatsAppie zajmuje się wysyłaniem: wiadomość do kontaktu otwiera się gotowa na telefonie i wystarczy stuknąć Wyślij.
+**Czy CarPlay przeczyta mi SMS-a po polsku?** Nie przez Siri: nie ma ona polskiego głosu, więc nie przeczyta go po polsku. Viavo po polsku odczytuje na głos wiadomości z Telegrama i Slacka, streszcza czaty i pozwala podyktować odpowiedź. Przy SMS-ach przygotowuje wiadomość: wiadomość do kontaktu otwiera się gotowa na telefonie i wystarczy stuknąć Wyślij.
 
 **Czy Viavo można uruchomić przyciskiem na kierownicy?** Nie. Apple zostawia przycisk na kierownicy i „Hey Siri” wyłącznie dla Siri, dlatego Viavo włączasz jednym stuknięciem na ekranie samochodu.
 
