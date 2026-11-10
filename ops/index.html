@@ -965,7 +965,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     tiles.appendChild(plainTile("Регистрации", fmt(t.signups), "в странах с рекламой"));
     tiles.appendChild(plainTile("В машине", fmt(t.in_car), "из них хоть раз с CarPlay"));
     tiles.appendChild(plainTile("€ за водителя в машине", eurTile(t.per_in_car)));
-    tiles.appendChild(plainTile("Покупатели", fmt(t.buyers), "пробных " + fmt(t.trials) + " · Plus " + fmt(t.paid) + " · пакетов " + fmt(t.packs)));
+    tiles.appendChild(plainTile("Покупатели", fmt(t.buyers), "на пробном " + fmt(t.trials) + " · Plus " + fmt(t.paid) + " · пакетов " + fmt(t.packs)));
     tiles.appendChild(plainTile("€ за покупателя", eurTile(t.per_buyer)));
     app.appendChild(tiles);
 
@@ -975,9 +975,9 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       }));
       byCountry.firstChild.classList.add("vheads");
       var buyers = ads.by_country.filter(function (c) { return c.buyers > 0; }).map(function (c) {
-        return adCountry(c.country) + " — пробных " + fmt(c.trials) + ", Plus " + fmt(c.paid) + ", пакетов " + fmt(c.packs);
+        return adCountry(c.country) + " — на пробном " + fmt(c.trials) + ", Plus " + fmt(c.paid) + ", пакетов " + fmt(c.packs);
       });
-      app.appendChild(figure("По странам", "Регистрации — водители, зарегистрировавшиеся за период в этой стране (страна первого запроса); в машине — те из них, кто сделал хотя бы один запрос из CarPlay; покупатели — пробная неделя, Plus или пакет, каждый водитель один раз (оплативший Plus после пробной недели есть и в «пробных», и в «Plus»). Машина и покупки считаются до сегодняшнего дня. Страна становится известна после первого запроса, поэтому регистрации по странам — нижняя граница; у водителей в машине страна известна всегда." +
+      app.appendChild(figure("По странам", "Регистрации — водители, зарегистрировавшиеся за период в этой стране (страна первого запроса); в машине — те из них, кто сделал хотя бы один запрос из CarPlay; покупатели — сейчас на пробной неделе, оплатили Plus или купили пакет, каждый водитель один раз; отменивший пробную неделю потерян и не считается (если потом не оплатил Plus и не купил пакет), оплативший после пробной недели — в «Plus». Машина и покупки считаются до сегодняшнего дня. Страна становится известна после первого запроса, поэтому регистрации по странам — нижняя граница; у водителей в машине страна известна всегда." +
         (buyers.length ? " Покупатели: " + buyers.join("; ") + "." : ""), byCountry, null, null));
     } else app.appendChild(el("p", { class: "sub", text: "За период Meta ничего не потратила." }));
     var o = ads.organic;
