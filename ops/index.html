@@ -103,6 +103,9 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .feedback .identity span { display: block; white-space: nowrap; }
 .feedback .identity .id { color: var(--hint); font-size: 12px; }
 .feedback td:nth-child(3), .feedback th:nth-child(3) { width: 60%; min-width: 120px; }
+.cohort td:first-child span, .cohort td:nth-child(2) span, .cohort td:nth-child(4) span { display: block; white-space: nowrap; }
+.cohort td:nth-child(3) { overflow-wrap: normal; min-width: 84px; }
+.cohort td:nth-child(4) .code { font-size: 11.5px; }
 footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 </style>
 </head>
@@ -605,7 +608,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(el("p", { class: "sub", text: "Визиты сайта не прочитаны" + (data.site_error ? ": " + data.site_error : "") + "." }));
       return;
     }
-    var todayMode = mode === "today", base = site.base || null;
+    var todayMode = mode === "today", base = site.base || null, partial = data.days !== "week_ago";
     var tiles = el("div", { class: "tiles" });
     [["Визиты", r.visits, base && base.visits], ["Просмотры", r.pageviews, base && base.pageviews], ["В App Store", r.appstore_clicks, base && base.appstore_clicks]]
       .forEach(function (v) {
@@ -624,7 +627,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         { name: "визиты", color: "var(--s1)", kind: "bar", values: pick("visits") },
         { name: "в App Store", color: "var(--s2)", kind: "line", values: pick("appstore_clicks") }
       ];
-      app.appendChild(figure("Визиты и переходы в App Store по дням", null, timeChart(days, siteSeries, { label: "Сайт по дням", partialLast: true }), siteSeries, function () {
+      app.appendChild(figure("Визиты и переходы в App Store по дням", null, timeChart(days, siteSeries, { label: "Сайт по дням", partialLast: partial }), siteSeries, function () {
         return dataTable(["День", "Визиты", "Просмотры", "В App Store"], days.map(function (d) { var x = byDay[d] || {}; return [dayLabel(d), fmt(x.visits || 0), fmt(x.pageviews || 0), fmt(x.appstore_clicks || 0)]; }));
       }));
     }
@@ -651,21 +654,27 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     redrawers = [];
     clear(app);
     if (data.days === 0 || data.days === 1) { renderDay(data); redrawCharts(); return; }
+    // VIA-581: «Неделю назад» — the seven whole days 14 to 8 days ago; the server sends only their days
+    var weekAgo = data.days === "week_ago", partial = !weekAgo;
     var allDays = data.series;
-    var s = allDays.slice(-data.days);
+    var s = weekAgo ? allDays : allDays.slice(-data.days);
     var days = s.map(function (d) { return d.day; });
     var td = data.today, period = data.period, prev = data.previous || null;
     var errorsOf = function (r) { return sum(r.quality.errors, function (e) { return e.n; }); };
 
-    app.appendChild(el("h1", { text: "Viavo · отчёт за " + data.days + " дней" }));
+    app.appendChild(el("h1", { text: weekAgo ? "Viavo · неделю назад" : "Viavo · отчёт за " + data.days + " дней" }));
     app.appendChild(el("p", { class: "sub", text: "Сутки UTC · данные на " + timeUtc(data.generated_at) + " UTC, " + dayLabel(data.generated_at) + " · водители без команды" }));
 
     periodSwitch();
 
+    if (weekAgo) renderCohort(data);
+
     // VIA-502: the period's own summary against the window of the same length and hours right before it
     // (an older server sends no `previous`: the tiles stand without a comparison)
-    app.appendChild(el("h2", { text: data.days + " дней: " + dayLabel(period.from) + " – " + dayLabel(period.to) + " (сегодня до " + timeUtc(period.to) + " UTC)" +
-      (prev ? " — в сравнении с " + dayLabel(prev.from) + " – " + dayLabel(prev.to) + " до того же часа" : "") }));
+    app.appendChild(el("h2", { text: weekAgo
+      ? "Эти 7 дней: " + dayRange(period) + " (полные сутки UTC) — в сравнении с " + dayRange(prev)
+      : data.days + " дней: " + dayLabel(period.from) + " – " + dayLabel(period.to) + " (сегодня до " + timeUtc(period.to) + " UTC)" +
+        (prev ? " — в сравнении с " + dayLabel(prev.from) + " – " + dayLabel(prev.to) + " до того же часа" : "") }));
     var tiles = el("div", { class: "tiles" });
     [
       ["Новые водители", period.signups.total, prev && prev.signups.total],
@@ -680,7 +689,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       ["Сбои на телефоне", deviceFailures(period), prev && deviceFailures(prev), false]
     ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], prev ? v[2] : undefined, null, v[3], "previous")); });
     app.appendChild(tiles);
-    app.appendChild(el("p", { class: "sub", text: "Водители — каждый один раз за период. Сегодня до " + timeUtc(data.generated_at) + " UTC: новых " + fmt(td.signups.total) + ", активных " + fmt(td.activity.active_drivers) + ", ходов " + fmt(td.activity.turns) + ", в машине " + fmt(td.activity.car_drivers) + "." }));
+    app.appendChild(el("p", { class: "sub", text: "Водители — каждый один раз за период." + (weekAgo ? " Плитки — события этих дней; что стало с начавшими пробную — выше." : " Сегодня до " + timeUtc(data.generated_at) + " UTC: новых " + fmt(td.signups.total) + ", активных " + fmt(td.activity.active_drivers) + ", ходов " + fmt(td.activity.turns) + ", в машине " + fmt(td.activity.car_drivers) + ".") }));
 
     renderSales(data, "period");
 
@@ -693,7 +702,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     marketSeries.push({ name: "страна неизвестна", color: "var(--other)", kind: "bar", stack: true, values: s.map(function (d) { return countryN(d, "unknown"); }) });
     marketSeries = marketSeries.filter(function (ms) { return sum(ms.values) > 0; });
     app.appendChild(figure("Регистрации по дням и рынкам", "Страна — по последнему ходу водителя с телефона; «?» — телефон страну не назвал (нет доступа к геопозиции или ни одного запроса).",
-      timeChart(days, marketSeries, { label: "Регистрации по дням", partialLast: true }), marketSeries, function () {
+      timeChart(days, marketSeries, { label: "Регистрации по дням", partialLast: partial }), marketSeries, function () {
         var tw = dataTable(["День"].concat(marketSeries.map(function (ms) { return ms.name === "страна неизвестна" ? "?" : ms.name === "другие" ? "др." : ms.name; })), s.map(function (d, i) { return [dayLabel(d.day)].concat(marketSeries.map(function (ms) { return fmt(ms.values[i]); })); }));
         tw.firstChild.classList.add("vheads"); // country names as column heads stand on their side (VIA-440)
         return tw;
@@ -707,19 +716,19 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       { name: "вернувшиеся", color: "var(--s3)", kind: "line", values: s.map(function (d) { return d.returning_drivers; }) }
     ];
     app.appendChild(figure("Водители с хотя бы одним ходом", "В машине — ход с экрана CarPlay. Вернувшиеся — зарегистрировались раньше этого дня.",
-      timeChart(days, actSeries, { label: "Активные водители по дням", partialLast: true }), actSeries, function () {
+      timeChart(days, actSeries, { label: "Активные водители по дням", partialLast: partial }), actSeries, function () {
         return dataTable(["День", "Активные", "В машине", "Вернувшиеся"], s.map(function (d) { return [dayLabel(d.day), fmt(d.active_drivers), fmt(d.car_drivers), fmt(d.returning_drivers)]; }));
       }));
     var turnSeries = [
       { name: "телефон", color: "var(--s1)", kind: "bar", stack: true, values: s.map(function (d) { return d.turns - d.car_turns; }) },
       { name: "CarPlay", color: "var(--s2)", kind: "bar", stack: true, values: s.map(function (d) { return d.car_turns; }) }
     ];
-    app.appendChild(figure("Ходы: телефон и CarPlay", null, timeChart(days, turnSeries, { label: "Ходы по дням", partialLast: true }), turnSeries, function () {
+    app.appendChild(figure("Ходы: телефон и CarPlay", null, timeChart(days, turnSeries, { label: "Ходы по дням", partialLast: partial }), turnSeries, function () {
       return dataTable(["День", "Телефон", "CarPlay", "Всего"], s.map(function (d) { return [dayLabel(d.day), fmt(d.turns - d.car_turns), fmt(d.car_turns), fmt(d.turns)]; }));
     }));
 
-    // 3. funnel by country (30 days, from owner_report)
-    app.appendChild(el("h2", { text: "Воронка по странам, 30 дней" }));
+    // 3. funnel by country (30 days up to the period's end, from owner_report)
+    app.appendChild(el("h2", { text: "Воронка по странам, 30 дней" + (weekAgo ? " по " + dayLabel(lastDayOf(period)) : "") }));
     app.appendChild(funnelFigure(period.retention));
 
     // 4. paywall and sales per day
@@ -728,7 +737,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       { name: "показы пейвола", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return d.paywall_shown; }) },
       { name: "покупки (событие в приложении)", color: "var(--s2)", kind: "line", values: s.map(function (d) { return d.purchases; }) }
     ];
-    app.appendChild(figure("Показы пейвола и покупки", "Покупки — событие purchase из приложения: всё, что приложение назвало покупкой, пробный тоже. Пробные и оплаты по App Store — ниже.", timeChart(days, pwSeries, { label: "Пейвол по дням", partialLast: true }), pwSeries, function () {
+    app.appendChild(figure("Показы пейвола и покупки", "Покупки — событие purchase из приложения: всё, что приложение назвало покупкой, пробный тоже. Пробные и оплаты по App Store — ниже.", timeChart(days, pwSeries, { label: "Пейвол по дням", partialLast: partial }), pwSeries, function () {
       return dataTable(["День", "Показы", "Покупки"], s.map(function (d) { return [dayLabel(d.day), fmt(d.paywall_shown), fmt(d.purchases)]; }));
     }));
     // VIA-502: trials and payments per day by kind; an older server's days have no kinds and get no chart
@@ -743,7 +752,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       var since = period.sales.billing_since;
       app.appendChild(figure("Пробные и оплаты по дням", "События App Store из RevenueCat (production), водители — каждый один раз на вид за день. Оплаты — новые платные подписки, оплаты после пробного и продления; отмены — пробного и подписки (продление выключено)." +
         (since && Date.parse(days[0] + "T00:00:00Z") < Date.parse(since) ? " Виды различаются с " + stamp(since) + ": до этого — нули." : ""),
-        timeChart(days, saleSeries, { label: "Пробные и оплаты по дням", partialLast: true }), saleSeries, function () {
+        timeChart(days, saleSeries, { label: "Пробные и оплаты по дням", partialLast: partial }), saleSeries, function () {
           var tw = dataTable(["День"].concat(saleColumns.map(saleLabel), ["Plus с ходом"]), s.map(function (d) {
             return [dayLabel(d.day)].concat(saleColumns.map(function (k) { return fmt(saleCount(d, k)); }), [fmt(d.plus_drivers)]);
           }));
@@ -766,7 +775,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       { name: "дошло", color: "var(--s3)", kind: "line", values: s.map(function (d) { return d.pushes_delivered == null ? null : d.pushes_delivered; }) },
       { name: "открыто", color: "var(--s2)", kind: "line", values: s.map(function (d) { return d.pushes_opened; }) }
     ];
-    app.appendChild(figure("Отправлено, дошло и открыто", null, timeChart(days, pushSeries, { label: "Пуши по дням", partialLast: true }), pushSeries, function () {
+    app.appendChild(figure("Отправлено, дошло и открыто", null, timeChart(days, pushSeries, { label: "Пуши по дням", partialLast: partial }), pushSeries, function () {
       return dataTable(["День", "Отправлено", "Дошло", "Открыто"], s.map(function (d) { return [dayLabel(d.day), fmt(d.pushes_sent), d.pushes_delivered == null ? "?" : fmt(d.pushes_delivered), fmt(d.pushes_opened)]; }));
     }));
     if (period.pushes.campaigns.length) {
@@ -805,7 +814,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         { name: "Ходы водителей", color: "var(--s1)", kind: "bar", stack: true, values: days.map(function (d) { var x = splitOf(d); return x && x.turns_usd !== null ? Math.max(0, x.turns_usd) : null; }) },
         { name: "Прочее", color: "var(--s4)", kind: "bar", stack: true, values: days.map(function (d) { var x = splitOf(d); return x && x.other_usd !== null ? Math.max(0, x.other_usd) : null; }) }
       ];
-      app.appendChild(figure("Ходы водителей и прочее, $", "Ходы — что стоили запросы водителей: их токены (ход, заметка к нему, приветствие CarPlay) по ставкам дневного счёта Anthropic и их доля распознавания и озвучки. Прочее — остальное в счетах: " + OTHER_SPEND + ". «≥» — часть счетов не прочитана; сегодня — по ставкам последнего дня со счётом.",
+      app.appendChild(figure("Ходы водителей и прочее, $", "Ходы — что стоили запросы водителей: их токены (ход, заметка к нему, приветствие CarPlay) по ставкам дневного счёта Anthropic и их доля распознавания и озвучки. Прочее — остальное в счетах: " + OTHER_SPEND + ". «≥» — часть счетов не прочитана" + (weekAgo ? "." : "; сегодня — по ставкам последнего дня со счётом."),
         timeChart(days, splitSeries, { label: "Ходы и прочее по дням", fmtValue: function (v) { return usd(v); }, fmtTick: function (v) { return "$" + compact(v); } }), splitSeries, function () {
           return dataTable(["День", "Ходы", "Прочее", "Итого", "$/ход"], days.map(function (d, i) { var x = splitOf(d); return [dayLabel(d), x ? part(x.turns_usd, x.turns_complete) : "—", x ? part(x.other_usd, x.other_complete) : "—", totalLabel(i), perTurn[i] === null ? "—" : (x.turns_complete ? "" : "≥ ") + usd(perTurn[i], 3)]; }));
         }));
@@ -823,7 +832,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     var errNames = Object.keys(errTypes).sort(function (a, b) { return errTypes[b] - errTypes[a]; }).slice(0, 6);
     var errSeries = errNames.map(function (name, i) { return { name: reportLabel("errors", name), code: reportLabel("errors", name) === name ? null : name, color: SLOT_VAR[i + 1], kind: "bar", stack: true, values: s.map(function (d) { var e = (d.errors || []).find(function (x) { return x.error_type === name; }); return e ? e.n : 0; }) }; });
     if (errSeries.length) {
-      app.appendChild(figure("Ошибки по типам", "Строки error из voice-pipeline; empty_transcript — пустая расшифровка (тишина, шум).", timeChart(days, errSeries, { label: "Ошибки по дням", partialLast: true }), errSeries, function () {
+      app.appendChild(figure("Ошибки по типам", "Строки error из voice-pipeline; empty_transcript — пустая расшифровка (тишина, шум).", timeChart(days, errSeries, { label: "Ошибки по дням", partialLast: partial }), errSeries, function () {
         return dataTable(["День"].concat(errNames.map(errorLabel)), s.map(function (d, i) { return [dayLabel(d.day)].concat(errSeries.map(function (es) { return fmt(es.values[i]); })); }));
       }));
     } else app.appendChild(el("p", { class: "sub", text: "Ошибок за период нет." }));
@@ -838,7 +847,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     }
     var deviceSeries = [{ name: "сбои на телефоне", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return d.device_failures || 0; }) }];
     if (sum(deviceSeries[0].values) > 0) {
-      app.appendChild(figure("Сбои на телефоне", "Действия, о сбое которых сообщил сам телефон: адрес не найден, музыка не заиграла, приложение не открылось.", timeChart(days, deviceSeries, { label: "Сбои на телефоне по дням", partialLast: true }), deviceSeries, function () {
+      app.appendChild(figure("Сбои на телефоне", "Действия, о сбое которых сообщил сам телефон: адрес не найден, музыка не заиграла, приложение не открылось.", timeChart(days, deviceSeries, { label: "Сбои на телефоне по дням", partialLast: partial }), deviceSeries, function () {
         return dataTable(["День", "Сбоев", "Действий"], s.map(function (d) { return [dayLabel(d.day), fmt(d.device_failures || 0), fmt(d.device_actions || 0)]; }));
       }));
     }
@@ -849,21 +858,81 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 
     renderSalesFeedback(period);
 
-    app.appendChild(el("footer", { text: "Счёт по owner_report и owner_report_series (SQL), без модели; реклама — Meta Marketing API и owner_ads_funnel. Команда и тестовые аккаунты исключены." }));
+    app.appendChild(el("footer", { text: "Счёт по owner_report и owner_report_series (SQL), без модели" + (weekAgo ? "; пробная неделя — owner_trial_cohort" : "") + "; реклама — Meta Marketing API и owner_ads_funnel. Команда и тестовые аккаунты исключены." }));
     redrawCharts();
   }
 
   function periodSwitch() {
     var row = el("div", { class: "row" });
-    var seg = el("div", { class: "seg", role: "group", "aria-label": "Период" });
-    [0, 1, 7, 14, 30].forEach(function (d) {
-      var b = el("button", { type: "button", "aria-pressed": d === state.days ? "true" : "false", text: d === 0 ? "Сегодня" : d === 1 ? "Вчера" : d + " д." });
-      b.addEventListener("click", function () { if (state.days !== d) load(d); });
-      seg.appendChild(b);
+    // the periods up to now, then «Неделю назад» apart (VIA-581): whole days 14 to 8 days ago, a look back
+    [[0, 1, 7, 14, 30], ["week_ago"]].forEach(function (group) {
+      var seg = el("div", { class: "seg", role: "group", "aria-label": group[0] === "week_ago" ? "Неделю назад" : "Период" });
+      group.forEach(function (d) {
+        var b = el("button", { type: "button", "aria-pressed": d === state.days ? "true" : "false", text: d === "week_ago" ? "Неделю назад" : d === 0 ? "Сегодня" : d === 1 ? "Вчера" : d + " д." });
+        b.addEventListener("click", function () { if (state.days !== d) load(d); });
+        seg.appendChild(b);
+      });
+      row.appendChild(seg);
     });
-    row.appendChild(seg);
     app.appendChild(row);
+  }
 
+  // ---------- «Неделю назад» (VIA-581): the drivers whose free week began in those days and what became of it up to now
+  var DAY_MS = 86400000;
+  // a whole-day window's last day: `to` is the next day's 00:00 UTC
+  function lastDayOf(r) { return new Date(Date.parse(r.to) - DAY_MS).toISOString(); }
+  function dayRange(r) { return dayLabel(r.from) + " – " + dayLabel(lastDayOf(r)); }
+  // how long after the start: minutes, hours, then days with a tenth
+  function after(fromIso, toIso) {
+    var min = Math.max(0, Math.round((Date.parse(toIso) - Date.parse(fromIso)) / 60000));
+    if (min < 60) return fmt(min) + " мин";
+    if (min < 24 * 60) return fmt(Math.floor(min / 60)) + " ч";
+    return fmt(Math.floor(min / 144) / 10, 1) + " д";
+  }
+  function trialOutcome(d) {
+    var label = reportLabel("trialOutcomes", d.outcome);
+    if (d.outcome === "paid") return label + " " + dayLabel(d.ended_at) + (d.renewal_off ? ", продление выкл." : "");
+    if (d.outcome === "cancelled") return "отменил через " + after(d.started_at, d.ended_at);
+    if ((d.outcome === "expired" || d.outcome === "payment_failed") && d.ended_at) return label + " " + dayLabel(d.ended_at);
+    return label;
+  }
+  function renderCohort(data) {
+    var c = data.cohort;
+    app.appendChild(el("h2", { text: "Начали пробную неделю " + dayRange(data.period) + ": что с ними сейчас" }));
+    if (!c) {
+      app.appendChild(el("p", { class: "sub", text: "Пробные недели не прочитаны" + (data.cohort_error ? ": " + data.cohort_error : ".") }));
+      return;
+    }
+    var t = c.totals, n = t.started;
+    var share = function (k) { return n ? Math.round((100 * k) / n) + " %" : null; };
+    var note = function (parts) { return parts.filter(Boolean).join(" · ") || null; };
+    var tiles = el("div", { class: "tiles" });
+    tiles.appendChild(plainTile("Начали пробную", fmt(n), t.deleted ? "удалили аккаунт: " + fmt(t.deleted) : null));
+    tiles.appendChild(plainTile("Оплатили", fmt(t.paid), note([share(t.paid), t.renewal_off ? "продление выкл. у\u00a0" + fmt(t.renewal_off) : null])));
+    tiles.appendChild(plainTile("Отменили", fmt(t.cancelled), note([share(t.cancelled), t.cancelled_first_day ? "в первые сутки\u00a0" + fmt(t.cancelled_first_day) : null])));
+    tiles.appendChild(plainTile("Истекла без оплаты", fmt(t.expired)));
+    tiles.appendChild(plainTile("Ходили после пробной", fmt(t.active_after), t.paid ? "из оплативших " + fmt(t.paid_active_after) : null));
+    tiles.appendChild(plainTile("Купили пакет", fmt(t.packs)));
+    if (t.on_trial) tiles.appendChild(plainTile("Ещё на пробной", fmt(t.on_trial)));
+    if (t.unknown) tiles.appendChild(plainTile("Неясно", fmt(t.unknown), "App Store ничего не сообщил"));
+    app.appendChild(tiles);
+    app.appendChild(el("p", { class: "sub", text: "Водители, у которых пробная неделя началась в эти дни (сутки UTC), и что с ними сейчас по событиям App Store. Конец пробной — первая оплата, отмена или истечение без оплаты. Ходы в таблице — в пробной → после её конца до сейчас, и день последнего хода." }));
+    if (!c.drivers.length) {
+      app.appendChild(el("p", { class: "sub", text: "В эти дни пробную неделю никто не начал." }));
+      return;
+    }
+    // a row per driver: when the week began (UTC), who, the outcome, turns in the trial → after it with the last turn's day
+    var table = dataTable(["Когда", "Кто", "Итог", "Ходы"], c.drivers.map(function (d) {
+      var when = el("span", null, [el("span", { text: dayLabel(d.started_at) }), el("span", { text: timeUtc(d.started_at) })]);
+      var who = el("span", null, [el("span", { text: d.uid }), el("span", { text: country(d.country || "unknown") }), d.deleted ? el("span", { class: "code", text: "аккаунт удалён" }) : null]);
+      // on the free week still (no end yet): its turns so far, nothing after
+      var turns = el("span", null, [el("span", { text: fmt(d.turns_trial) + " → " + (d.ended_at ? fmt(d.turns_after) : "…") }),
+        d.car_turns_after ? el("span", { class: "code", text: "в машине " + fmt(d.car_turns_after) }) : null,
+        el("span", { class: "code", text: d.last_turn_at ? "посл. " + dayLabel(d.last_turn_at) : "ни одного" })]);
+      return [when, who, trialOutcome(d), turns];
+    }), [2, 3]);
+    table.firstChild.classList.add("cohort");
+    app.appendChild(table);
   }
 
   function renderSalesFeedback(period, periodName) {
@@ -1154,6 +1223,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       if (!data || data.days !== days || (days === 0
         ? !data.today || !data.same_hours_yesterday || !data.hourly || !Array.isArray(data.hourly.today) || data.hourly.today.length !== 24 || !Array.isArray(data.hourly.yesterday) || data.hourly.yesterday.length !== 24
         : days === 1 ? !data.yesterday || !Object.prototype.hasOwnProperty.call(data, "base") || !data.hourly || !Array.isArray(data.hourly.yesterday) || data.hourly.yesterday.length !== 24 || !Array.isArray(data.hourly.day_before) || data.hourly.day_before.length !== 24
+        : days === "week_ago" ? !Array.isArray(data.series) || !data.period || !data.previous || !Object.prototype.hasOwnProperty.call(data, "cohort") || (data.cohort !== null && !Array.isArray(data.cohort.drivers))
         : !Array.isArray(data.series) || !data.yesterday || !data.today || !data.period)) throw new Error("Сервер ответил не отчётом");
       state.data = data;
       render(data);
