@@ -797,10 +797,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         { name: "ElevenLabs", color: "var(--s3)", kind: "bar", stack: true, values: days.map(function (d) { var c = spendOf(sp.elevenlabs_credits, d); return c !== null && perCredit !== null ? c * perCredit : null; }) }
       ];
       var total = days.map(function (d, i) { return spendSeries.reduce(function (t, ss) { return t + (ss.values[i] || 0); }, 0); });
-      var partial = days.map(function (d, i) { return spendSeries.some(function (ss) { return ss.values[i] === null; }); });
+      var spendGap = days.map(function (d, i) { return spendSeries.some(function (ss) { return ss.values[i] === null; }); });
       var totalLabel = function (i) {
         if (spendSeries.every(function (ss) { return ss.values[i] === null; })) return "—";
-        return (partial[i] ? "≥ " : "") + usd(total[i]);
+        return (spendGap[i] ? "≥ " : "") + usd(total[i]);
       };
       // The drivers' requests and the rest of the bills, per day, as the server split them (VIA-441).
       var splitOf = function (d) { return sp.split && sp.split[d] ? sp.split[d] : null; };
@@ -908,7 +908,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     var note = function (parts) { return parts.filter(Boolean).join(" · ") || null; };
     var tiles = el("div", { class: "tiles" });
     tiles.appendChild(plainTile("Начали пробную", fmt(n), t.deleted ? "удалили аккаунт: " + fmt(t.deleted) : null));
-    tiles.appendChild(plainTile("Оплатили", fmt(t.paid), note([share(t.paid), t.renewal_off ? "продление выкл. у\u00a0" + fmt(t.renewal_off) : null])));
+    tiles.appendChild(plainTile("Оплатили", fmt(t.paid), note([share(t.paid), t.renewal_off ? "продление выкл. у\u00a0" + fmt(t.renewal_off) : null,
+      t.refunded ? "ещё " + fmt(t.refunded) + " — деньги вернули" : null])));
     tiles.appendChild(plainTile("Отменили", fmt(t.cancelled), note([share(t.cancelled), t.cancelled_first_day ? "в первые сутки\u00a0" + fmt(t.cancelled_first_day) : null])));
     tiles.appendChild(plainTile("Истекла без оплаты", fmt(t.expired)));
     tiles.appendChild(plainTile("Ходили после пробной", fmt(t.active_after), t.paid ? "из оплативших " + fmt(t.paid_active_after) : null));
@@ -916,7 +917,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     if (t.on_trial) tiles.appendChild(plainTile("Ещё на пробной", fmt(t.on_trial)));
     if (t.unknown) tiles.appendChild(plainTile("Неясно", fmt(t.unknown), "App Store ничего не сообщил"));
     app.appendChild(tiles);
-    app.appendChild(el("p", { class: "sub", text: "Водители, у которых пробная неделя началась в эти дни (сутки UTC), и что с ними сейчас по событиям App Store. Конец пробной — первая оплата, отмена или истечение без оплаты. Ходы в таблице — в пробной → после её конца до сейчас, и день последнего хода." }));
+    // App Store events are kept since billing_since (28.10 20:12 UTC): a free week begun before it is not here
+    var since = data.period.sales && data.period.sales.billing_since;
+    var early = since && Date.parse(data.period.from) < Date.parse(since) ? " События App Store записываются с " + stamp(since) + ": пробные, начатые раньше, здесь не учтены." : "";
+    app.appendChild(el("p", { class: "sub", text: "Водители, у которых пробная неделя началась в эти дни (сутки UTC), и что с ними сейчас по событиям App Store. Конец пробной — первая оплата, отмена или истечение без оплаты. Ходы в таблице — в пробной → после её конца до сейчас, и день последнего хода." + early }));
     if (!c.drivers.length) {
       app.appendChild(el("p", { class: "sub", text: "В эти дни пробную неделю никто не начал." }));
       return;
