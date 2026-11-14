@@ -531,19 +531,21 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   // VIA-411: current reachability is a snapshot, the funnel uses the selected send window.
   function pushDelivery(p) {
     var r = p.reach;
-    var line = (p.tried == null ? "" : "попыток " + fmt(p.tried) + " → ") + "APNs " + fmt(p.apns_ok == null ? p.sent : p.apns_ok) + " → дошло " + fmt(p.delivered) + " → открыли " + fmt(p.opened);
+    var line = "Дошло " + fmt(p.delivered) + " · открыто " + fmt(p.opened) + (p.delivered > 0 ? " · " + Math.round(100 * p.opened / p.delivered) + " % дошедших" : "");
     if (r) line += " · достижимы " + fmt(r.reachable) + " · выкл. " + fmt(r.notifications_off) + " · удалили (APNs) " + fmt(r.uninstalled) + " · молчат " + fmt(r.silent);
     app.appendChild(el("p", { text: line }));
+    app.appendChild(el("p", { class: "sub", text: "Отправка: " + (p.tried == null ? "" : "попыток " + fmt(p.tried) + " → ") + "APNs " + fmt(p.apns_ok == null ? p.sent : p.apns_ok) + " → дошло " + fmt(p.delivered) + "." }));
     if (r) app.appendChild(el("p", { class: "sub", text: "Сейчас: без недавней отправки " + fmt(r.no_recent_send) + " · отказали при входе " + fmt(r.onboarding_refused) + ". Молчат — возможно удалили приложение или выключили уведомления." }));
-    app.appendChild(el("p", { class: "sub", text: "APNs — отправки, принятые Apple. Дошло — подтверждение с телефона." }));
+    app.appendChild(el("p", { class: "sub", text: "Пуши считаются по подтверждению с телефона (дошло). APNs — отправки, принятые Apple: не все из них доходят." }));
     if (p.apns_failed && p.apns_failed.length) app.appendChild(dataTable(["Отказ APNs", "Попыток"], p.apns_failed.map(function (f) { return [f.reason, fmt(f.n)]; })));
   }
 
   function pushCampaignTable(p) {
     var tried = p.tried != null;
-    return dataTable(["Кампания"].concat(tried ? ["Попыток"] : [], ["APNs", "Дошло", "Открыто"]), p.campaigns.map(function (c) {
-      return [c.campaign || "?"].concat(tried ? [c.tried == null ? "—" : fmt(c.tried)] : [],
-        [fmt(c.apns_ok == null ? c.sent : c.apns_ok), fmt(c.delivered), fmt(c.opened)]);
+    var rows = p.campaigns.slice().sort(function (a, b) { return b.delivered - a.delivered || b.opened - a.opened; });
+    return dataTable(["Кампания", "Дошло", "Открыто", "APNs"].concat(tried ? ["Попыток"] : []), rows.map(function (c) {
+      return [c.campaign || "?", fmt(c.delivered), fmt(c.opened), fmt(c.apns_ok == null ? c.sent : c.apns_ok)]
+        .concat(tried ? [c.tried == null ? "—" : fmt(c.tried)] : []);
     }));
   }
 
@@ -684,7 +686,9 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       // over a period: active drivers who signed up before it, not drivers who came back
       ["Активные, пришли до периода", period.activity.returning_drivers, prev && prev.activity.returning_drivers],
       ["Показы пейвола", period.paywall.shown, prev && prev.paywall.shown],
-      ["Пуши", period.pushes.sent, prev && prev.pushes.sent],
+      // VIA-615: pushes the phone confirmed, not what APNs took; opened beside them
+      ["Пуши, дошло", period.pushes.delivered, prev && prev.pushes.delivered],
+      ["Пуши, открыто", period.pushes.opened, prev && prev.pushes.opened],
       ["Ошибки", errorsOf(period), prev && errorsOf(prev), false],
       ["Сбои на телефоне", deviceFailures(period), prev && deviceFailures(prev), false]
     ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], prev ? v[2] : undefined, null, v[3], "previous")); });
@@ -771,12 +775,11 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     app.appendChild(el("h2", { text: "Пуши" }));
     pushDelivery(period.pushes);
     var pushSeries = [
-      { name: "отправлено", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return d.pushes_sent; }) },
-      { name: "дошло", color: "var(--s3)", kind: "line", values: s.map(function (d) { return d.pushes_delivered == null ? null : d.pushes_delivered; }) },
+      { name: "дошло", color: "var(--s1)", kind: "bar", values: s.map(function (d) { return d.pushes_delivered == null ? null : d.pushes_delivered; }) },
       { name: "открыто", color: "var(--s2)", kind: "line", values: s.map(function (d) { return d.pushes_opened; }) }
     ];
-    app.appendChild(figure("Отправлено, дошло и открыто", null, timeChart(days, pushSeries, { label: "Пуши по дням", partialLast: partial }), pushSeries, function () {
-      return dataTable(["День", "Отправлено", "Дошло", "Открыто"], s.map(function (d) { return [dayLabel(d.day), fmt(d.pushes_sent), d.pushes_delivered == null ? "?" : fmt(d.pushes_delivered), fmt(d.pushes_opened)]; }));
+    app.appendChild(figure("Дошло и открыто", null, timeChart(days, pushSeries, { label: "Пуши по дням", partialLast: partial }), pushSeries, function () {
+      return dataTable(["День", "Дошло", "Открыто"], s.map(function (d) { return [dayLabel(d.day), d.pushes_delivered == null ? "?" : fmt(d.pushes_delivered), fmt(d.pushes_opened)]; }));
     }));
     if (period.pushes.campaigns.length) {
       app.appendChild(el("p", { class: "sub", text: "Пуши по кампаниям за период" }));
@@ -1088,7 +1091,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       ["В машине", td.activity.car_drivers, todayMode ? prev.activity.car_drivers : base.car_drivers],
       ["Вернулись", td.activity.returning_drivers, todayMode ? prev.activity.returning_drivers : base.returning_drivers],
       ["Показы пейвола", td.paywall.shown, todayMode ? prev.paywall.shown : base.paywall_shown],
-      ["Пуши", td.pushes.sent, todayMode ? prev.pushes.sent : base.pushes_sent],
+      ["Пуши, дошло", td.pushes.delivered, todayMode ? prev.pushes.delivered : base.pushes_delivered],
+      ["Пуши, открыто", td.pushes.opened, todayMode ? prev.pushes.opened : base.pushes_opened],
       ["Ошибки", errors(td), todayMode ? errors(prev) : base.errors, false],
       ["Сбои на телефоне", deviceFailures(td), todayMode ? deviceFailures(prev) : base.device_failures, false]
     ].forEach(function (v) { tiles.appendChild(tile(v[0], v[1], v[2], null, v[3], todayMode)); });
