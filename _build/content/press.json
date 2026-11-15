@@ -1,9 +1,9 @@
 {
  "title": "Viavo for press",
- "lead": "Viavo is a tap-to-talk AI voice assistant for drivers on iPhone and CarPlay. Press one button on the car screen, say what you need in your own words, and Viavo does it and answers out loud, with a native voice, in 28 languages.",
+ "lead": "Viavo is a tap-to-talk AI voice assistant for drivers on iPhone and CarPlay. Press one button on the car screen, say what you need in your own words, and Viavo does it and answers out loud, with a native voice, in 29 languages.",
  "whyTitle": "Why it exists",
  "why": [
-  "Siri on CarPlay still doesn’t speak Polish, Czech, Romanian, Greek, Hungarian, Croatian, Serbian or Ukrainian. Drivers there either talk to their car in English or don’t talk to it at all. The chatbot apps that came to CarPlay mostly talk: in ZDNET’s test, ChatGPT and Perplexity couldn’t place a call, send a message or play music. Viavo speaks all of these languages and twenty more, understands everyday speech rather than fixed commands, and does the task.",
+  "Siri on CarPlay still doesn’t speak Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian or Ukrainian, and the new Siri AI isn’t available on iPhone in the EU. The chatbot apps that came to CarPlay mostly talk: OpenAI says ChatGPT in CarPlay can’t control other apps, and in ZDNET’s test ChatGPT and Perplexity couldn’t place a call, send a message or play music. Viavo speaks all of these languages and twenty more, understands everyday speech rather than fixed commands, and does the task.",
   "Viavo is made by a small team in Serbia."
  ],
  "saysTitle": "What drivers say to it",
@@ -17,16 +17,16 @@
    "Places with ratings, opening hours and reviews."
   ],
   [
-   "Will I make it by nine?",
-   "Travel time with traffic."
-  ],
-  [
-   "Play something for the road",
-   "Apple Music, Spotify, YouTube Music or Deezer; live radio by name."
+   "Call Anna on WhatsApp",
+   "The call starts right from the car screen (iOS 27)."
   ],
   [
    "What’s new in my chats?",
-   "Telegram and Slack: read, summarize and dictate a reply. WhatsApp notification reading and separate private sending arrive in Viavo 1.0.11 on iOS 27 or later; the current App Store version 1.0.9 lacks native setup. Only received notification previews and unambiguously observed recipients are supported, with confirmation and no delivery guarantee. Phone drafts, including SMS, remain available."
+   "New WhatsApp and SMS messages read aloud, and a reply by voice (iOS 27). Telegram and Slack: the gist of a chat, a message read out, a dictated reply; Telegram voice messages in the sender’s own voice."
+  ],
+  [
+   "Play something for the road",
+   "Apple Music, Spotify, YouTube Music, Amazon Music or Deezer; live radio by name."
   ],
   [
    "Remind me to call the bank when I get to the office",
@@ -46,15 +46,15 @@
   ],
   [
    "Platforms",
-   "iPhone (iOS 17 or later) and CarPlay"
+   "iPhone (iOS 17 or later; WhatsApp calls and message replies need iOS 27) and CarPlay"
   ],
   [
    "Languages",
-   "28, a native female or male voice in each"
+   "29, a native female or male voice in each"
   ],
   [
    "Siri doesn’t speak, Viavo does",
-   "Polish, Czech, Romanian, Greek, Hungarian, Croatian, Serbian, Ukrainian"
+   "Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian, Ukrainian"
   ],
   [
    "Price",

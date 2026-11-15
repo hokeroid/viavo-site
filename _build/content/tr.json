@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: CarPlay için yapay zekâlı sesli asistan, 28 dilde",
-  "description": "Tek düğmeye basın, kendi sözlerinizle söyleyin. Viavo molalı rota açar, arar, mesaj yazar, müzik ve radyo çalar, sesli yanıtlar. 28 dil, her birinde doğal ses.",
+  "title": "Viavo: CarPlay için yapay zekâlı sesli asistan, 29 dilde",
+  "description": "Tek düğmeye basın, kendi sözlerinizle söyleyin. Viavo molalı rota açar, arar, mesaj yazar, müzik ve radyo çalar, sesli yanıtlar. 29 dil, her birinde doğal ses.",
   "ogTitle": "Kendi sözlerinizle söyleyin. Viavo halleder."
  },
  "qo": "“",
@@ -13,7 +13,7 @@
  "eyebrow": "CarPlay için yapay zekâ asistanı",
  "h1a": "Kendi sözlerinizle söyleyin.",
  "h1b": "Viavo halleder.",
- "sub": "Molalı rotalar, aramalar, mesajlar, müzik ve radyo. Tek düğmeye basın ve bir insana nasıl söylerseniz öyle söyleyin, 28 dilin herhangi birinde.",
+ "sub": "Molalı rotalar, aramalar, mesajlar, müzik ve radyo. Tek düğmeye basın ve bir insana nasıl söylerseniz öyle söyleyin, 29 dilin herhangi birinde.",
  "heroAlt": "CarPlay ekranında Viavo",
  "bandPre": "Siri ",
  "bandPost": " konuşmuyor.",
@@ -21,6 +21,7 @@
  "bandWords": {
   "pl": "Lehçe",
   "cs": "Çekçe",
+  "sk": "Slovakça",
   "ro": "Rumence",
   "el": "Yunanca",
   "hu": "Macarca",
@@ -28,7 +29,7 @@
   "sr": "Sırpça",
   "uk": "Ukraynaca"
  },
- "bandSub": "Siri bu sekiz dilin hiçbirini konuşmuyor. Viavo hepsini konuşuyor.",
+ "bandSub": "Siri bu dokuz dilin hiçbirini konuşmuyor. Viavo hepsini konuşuyor.",
  "say": "Yanıt vermekle kalmaz. İşi yapar.",
  "sayLead": "Tek düğme yeter: Viavo rotayı, yol üstündeki yerleri, müziği, aramaları, mesajları ve sorularınızı sesli olarak halleder, gözleriniz yoldan ayrılmaz.",
  "examples": [
@@ -74,10 +75,10 @@
   [
    "Kişiler ve mesajlar",
    [
-    "Rehberdeki bir kişiyi adıyla arama",
-    "WhatsApp: sonraki sürümde sesle okuma ve gönderme",
-    "SMS: mesaj telefonda hazır açılır, Gönder'e dokunmanız yeterli",
-    "Telegram ve Slack: yenilikler, sohbetin özeti, dikte ettiğiniz yanıt"
+    "Rehberdeki bir kişiyi adıyla, WhatsApp üzerinden de arama (iOS 27)",
+    "WhatsApp ve SMS: yeni mesajları dinleme, sesle yanıtlama (iOS 27)",
+    "Telegram ve Slack: yenilikler, sohbetin özeti, dikte ettiğiniz yanıt",
+    "Telegram sesli mesajlarını gönderenin kendi sesinden dinleme"
    ],
    "Mehmet'e on dakika gecikeceğimi söyle"
   ],
@@ -125,7 +126,7 @@
   "Calendar": "Takvim",
   "Reminders": "Anımsatıcılar"
  },
- "langsTitle": "28 dil, her birinde doğal bir ses",
+ "langsTitle": "29 dil, her birinde doğal bir ses",
  "legend": "Siri bu dili konuşmuyor",
  "langNames": {
   "ar": "Arapça",
@@ -150,6 +151,7 @@
   "ro": "Rumence",
   "ru": "Rusça",
   "sr": "Sırpça",
+  "sk": "Slovakça",
   "es": "İspanyolca",
   "sv": "İsveççe",
   "th": "Tayca",
@@ -176,11 +178,11 @@
  "faqItems": [
   [
    "Viavo'nun CarPlay'deki ChatGPT ya da Gemini'den farkı ne?",
-   "CarPlay'deki ChatGPT ve Gemini sohbet için tasarlandı. Viavo ise sohbetle kalmaz, söylediğinizi yapar: bir kişiyi arar, SMS mesajı hazırlar, müzik ya da bir radyo istasyonu çalar ve tek bir cümleyle navigasyon uygulamanızda molalı bir rota ya da yol üstündeki bir yeri açar."
+   "CarPlay'deki ChatGPT ve Gemini sohbet için tasarlandı. Viavo ise sohbetle kalmaz, söylediğinizi yapar: bir kişiyi telefonla ya da WhatsApp'tan arar, yeni WhatsApp mesajlarını ve SMS'leri sesli okuyup sesle yanıt vermenizi sağlar (iOS 27'de), müzik ya da bir radyo istasyonu çalar ve tek bir cümleyle navigasyon uygulamanızda molalı bir rota ya da yol üstündeki bir yeri açar."
   ],
   [
    "Viavo hangi dilleri konuşuyor?",
-   "28 dil: Almanca, Arapça, Çekçe, Çince (Basitleştirilmiş ve Geleneksel), Endonezce, Felemenkçe, Fransızca, Hırvatça, Hintçe, İbranice, İngilizce, İspanyolca, İsveççe, İtalyanca, Japonca, Korece, Lehçe, Macarca, Portekizce, Rumence, Rusça, Sırpça, Tayca, Türkçe, Ukraynaca, Vietnamca ve Yunanca. Her dilde uygulamanın ekranları ve anadili gibi konuşan bir ses var, kadın ya da erkek."
+   "29 dil: Almanca, Arapça, Çekçe, Çince (Basitleştirilmiş ve Geleneksel), Endonezce, Felemenkçe, Fransızca, Hırvatça, Hintçe, İbranice, İngilizce, İspanyolca, İsveççe, İtalyanca, Japonca, Korece, Lehçe, Macarca, Portekizce, Rumence, Rusça, Sırpça, Slovakça, Tayca, Türkçe, Ukraynaca, Vietnamca ve Yunanca. Her dilde uygulamanın ekranları ve anadili gibi konuşan bir ses var, kadın ya da erkek."
   ],
   [
    "Siri'nin yerini mi alıyor?",
@@ -200,7 +202,7 @@
   ],
   [
    "Hangi uygulamalarla çalışır?",
-   "Apple Maps, Google Maps ve Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer ve Apple Podcasts; Simple Radio, TuneIn ve iHeartRadio; WhatsApp, SMS, Telegram ve Slack; HomeKit, Takvim ve Anımsatıcılar. Başka uygulamaları da adını söylediğinizde açar."
+   "Apple Maps, Google Maps ve Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer ve Apple Podcasts; Simple Radio, TuneIn ve iHeartRadio; WhatsApp, Viber, SMS, Telegram ve Slack; Gmail, iCloud ve Yahoo e-postası; HomeKit, Takvim ve Anımsatıcılar. Başka uygulamaları da adını söylediğinizde açar."
   ],
   [
    "Ücreti ne kadar?",
@@ -208,7 +210,7 @@
   ],
   [
    "WhatsApp, Viavo ile nasıl çalışır?",
-   "iOS 27 veya üzeri için Viavo 1.0.11 ile geliyor. App Store’daki mevcut 1.0.9 sürümünde bu kurulum yoktur. Viavo’dan kurulumdan sonra aldığı WhatsApp bildirimlerini okumasını isteyin. Yalnızca mevcut bildirim önizlemeleri okunur; eski sohbetlere veya eklere erişilmez. Metin eksik olabilir. Gönderme için ayrı izin, alıcı ve metin onayı gerekir."
+   "iOS 27 veya üzerinde, Viavo Ayarları’nda adım adım kurulan tek bir Viavo otomasyonuyla çalışır. Viavo yeni WhatsApp mesajlarını ve SMS’leri sesli okur, kişiyi ve metni onayladığınızda yanıtınızı gönderir. WhatsApp’ta, bağladıktan sonra size yazan kişilere yanıt verir; SMS ise rehberinizdeki herkese gönderilebilir. “Ayşe’yi WhatsApp’tan ara” dediğinizde arama başlar, araç ekranından da. Daha eski iOS sürümlerinde mesaj telefonunuzda hazır açılır, Gönder’e dokunmanız yeterli."
   ],
   [
    "Verilerime ne oluyor?",
@@ -232,9 +234,9 @@
  "close": "Kapat",
  "whatsapp": {
   "title": "WhatsApp, Viavo ile nasıl çalışır?",
-  "availability": "iOS 27 veya üzeri için Viavo 1.0.11 ile geliyor. App Store’daki mevcut 1.0.9 sürümünde bu kurulum yoktur.",
-  "receive": "Viavo’dan kurulumdan sonra aldığı WhatsApp bildirimlerini okumasını isteyin. Yalnızca mevcut bildirim önizlemeleri okunur; eski sohbetlere veya eklere erişilmez. Metin eksik olabilir.",
-  "send": "Gönderme için ayrı izin, alıcı ve metin onayı gerekir. Yalnızca bu Viavo kurulumunun aldığı bildirimlerden açıkça tanımlanan kişilere özel mesaj gönderilebilir. Telefon rehberinde kayıtlı olmak tek başına yetmez. Teslimat garanti edilmez; telefondaki taslaklar alternatif olarak kullanılabilir.",
-  "setup": "Park halindeyken Viavo Ayarları’nda veya ilk kurulumda WhatsApp’ı açıp Bağlan’a dokunun. Alma kestirmesini ekleyin, otomasyonunu açın, bir kez çalıştırın ve istenen erişime izin verin. Göndermek de istiyorsanız ayrıca kurun ve kestirmesini aynı şekilde etkinleştirin. Kestirmeler otomatik olarak Viavo klasöründe toplanır."
+  "availability": "iOS 27 veya üzerinde, tek bir Viavo otomasyonuyla çalışır. Daha eski iOS sürümlerinde mesaj telefonunuzda hazır açılır, Gönder’e dokunmanız yeterli.",
+  "receive": "Viavo, bağladıktan sonra gelen yeni WhatsApp mesajlarını ve SMS’leri sesli okur: kimden geldiğini ve bildirimdeki önizleme metnini; eski sohbetleri ve ekleri okumaz. Tek kullanımlık kod içeren SMS’ler ve kısa numaralardan gelen mesajlar atlanır.",
+  "send": "Yanıt, yalnızca kişiyi ve metni onayladığınızda gönderilir. WhatsApp’ta Viavo, bağladığınızdan beri size yazmış kişilere yanıt verir; SMS ise rehberinizdeki herkese gidebilir, numarayı telefon kendisi doldurur. “Ayşe’yi WhatsApp’tan ara” gibi bir cümleyle rehberinizde kayıtlı herhangi biriyle WhatsApp araması başlatabilirsiniz, araç ekranından da.",
+  "setup": "Park halindeyken Viavo Ayarları’nı açın ve adımları izleyin: “Viavo” kestirmesini yükleyin, otomasyonunu açın ve kontrolü başlatın. Aynı otomasyon WhatsApp’ı, SMS’i, WhatsApp ve Viber aramalarını yönetir; CarPlay bağlandığında da Viavo’yu açar."
  }
 }

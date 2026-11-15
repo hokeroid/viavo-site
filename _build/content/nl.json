@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: AI-spraakassistent voor CarPlay, in 28 talen",
-  "description": "Druk op één knop en zeg het op jouw manier. Viavo opent routes met een tussenstop, belt, stuurt berichten, zet muziek en radio op en antwoordt hardop. 28 talen.",
+  "title": "Viavo: AI-spraakassistent voor CarPlay, in 29 talen",
+  "description": "Druk op één knop en zeg het op jouw manier. Viavo opent routes met een tussenstop, belt, stuurt berichten, zet muziek en radio op en antwoordt hardop. 29 talen.",
   "ogTitle": "Zeg het op jouw manier. Viavo doet het."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "AI-assistent voor CarPlay",
  "h1a": "Zeg het op jouw manier.",
  "h1b": "Viavo doet het.",
- "sub": "Routes met een tussenstop, bellen, berichten, muziek en radio. Druk op één knop en zeg het zoals je het tegen iemand zou zeggen, in een van de 28 talen.",
+ "sub": "Routes met een tussenstop, bellen, berichten, muziek en radio. Druk op één knop en zeg het zoals je het tegen iemand zou zeggen, in een van de 29 talen.",
  "heroAlt": "Viavo op een CarPlay-scherm",
  "bandPre": "Siri spreekt geen ",
  "bandPost": ".",
@@ -21,6 +21,7 @@
  "bandWords": {
   "pl": "Pools",
   "cs": "Tsjechisch",
+  "sk": "Slowaaks",
   "ro": "Roemeens",
   "el": "Grieks",
   "hu": "Hongaars",
@@ -28,7 +29,7 @@
   "sr": "Servisch",
   "uk": "Oekraïens"
  },
- "bandSub": "Siri spreekt geen van deze acht talen. Viavo spreekt ze allemaal.",
+ "bandSub": "Siri spreekt geen van deze negen talen. Viavo spreekt ze allemaal.",
  "say": "Viavo antwoordt niet alleen, maar regelt het ook.",
  "sayLead": "Eén druk op de knop en Viavo regelt je route, plekken onderweg, muziek, gesprekken en berichten, en beantwoordt je vragen hardop. Zo houd je je ogen op de weg.",
  "examples": [
@@ -74,10 +75,10 @@
   [
    "Mensen en berichten",
    [
-    "Een contact op naam bellen",
-    "WhatsApp: voorlezen en versturen met je stem in de volgende versie",
-    "Sms: kant-en-klaar op je telefoon, je tikt alleen nog op Stuur",
-    "Telegram en Slack: wat er nieuw is, de kern, een gedicteerd antwoord"
+    "Een contact op naam bellen, ook via WhatsApp (iOS 27)",
+    "WhatsApp en sms: nieuwe berichten horen, antwoorden met je stem (iOS 27)",
+    "Telegram en Slack: wat er nieuw is, de kern, een gedicteerd antwoord",
+    "Telegram-spraakberichten in de stem van de afzender zelf"
    ],
    "Zeg tegen Piet dat ik tien minuten te laat ben"
   ],
@@ -125,7 +126,7 @@
   "Calendar": "Agenda",
   "Reminders": "Herinneringen"
  },
- "langsTitle": "28 talen, elk met een moedertaalstem",
+ "langsTitle": "29 talen, elk met een moedertaalstem",
  "legend": "Siri spreekt deze taal niet",
  "langNames": {
   "ar": "Arabisch",
@@ -150,6 +151,7 @@
   "ro": "Roemeens",
   "ru": "Russisch",
   "sr": "Servisch",
+  "sk": "Slowaaks",
   "es": "Spaans",
   "sv": "Zweeds",
   "th": "Thai",
@@ -176,11 +178,11 @@
  "faqItems": [
   [
    "Wat is het verschil tussen Viavo en ChatGPT of Gemini in CarPlay?",
-   "ChatGPT en Gemini in CarPlay zijn gemaakt om mee te praten. Viavo doet ook echt wat je zegt: het belt een contact, zet een sms-bericht klaar, speelt muziek of een radiozender af en opent met één zin een route met een tussenstop, of een plek onderweg, in je navigatie-app."
+   "ChatGPT en Gemini in CarPlay zijn gemaakt om mee te praten. Viavo doet ook echt wat je zegt: het belt een contact, ook via WhatsApp, leest nieuwe WhatsApp-berichten en sms’jes voor en verstuurt je ingesproken antwoord (vanaf iOS 27), speelt muziek of een radiozender af en opent met één zin een route met een tussenstop, of een plek onderweg, in je navigatie-app."
   ],
   [
    "Welke talen spreekt Viavo?",
-   "28: Arabisch, Chinees (vereenvoudigd en traditioneel), Duits, Engels, Frans, Grieks, Hebreeuws, Hindi, Hongaars, Indonesisch, Italiaans, Japans, Koreaans, Kroatisch, Nederlands, Oekraïens, Pools, Portugees, Roemeens, Russisch, Servisch, Spaans, Thai, Tsjechisch, Turks, Vietnamees en Zweeds. In elke taal: de schermen van de app en een moedertaalstem, een vrouwen- of mannenstem."
+   "29: Arabisch, Chinees (vereenvoudigd en traditioneel), Duits, Engels, Frans, Grieks, Hebreeuws, Hindi, Hongaars, Indonesisch, Italiaans, Japans, Koreaans, Kroatisch, Nederlands, Oekraïens, Pools, Portugees, Roemeens, Russisch, Servisch, Slowaaks, Spaans, Thai, Tsjechisch, Turks, Vietnamees en Zweeds. In elke taal: de schermen van de app en een moedertaalstem, een vrouwen- of mannenstem."
   ],
   [
    "Vervangt Viavo Siri?",
@@ -200,7 +202,7 @@
   ],
   [
    "Met welke apps werkt Viavo?",
-   "Apple Maps, Google Maps en Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer en Apple Podcasts; Simple Radio, TuneIn en iHeartRadio; WhatsApp, sms, Telegram en Slack; HomeKit, Agenda en Herinneringen. Andere apps opent Viavo op naam."
+   "Apple Maps, Google Maps en Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer en Apple Podcasts; Simple Radio, TuneIn en iHeartRadio; WhatsApp, Viber, sms, Telegram en Slack; e-mail van Gmail, iCloud en Yahoo; HomeKit, Agenda en Herinneringen. Andere apps opent Viavo op naam."
   ],
   [
    "Wat kost het?",
@@ -208,7 +210,7 @@
   ],
   [
    "Hoe werkt WhatsApp met Viavo?",
-   "Komt in Viavo 1.0.11 op iOS 27 of nieuwer. De huidige App Store-versie, 1.0.9, bevat deze instelling nog niet. Vraag Viavo om WhatsApp-meldingen voor te lezen die na het instellen zijn ontvangen. Alleen beschikbare meldingsvoorbeelden worden gelezen, geen oude chats of bijlagen; de tekst kan onvolledig zijn. Versturen vereist aparte toestemming en bevestiging van ontvanger en tekst."
+   "Het werkt op iOS 27 of nieuwer, via één Viavo-automatisering die je in Viavo onder Instellingen stap voor stap inricht. Viavo leest nieuwe WhatsApp-berichten en sms’jes voor en verstuurt je antwoord zodra je ontvanger en tekst hebt bevestigd. Op WhatsApp antwoordt Viavo mensen die je na het koppelen een bericht hebben gestuurd; een sms kan naar iedereen in je contacten. „Bel Anna via WhatsApp” start het gesprek, ook vanaf het autoscherm. Op oudere iOS-versies opent het bericht kant-en-klaar op je telefoon en tik je alleen nog op Stuur."
   ],
   [
    "Wat gebeurt er met mijn gegevens?",
@@ -232,9 +234,9 @@
  "close": "Sluit",
  "whatsapp": {
   "title": "Hoe werkt WhatsApp met Viavo?",
-  "availability": "Komt in Viavo 1.0.11 op iOS 27 of nieuwer. De huidige App Store-versie, 1.0.9, bevat deze instelling nog niet.",
-  "receive": "Vraag Viavo om WhatsApp-meldingen voor te lezen die na het instellen zijn ontvangen. Alleen beschikbare meldingsvoorbeelden worden gelezen, geen oude chats of bijlagen; de tekst kan onvolledig zijn.",
-  "send": "Versturen vereist aparte toestemming en bevestiging van ontvanger en tekst. Alleen privéberichten aan mensen die eenduidig zijn herkend uit meldingen die deze Viavo-installatie ontving. Alleen een telefooncontact is niet genoeg. Bezorging is niet gegarandeerd; een concept op je telefoon blijft een alternatief.",
-  "setup": "Open terwijl je geparkeerd staat WhatsApp in de Viavo-instellingen of tijdens de eerste configuratie en tik op Verbinden. Voeg de ontvangstopdracht toe, schakel de automatisering in, voer de opdracht eenmaal uit en geef de gevraagde toegang. Stel versturen desgewenst apart in en activeer die opdracht op dezelfde manier. De opdrachten komen automatisch in de map Viavo."
+  "availability": "Werkt op iOS 27 of nieuwer, via één Viavo-automatisering. Op oudere iOS-versies opent het bericht kant-en-klaar op je telefoon en tik je alleen nog op Stuur.",
+  "receive": "Viavo leest nieuwe WhatsApp-berichten en sms’jes voor die na het koppelen binnenkomen: de afzender en de voorbeeldtekst van de melding, geen oude chats of bijlagen. Sms’jes met eenmalige codes en berichten van korte nummers worden overgeslagen.",
+  "send": "Een antwoord wordt pas verstuurd als je ontvanger en tekst hebt bevestigd. Op WhatsApp antwoordt Viavo mensen die je sinds het koppelen een bericht hebben gestuurd; een sms kan naar iedereen in je contacten, en de telefoon vult het nummer zelf in. „Bel Anna via WhatsApp” werkt met elk opgeslagen contact en start het WhatsApp-gesprek, ook vanaf het autoscherm.",
+  "setup": "Sta je geparkeerd, open dan Instellingen in Viavo en volg de stappen: installeer de Viavo-opdracht, zet de automatisering aan en controleer of het werkt. Dezelfde automatisering regelt WhatsApp, sms en bellen via WhatsApp en Viber, en opent Viavo zodra CarPlay verbonden is."
  }
 }

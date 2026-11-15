@@ -53,6 +53,7 @@ LANGS = [
     ('ro', 'ro', 'ro', 'Română', 'Romanian', 'ltr', 'ro', 'ro_RO'),
     ('ru', 'ru', 'ru', 'Русский', 'Russian', 'ltr', '', 'ru_RU'),
     ('sr', 'sr', 'sr-Latn', 'Srpski', 'Serbian', 'ltr', 'rs', 'sr_RS'),
+    ('sk', 'sk', 'sk', 'Slovenčina', 'Slovak', 'ltr', 'sk', 'sk_SK'),
     ('es', 'es', 'es', 'Español', 'Spanish', 'ltr', 'es', 'es_ES'),
     ('sv', 'sv', 'sv', 'Svenska', 'Swedish', 'ltr', 'se', 'sv_SE'),
     ('th', 'th', 'th', 'ไทย', 'Thai', 'ltr', 'th', 'th_TH'),
@@ -61,11 +62,11 @@ LANGS = [
     ('vi', 'vi', 'vi', 'Tiếng Việt', 'Vietnamese', 'ltr', 'vn', 'vi_VN'),
 ]
 L = {x[0]: dict(zip(('code', 'folder', 'hreflang', 'native', 'english', 'dir', 'cc', 'og'), x)) for x in LANGS}
-GAP = ['pl', 'cs', 'ro', 'el', 'hu', 'hr', 'sr', 'uk']  # Siri does not speak these (apple.com feature availability, VIA-466)
+GAP = ['pl', 'cs', 'sk', 'ro', 'el', 'hu', 'hr', 'sr', 'uk']  # Siri does not speak these (apple.com feature availability, VIA-466)
 # Pages that open with the Siri band (their language has no Siri, or the global English page). Elsewhere Siri speaks the
-# reader's language, so a general, smaller band about the eight sits further down, without a screen.
+# reader's language, so a general, smaller band about the nine sits further down, without a screen.
 STORY = set(GAP) | {'en'}
-LATIN_HEADLINES = {'en', 'hr', 'cs', 'nl', 'fr', 'de', 'hu', 'id', 'it', 'pl', 'pt', 'ro', 'sr', 'es', 'sv', 'tr', 'vi'}
+LATIN_HEADLINES = {'en', 'hr', 'cs', 'sk', 'nl', 'fr', 'de', 'hu', 'id', 'it', 'pl', 'pt', 'ro', 'sr', 'es', 'sv', 'tr', 'vi'}
 
 APPS = [
     ('nav', ['Apple Maps', 'Google Maps', 'Waze']),
@@ -288,7 +289,7 @@ def hero_screen(lang):
 
 
 # Czech and Slovak typesetting keeps one-letter words (v, k, s, z, a, i, o, u) with the next word.
-NBSP_LANGS = {'cs'}
+NBSP_LANGS = {'cs', 'sk'}
 
 
 def typeset(lang, page):

@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Viavo: asistent vocal cu AI pentru CarPlay, în limba română",
-  "description": "Apăsați un buton și spuneți-o cum vă vine. Viavo deschide trasee cu oprire, sună, scrie mesaje, pune muzică și radio și răspunde cu voce tare. 28 de limbi.",
+  "description": "Apăsați un buton și spuneți-o cum vă vine. Viavo deschide trasee cu oprire, sună, scrie mesaje, pune muzică și radio și răspunde cu voce tare. 29 de limbi.",
   "ogTitle": "Spuneți-o în limba dvs. Viavo face restul."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "Asistent cu AI pentru CarPlay",
  "h1a": "Spuneți-o în limba dvs.",
  "h1b": "Viavo face restul.",
- "sub": "Trasee cu o oprire pe drum, apeluri, mesaje, muzică și radio. Apăsați un singur buton și spuneți ce vă trebuie, așa cum i-ați spune unui om, în oricare dintre cele 28 de limbi.",
+ "sub": "Trasee cu o oprire pe drum, apeluri, mesaje, muzică și radio. Apăsați un singur buton și spuneți ce vă trebuie, așa cum i-ați spune unui om, în oricare dintre cele 29 de limbi.",
  "heroAlt": "Viavo pe un ecran CarPlay",
  "bandPre": "Siri nu vorbește ",
  "bandPost": ".",
@@ -21,6 +21,7 @@
  "bandWords": {
   "pl": "poloneză",
   "cs": "cehă",
+  "sk": "slovacă",
   "ro": "română",
   "el": "greacă",
   "hu": "maghiară",
@@ -28,7 +29,7 @@
   "sr": "sârbă",
   "uk": "ucraineană"
  },
- "bandSub": "Siri nu vorbește niciuna dintre aceste opt limbi. Viavo le vorbește pe toate.",
+ "bandSub": "Siri nu vorbește niciuna dintre aceste nouă limbi. Viavo le vorbește pe toate.",
  "say": "Nu doar răspunde. Acționează.",
  "sayLead": "Un buton, iar Viavo se ocupă de traseu, locuri pe drum, muzică, apeluri și mesaje și vă răspunde la întrebări cu voce tare, ca să nu luați ochii de pe șosea.",
  "examples": [
@@ -74,10 +75,10 @@
   [
    "Oameni și mesaje",
    [
-    "Apelarea unui contact după nume",
-    "WhatsApp: citire și trimitere vocală în versiunea viitoare",
-    "SMS: mesajul se deschide gata scris pe telefon, rămâne doar să atingeți Trimite",
-    "Telegram și Slack: ce e nou, esența unei conversații, un răspuns dictat"
+    "Apelarea unui contact după nume, inclusiv pe WhatsApp (iOS 27)",
+    "WhatsApp și SMS: citirea mesajelor noi și răspunsul vocal (iOS 27)",
+    "Telegram și Slack: ce e nou, esența unei conversații, un răspuns dictat",
+    "Mesajele vocale din Telegram, cu vocea expeditorului"
    ],
    "Spune-i lui Petru că întârzii zece minute"
   ],
@@ -125,7 +126,7 @@
   "Calendar": "Calendar",
   "Reminders": "Mementouri"
  },
- "langsTitle": "28 de limbi, o voce nativă pentru fiecare",
+ "langsTitle": "29 de limbi, o voce nativă pentru fiecare",
  "legend": "Siri nu o vorbește",
  "langNames": {
   "ar": "Arabă",
@@ -150,6 +151,7 @@
   "ro": "Română",
   "ru": "Rusă",
   "sr": "Sârbă",
+  "sk": "Slovacă",
   "es": "Spaniolă",
   "sv": "Suedeză",
   "th": "Thailandeză",
@@ -176,11 +178,11 @@
  "faqItems": [
   [
    "Prin ce diferă Viavo de ChatGPT sau Gemini în CarPlay?",
-   "ChatGPT și Gemini în CarPlay sunt gândite pentru conversație. Viavo și face ce îi spuneți: sună un contact, pregătește un SMS, pune muzică sau un post de radio și, dintr-o singură frază, deschide în aplicația dvs. de navigație un traseu cu o oprire sau un loc de pe drum."
+   "ChatGPT și Gemini în CarPlay sunt gândite pentru conversație. Viavo și face ce îi spuneți: sună un contact, inclusiv pe WhatsApp, citește mesajele noi din WhatsApp și SMS și răspunde la ele prin voce (pe iOS 27), pune muzică sau un post de radio și, dintr-o singură frază, deschide în aplicația dvs. de navigație un traseu cu o oprire sau un loc de pe drum."
   ],
   [
    "Ce limbi vorbește Viavo?",
-   "28: arabă, cehă, chineză (simplificată și tradițională), coreeană, croată, ebraică, engleză, franceză, germană, greacă, hindi, indoneziană, italiană, japoneză, maghiară, neerlandeză, poloneză, portugheză, română, rusă, sârbă, spaniolă, suedeză, thailandeză, turcă, ucraineană și vietnameză. Pentru fiecare limbă, ecranele aplicației și o voce de vorbitor nativ, feminină sau masculină."
+   "29: arabă, cehă, chineză (simplificată și tradițională), coreeană, croată, ebraică, engleză, franceză, germană, greacă, hindi, indoneziană, italiană, japoneză, maghiară, neerlandeză, poloneză, portugheză, română, rusă, sârbă, slovacă, spaniolă, suedeză, thailandeză, turcă, ucraineană și vietnameză. Pentru fiecare limbă, ecranele aplicației și o voce de vorbitor nativ, feminină sau masculină."
   ],
   [
    "Viavo înlocuiește Siri?",
@@ -200,7 +202,7 @@
   ],
   [
    "Cu ce aplicații funcționează?",
-   "Apple Maps, Google Maps și Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer și Apple Podcasts; Simple Radio, TuneIn și iHeartRadio; WhatsApp, SMS, Telegram și Slack; HomeKit, Calendar și Mementouri. Deschide și alte aplicații după nume."
+   "Apple Maps, Google Maps și Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer și Apple Podcasts; Simple Radio, TuneIn și iHeartRadio; WhatsApp, Viber, SMS, Telegram și Slack; e-mail pe Gmail, iCloud și Yahoo; HomeKit, Calendar și Mementouri. Deschide și alte aplicații după nume."
   ],
   [
    "Cât costă?",
@@ -208,7 +210,7 @@
   ],
   [
    "Cum funcționează WhatsApp cu Viavo?",
-   "În curând în Viavo 1.0.11 pe iOS 27 sau ulterior. Versiunea actuală din App Store, 1.0.9, nu include această configurare. Cereți Viavo să citească notificările WhatsApp primite după configurare. Sunt disponibile doar previzualizările notificărilor, nu conversațiile vechi sau atașamentele; textul poate fi incomplet. Trimiterea necesită acord separat și confirmarea destinatarului și a textului."
+   "Funcționează pe iOS 27 sau ulterior, printr-o singură automatizare Viavo, pe care o instalați pas cu pas din Configurări în Viavo. Viavo citește cu voce tare mesajele noi din WhatsApp și SMS și trimite răspunsul dvs. după ce confirmați persoana și textul. Pe WhatsApp răspunde persoanelor care v-au scris după conectare; puteți trimite un SMS oricui din contacte. La „Sună-o pe Ana pe WhatsApp”, Viavo sună, inclusiv de pe ecranul mașinii. Pe versiunile mai vechi de iOS, mesajul se deschide gata scris pe telefon și rămâne doar să atingeți Trimite."
   ],
   [
    "Ce se întâmplă cu datele mele?",
@@ -232,9 +234,9 @@
  "close": "Închideți",
  "whatsapp": {
   "title": "Cum funcționează WhatsApp cu Viavo?",
-  "availability": "În curând în Viavo 1.0.11 pe iOS 27 sau ulterior. Versiunea actuală din App Store, 1.0.9, nu include această configurare.",
-  "receive": "Cereți Viavo să citească notificările WhatsApp primite după configurare. Sunt disponibile doar previzualizările notificărilor, nu conversațiile vechi sau atașamentele; textul poate fi incomplet.",
-  "send": "Trimiterea necesită acord separat și confirmarea destinatarului și a textului. Doar mesaje private către persoane identificate fără ambiguitate din notificările primite de această instalare Viavo. Un contact în telefon nu este suficient. Livrarea nu este garantată; ciorna pe telefon rămâne o alternativă.",
-  "setup": "Când sunteți parcat, deschideți WhatsApp din setările Viavo sau la prima configurare și apăsați Conectare. Adăugați scurtătura de primire, activați automatizarea, rulați-o o dată și permiteți accesul cerut. Configurați trimiterea separat dacă o doriți și activați la fel scurtătura ei. Scurtăturile sunt grupate automat în dosarul Viavo."
+  "availability": "Funcționează pe iOS 27 sau ulterior, printr-o singură automatizare Viavo. Pe versiunile mai vechi de iOS, mesajul se deschide gata scris pe telefon și rămâne doar să atingeți Trimite.",
+  "receive": "Viavo citește cu voce tare mesajele noi din WhatsApp și SMS-urile primite după conectare: expeditorul și textul din previzualizarea notificării, nu conversațiile vechi sau atașamentele. SMS-urile cu coduri de unică folosință și mesajele de la numere scurte sunt omise.",
+  "send": "Răspunsul pleacă doar după ce confirmați persoana și textul. Pe WhatsApp, Viavo răspunde persoanelor care v-au scris după conectare; puteți trimite un SMS oricui din contactele dvs., iar telefonul completează singur numărul. Pe WhatsApp puteți suna pe oricine din contacte, inclusiv de pe ecranul mașinii: e suficient să spuneți „Sună-o pe Ana pe WhatsApp”.",
+  "setup": "Când sunteți parcat, deschideți Configurări în Viavo și urmați pașii: instalați scurtătura Viavo, activați-i automatizarea și rulați verificarea. Aceeași automatizare se ocupă de WhatsApp, SMS și apelurile pe WhatsApp și Viber, iar când se conectează CarPlay, deschide Viavo."
  }
 }

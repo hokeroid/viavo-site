@@ -5,13 +5,13 @@ path: /ro/siri/
 title: "Siri în română în mașină: ce există și ce merge (noiembrie 2026)"
 description: "Siri nu vorbește încă română. Ce înseamnă asta în CarPlay și cum folosiți azi, la volan, un asistent vocal în limba română."
 h1: "Siri vorbește română? Încă nu. Iată ce puteți folosi azi în mașină"
-updated: 2026-11-08
+updated: 2026-11-15
 sources: pages/facts-2026-11.md, pages/template-siri.md, mobile/store/metadata/ro.json, mobile/lib/l10n/app_ro.arb
 covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri in romana", "exista siri in romana", "siri vorbeste romana", "siri limba romana", "asistent vocal in limba romana", "asistent vocal masina"
 cta: App Store, Romania store, ct=ro-siri
 ---
 
-**Pe scurt.** În noiembrie 2026, Siri nu vorbește română: româna nu figurează printre limbile sale, așa că în CarPlay Siri acceptă comenzi doar într-o altă limbă, de exemplu în engleză, și nu are o voce în română pentru a vă citi mesajele cu glas tare. Pe tastatura iPhone-ului puteți dicta în română, însă noua Siri AI nu este disponibilă pe iPhone în UE, iar româna nu se numără nici printre limbile ei. În mașină puteți vorbi deja în română cu Viavo: atingeți un singur buton pe ecranul CarPlay și spuneți ce vă trebuie, așa cum vorbiți de obicei, iar Viavo deschide traseul, pune muzică, face apeluri și vă pregătește mesajele. Vă răspunde cu voce tare, în română.
+**Pe scurt.** În noiembrie 2026, Siri nu vorbește română: româna nu figurează printre limbile sale, așa că în CarPlay Siri acceptă comenzi doar într-o altă limbă, de exemplu în engleză, și nu are o voce în română pentru a vă citi mesajele cu glas tare. Pe tastatura iPhone-ului puteți dicta în română, însă noua Siri AI nu este disponibilă pe iPhone în UE, iar româna nu se numără nici printre limbile ei. În mașină puteți vorbi deja în română cu Viavo: atingeți un singur buton pe ecranul CarPlay și spuneți ce vă trebuie, așa cum vorbiți de obicei, iar Viavo deschide traseul, pune muzică, face apeluri, vă citește mesajele și trimite răspunsurile pe care i le dictați. Vă răspunde cu voce tare, în română.
 
 ## Ce înseamnă asta în CarPlay
 
@@ -31,20 +31,20 @@ Dacă vă trebuie un asistent vocal pentru mașină care să înțeleagă român
 | Răspunde cu voce tare în română | Nu | ChatGPT da; Perplexity, neconfirmat | Da, cu o voce nativă în română |
 | Deschide traseul în Apple Maps, Google Maps sau Waze | Da, cu comenzi în altă limbă | ChatGPT nu; Perplexity, în Apple Maps | Da, în aplicația de navigație pe care o folosiți |
 | Pune muzică în Apple Music, Spotify, YouTube Music | Da, cu comenzi în altă limbă | Nu | Da |
-| Sună un contact | Da, cu comenzi în altă limbă | Nu | Da |
-| SMS | Nu: dictarea trece prin Siri | Nu | Mesajul se deschide gata scris pe telefon, rămâne doar să atingeți Trimite |
-| WhatsApp | — | — | WhatsApp: citire și trimitere vocală în versiunea viitoare. În curând în Viavo 1.0.11 pe iOS 27 sau ulterior. Versiunea actuală din App Store, 1.0.9, nu include această configurare. |
+| Sună un contact | Da, cu comenzi în altă limbă | Nu | Da, pe iOS 27 și pe WhatsApp: „Sună-o pe Ana pe WhatsApp” |
+| SMS | Nu: dictarea trece prin Siri | Nu | Pe iOS 27: citirea cu voce tare a mesajelor noi, răspunsul vocal, un SMS către oricine din contacte. Pe versiunile mai vechi de iOS, mesajul se deschide gata scris pe telefon și rămâne doar să atingeți Trimite |
+| WhatsApp | — | — | Pe iOS 27: citirea cu voce tare a mesajelor noi, răspunsul vocal, apeluri de pe ecranul mașinii. Pe versiunile mai vechi de iOS, mesajul se deschide gata scris pe telefon și rămâne doar să atingeți Trimite |
 | Pornește de la butonul de pe volan | Da | Nu | Nu: un buton pe ecranul mașinii |
 
 ## Cum funcționează WhatsApp cu Viavo?
 
-În curând în Viavo 1.0.11 pe iOS 27 sau ulterior. Versiunea actuală din App Store, 1.0.9, nu include această configurare.
+Funcționează pe iOS 27 sau ulterior, printr-o singură automatizare Viavo. Pe versiunile mai vechi de iOS, mesajul se deschide gata scris pe telefon și rămâne doar să atingeți Trimite.
 
-Cereți Viavo să citească notificările WhatsApp primite după configurare. Sunt disponibile doar previzualizările notificărilor, nu conversațiile vechi sau atașamentele; textul poate fi incomplet.
+Viavo citește cu voce tare mesajele noi din WhatsApp și SMS-urile primite după conectare: expeditorul și textul din previzualizarea notificării, nu conversațiile vechi sau atașamentele. SMS-urile cu coduri de unică folosință și mesajele de la numere scurte sunt omise.
 
-Trimiterea necesită acord separat și confirmarea destinatarului și a textului. Doar mesaje private către persoane identificate fără ambiguitate din notificările primite de această instalare Viavo. Un contact în telefon nu este suficient. Livrarea nu este garantată; ciorna pe telefon rămâne o alternativă.
+Răspunsul pleacă doar după ce confirmați persoana și textul. Pe WhatsApp, Viavo răspunde persoanelor care v-au scris după conectare; puteți trimite un SMS oricui din contactele dvs., iar telefonul completează singur numărul. Pe WhatsApp puteți suna pe oricine din contacte, inclusiv de pe ecranul mașinii: e suficient să spuneți „Sună-o pe Ana pe WhatsApp”.
 
-Când sunteți parcat, deschideți WhatsApp din setările Viavo sau la prima configurare și apăsați Conectare. Adăugați scurtătura de primire, activați automatizarea, rulați-o o dată și permiteți accesul cerut. Configurați trimiterea separat dacă o doriți și activați la fel scurtătura ei. Scurtăturile sunt grupate automat în dosarul Viavo.
+Când sunteți parcat, deschideți Configurări în Viavo și urmați pașii: instalați scurtătura Viavo, activați-i automatizarea și rulați verificarea. Aceeași automatizare se ocupă de WhatsApp, SMS și apelurile pe WhatsApp și Viber, iar când se conectează CarPlay, deschide Viavo.
 
 [Cum gestionează Viavo mesajele dvs.](https://viavo.app/messengers/)
 
@@ -68,9 +68,9 @@ Cinci exemple reale din aplicație:
 
 ## Întrebări
 
-**Când va vorbi Siri română?** Apple nu a anunțat nicio dată, iar pentru noua Siri AI nu există deocamdată un termen în UE. Urmărim apple.com/ios/feature-availability și actualizăm textul de aici când se schimbă ceva. Ultima verificare: 2 noiembrie 2026.
+**Când va vorbi Siri română?** Apple nu a anunțat nicio dată, iar pentru noua Siri AI nu există deocamdată un termen în UE. Urmărim apple.com/ios/feature-availability și actualizăm textul de aici când se schimbă ceva. Ultima verificare: 15 noiembrie 2026.
 
-**Pot trece Siri pe limba română din setări?** Nu. Limba lui Siri se alege dintr-o listă, iar româna nu se află în ea. Nu apare nici pe pagina oficială Apple cu limbile Siri (apple.com/ios/feature-availability), verificată pe 2 noiembrie 2026. Dacă ați citit altundeva că Siri vorbește română, pagina Apple este sursa oficială.
+**Pot trece Siri pe limba română din setări?** Nu. Limba lui Siri se alege dintr-o listă, iar româna nu se află în ea. Nu apare nici pe pagina oficială Apple cu limbile Siri (apple.com/ios/feature-availability), verificată pe 15 noiembrie 2026. Dacă ați citit altundeva că Siri vorbește română, pagina Apple este sursa oficială.
 
 **Pot porni Viavo de la butonul de pe volan?** Nu. Apple păstrează butonul de pe volan și „Hey Siri” pentru Siri. Viavo pornește cu o atingere pe ecranul mașinii.
 

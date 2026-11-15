@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: AI voice assistant for CarPlay, in 28 languages",
-  "description": "Press one button and say it your way. Viavo opens routes with a stop, calls, messages, plays music and radio, and answers out loud. 28 languages, a native voice in each.",
+  "title": "Viavo: AI voice assistant for CarPlay, in 29 languages",
+  "description": "Press one button and say it your way. Viavo opens routes with a stop, calls, messages, plays music and radio, and answers out loud. 29 languages, a native voice in each.",
   "ogTitle": "Say it in your language. Viavo gets it done.",
   "pressTitle": "Press kit · Viavo",
   "pressDescription": "Facts, logos, the app icon and real CarPlay and iPhone screenshots of Viavo, the AI voice assistant for CarPlay."
@@ -15,7 +15,7 @@
  "eyebrow": "AI assistant for CarPlay",
  "h1a": "Say it in your language.",
  "h1b": "Viavo gets it done.",
- "sub": "Routes with a stop, calls, messages, music and radio. Press one button and say it the way you would to a person, in any of 28 languages.",
+ "sub": "Routes with a stop, calls, messages, music and radio. Press one button and say it the way you would to a person, in any of 29 languages.",
  "heroAlt": "Viavo on a CarPlay screen",
  "bandPre": "Siri doesn’t speak ",
  "bandPost": ".",
@@ -23,6 +23,7 @@
  "bandWords": {
   "pl": "Polish",
   "cs": "Czech",
+  "sk": "Slovak",
   "ro": "Romanian",
   "el": "Greek",
   "hu": "Hungarian",
@@ -30,7 +31,7 @@
   "sr": "Serbian",
   "uk": "Ukrainian"
  },
- "bandSub": "Siri doesn’t speak any of these eight. Viavo speaks all of them.",
+ "bandSub": "Siri doesn’t speak any of these nine. Viavo speaks all of them.",
  "say": "It doesn’t just answer. It does it.",
  "sayLead": "One button, and Viavo handles the route, places on the way, music, calls, messages and your questions out loud, so your eyes stay on the road.",
  "examples": [
@@ -76,10 +77,10 @@
   [
    "People and messages",
    [
-    "Call a contact by name",
-    "WhatsApp: read and send by voice in the upcoming release",
-    "SMS: ready on your phone, you tap Send",
-    "Telegram and Slack: what’s new, the gist, a dictated reply"
+    "Call a contact by name, also in WhatsApp (iOS 27)",
+    "WhatsApp and SMS: hear new messages, reply by voice (iOS 27)",
+    "Telegram and Slack: what’s new, the gist, a dictated reply",
+    "Telegram voice messages in the sender’s own voice"
    ],
    "Tell Pete I’ll be ten minutes late"
   ],
@@ -124,7 +125,7 @@
   "home": "Home and plans"
  },
  "appNames": {},
- "langsTitle": "28 languages, a native voice in each",
+ "langsTitle": "29 languages, a native voice in each",
  "legend": "Siri doesn’t speak it",
  "langNames": {},
  "steps": "Three steps to the road",
@@ -146,11 +147,11 @@
  "faqItems": [
   [
    "How is Viavo different from ChatGPT or Gemini in CarPlay?",
-   "ChatGPT and Gemini in CarPlay are built for conversation. Viavo also acts on what you say: it calls a contact, prepares an SMS message, plays music or a radio station, and from one sentence opens a route with a stop, or a place along the way, in your navigator."
+   "ChatGPT and Gemini in CarPlay are built for conversation. Viavo also acts on what you say: it calls a contact, also in WhatsApp, reads new WhatsApp and SMS messages and replies by voice (on iOS 27), plays music or a radio station, and from one sentence opens a route with a stop, or a place along the way, in your navigator."
   ],
   [
    "Which languages does Viavo speak?",
-   "28: Arabic, Chinese (Simplified and Traditional), Croatian, Czech, Dutch, English, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Romanian, Russian, Serbian, Spanish, Swedish, Thai, Turkish, Ukrainian and Vietnamese. In each one, the app’s screens and a native voice, a woman’s or a man’s."
+   "29: Arabic, Chinese (Simplified and Traditional), Croatian, Czech, Dutch, English, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Thai, Turkish, Ukrainian and Vietnamese. In each one, the app’s screens and a native voice, a woman’s or a man’s."
   ],
   [
    "Does it replace Siri?",
@@ -170,7 +171,7 @@
   ],
   [
    "Which apps does it work with?",
-   "Apple Maps, Google Maps and Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer and Apple Podcasts; Simple Radio, TuneIn and iHeartRadio; WhatsApp, SMS, Telegram and Slack; HomeKit, Calendar and Reminders. It also opens other apps by name."
+   "Apple Maps, Google Maps and Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer and Apple Podcasts; Simple Radio, TuneIn and iHeartRadio; WhatsApp, Viber, SMS, Telegram and Slack; Gmail, iCloud and Yahoo mail; HomeKit, Calendar and Reminders. It also opens other apps by name."
   ],
   [
    "How much does it cost?",
@@ -178,7 +179,7 @@
   ],
   [
    "How does WhatsApp work with Viavo?",
-   "Coming in Viavo 1.0.11 on iOS 27 or later. The current App Store version, 1.0.9, does not include this setup. Ask Viavo to read WhatsApp notifications received after setup. Only available notification previews are read, not past chats or attachments; previews can be incomplete. Sending needs separate opt-in and confirmation of the recipient and text."
+   "On iOS 27 or later, through the one Viavo automation that Viavo’s Settings set up step by step. Viavo reads new WhatsApp and SMS messages aloud and sends your reply after you confirm the person and the text. On WhatsApp it replies to people who wrote to you after you connected; an SMS can go to anyone in your contacts. “Call Anna on WhatsApp” starts the call, from the car screen too. On earlier iOS versions the message opens ready on your phone, and you tap Send."
   ],
   [
    "What happens to my data?",
@@ -202,9 +203,9 @@
  "close": "Close",
  "whatsapp": {
   "title": "How does WhatsApp work with Viavo?",
-  "availability": "Coming in Viavo 1.0.11 on iOS 27 or later. The current App Store version, 1.0.9, does not include this setup.",
-  "receive": "Ask Viavo to read WhatsApp notifications received after setup. Only available notification previews are read, not past chats or attachments; previews can be incomplete.",
-  "send": "Sending needs separate opt-in and confirmation of the recipient and text. Private messages only, to unambiguously identified people whose notifications Viavo has received on this installation. A phone contact alone is not enough. Delivery is not guaranteed; phone drafts remain a fallback.",
-  "setup": "While parked, open WhatsApp in Viavo Settings or onboarding and tap Connect. Add the receiving shortcut, enable its automation, then run it once and allow the requested access. Set up sending separately if you want it. Follow the same activation steps for that shortcut. Setup groups the shortcuts in the Viavo folder automatically."
+  "availability": "Works on iOS 27 or later, through the one Viavo automation. On earlier iOS versions, a message opens ready on your phone and you tap Send.",
+  "receive": "Viavo reads aloud new WhatsApp and SMS messages that arrive after you connect: the sender and the notification’s preview text, not past chats or attachments. SMS with one-time codes and messages from short numbers are skipped.",
+  "send": "A reply goes out only after you confirm the person and the text. On WhatsApp, Viavo replies to people who have written to you since you connected; an SMS can go to anyone in your contacts, and the phone fills in the number itself. “Call Anna on WhatsApp” starts a WhatsApp call to anyone saved in your contacts, from the car screen too.",
+  "setup": "While parked, open Viavo’s Settings and follow the steps: install the Viavo shortcut, turn on its automation and run the check. The same automation covers WhatsApp, SMS, calls in WhatsApp and Viber, and opens Viavo when CarPlay connects."
  }
 }

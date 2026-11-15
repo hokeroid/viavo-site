@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: Trợ lý ảo AI cho CarPlay, 28 ngôn ngữ, có tiếng Việt",
-  "description": "Nhấn nút, nói theo cách của bạn. Viavo mở lộ trình kèm điểm dừng, gọi điện, nhắn tin, bật nhạc và radio, trả lời thành tiếng. 28 ngôn ngữ, đều có giọng bản ngữ.",
+  "title": "Viavo: Trợ lý ảo AI cho CarPlay, 29 ngôn ngữ, có tiếng Việt",
+  "description": "Nhấn nút, nói theo cách của bạn. Viavo mở lộ trình kèm điểm dừng, gọi điện, nhắn tin, bật nhạc và radio, trả lời thành tiếng. 29 ngôn ngữ, đều có giọng bản ngữ.",
   "ogTitle": "Nói bằng tiếng của bạn. Viavo lo phần còn lại."
  },
  "qo": "“",
@@ -13,7 +13,7 @@
  "eyebrow": "Trợ lý AI cho CarPlay",
  "h1a": "Nói bằng tiếng của bạn.",
  "h1b": "Viavo lo phần còn lại.",
- "sub": "Lộ trình kèm điểm dừng, cuộc gọi, tin nhắn, nhạc và radio. Nhấn một nút và nói như khi trò chuyện với người thật, bằng một trong 28 ngôn ngữ.",
+ "sub": "Lộ trình kèm điểm dừng, cuộc gọi, tin nhắn, nhạc và radio. Nhấn một nút và nói như khi trò chuyện với người thật, bằng một trong 29 ngôn ngữ.",
  "heroAlt": "Viavo trên màn hình CarPlay",
  "bandPre": "Siri không nói được ",
  "bandPost": ".",
@@ -21,6 +21,7 @@
  "bandWords": {
   "pl": "tiếng Ba Lan",
   "cs": "tiếng Séc",
+  "sk": "tiếng Slovakia",
   "ro": "tiếng Romania",
   "el": "tiếng Hy Lạp",
   "hu": "tiếng Hungary",
@@ -28,7 +29,7 @@
   "sr": "tiếng Serbia",
   "uk": "tiếng Ukraina"
  },
- "bandSub": "Siri không nói được tiếng nào trong tám thứ tiếng này. Viavo nói được tất cả.",
+ "bandSub": "Siri không nói được tiếng nào trong chín thứ tiếng này. Viavo nói được tất cả.",
  "say": "Không chỉ trả lời. Mà còn làm giúp bạn.",
  "sayLead": "Chỉ một nút bấm, Viavo lo lộ trình, điểm dừng dọc đường, nhạc, cuộc gọi, tin nhắn và trả lời câu hỏi của bạn bằng giọng nói, để mắt bạn luôn nhìn đường.",
  "examples": [
@@ -74,10 +75,10 @@
   [
    "Liên lạc và tin nhắn",
    [
-    "Gọi cho người trong danh bạ chỉ bằng cách nói tên",
-    "WhatsApp: đọc và gửi bằng giọng nói trong phiên bản sắp tới",
-    "SMS: tin nhắn được soạn sẵn trên điện thoại, bạn chỉ cần chạm Gửi",
-    "Telegram và Slack: có gì mới, tóm tắt ý chính, đọc chính tả tin trả lời"
+    "Gọi cho người trong danh bạ chỉ bằng cách nói tên, kể cả qua WhatsApp (iOS 27)",
+    "WhatsApp và SMS: nghe tin nhắn mới, trả lời bằng giọng nói (iOS 27)",
+    "Telegram và Slack: có gì mới, tóm tắt ý chính, đọc chính tả tin trả lời",
+    "Nghe tin nhắn thoại Telegram bằng chính giọng người gửi"
    ],
    "Nhắn Minh là tôi đến muộn mười phút"
   ],
@@ -125,7 +126,7 @@
   "Calendar": "Lịch",
   "Reminders": "Lời nhắc"
  },
- "langsTitle": "28 ngôn ngữ, đều có giọng bản ngữ",
+ "langsTitle": "29 ngôn ngữ, đều có giọng bản ngữ",
  "legend": "Siri không nói được tiếng này",
  "langNames": {
   "ar": "Tiếng Ả Rập",
@@ -150,6 +151,7 @@
   "ro": "Tiếng Romania",
   "ru": "Tiếng Nga",
   "sr": "Tiếng Serbia",
+  "sk": "Tiếng Slovakia",
   "es": "Tiếng Tây Ban Nha",
   "sv": "Tiếng Thụy Điển",
   "th": "Tiếng Thái",
@@ -176,11 +178,11 @@
  "faqItems": [
   [
    "Viavo khác gì ChatGPT hay Gemini trên CarPlay?",
-   "ChatGPT và Gemini trên CarPlay được thiết kế để trò chuyện. Viavo còn làm theo lời bạn nói: gọi cho một liên hệ, soạn sẵn tin nhắn SMS, phát nhạc hay một đài radio, và chỉ từ một câu nói là mở lộ trình kèm điểm dừng, hoặc một địa điểm dọc đường, trong ứng dụng dẫn đường của bạn."
+   "ChatGPT và Gemini trên CarPlay được thiết kế để trò chuyện. Viavo còn làm theo lời bạn nói: gọi cho một liên hệ, kể cả qua WhatsApp, đọc to tin nhắn WhatsApp và SMS mới, giúp bạn trả lời bằng giọng nói (trên iOS 27), phát nhạc hay một đài radio, và chỉ từ một câu nói là mở lộ trình kèm điểm dừng, hoặc một địa điểm dọc đường, trong ứng dụng dẫn đường của bạn."
   ],
   [
    "Viavo nói được những ngôn ngữ nào?",
-   "28 ngôn ngữ: tiếng Ả Rập, Anh, Ba Lan, Bồ Đào Nha, Croatia, Do Thái, Đức, Hà Lan, Hàn, Hindi, Hungary, Hy Lạp, Indonesia, Nga, Nhật, Pháp, Romania, Séc, Serbia, Tây Ban Nha, Thái, Thổ Nhĩ Kỳ, Thụy Điển, Trung (giản thể và phồn thể), Ukraina, Việt và Ý. Ngôn ngữ nào cũng có giao diện ứng dụng và giọng bản ngữ, giọng nữ hoặc giọng nam."
+   "29 ngôn ngữ: tiếng Ả Rập, Anh, Ba Lan, Bồ Đào Nha, Croatia, Do Thái, Đức, Hà Lan, Hàn, Hindi, Hungary, Hy Lạp, Indonesia, Nga, Nhật, Pháp, Romania, Séc, Serbia, Slovakia, Tây Ban Nha, Thái, Thổ Nhĩ Kỳ, Thụy Điển, Trung (giản thể và phồn thể), Ukraina, Việt và Ý. Ngôn ngữ nào cũng có giao diện ứng dụng và giọng bản ngữ, giọng nữ hoặc giọng nam."
   ],
   [
    "Viavo có thay thế Siri không?",
@@ -200,7 +202,7 @@
   ],
   [
    "Viavo hoạt động với những ứng dụng nào?",
-   "Apple Maps, Google Maps và Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer và Apple Podcasts; Simple Radio, TuneIn và iHeartRadio; WhatsApp, SMS, Telegram và Slack; HomeKit, Lịch và Lời nhắc. Viavo cũng mở các ứng dụng khác khi bạn nói tên."
+   "Apple Maps, Google Maps và Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer và Apple Podcasts; Simple Radio, TuneIn và iHeartRadio; WhatsApp, Viber, SMS, Telegram và Slack; email Gmail, iCloud và Yahoo; HomeKit, Lịch và Lời nhắc. Viavo cũng mở các ứng dụng khác khi bạn nói tên."
   ],
   [
    "Viavo giá bao nhiêu?",
@@ -208,7 +210,7 @@
   ],
   [
    "WhatsApp hoạt động với Viavo như thế nào?",
-   "Sắp có trong Viavo 1.0.11 trên iOS 27 trở lên. Phiên bản App Store hiện tại, 1.0.9, chưa có phần thiết lập này. Yêu cầu Viavo đọc thông báo WhatsApp nhận được sau khi thiết lập. Chỉ nội dung xem trước có sẵn được đọc, không phải lịch sử trò chuyện hay tệp đính kèm; văn bản có thể không đầy đủ. Gửi tin cần sự đồng ý riêng và xác nhận người nhận cùng nội dung."
+   "Hoạt động trên iOS 27 trở lên, qua một tự động hóa Viavo duy nhất mà bạn thiết lập từng bước trong Cài đặt Viavo. Tin nhắn WhatsApp và SMS mới được đọc to, còn tin trả lời của bạn chỉ được gửi sau khi bạn xác nhận người nhận và nội dung. Trên WhatsApp, bạn trả lời được những người nhắn cho bạn sau khi kết nối; còn SMS thì gửi được cho bất kỳ ai trong danh bạ. Chỉ cần nói “Gọi cho Lan qua WhatsApp” là cuộc gọi bắt đầu, kể cả từ màn hình xe. Trên các phiên bản iOS cũ hơn, tin nhắn được soạn sẵn và mở trên điện thoại, bạn chỉ cần chạm Gửi."
   ],
   [
    "Dữ liệu của tôi được xử lý thế nào?",
@@ -232,9 +234,9 @@
  "close": "Đóng",
  "whatsapp": {
   "title": "WhatsApp hoạt động với Viavo như thế nào?",
-  "availability": "Sắp có trong Viavo 1.0.11 trên iOS 27 trở lên. Phiên bản App Store hiện tại, 1.0.9, chưa có phần thiết lập này.",
-  "receive": "Yêu cầu Viavo đọc thông báo WhatsApp nhận được sau khi thiết lập. Chỉ nội dung xem trước có sẵn được đọc, không phải lịch sử trò chuyện hay tệp đính kèm; văn bản có thể không đầy đủ.",
-  "send": "Gửi tin cần sự đồng ý riêng và xác nhận người nhận cùng nội dung. Chỉ gửi tin riêng cho người được xác định rõ từ thông báo mà bản cài đặt Viavo này đã nhận. Chỉ có liên hệ trong danh bạ là chưa đủ. Không đảm bảo tin được giao; bản nháp trên điện thoại vẫn là phương án dự phòng.",
-  "setup": "Khi đã đỗ xe, mở WhatsApp trong Cài đặt Viavo hoặc lúc thiết lập ban đầu rồi chạm Kết nối. Thêm phím tắt nhận tin, bật tự động hóa, chạy một lần và cho phép quyền truy cập được yêu cầu. Nếu muốn gửi tin, hãy thiết lập riêng và kích hoạt phím tắt đó tương tự. Các phím tắt tự động được gom vào thư mục Viavo."
+  "availability": "Hoạt động trên iOS 27 trở lên, qua một tự động hóa Viavo duy nhất. Trên các phiên bản iOS cũ hơn, tin nhắn được soạn sẵn và mở trên điện thoại, bạn chỉ cần chạm Gửi.",
+  "receive": "Viavo đọc to tin nhắn WhatsApp và SMS mới đến sau khi bạn kết nối: người gửi và nội dung xem trước của thông báo, không phải lịch sử trò chuyện hay tệp đính kèm. SMS chứa mã OTP và tin nhắn từ đầu số ngắn sẽ được bỏ qua.",
+  "send": "Tin trả lời chỉ được gửi sau khi bạn xác nhận người nhận và nội dung. Trên WhatsApp, Viavo trả lời những người đã nhắn cho bạn từ khi bạn kết nối; còn SMS thì gửi được cho bất kỳ ai trong danh bạ, điện thoại tự điền số. Câu “Gọi cho Lan qua WhatsApp” sẽ bắt đầu cuộc gọi WhatsApp tới bất kỳ ai đã lưu trong danh bạ, kể cả từ màn hình xe.",
+  "setup": "Khi đã đỗ xe, mở Cài đặt Viavo và làm theo các bước: cài phím tắt “Viavo”, bật tự động hóa của nó rồi chạy kiểm tra. Cũng chính tự động hóa này lo WhatsApp, SMS, cuộc gọi qua WhatsApp và Viber, đồng thời tự mở Viavo khi CarPlay kết nối."
  }
 }

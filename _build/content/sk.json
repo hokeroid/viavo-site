@@ -1,0 +1,244 @@
+{
+ "meta": {
+  "title": "Viavo: hlasový AI asistent v slovenčine pre CarPlay",
+  "description": "Klepnite na jedno tlačidlo a povedzte to po svojom. Viavo otvorí trasu so zastávkou, zavolá, napíše správu, pustí hudbu aj rádio a odpovie nahlas. 29 jazykov, každý s hlasom rodeného hovoriaceho.",
+  "ogTitle": "Povedzte to vo svojom jazyku. Viavo to zariadi.",
+  "pressTitle": "Pre médiá · Viavo",
+  "pressDescription": "Fakty, logá, ikona aplikácie a skutočné snímky obrazovky z CarPlay a iPhonu: Viavo, hlasový AI asistent pre CarPlay."
+ },
+ "qo": "„",
+ "qc": "“",
+ "nFeatures": "Funkcie",
+ "nLanguages": "Jazyky",
+ "nPress": "Pre médiá",
+ "nLangMenu": "Jazyk",
+ "eyebrow": "AI asistent pre CarPlay",
+ "h1a": "Povedzte to vo svojom jazyku.",
+ "h1b": "Viavo to zariadi.",
+ "sub": "Trasy so zastávkou po ceste, hovory, správy, hudba aj rádio. Klepnite na jedno tlačidlo a povedzte to tak, ako by ste to povedali človeku, v ktoromkoľvek z 29 jazykov.",
+ "heroAlt": "Viavo na obrazovke CarPlay",
+ "bandPre": "Siri nevie ",
+ "bandPost": ".",
+ "bandTail": "Viavo áno.",
+ "bandWords": {
+  "pl": "po poľsky",
+  "cs": "po česky",
+  "sk": "po slovensky",
+  "ro": "po rumunsky",
+  "el": "po grécky",
+  "hu": "po maďarsky",
+  "hr": "po chorvátsky",
+  "sr": "po srbsky",
+  "uk": "po ukrajinsky"
+ },
+ "bandSub": "Siri neovláda ani jeden z týchto deviatich jazykov. Viavo ich ovláda všetky.",
+ "say": "Neodpovie len slovami. Zariadi to.",
+ "sayLead": "Jedno tlačidlo a Viavo sa postará o trasu, miesta po ceste, hudbu, hovory, správy aj o vaše otázky. Odpovedá nahlas, takže oči máte stále na ceste.",
+ "examples": [
+  "Odvez ma domov cez benzínku",
+  "Dobrá reštaurácia po ceste",
+  "Pusti niečo na cestu",
+  "Čo je nové v chatoch?"
+ ],
+ "replies": [
+  "Trasa domov so zastávkou na benzínke na obchvate. V premávke asi 25 minút, takže doma budete o 19:40.",
+  "Po ceste, asi o hodinu: Koliba Starý mlyn, 4,7 hviezdičky podľa 1 200 recenzií, otvorená do 23:00. Hostia chvália pstruha na grile. Mám ju pridať ako zastávku?",
+  "Tu je niečo na cestu: svižný mix do auta, 40 skladieb. Príjemnú jazdu!",
+  "Tri nové chaty. Zuzana sa pýta, či budete doma do ôsmej. Tím presunul zajtrajší hovor na desiatu. Brat vám poslal fotky z Tatier. Chcete odpovedať Zuzane?"
+ ],
+ "done": [
+  "Trasa sa otvorí vo vašej navigácii",
+  "Hodnotenie, otváracie hodiny a recenzie nahlas",
+  "Hrá v Spotify alebo v Apple Music",
+  "Zhrnutie nahlas, odpoveď nadiktujete"
+ ],
+ "can": "Čo Viavo dokáže",
+ "groups": [
+  [
+   "Na ceste",
+   [
+    "Trasy vo vašej navigácii, aj so zastávkou po ceste",
+    "Čas jazdy v aktuálnej premávke",
+    "Miesta s hodnotením, otváracími hodinami a recenziami",
+    "Počasie teraz, na týždeň a v cieli"
+   ],
+   "Stihnem byť v práci do deviatej?"
+  ],
+  [
+   "Hudba a zvuk",
+   [
+    "Apple Music, Spotify, YouTube Music, Amazon Music, Deezer",
+    "Rádio naživo podľa názvu stanice alebo frekvencie",
+    "Rozpoznanie skladby, ktorá hrá v rádiu",
+    "Podcasty v Apple Podcasts"
+   ],
+   "Pusti niečo na cestu"
+  ],
+  [
+   "Ľudia a správy",
+   [
+    "Zavolá kontaktu podľa mena, aj cez WhatsApp (iOS 27)",
+    "WhatsApp a SMS: nové správy nahlas, odpoveď hlasom (iOS 27)",
+    "Telegram a Slack: čo je nové, zhrnutie a nadiktovaná odpoveď",
+    "Hlasové správy z Telegramu prehrané hlasom odosielateľa"
+   ],
+   "Napíš Petrovi, že prídem o desať minút neskôr"
+  ],
+  [
+   "Plány",
+   [
+    "Pripomienky na určitý čas alebo po príchode na miesto",
+    "Váš zoznam úloh",
+    "Kalendár: prehľad dňa, pridanie, presun alebo zrušenie udalosti",
+    "Budíky, minútky a rýchle poznámky"
+   ],
+   "Naviguj na moje ďalšie stretnutie"
+  ],
+  [
+   "A ďalšie",
+   [
+    "Odpovede s vyhľadávaním na webe, keď treba čerstvé informácie",
+    "Pamäť: zapamätá si a na požiadanie zabudne",
+    "Príslušenstvo a scény HomeKit",
+    "Stačí povedať názov aplikácie a otvorí sa"
+   ],
+   "Otvor Waze"
+  ],
+  [
+   "CarPlay",
+   [
+    "Jedno veľké tlačidlo na obrazovke auta",
+    "Odpovedá nahlas",
+    "Nič na obrazovke auta vás nenúti pozerať sa do telefónu"
+   ],
+   "Až šesť vlastných rýchlych príkazov"
+  ]
+ ],
+ "works": "Funguje s vašimi aplikáciami",
+ "worksSub": "A ďalšie aplikácie otvorí podľa názvu.",
+ "cats": {
+  "all": "Všetky",
+  "nav": "Navigácia",
+  "music": "Hudba",
+  "radio": "Rádio",
+  "msg": "Správy",
+  "home": "Domácnosť a plány"
+ },
+ "appNames": {
+  "Calendar": "Kalendár",
+  "Reminders": "Pripomienky"
+ },
+ "langsTitle": "29 jazykov, každý s hlasom rodeného hovoriaceho",
+ "legend": "Siri tento jazyk neovláda",
+ "langNames": {
+  "ar": "Arabčina",
+  "zh-hans": "Čínština (zjednodušená)",
+  "zh-hant": "Čínština (tradičná)",
+  "hr": "Chorvátčina",
+  "cs": "Čeština",
+  "nl": "Holandčina",
+  "en": "Angličtina",
+  "fr": "Francúzština",
+  "de": "Nemčina",
+  "el": "Gréčtina",
+  "he": "Hebrejčina",
+  "hi": "Hindčina",
+  "hu": "Maďarčina",
+  "id": "Indonézština",
+  "it": "Taliančina",
+  "ja": "Japončina",
+  "ko": "Kórejčina",
+  "pl": "Poľština",
+  "pt": "Portugalčina",
+  "ro": "Rumunčina",
+  "ru": "Ruština",
+  "sr": "Srbčina",
+  "sk": "Slovenčina",
+  "es": "Španielčina",
+  "sv": "Švédčina",
+  "th": "Thajčina",
+  "tr": "Turečtina",
+  "uk": "Ukrajinčina",
+  "vi": "Vietnamčina"
+ },
+ "steps": "Na cestu v troch krokoch",
+ "stepItems": [
+  [
+   "Získajte Viavo",
+   "Stiahnite si ho z App Store do svojho iPhonu."
+  ],
+  [
+   "Pripojte CarPlay",
+   "Viavo sa objaví na obrazovke vášho auta."
+  ],
+  [
+   "Klepnite a hovorte",
+   "Jedno tlačidlo. Povedzte to tak, ako by ste to povedali človeku."
+  ]
+ ],
+ "faq": "Časté otázky",
+ "faqItems": [
+  [
+   "Čím sa Viavo líši od ChatGPT alebo Gemini v CarPlay?",
+   "ChatGPT a Gemini sú v CarPlay určené na rozhovor. Viavo navyše urobí, čo poviete: zavolá kontaktu, aj cez WhatsApp, prečíta nové správy z WhatsAppu a SMS a odpovie na ne hlasom (v iOS 27), pustí hudbu alebo rozhlasovú stanicu a z jedinej vety otvorí vo vašej navigácii trasu so zastávkou alebo miesto po ceste."
+  ],
+  [
+   "Ktoré jazyky Viavo ovláda?",
+   "Je ich 29: angličtina, arabčina, čeština, čínština (zjednodušená aj tradičná), francúzština, gréčtina, hebrejčina, hindčina, holandčina, chorvátčina, indonézština, japončina, kórejčina, maďarčina, nemčina, poľština, portugalčina, rumunčina, ruština, slovenčina, srbčina, španielčina, švédčina, taliančina, thajčina, turečtina, ukrajinčina a vietnamčina. V každom z nich sú obrazovky aplikácie aj hlas rodeného hovoriaceho, ženský alebo mužský."
+  ],
+  [
+   "Nahrádza Viavo Siri?",
+   "Nie. Viavo je samostatná aplikácia na obrazovke CarPlay: otvorte ju a klepnite na jedno tlačidlo."
+  ],
+  [
+   "Dá sa Viavo bezpečne používať počas jazdy?",
+   "Viavo je navrhnuté tak, aby ste nespúšťali oči z cesty: jedno veľké tlačidlo, odpovede nahlas a nič na obrazovke auta vás nenúti pozerať sa do telefónu."
+  ],
+  [
+   "Musím sa učiť nejaké príkazy?",
+   "Nie. Klepnite na jedno tlačidlo a povedzte to tak, ako by ste to povedali človeku."
+  ],
+  [
+   "Funguje aj bez CarPlay?",
+   "Áno, na iPhone: rovnaké jedno tlačidlo a požiadavku môžete aj napísať."
+  ],
+  [
+   "S ktorými aplikáciami Viavo funguje?",
+   "Apple Maps, Google Maps a Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer a Apple Podcasts; Simple Radio, TuneIn a iHeartRadio; WhatsApp, Viber, SMS, Telegram a Slack; pošta Gmail, iCloud a Yahoo; HomeKit, Kalendár a Pripomienky. Ďalšie aplikácie otvorí podľa názvu."
+  ],
+  [
+   "Koľko to stojí?",
+   "Vyskúšajte Viavo zadarmo: nový účet začína s bezplatnými kreditmi alebo s týždňom Viavo Plus zadarmo pri mesačnom aj ročnom predplatnom (jeden bezplatný týždeň na osobu). Ak predplatné počas bezplatného týždňa zrušíte, prístup sa hneď skončí. Ceny nájdete v App Store vo vašej mene."
+  ],
+  [
+   "Ako funguje WhatsApp vo Viavo?",
+   "Funguje v iOS 27 alebo novšom cez jedinú automatizáciu Viavo, ktorú krok za krokom nastavíte v Nastaveniach aplikácie. Viavo nahlas prečíta nové správy z WhatsAppu a SMS a vašu odpoveď odošle, až keď potvrdíte príjemcu a text. Vo WhatsAppe odpovedá ľuďom, ktorí vám napísali po pripojení; SMS môžete poslať komukoľvek z vašich kontaktov. „Zavolaj Anne cez WhatsApp“ spustí hovor, aj z obrazovky auta. V starších verziách iOS sa správa otvorí v telefóne pripravená a stačí klepnúť na Odoslať."
+  ],
+  [
+   "Čo sa deje s mojimi údajmi?",
+   "Všetko nájdete v dvoch dokumentoch."
+  ]
+ ],
+ "lPrivacy": "Zásady ochrany súkromia",
+ "lMessages": "Ako Viavo narába s vašimi správami",
+ "cta": "Jedno tlačidlo. Váš jazyk. Hotovo.",
+ "ctaSub": "Vyskúšajte Viavo zadarmo: nový účet začína s bezplatnými kreditmi alebo s týždňom Viavo Plus zadarmo.",
+ "fPrivacy": "Ochrana súkromia",
+ "fTerms": "Podmienky používania",
+ "fMessengers": "Komunikátory",
+ "fSupport": "Podpora",
+ "fPress": "Pre médiá",
+ "tm": "Apple, logo Apple, CarPlay, iPhone a Siri sú ochranné známky spoločnosti Apple Inc. App Store je servisná známka spoločnosti Apple Inc.",
+ "badgeAlt": "Stiahnuť v App Store",
+ "scan": "Naskenujte iPhonom",
+ "getApp": "Stiahnuť aplikáciu",
+ "skip": "Preskočiť na obsah",
+ "close": "Zavrieť",
+ "whatsapp": {
+  "title": "Ako funguje WhatsApp vo Viavo?",
+  "availability": "Funguje v iOS 27 alebo novšom cez jedinú automatizáciu Viavo. V starších verziách iOS sa správa otvorí v telefóne pripravená a stačí klepnúť na Odoslať.",
+  "receive": "Viavo nahlas prečíta nové správy z WhatsAppu a SMS, ktoré prídu po pripojení: odosielateľa a text náhľadu hlásenia, nie staršie chaty ani prílohy. SMS s jednorazovými kódmi a správy z krátkych čísel vynecháva.",
+  "send": "Odpoveď sa odošle, až keď potvrdíte príjemcu a text. Vo WhatsAppe Viavo odpovedá ľuďom, ktorí vám napísali po pripojení; SMS môžete poslať komukoľvek z vašich kontaktov a číslo doplní telefón sám. „Zavolaj Anne cez WhatsApp“ spustí hovor vo WhatsAppe s kýmkoľvek, kto je uložený vo vašich kontaktoch, aj z obrazovky auta.",
+  "setup": "Keď auto stojí, otvorte Nastavenia Viavo a postupujte podľa krokov: nainštalujte skratku Viavo, zapnite jej automatizáciu a spustite kontrolu. Tá istá automatizácia obsluhuje WhatsApp, SMS aj hovory cez WhatsApp a Viber a po pripojení CarPlay otvorí Viavo."
+ }
+}

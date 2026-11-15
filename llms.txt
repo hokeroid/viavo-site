@@ -1,6 +1,6 @@
 # Viavo
 
-> Viavo: AI Car Voice Assistant — a tap-to-talk voice assistant for drivers on iPhone and Apple CarPlay. Press one button, say what you need in your own words, and Viavo does it and answers out loud: routes in your navigator with stops on the way, places along the route, music and live radio, calls, SMS drafts and WhatsApp support in the upcoming release, Telegram and Slack, reminders, calendar and questions. It speaks 28 languages with a native voice, including Polish, Czech, Romanian, Greek, Hungarian, Croatian, Serbian and Ukrainian, which Siri does not speak.
+> Viavo: AI Car Voice Assistant — a tap-to-talk voice assistant for drivers on iPhone and Apple CarPlay. Press one button, say what you need in your own words, and Viavo does it and answers out loud: routes in your navigator with stops on the way, places along the route, music and live radio, calls (also inside WhatsApp), WhatsApp and SMS messages read aloud and answered by voice, Telegram and Slack, email, reminders, calendar and questions. It speaks 29 languages with a native voice, including Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian and Ukrainian, which Siri does not speak.
 
 Key facts:
 - Platforms: iPhone (iOS 17 or later) and Apple CarPlay. App Store: https://apps.apple.com/app/id6761760437
@@ -9,9 +9,9 @@ Key facts:
 - Works with Apple Maps, Google Maps, Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer; Simple Radio, TuneIn, iHeartRadio.
 - Made by a small team in Serbia.
 
-## WhatsApp availability and limits
+## WhatsApp, SMS and calls
 
-As of 8 November 2026, WhatsApp notification reading and separately enabled background sending are implemented for the upcoming Viavo 1.0.11 on iOS 27 or later. The public App Store version 1.0.9 does not include native setup. After opt-in, Viavo reads only notification previews received after setup, not historical chats or attachments. Sending requires separate setup, confirmation of recipient and text, and an unambiguous sender observed by the current installation; a phone contact alone is insufficient. Private messages only, with no delivery guarantee. Phone drafts remain a fallback. SMS/iMessage and Viber do not have the same released automation support. Setup and data handling: https://viavo.app/messengers/.
+On iOS 27 or later, through the one Viavo automation in Apple Shortcuts: Viavo reads new WhatsApp and SMS messages aloud (notification previews received after connecting, not past chats or attachments) and sends a reply after the driver confirms the person and the text. WhatsApp replies go to people who wrote after connecting; an SMS can go to anyone in the contacts, and the phone fills in the number. "Call Anna on WhatsApp" starts a WhatsApp call to a saved contact, from the CarPlay screen too; Viber calls start from the unlocked phone only. Telegram voice messages are played in the sender's own voice. On earlier iOS versions a WhatsApp or SMS message opens ready on the phone. Setup and data handling: https://viavo.app/messengers/.
 
 ## Pages
 - [Viavo — home (English)](https://viavo.app/): what Viavo does, languages, how to start
@@ -45,6 +45,7 @@ As of 8 November 2026, WhatsApp notification reading and separately enabled back
 - [Português](https://viavo.app/pt/)
 - [Română](https://viavo.app/ro/)
 - [Srpski](https://viavo.app/sr/)
+- [Slovenčina](https://viavo.app/sk/)
 - [Svenska](https://viavo.app/sv/)
 - [ไทย](https://viavo.app/th/)
 - [Türkçe](https://viavo.app/tr/)

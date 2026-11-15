@@ -5,14 +5,14 @@ path: /cs/siri/
 title: "Siri česky v autě: stav v listopadu 2026 a co funguje už teď"
 description: "Siri zatím česky nemluví. Co to znamená v CarPlay a který hlasový asistent v češtině vám v autě už dnes otevře trasu, pustí hudbu a zavolá."
 h1: "Umí Siri česky? Zatím ne. Tohle v autě funguje už dnes"
-updated: 2026-11-08
+updated: 2026-11-15
 sources: pages/facts-2026-11.md (every claim about Siri and the chatbots is there with a URL and the date it was read); Viavo claims from mobile/store/metadata/cs.json
 covers: keywords "siri česky", "umí siri česky", "kdy bude siri česky", "siri v češtině", "siri čeština", "hlasový asistent v češtině", "který hlasový asistent umí česky", "hey siri česky"
 store: cz
 ct: cs-siri
 ---
 
-**Stručná odpověď.** K listopadu 2026 Siri česky nemluví: čeština mezi jejími jazyky není, takže v CarPlay přijímá příkazy jen v jiném jazyce, třeba v angličtině, a nemá český hlas, kterým by vám zprávy přečetla nahlas. Česky můžete diktovat na klávesnici iPhonu, ale nová Siri AI není na iPhonu v EU dostupná a češtinu mezi svými jazyky nemá. V autě se už teď česky domluvíte s aplikací Viavo: stačí na obrazovce CarPlay klepnout na jedno tlačítko a mluvit tak, jak jste zvyklí. Viavo otevře trasu, pustí hudbu, zavolá nebo připraví zprávu a odpoví vám nahlas česky.
+**Stručná odpověď.** K listopadu 2026 Siri česky nemluví: čeština mezi jejími jazyky není, takže v CarPlay přijímá příkazy jen v jiném jazyce, třeba v angličtině, a nemá český hlas, kterým by vám zprávy přečetla nahlas. Česky můžete diktovat na klávesnici iPhonu, ale nová Siri AI není na iPhonu v EU dostupná a češtinu mezi svými jazyky nemá. V autě se už teď česky domluvíte s aplikací Viavo: stačí na obrazovce CarPlay klepnout na jedno tlačítko a mluvit tak, jak jste zvyklí. Viavo otevře trasu, pustí hudbu, zavolá, přečte zprávy a odešle vaši odpověď. Mluví s vámi nahlas česky.
 
 ## Co to znamená v CarPlay
 
@@ -24,7 +24,7 @@ ct: cs-siri
 
 ## Co dnes funguje česky
 
-Který hlasový asistent tedy v autě umí česky? Takhle to vypadá k 2. listopadu 2026:
+Který hlasový asistent tedy v autě umí česky? Takhle to vypadá k 15. listopadu 2026:
 
 | | Siri | ChatGPT a Perplexity (test ZDNET) | Viavo |
 |---|---|---|---|
@@ -32,20 +32,20 @@ Který hlasový asistent tedy v autě umí česky? Takhle to vypadá k 2. listop
 | Odpovídá nahlas česky | Ne | ChatGPT ano, u Perplexity nepotvrzeno | Ano, hlasem rodilého mluvčího |
 | Otevře trasu v Apple Maps, Google Maps nebo Waze | Ano, ale jen s příkazy v jiném jazyce | ChatGPT ne, Perplexity v Apple Maps | Ano, ve vaší navigaci |
 | Pustí hudbu v Apple Music, Spotify nebo YouTube Music | Ano, ale jen s příkazy v jiném jazyce | Ne | Ano |
-| Zavolá kontaktu | Ano, ale jen s příkazy v jiném jazyce | Ne | Ano |
-| SMS | Ne, Siri český diktát nepřijme | Ne | Zpráva se v telefonu otevře připravená, stačí klepnout na Odeslat |
-| WhatsApp | — | — | WhatsApp: čtení a odesílání hlasem v připravované verzi. Přichází ve Viavo 1.0.11 pro iOS 27 a novější. Aktuální verze v App Store, 1.0.9, toto nastavení neobsahuje. |
+| Zavolá kontaktu | Ano, ale jen s příkazy v jiném jazyce | Ne | Ano, v iOS 27 i přes WhatsApp: „Zavolej Anně přes WhatsApp“ |
+| SMS | Ne, Siri český diktát nepřijme | Ne | V iOS 27: předčítání nových zpráv, odpověď hlasem, SMS komukoli z kontaktů. Ve starších verzích iOS se zpráva v telefonu otevře připravená, stačí klepnout na Odeslat |
+| WhatsApp | — | — | V iOS 27: předčítání nových zpráv, odpověď hlasem, hovory z obrazovky auta. Ve starších verzích iOS se zpráva v telefonu otevře připravená, stačí klepnout na Odeslat |
 | Spouští se tlačítkem na volantu | Ano | Ne | Ne, jedním tlačítkem na obrazovce auta |
 
 ## Jak funguje WhatsApp s Viavo?
 
-Přichází ve Viavo 1.0.11 pro iOS 27 a novější. Aktuální verze v App Store, 1.0.9, toto nastavení neobsahuje.
+Funguje v iOS 27 a novějším přes jedinou automatizaci Viavo. Ve starších verzích iOS se zpráva v telefonu otevře připravená a stačí klepnout na Odeslat.
 
-Požádejte Viavo o přečtení oznámení WhatsApp přijatých po nastavení. Čte pouze dostupné náhledy oznámení, ne starší chaty ani přílohy; text může být neúplný.
+Viavo nahlas přečte nové zprávy z WhatsAppu a SMS, které přijdou po připojení: odesílatele a text z náhledu oznámení, ne starší chaty ani přílohy. SMS s jednorázovými kódy a zprávy z krátkých čísel přeskakuje.
 
-Odesílání vyžaduje samostatný souhlas a potvrzení příjemce i textu. Jen soukromé zprávy lidem jednoznačně určeným z oznámení přijatých touto instalací Viavo. Samotný kontakt v telefonu nestačí. Doručení není zaručeno; koncept v telefonu zůstává náhradní možností.
+Odpověď odejde teprve poté, co potvrdíte příjemce a text. Na WhatsAppu Viavo odpovídá lidem, kteří vám od připojení napsali; SMS můžete poslat komukoli z kontaktů a číslo doplní telefon sám. Přes WhatsApp zavoláte komukoli z kontaktů, i z obrazovky auta: stačí říct „Zavolej Anně přes WhatsApp“.
 
-Při stání otevřete WhatsApp v nastavení Viavo nebo při prvním spuštění a klepněte na Připojit. Přidejte zkratku pro příjem, zapněte její automatizaci, jednou ji spusťte a povolte požadovaný přístup. Odesílání nastavte zvlášť, pokud ho chcete, a jeho zkratku aktivujte stejně. Zkratky se automaticky seskupí do složky Viavo.
+Při stání otevřete nastavení Viavo a projděte kroky: nainstalujte zkratku Viavo, zapněte její automatizaci a vyzkoušejte ji. Stejná automatizace obsluhuje WhatsApp, SMS i hovory přes WhatsApp a Viber, a když se připojí CarPlay, otevře Viavo.
 
 [Jak Viavo zachází s vašimi zprávami](https://viavo.app/messengers/)
 
@@ -69,12 +69,12 @@ Pět příkladů přímo z aplikace:
 
 ## Časté otázky
 
-**Kdy bude Siri mluvit česky?** Apple zatím žádné datum neoznámil a pro novou Siri AI v EU podle vlastních slov nemá žádný termín. Sledujeme stránku apple.com/ios/feature-availability a tento článek aktualizujeme, jakmile se něco změní. Naposledy ověřeno 2. listopadu 2026.
+**Kdy bude Siri mluvit česky?** Apple zatím žádné datum neoznámil a pro novou Siri AI v EU podle vlastních slov nemá žádný termín. Sledujeme stránku apple.com/ios/feature-availability a tento článek aktualizujeme, jakmile se něco změní. Naposledy ověřeno 15. listopadu 2026.
 
 **Dá se Viavo spouštět tlačítkem na volantu?** Ne. Tlačítko na volantu i „Hey Siri“ si Apple nechává pro Siri. Viavo spustíte jedním klepnutím na obrazovce auta.
 
 **Funguje Viavo i bez CarPlay?** Ano, i přímo na iPhonu, třeba v držáku na telefon.
 
-**Přečte mi Viavo zprávy nahlas česky?** Z Telegramu a Slacku ano: řekne vám, co je nového, shrne chat, přečte zprávu a odpověď mu nadiktujete. SMS Viavo připraví a otevře v telefonu, odešlete ji jedním klepnutím.
+**Přečte mi Viavo zprávy nahlas česky?** Z Telegramu a Slacku ano: řekne vám, co je nového, shrne chat, přečte zprávu a odpověď mu nadiktujete. Hlasové zprávy z Telegramu přehraje hlasem odesílatele. V iOS 27 nahlas přečte i nové zprávy z WhatsAppu a SMS a vaši odpověď odešle, až potvrdíte příjemce a text; SMS můžete poslat komukoli z kontaktů. Ve starších verzích iOS se zpráva v telefonu otevře připravená a stačí klepnout na Odeslat.
 
 **Je Viavo zdarma?** Vyzkoušet ho můžete zdarma: nový účet dostane na začátek buď bezplatné kredity, nebo týden Viavo Plus zdarma (jeden bezplatný týden na osobu). Potom je Viavo Plus měsíční nebo roční předplatné.

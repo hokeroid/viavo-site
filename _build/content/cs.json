@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Viavo: hlasový AI asistent v češtině pro CarPlay",
-  "description": "Stiskněte tlačítko a mluvte po svém. Viavo otevře trasu se zastávkou, zavolá, napíše zprávu, pustí hudbu i rádio a odpoví nahlas. 28 jazyků s rodilým hlasem.",
+  "description": "Stiskněte tlačítko a mluvte po svém. Viavo otevře trasu se zastávkou, zavolá, napíše zprávu, pustí hudbu i rádio a odpoví nahlas. 29 jazyků s rodilým hlasem.",
   "ogTitle": "Řekněte to svým jazykem. Viavo to zařídí."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "AI asistent pro CarPlay",
  "h1a": "Řekněte to svým jazykem.",
  "h1b": "Viavo to zařídí.",
- "sub": "Trasy se zastávkou po cestě, hovory, zprávy, hudba i rádio. Stiskněte jedno tlačítko a řekněte to kterýmkoli z 28 jazyků, jako byste mluvili s člověkem.",
+ "sub": "Trasy se zastávkou po cestě, hovory, zprávy, hudba i rádio. Stiskněte jedno tlačítko a řekněte to kterýmkoli z 29 jazyků, jako byste mluvili s člověkem.",
  "heroAlt": "Viavo na obrazovce CarPlay",
  "bandPre": "Siri nemluví ",
  "bandPost": ".",
@@ -21,6 +21,7 @@
  "bandWords": {
   "pl": "polsky",
   "cs": "česky",
+  "sk": "slovensky",
   "ro": "rumunsky",
   "el": "řecky",
   "hu": "maďarsky",
@@ -28,7 +29,7 @@
   "sr": "srbsky",
   "uk": "ukrajinsky"
  },
- "bandSub": "Siri nemluví ani jedním z těchto osmi jazyků. Viavo mluví všemi.",
+ "bandSub": "Siri nemluví ani jedním z těchto devíti jazyků. Viavo mluví všemi.",
  "say": "Neodpoví jen slovy. Zařídí to.",
  "sayLead": "Jedno tlačítko a Viavo vyřeší trasu, místa po cestě, hudbu, hovory, zprávy i vaše otázky. Odpovídá nahlas, takže nespouštíte oči ze silnice.",
  "examples": [
@@ -74,10 +75,10 @@
   [
    "Lidé a zprávy",
    [
-    "Volání kontaktům podle jména",
-    "WhatsApp: čtení a odesílání hlasem v připravované verzi",
-    "SMS: zpráva se v telefonu otevře připravená, stačí klepnout na Odeslat",
-    "Telegram a Slack: co je nového, shrnutí a nadiktovaná odpověď"
+    "Volání kontaktům podle jména, i přes WhatsApp (iOS 27)",
+    "WhatsApp a SMS: předčítání nových zpráv a odpovídání hlasem (iOS 27)",
+    "Telegram a Slack: co je nového, shrnutí a nadiktovaná odpověď",
+    "Hlasové zprávy v Telegramu přehrané hlasem odesílatele"
    ],
    "Napiš Petrovi, že přijedu o deset minut později"
   ],
@@ -125,7 +126,7 @@
   "Calendar": "Kalendář",
   "Reminders": "Připomínky"
  },
- "langsTitle": "28 jazyků, každý s rodilým mluvčím",
+ "langsTitle": "29 jazyků, každý s rodilým mluvčím",
  "legend": "Siri tímto jazykem nemluví",
  "langNames": {
   "ar": "Arabština",
@@ -150,6 +151,7 @@
   "ro": "Rumunština",
   "ru": "Ruština",
   "sr": "Srbština",
+  "sk": "Slovenština",
   "es": "Španělština",
   "sv": "Švédština",
   "th": "Thajština",
@@ -176,11 +178,11 @@
  "faqItems": [
   [
    "Čím se Viavo liší od ChatGPT nebo Gemini v CarPlay?",
-   "ChatGPT a Gemini jsou v CarPlay určené k rozhovoru. Viavo navíc udělá, co řeknete: zavolá kontaktu, připraví zprávu SMS, pustí hudbu nebo rádiovou stanici a z jediné věty otevře ve vaší navigaci trasu se zastávkou nebo místo po cestě."
+   "ChatGPT a Gemini jsou v CarPlay určené k rozhovoru. Viavo navíc udělá, co řeknete: zavolá kontaktu, i přes WhatsApp, nahlas přečte nové zprávy z WhatsAppu a SMS a hlasem na ně odpoví (v iOS 27), pustí hudbu nebo rádiovou stanici a z jediné věty otevře ve vaší navigaci trasu se zastávkou nebo místo po cestě."
   ],
   [
    "Jakými jazyky Viavo mluví?",
-   "Je jich 28: angličtina, arabština, čeština, čínština (zjednodušená i tradiční), francouzština, hebrejština, hindština, chorvatština, indonéština, italština, japonština, korejština, maďarština, němčina, nizozemština, polština, portugalština, rumunština, ruština, řečtina, srbština, španělština, švédština, thajština, turečtina, ukrajinština a vietnamština. V každém z nich jsou obrazovky aplikace i hlas rodilého mluvčího, ženský nebo mužský."
+   "Je jich 29: angličtina, arabština, čeština, čínština (zjednodušená i tradiční), francouzština, hebrejština, hindština, chorvatština, indonéština, italština, japonština, korejština, maďarština, němčina, nizozemština, polština, portugalština, rumunština, ruština, řečtina, slovenština, srbština, španělština, švédština, thajština, turečtina, ukrajinština a vietnamština. V každém z nich jsou obrazovky aplikace i hlas rodilého mluvčího, ženský nebo mužský."
   ],
   [
    "Nahrazuje Viavo Siri?",
@@ -200,7 +202,7 @@
   ],
   [
    "S jakými aplikacemi Viavo funguje?",
-   "Apple Maps, Google Maps a Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer a Apple Podcasts; Simple Radio, TuneIn a iHeartRadio; WhatsApp, SMS, Telegram a Slack; HomeKit, Kalendář a Připomínky. Další aplikace otevře podle názvu."
+   "Apple Maps, Google Maps a Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer a Apple Podcasts; Simple Radio, TuneIn a iHeartRadio; WhatsApp, Viber, SMS, Telegram a Slack; e-maily z Gmailu, iCloudu a Yahoo; HomeKit, Kalendář a Připomínky. Další aplikace otevře podle názvu."
   ],
   [
    "Kolik to stojí?",
@@ -208,7 +210,7 @@
   ],
   [
    "Jak funguje WhatsApp s Viavo?",
-   "Přichází ve Viavo 1.0.11 pro iOS 27 a novější. Aktuální verze v App Store, 1.0.9, toto nastavení neobsahuje. Požádejte Viavo o přečtení oznámení WhatsApp přijatých po nastavení. Čte pouze dostupné náhledy oznámení, ne starší chaty ani přílohy; text může být neúplný. Odesílání vyžaduje samostatný souhlas a potvrzení příjemce i textu."
+   "Funguje v iOS 27 a novějším přes jedinou automatizaci Viavo, kterou krok za krokem zprovozníte v nastavení Viavo. Viavo nahlas přečte nové zprávy z WhatsAppu a SMS a vaši odpověď odešle, až potvrdíte příjemce a text. Na WhatsAppu odpovídá lidem, kteří vám napsali po připojení; SMS můžete poslat komukoli z kontaktů. Na pokyn „Zavolej Anně přes WhatsApp“ Viavo zavolá, i z obrazovky auta. Ve starších verzích iOS se zpráva v telefonu otevře připravená a stačí klepnout na Odeslat."
   ],
   [
    "Co se děje s mými daty?",
@@ -232,9 +234,9 @@
  "close": "Zavřít",
  "whatsapp": {
   "title": "Jak funguje WhatsApp s Viavo?",
-  "availability": "Přichází ve Viavo 1.0.11 pro iOS 27 a novější. Aktuální verze v App Store, 1.0.9, toto nastavení neobsahuje.",
-  "receive": "Požádejte Viavo o přečtení oznámení WhatsApp přijatých po nastavení. Čte pouze dostupné náhledy oznámení, ne starší chaty ani přílohy; text může být neúplný.",
-  "send": "Odesílání vyžaduje samostatný souhlas a potvrzení příjemce i textu. Jen soukromé zprávy lidem jednoznačně určeným z oznámení přijatých touto instalací Viavo. Samotný kontakt v telefonu nestačí. Doručení není zaručeno; koncept v telefonu zůstává náhradní možností.",
-  "setup": "Při stání otevřete WhatsApp v nastavení Viavo nebo při prvním spuštění a klepněte na Připojit. Přidejte zkratku pro příjem, zapněte její automatizaci, jednou ji spusťte a povolte požadovaný přístup. Odesílání nastavte zvlášť, pokud ho chcete, a jeho zkratku aktivujte stejně. Zkratky se automaticky seskupí do složky Viavo."
+  "availability": "Funguje v iOS 27 a novějším přes jedinou automatizaci Viavo. Ve starších verzích iOS se zpráva v telefonu otevře připravená a stačí klepnout na Odeslat.",
+  "receive": "Viavo nahlas přečte nové zprávy z WhatsAppu a SMS, které přijdou po připojení: odesílatele a text z náhledu oznámení, ne starší chaty ani přílohy. SMS s jednorázovými kódy a zprávy z krátkých čísel přeskakuje.",
+  "send": "Odpověď odejde teprve poté, co potvrdíte příjemce a text. Na WhatsAppu Viavo odpovídá lidem, kteří vám od připojení napsali; SMS můžete poslat komukoli z kontaktů a číslo doplní telefon sám. Přes WhatsApp zavoláte komukoli z kontaktů, i z obrazovky auta: stačí říct „Zavolej Anně přes WhatsApp“.",
+  "setup": "Při stání otevřete nastavení Viavo a projděte kroky: nainstalujte zkratku Viavo, zapněte její automatizaci a vyzkoušejte ji. Stejná automatizace obsluhuje WhatsApp, SMS i hovory přes WhatsApp a Viber, a když se připojí CarPlay, otevře Viavo."
  }
 }

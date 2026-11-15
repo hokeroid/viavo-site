@@ -1,6 +1,6 @@
 {
  "meta": {
-  "title": "Viavo: asisten suara AI untuk CarPlay, dalam 28 bahasa",
+  "title": "Viavo: asisten suara AI untuk CarPlay, dalam 29 bahasa",
   "description": "Satu tombol, bicara seperti biasa. Viavo membuka rute dengan tempat singgah, menelepon, mengirim pesan, memutar musik dan radio, dan menjawab dengan suara.",
   "ogTitle": "Ucapkan dalam bahasa Anda. Viavo kerjakan."
  },
@@ -13,7 +13,7 @@
  "eyebrow": "Asisten AI untuk CarPlay",
  "h1a": "Ucapkan dalam bahasa Anda.",
  "h1b": "Viavo kerjakan.",
- "sub": "Rute dengan tempat singgah, panggilan, pesan, musik, dan radio. Tekan satu tombol dan ucapkan seperti saat bicara dengan orang lain, dalam salah satu dari 28 bahasa.",
+ "sub": "Rute dengan tempat singgah, panggilan, pesan, musik, dan radio. Tekan satu tombol dan ucapkan seperti saat bicara dengan orang lain, dalam salah satu dari 29 bahasa.",
  "heroAlt": "Viavo di layar CarPlay",
  "bandPre": "Siri tidak bisa berbahasa ",
  "bandPost": ".",
@@ -21,6 +21,7 @@
  "bandWords": {
   "pl": "Polandia",
   "cs": "Ceko",
+  "sk": "Slovakia",
   "ro": "Rumania",
   "el": "Yunani",
   "hu": "Hungaria",
@@ -28,7 +29,7 @@
   "sr": "Serbia",
   "uk": "Ukraina"
  },
- "bandSub": "Siri tidak bisa satu pun dari delapan bahasa ini. Viavo bisa semuanya.",
+ "bandSub": "Siri tidak bisa satu pun dari sembilan bahasa ini. Viavo bisa semuanya.",
  "say": "Bukan sekadar menjawab. Viavo langsung bertindak.",
  "sayLead": "Cukup satu tombol, dan Viavo mengurus rute, tempat singgah di jalan, musik, telepon, pesan, dan pertanyaan Anda dengan suara, jadi mata tetap fokus ke jalan.",
  "examples": [
@@ -74,10 +75,10 @@
   [
    "Orang dan pesan",
    [
-    "Telepon kontak cukup dengan menyebut namanya",
-    "WhatsApp: baca dan kirim dengan suara di versi mendatang",
-    "SMS: pesan siap di ponsel, tinggal ketuk Kirim",
-    "Telegram dan Slack: kabar terbaru, inti obrolan, balasan lewat dikte"
+    "Telepon kontak cukup dengan menyebut namanya, juga lewat WhatsApp (iOS 27)",
+    "WhatsApp dan SMS: dengarkan pesan baru, balas dengan suara (iOS 27)",
+    "Telegram dan Slack: kabar terbaru, inti obrolan, balasan lewat dikte",
+    "Pesan suara Telegram dengan suara asli pengirimnya"
    ],
    "Bilang ke Budi aku telat sepuluh menit"
   ],
@@ -125,7 +126,7 @@
   "Calendar": "Kalender",
   "Reminders": "Pengingat"
  },
- "langsTitle": "28 bahasa, masing-masing dengan suara penutur asli",
+ "langsTitle": "29 bahasa, masing-masing dengan suara penutur asli",
  "legend": "Siri tidak bisa bahasa ini",
  "langNames": {
   "ar": "Arab",
@@ -150,6 +151,7 @@
   "ro": "Rumania",
   "ru": "Rusia",
   "sr": "Serbia",
+  "sk": "Slovakia",
   "es": "Spanyol",
   "sv": "Swedia",
   "th": "Thai",
@@ -176,11 +178,11 @@
  "faqItems": [
   [
    "Apa bedanya Viavo dengan ChatGPT atau Gemini di CarPlay?",
-   "ChatGPT dan Gemini di CarPlay dibuat untuk mengobrol. Viavo juga menjalankan apa yang Anda ucapkan: menelepon kontak, menyiapkan pesan SMS, memutar musik atau stasiun radio, dan cukup dengan satu kalimat membuka rute dengan tempat singgah, atau tempat di sepanjang jalan, di aplikasi navigasi Anda."
+   "ChatGPT dan Gemini di CarPlay dibuat untuk mengobrol. Viavo juga menjalankan apa yang Anda ucapkan: menelepon kontak, juga lewat WhatsApp, membacakan pesan WhatsApp dan SMS baru serta mengirim balasan yang Anda ucapkan (di iOS 27), memutar musik atau stasiun radio, dan cukup dengan satu kalimat membuka rute dengan tempat singgah, atau tempat di sepanjang jalan, di aplikasi navigasi Anda."
   ],
   [
    "Viavo bisa berbahasa apa saja?",
-   "28 bahasa: Arab, Belanda, Ceko, Hindi, Hungaria, Ibrani, Indonesia, Inggris, Italia, Jepang, Jerman, Korea, Kroasia, Polandia, Portugis, Prancis, Rumania, Rusia, Serbia, Spanyol, Swedia, Thai, Tionghoa (Sederhana dan Tradisional), Turki, Ukraina, Vietnam, dan Yunani. Setiap bahasa punya tampilan aplikasinya sendiri dan suara penutur asli, wanita atau pria."
+   "29 bahasa: Arab, Belanda, Ceko, Hindi, Hungaria, Ibrani, Indonesia, Inggris, Italia, Jepang, Jerman, Korea, Kroasia, Polandia, Portugis, Prancis, Rumania, Rusia, Serbia, Slovakia, Spanyol, Swedia, Thai, Tionghoa (Sederhana dan Tradisional), Turki, Ukraina, Vietnam, dan Yunani. Setiap bahasa punya tampilan aplikasinya sendiri dan suara penutur asli, wanita atau pria."
   ],
   [
    "Apakah Viavo menggantikan Siri?",
@@ -200,7 +202,7 @@
   ],
   [
    "Bekerja dengan aplikasi apa saja?",
-   "Apple Maps, Google Maps, dan Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer, dan Apple Podcasts; Simple Radio, TuneIn, dan iHeartRadio; WhatsApp, SMS, Telegram, dan Slack; HomeKit, Kalender, dan Pengingat. Viavo juga bisa membuka aplikasi lain, cukup sebut namanya."
+   "Apple Maps, Google Maps, dan Waze; Apple Music, Spotify, YouTube Music, Amazon Music, Deezer, dan Apple Podcasts; Simple Radio, TuneIn, dan iHeartRadio; WhatsApp, Viber, SMS, Telegram, dan Slack; email Gmail, iCloud, dan Yahoo; HomeKit, Kalender, dan Pengingat. Viavo juga bisa membuka aplikasi lain, cukup sebut namanya."
   ],
   [
    "Berapa biayanya?",
@@ -208,7 +210,7 @@
   ],
   [
    "Bagaimana WhatsApp bekerja dengan Viavo?",
-   "Hadir di Viavo 1.0.11 pada iOS 27 atau lebih baru. Versi App Store saat ini, 1.0.9, belum menyertakan pengaturan ini. Minta Viavo membacakan notifikasi WhatsApp yang diterima setelah pengaturan. Hanya pratinjau notifikasi yang tersedia yang dibaca, bukan chat lama atau lampiran; teks bisa tidak lengkap. Pengiriman memerlukan persetujuan terpisah serta konfirmasi penerima dan teks."
+   "Di iOS 27 atau lebih baru, lewat satu otomatisasi Viavo yang disiapkan langkah demi langkah di Pengaturan Viavo. Pesan WhatsApp dan SMS baru dibacakan, lalu balasan Anda dikirim setelah Anda mengonfirmasi penerima dan teksnya. Di WhatsApp, balasan hanya untuk orang yang mengirimi Anda pesan setelah WhatsApp dihubungkan; SMS bisa dikirim ke siapa saja di kontak Anda. Ucapkan “Telepon Ani lewat WhatsApp” dan panggilan langsung dimulai, juga dari layar mobil. Di versi iOS sebelumnya, pesan terbuka siap di ponsel, tinggal ketuk Kirim."
   ],
   [
    "Bagaimana dengan data saya?",
@@ -232,9 +234,9 @@
  "close": "Tutup",
  "whatsapp": {
   "title": "Bagaimana WhatsApp bekerja dengan Viavo?",
-  "availability": "Hadir di Viavo 1.0.11 pada iOS 27 atau lebih baru. Versi App Store saat ini, 1.0.9, belum menyertakan pengaturan ini.",
-  "receive": "Minta Viavo membacakan notifikasi WhatsApp yang diterima setelah pengaturan. Hanya pratinjau notifikasi yang tersedia yang dibaca, bukan chat lama atau lampiran; teks bisa tidak lengkap.",
-  "send": "Pengiriman memerlukan persetujuan terpisah serta konfirmasi penerima dan teks. Hanya pesan pribadi kepada orang yang diidentifikasi dengan jelas dari notifikasi yang diterima instalasi Viavo ini. Kontak telepon saja tidak cukup. Pengantaran tidak dijamin; draf di ponsel tetap tersedia sebagai alternatif.",
-  "setup": "Saat parkir, buka WhatsApp di Pengaturan Viavo atau saat penyiapan awal, lalu ketuk Hubungkan. Tambahkan pintasan penerimaan, aktifkan otomatisasinya, jalankan sekali dan izinkan akses yang diminta. Jika ingin mengirim, atur secara terpisah dan aktifkan pintasannya dengan cara yang sama. Pintasan otomatis dikelompokkan dalam folder Viavo."
+  "availability": "Berfungsi di iOS 27 atau lebih baru, lewat satu otomatisasi Viavo. Di versi iOS sebelumnya, pesan terbuka siap di ponsel dan Anda tinggal mengetuk Kirim.",
+  "receive": "Viavo membacakan pesan WhatsApp dan SMS baru yang masuk setelah dihubungkan: pengirim dan teks pratinjau di notifikasi, bukan chat lama atau lampiran. SMS berisi kode OTP dan pesan dari nomor pendek dilewati.",
+  "send": "Balasan hanya dikirim setelah Anda mengonfirmasi penerima dan teksnya. Di WhatsApp, Viavo membalas orang yang sudah mengirimi Anda pesan sejak dihubungkan; SMS bisa dikirim ke siapa saja di kontak Anda, dan ponsel mengisi nomornya sendiri. “Telepon Ani lewat WhatsApp” memulai panggilan WhatsApp ke siapa pun yang tersimpan di kontak Anda, juga dari layar mobil.",
+  "setup": "Saat parkir, buka Pengaturan Viavo dan ikuti langkah-langkahnya: pasang pintasan “Viavo”, nyalakan otomatisasinya, lalu jalankan pemeriksaan. Otomatisasi yang sama menangani WhatsApp, SMS, panggilan WhatsApp dan Viber, serta membuka Viavo saat CarPlay terhubung."
  }
 }
