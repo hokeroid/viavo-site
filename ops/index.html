@@ -651,6 +651,101 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     }
   }
 
+  // ---------- the «Viavo» shortcut (VIA-626)
+  // mode: "today" | "yesterday" | "period"; s: the period's series days (period mode)
+  function renderAutomation(data, mode, s) {
+    app.appendChild(el("h2", { text: "Автоматизация Viavo" }));
+    var a = data.automation;
+    var r = a && (mode === "period" ? a.period : mode === "today" ? a.today : a.yesterday);
+    if (!r) {
+      app.appendChild(el("p", { class: "sub", text: "Воронка автоматизации не прочитана" + (data.automation_error ? ": " + data.automation_error : "") + "." }));
+      return;
+    }
+    var f = r.funnel, now = r.now, todayMode = mode === "today", base = a.base || null;
+    var eventsDone = sum(r.events, function (e) { return e.done; }), eventsFailed = sum(r.events, function (e) { return e.failed; });
+    var tiles = el("div", { class: "tiles" });
+    [["Открыли настройку", f.setup_opened, base && base.setup_opened], ["Проверка прошла", f.check_works, base && base.check_works],
+     ["Заработала у новых", f.new_working, base && base.new_working], ["Через команду", eventsDone, base && base.events_done]]
+      .forEach(function (v) {
+        var t = tile(v[0], v[1], mode === "period" ? undefined : v[2], null, true, todayMode);
+        if (mode === "period") t.lastChild.textContent = "за период";
+        tiles.appendChild(t);
+      });
+    var held = tile("Работает всего", now.working, undefined, null, true, todayMode);
+    held.lastChild.textContent = mode === "period" ? "на конец периода" : "на сейчас";
+    tiles.appendChild(held);
+    app.appendChild(tiles);
+    app.appendChild(el("p", { class: "sub", text: "Водители, не шаги: каждый считается на шаге один раз. «Работает» — команда хоть раз ответила: проверка прошла, ответил пинг, запрос с её ревизией, событие через неё, пришло сообщение или CarPlay открылся сам (с 1.1)." }));
+    if (mode === "period" && a.series) {
+      var days = s.map(function (d) { return d.day; });
+      var byDay = {};
+      a.series.forEach(function (d) { byDay[d.day] = d; });
+      var pick = function (key) { return days.map(function (d) { return byDay[d] ? byDay[d][key] : 0; }); };
+      var autoSeries = [
+        { name: "открыли настройку", color: "var(--s1)", kind: "bar", values: pick("setup_opened") },
+        { name: "проверка прошла", color: "var(--s2)", kind: "line", values: pick("check_works") },
+        { name: "заработала у новых", color: "var(--s3)", kind: "line", values: pick("new_working") }
+      ];
+      app.appendChild(figure("Настройка по дням", null, timeChart(days, autoSeries, { label: "Автоматизация по дням", partialLast: data.days !== "week_ago" }), autoSeries, function () {
+        return dataTable(["День", "Открыли", "Ссылка", "Прошла", "Новых"], days.map(function (d) {
+          var x = byDay[d] || {};
+          return [dayLabel(d), fmt(x.setup_opened || 0), fmt(x.link_opened || 0), fmt(x.check_works || 0), fmt(x.new_working || 0)];
+        }));
+      }));
+    }
+    var share = function (n) { return f.setup_opened > 0 ? Math.round(100 * n / f.setup_opened) + " %" : "—"; };
+    app.appendChild(el("p", { class: "sub", text: "Воронка настройки; доля — от открывших настройку" }));
+    app.appendChild(dataTable(["Шаг", "Водит.", "Доля"], [
+      ["Видели предложение", fmt(f.offered), "—"],
+      ["Старая iOS, нельзя", fmt(f.old_ios), "—"],
+      ["Открыли настройку", fmt(f.setup_opened), share(f.setup_opened)],
+      ["Открыли ссылку", fmt(f.link_opened), share(f.link_opened)],
+      ["Открыли «Автоматизацию»", fmt(f.enable_opened), share(f.enable_opened)],
+      ["Запустили проверку", fmt(f.check_ran), share(f.check_ran)],
+      ["Проверка прошла", fmt(f.check_works), share(f.check_works)],
+      ["Заработала у новых", fmt(f.new_working), "—"]
+    ]));
+    var current = data.automation_revision;
+    var holders = [["Работает всего", fmt(now.working)]].concat(now.by_revision.map(function (v) {
+      return [v.revision === null ? "Ревизия неизвестна" : "Ревизия " + v.revision + (v.revision === current ? " (последняя)" : ""), fmt(v.drivers)];
+    }), [["Последний пинг без ответа", fmt(now.ping_no_answer)], ["Две копии", fmt(now.ping_duplicate)]]);
+    app.appendChild(el("p", { class: "sub", text: mode === "period" ? "На конец периода" : "Сейчас" }));
+    app.appendChild(dataTable(["Кто с командой", "Водителей"], holders));
+    if (now.stuck.total) {
+      app.appendChild(el("p", { class: "sub", text: "Открыли ссылку, но команда так и не заработала — по последней проверке" }));
+      app.appendChild(dataTable(["Где застряли", "Водителей"], [["Всего", fmt(now.stuck.total)]].concat(now.stuck.by_cause.map(function (c) {
+        return [reportLabel("automationStuck", c.cause), fmt(c.drivers)];
+      }))));
+    }
+    if (r.check_run_failures.length) {
+      app.appendChild(el("p", { class: "sub", text: "Что Shortcuts ответил, когда проверка не прошла" }));
+      r.check_run_failures.forEach(function (c) {
+        app.appendChild(el("p", { text: (c.reason === "?" ? "без текста" : "«" + c.reason + "»") + " — " + fmt(c.drivers) + " водит." }));
+      });
+    }
+    if (r.events.length) {
+      app.appendChild(el("p", { class: "sub", text: "Через команду: сработало " + fmt(eventsDone) + " из " + fmt(eventsDone + eventsFailed) +
+        ". «Нет» — команда не подтвердила или не взяла; «отказ» — приложение не стало отправлять (старая копия, нет разрешения)." }));
+      app.appendChild(dataTable(["Что", "Да", "Нет", "Отказ", "Водит."], r.events.map(function (e) {
+        return [reportLabel("automationEvents", e.event), fmt(e.done), fmt(e.failed), fmt(e.refused), fmt(e.drivers)];
+      })));
+    }
+    var sources = {};
+    now.messengers.forEach(function (m) { sources[m.source] = { connected: m.drivers, messages: 0, drivers: 0 }; });
+    r.received.forEach(function (x) { var o = sources[x.source] || (sources[x.source] = { connected: 0, messages: 0, drivers: 0 }); o.messages = x.messages; o.drivers = x.drivers; });
+    var names = Object.keys(sources);
+    if (names.length) {
+      app.appendChild(el("p", { class: "sub", text: "Сообщения через команду: подключены — водителей сейчас; пришло — сообщений за время отчёта, у скольких водителей" }));
+      app.appendChild(dataTable(["Где", "Подкл.", "Пришло", "Водит."], names.map(function (n) {
+        return [reportLabel("messengers", n), fmt(sources[n].connected), fmt(sources[n].messages), fmt(sources[n].drivers)];
+      })));
+    }
+    if (r.missed.turns) {
+      app.appendChild(el("p", { text: "Без команды не вернули музыку: " + fmt(r.missed.drivers) + " водит., " + fmt(r.missed.turns) + " ходов" +
+        (mode !== "period" && base ? " (" + (todayMode ? "вчера " : "ср. ") + fmt(base.missed_drivers, todayMode ? 0 : 1) + " водит.)" : "") }));
+    }
+  }
+
   function render(data) {
     hideTip();
     redrawers = [];
@@ -787,6 +882,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     }
 
     renderSite(data, "period", s);
+    renderAutomation(data, "period", s);
 
     // 6. spend
     app.appendChild(el("h2", { text: "Расходы" }));
@@ -1148,6 +1244,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       app.appendChild(pushCampaignTable(td.pushes));
     }
     renderSite(data, todayMode ? "today" : "yesterday");
+    renderAutomation(data, todayMode ? "today" : "yesterday");
     renderSalesFeedback(td, periodName);
 
     app.appendChild(el("h2", { text: "Расходы " + periodName }));
