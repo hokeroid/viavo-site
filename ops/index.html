@@ -672,7 +672,9 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         tiles.appendChild(t);
       });
     var held = tile("Работает всего", now.working, undefined, null, true, todayMode);
-    held.lastChild.textContent = mode === "period" ? "на конец периода" : "на сейчас";
+    // The state at the window's end: now for today, 00:00 UTC for yesterday, the period's end.
+    var stateAt = mode === "period" ? "на конец периода" : mode === "yesterday" ? "на конец дня" : "на сейчас";
+    held.lastChild.textContent = stateAt;
     tiles.appendChild(held);
     app.appendChild(tiles);
     app.appendChild(el("p", { class: "sub", text: "Водители, не шаги: каждый считается на шаге один раз. «Работает» — команда хоть раз ответила: проверка прошла, ответил пинг, запрос с её ревизией, событие через неё, пришло сообщение или CarPlay открылся сам (с 1.1)." }));
@@ -709,7 +711,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     var holders = [["Работает всего", fmt(now.working)]].concat(now.by_revision.map(function (v) {
       return [v.revision === null ? "Ревизия неизвестна" : "Ревизия " + v.revision + (v.revision === current ? " (последняя)" : ""), fmt(v.drivers)];
     }), [["Последний пинг без ответа", fmt(now.ping_no_answer)], ["Две копии", fmt(now.ping_duplicate)]]);
-    app.appendChild(el("p", { class: "sub", text: mode === "period" ? "На конец периода" : "Сейчас" }));
+    app.appendChild(el("p", { class: "sub", text: mode === "today" ? "Сейчас" : stateAt.charAt(0).toUpperCase() + stateAt.slice(1) }));
     app.appendChild(dataTable(["Кто с командой", "Водителей"], holders));
     if (now.stuck.total) {
       app.appendChild(el("p", { class: "sub", text: "Открыли ссылку, но команда так и не заработала — по последней проверке" }));
