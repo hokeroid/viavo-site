@@ -1161,7 +1161,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     app.appendChild(el("h3", { text: "Meta" }));
     var ads = data.ads;
     if (!ads) {
-      app.appendChild(el("p", { class: "sub", text: data.ads_error && /^Meta/.test(data.ads_error) ? data.ads_error : "Meta не прочитана" + (data.ads_error ? ": " + data.ads_error : ".") }));
+      // Meta's own sentences start with «Meta»; a failed sign-ups read says so itself
+      app.appendChild(el("p", { class: "sub", text: data.ads_error && /^(Meta|Регистрации)/.test(data.ads_error) ? data.ads_error : "Meta не прочитана" + (data.ads_error ? ": " + data.ads_error : ".") }));
       return;
     }
     var w = ads.window, t = ads.totals;
@@ -1253,7 +1254,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       dayLabel(g.read_at.slice(0, 10)) + " " + timeUtc(g.read_at) + " UTC, их раз в час присылает скрипт в кабинете" }));
     if (g.stale) app.appendChild(el("p", { class: "sub warn", text: "Скрипт не присылал цифры с " + dayLabel(g.received_at.slice(0, 10)) + " " + timeUtc(g.received_at) +
       " UTC: цифры ниже на то время. Его история — в кабинете: Инструменты → Массовые действия → Скрипты." }));
-    else if (g.behind) app.appendChild(el("p", { class: "sub warn", text: "Последних дней периода в цифрах Google ещё нет." }));
+    else if (g.behind) app.appendChild(el("p", { class: "sub warn", text: g.window.since === g.window.until
+      ? "Цифр Google за " + dayLabel(g.window.until) + " ещё нет: скрипт пришлёт их в течение часа."
+      : "Цифр Google после " + dayLabel(g.synced_until) + " ещё нет: скрипт пришлёт их в течение часа." }));
+    if (g.notes && g.notes.length) app.appendChild(el("p", { class: "sub" }, ["Скрипт прочитал не всё, недостающее — «—»: ", el("span", { class: "code", text: g.notes.join(" · ") })]));
     var tiles = el("div", { class: "tiles" });
     tiles.appendChild(plainTile("Потрачено", eurTile(t.spend)));
     tiles.appendChild(plainTile("Показы", fmt(t.impressions)));
@@ -1276,7 +1280,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         return [anyCountry(c.country), eur(c.spend), fmt(c.impressions), fmt(c.clicks), ctr(c.ctr), eur(c.cpc), fmt(c.site_visits), fmt(c.appstore_visits)];
       }));
       byCountry.firstChild.classList.add("vheads");
-      app.appendChild(figure("По странам", "Траты, показы и клики — по стране, где Google увидел человека; «не указана» — то, чему Google страну не назвал. Визиты и переходы в App Store — с сайта, страна по часовому поясу браузера, поэтому со страной клика могут не совпасть. Клик и визит не всегда один к одному: человек мог закрыть страницу, не дождавшись загрузки, или открыть её дважды.", byCountry, null, null));
+      app.appendChild(figure("По странам", "Траты, показы и клики — по стране, где Google увидел человека; «не указана» — то, чему Google страну не назвал. Визиты и переходы в App Store — с сайта, страна по часовому поясу браузера, поэтому со страной клика могут не совпасть; визиты, чей пояс страну не называет, есть только в общем числе. Клик и визит не всегда один к одному: человек мог закрыть страницу, не дождавшись загрузки, или открыть её дважды.", byCountry, null, null));
     } else if (!(t.spend > 0)) app.appendChild(el("p", { class: "sub", text: "За период Google ничего не потратил." }));
     if (g.pages.length) {
       app.appendChild(el("p", { class: "sub", text: "Страницы входа: " + g.pages.map(function (p) { return p.path + " " + fmt(p.visits) + (p.appstore_visits ? " (в App Store " + fmt(p.appstore_visits) + ")" : ""); }).join(" · ") }));
