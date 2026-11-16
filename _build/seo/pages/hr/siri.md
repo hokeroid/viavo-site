@@ -2,38 +2,39 @@
 page: siri
 lang: hr
 path: /hr/siri/
-title: "Siri na hrvatskom u autu: stanje u studenom 2026. i što koristiti"
-description: "Siri još ne govori hrvatski. Što to znači u CarPlayu i kako već danas u autu na hrvatskom glasom otvoriti rutu, pustiti glazbu i obaviti poziv."
+title: "Siri na hrvatskom: kada? Stanje u studenom 2026. i što radi u autu"
+description: "Siri još ne govori hrvatski i Apple nije najavio datum. Što u CarPlayu nudi Gemini, a što Viavo, koji na hrvatskom zove, šalje poruke i pušta glazbu."
 h1: "Ima li Siri na hrvatskom? Još nema. Evo što u autu radi već danas"
-updated: 2026-11-15
-sources: pages/facts-2026-11.md, pages/template-siri.md, mobile/store/metadata/hr.json, mobile/lib/l10n/app_hr.arb, app_sr_Latn.arb
-covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri hrvatski", "siri na hrvatskom", "ima li siri na hrvatskom", "glasovni asistent na hrvatskom", "siri srpski", "siri na srpskom", "glasovni asistent na srpskom"
+updated: 2026-11-16
+sources: pages/facts-2026-11.md, pages/update-2026-11-16.md, press/research/refresh-2026-11-15.md (0, 3), mobile/store/metadata/hr.json, mobile/lib/l10n/app_hr.arb
+covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri hrvatski", "siri hrvatski jezik", "siri na hrvatskom", "ima li siri na hrvatskom", "kada će siri na hrvatskom", "iphone siri na hrvatskom", "glasovni asistent na hrvatskom", "gemini hrvatski", "gemini carplay"; "siri na srpskom" only as a link to /sr/siri/
 ---
 
-**Ukratko.** U studenom 2026. Siri ne govori hrvatski: hrvatskog nema na popisu jezika koje Siri podržava, pa u CarPlayu prima naredbe samo na nekom drugom jeziku, primjerice na engleskom, i nema hrvatski glas kojim bi ti naglas pročitala poruke. Hrvatski možeš diktirati preko tipkovnice iPhonea, ali nova Siri AI nije dostupna na iPhoneu u EU-u, a hrvatski nije među njezinim jezicima. U autu već sada možeš razgovarati na hrvatskom s Viavom: dodirni jedan gumb na zaslonu automobila i svojim riječima reci što trebaš, a Viavo otvara rutu u tvojoj navigaciji, pušta glazbu, zove kontakte, čita i šalje poruke te ti naglas odgovara na hrvatskom.
+**Ukratko.** Apple još nije rekao kada će Siri progovoriti hrvatski: na dan 16. studenoga 2026. hrvatskog nema na popisu jezika koje Siri podržava (apple.com/ios/feature-availability). Zato u CarPlayu Siri prima naredbe samo na nekom drugom jeziku, primjerice na engleskom, i nema hrvatski glas kojim bi ti naglas pročitala poruke. Hrvatski možeš diktirati preko tipkovnice iPhonea, a nova Siri AI zasad radi samo na šest jezika (engleski, francuski, japanski, korejski, portugalski i španjolski) i na iPhoneu u EU-u je uopće nema. Od 11. studenoga Google postupno uvodi Gemini u CarPlay i hrvatski navodi među njegovim jezicima. U autu već sada možeš razgovarati na hrvatskom s Viavom: dodirni jedan gumb na zaslonu automobila i svojim riječima reci što trebaš, a Viavo zove kontakte, čita i šalje poruke, pušta glazbu i otvara rutu u tvojoj navigaciji te ti naglas odgovara na hrvatskom.
 
 ## Što to znači u CarPlayu
 
 - Siri u CarPlayu prima naredbe samo na nekom od jezika koje podržava, primjerice na engleskom.
 - Siri nema hrvatski glas, pa ti hrvatske poruke ne može pročitati naglas na hrvatskom.
 - Poruke se u CarPlayu diktiraju preko Siri, pa hrvatski tekst tamo ne možeš izdiktirati. (Diktiranje preko tipkovnice na samom iPhoneu podržava hrvatski.)
-- Nova Siri AI iz iOS-a 27 nije dostupna na iPhoneu u EU-u, a Apple navodi da za to zasad nema predviđenog roka. Hrvatski ionako nije među njezinim jezicima.
+- Nova Siri AI iz iOS-a 27 nije dostupna na iPhoneu u EU-u, a Apple za to nije najavio rok. Hrvatski ionako nije među njezinim jezicima.
 - AI chatbotovi kao što su ChatGPT, Claude i Perplexity rade u CarPlayu, a ChatGPT razumije i govori hrvatski. S njima se dobro razgovara, ali u testu portala ZDNET iz svibnja 2026. ni ChatGPT ni Perplexity nisu uspjeli pustiti glazbu, obaviti poziv ni poslati poruku, a ChatGPT nije mogao isplanirati rutu jer ne vidi gdje se nalaziš.
+- Od 11. studenoga 2026. Google postupno uvodi i svoj Gemini u CarPlay, a hrvatski navodi među jezicima aplikacije Gemini na iPhoneu. Googleova najava spominje razgovor u kojem ga možeš prekinuti ili promijeniti temu, Google kalendar, Gmail (nepročitana pošta, sažeci, kratak odgovor glasom) i preporuke za kraj u koji putuješ, a pozive, SMS-ove, WhatsApp ni glazbu ne spominje. Dnevni sažetak (Daily Brief) prema Googleovoj napomeni nije dostupan u Europskom gospodarskom prostoru, pa ni u Hrvatskoj. Prema pisanju medija, Gemini se pokreće dodirom ikone na zaslonu automobila, a ne glasom ni tipkom na upravljaču, i otvara se preko cijelog zaslona, pa dok razgovaraš ne vidiš kartu.
 
 ## Što na hrvatskom radi već danas
 
-Viavo je glasovni asistent na hrvatskom za iPhone i CarPlay. Usporedba sa Siri i chatbotovima u CarPlayu:
+Viavo je glasovni asistent na hrvatskom za iPhone i CarPlay. U studenom 2026. usporedba sa Siri, Geminijem i chatbotovima u CarPlayu izgleda ovako:
 
-| | Siri | ChatGPT i Perplexity (test portala ZDNET) | Viavo |
-|---|---|---|---|
-| Razumije hrvatski | Ne | ChatGPT da; za Perplexity nije potvrđeno | Da |
-| Odgovara naglas na hrvatskom | Ne | ChatGPT da; za Perplexity nije potvrđeno | Da, glasom izvornog govornika |
-| Otvara rutu u aplikaciji Apple Maps, Google Maps ili Waze | Da, uz naredbe na drugom jeziku | ChatGPT ne; Perplexity da, u aplikaciji Apple Maps | Da, u navigaciji koju koristiš |
-| Pušta glazbu u aplikaciji Apple Music, Spotify ili YouTube Music | Da, uz naredbe na drugom jeziku | Ne | Da |
-| Zove kontakt | Da, uz naredbe na drugom jeziku | Ne | Da, na iOS-u 27 i preko WhatsAppa: „Nazovi Anu preko WhatsAppa“ |
-| SMS | Ne: poruke se diktiraju Siri, a ona ne razumije hrvatski | Ne | Na iOS-u 27: čitanje novih poruka naglas, odgovor glasom, SMS bilo kome iz kontakata. Na starijim verzijama iOS-a poruka se otvara spremna na mobitelu, samo dodirneš Pošalji |
-| WhatsApp | — | — | Na iOS-u 27: čitanje novih poruka naglas, odgovor glasom, pozivi sa zaslona automobila. Na starijim verzijama iOS-a poruka se otvara spremna na mobitelu, samo dodirneš Pošalji |
-| Pokreće se tipkom na upravljaču | Da | Ne | Ne: jedan gumb na zaslonu automobila |
+| | Siri | Gemini | ChatGPT i Perplexity (test portala ZDNET) | Viavo |
+|---|---|---|---|---|
+| Razumije hrvatski | Ne | Da (na Googleovu popisu) | ChatGPT da; za Perplexity nije potvrđeno | Da |
+| Odgovara naglas na hrvatskom | Ne | Da | ChatGPT da; za Perplexity nije potvrđeno | Da, glasom izvornog govornika |
+| Otvara rutu u aplikaciji Apple Maps, Google Maps ili Waze | Da, uz naredbe na drugom jeziku | U Google Mapsu (prema medijima) | ChatGPT ne; Perplexity da, u aplikaciji Apple Maps | Da, u navigaciji koju koristiš |
+| Pušta glazbu u aplikaciji Apple Music, Spotify ili YouTube Music | Da, uz naredbe na drugom jeziku | Nema u Googleovoj najavi | Ne | Da |
+| Zove kontakt | Da, uz naredbe na drugom jeziku | Nema u Googleovoj najavi | Ne | Da, na iOS-u 27 i preko WhatsAppa: „Nazovi Anu preko WhatsAppa“ |
+| SMS | Ne: poruke se diktiraju Siri, a ona ne razumije hrvatski | Nema u Googleovoj najavi | Ne | Na iOS-u 27: čitanje novih poruka naglas, odgovor glasom, SMS bilo kome iz kontakata. Na starijim verzijama iOS-a poruka se otvara spremna na mobitelu, samo dodirneš Pošalji |
+| WhatsApp | — | Nema u Googleovoj najavi | — | Na iOS-u 27: čitanje novih poruka naglas, odgovor glasom, pozivi sa zaslona automobila. Na starijim verzijama iOS-a poruka se otvara spremna na mobitelu, samo dodirneš Pošalji |
+| Pokreće se tipkom na upravljaču | Da | Ne: dodirom ikone na zaslonu | Ne | Ne: jedan gumb na zaslonu automobila |
 
 ## Kako WhatsApp radi s Viavom?
 
@@ -51,15 +52,15 @@ Dok si parkiran, otvori postavke Viava i prati korake: instaliraj prečac Viavo,
 
 Dodirni gumb i reci, primjerice:
 
-- „Vodi me kući, usput da natočim gorivo“ (ruta s usputnim zaustavljanjem)
-- „Gdje se ovdje u blizini može dobro jesti?“ (dobro mjesto za jelo u blizini)
-- „Pusti nešto opuštajuće“ (glazba prema raspoloženju)
 - „Pošalji Ani WhatsApp: na putu sam“ (poruka na WhatsAppu)
+- „Pusti nešto opuštajuće“ (glazba prema raspoloženju)
+- „Gdje se ovdje u blizini može dobro jesti?“ (dobro mjesto za jelo u blizini)
+- „Vodi me kući, usput da natočim gorivo“ (ruta s usputnim zaustavljanjem)
 - „Hoću li stići na posao do devet?“ (stižeš li na vrijeme)
 
 ## Siri na srpskom
 
-U novembru 2026. Siri ne govori srpski: srpskog nema na spisku jezika koje Siri podržava, pa u CarPlay-u prima komande samo na nekom drugom jeziku, na primer na engleskom, i nema srpski glas kojim bi ti naglas pročitala poruke. Apple srpski ne navodi ni među jezicima za diktiranje preko tastature, a ne podržava ga ni nova Siri AI. Viavo je glasovni asistent koji govori i srpski. Reci, na primer, „Vodi me kući, usput da svratim na pumpu“ ili „Gde mogu dobro da jedem ovde u blizini?“ i Viavo će ti naglas odgovoriti na srpskom.
+Siri ne govori ni srpski, a Apple srpski ne navodi ni među jezicima za diktiranje preko tastature. Šta na srpskom već danas radi u kolima, pročitaj na stranici [Siri na srpskom](https://viavo.app/sr/siri/).
 
 ## Kako početi
 
@@ -71,7 +72,9 @@ U novembru 2026. Siri ne govori srpski: srpskog nema na spisku jezika koje Siri 
 
 ## Pitanja i odgovori
 
-**Kada će Siri progovoriti hrvatski?** Apple nije najavio datum, a za novu Siri AI u EU-u nema ni predviđenog roka. Pratimo stranicu apple.com/ios/feature-availability i ažurirat ćemo ovaj tekst čim se nešto promijeni. Zadnja provjera: 15. studenoga 2026.
+**Kada će Siri progovoriti hrvatski?** Apple nije najavio datum. Nova Siri AI zasad radi samo na šest jezika (engleski, francuski, japanski, korejski, portugalski i španjolski) i nije dostupna na iPhoneu u EU-u, a ni za to Apple nije najavio rok. Pratimo stranicu apple.com/ios/feature-availability i ažurirat ćemo ovaj tekst čim se nešto promijeni. Zadnja provjera: 16. studenoga 2026.
+
+**Govori li Gemini hrvatski u CarPlayu?** Google hrvatski navodi među jezicima aplikacije Gemini na iPhoneu, a u CarPlay Gemini stiže od 11. studenoga 2026. Googleova najava govori o razgovoru, Gmailu i Google kalendaru; pozive, poruke i glazbu ne spominje. To na hrvatskom radi Viavo.
 
 **Mogu li Viavo pokretati tipkom na upravljaču?** Ne. Tipku na upravljaču i „Hey Siri“ Apple zadržava za Siri. Viavo se pokreće jednim dodirom na zaslonu automobila.
 

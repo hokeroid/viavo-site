@@ -27,6 +27,20 @@
     if (a) { try { hit('appstore_click', new URL(a.href).searchParams.get('ct')); } catch (e) {} }
   });
 
+  // Paid search (VIA-645): an ad's final URL carries utm_medium=cpc, so the App Store buttons on the page it opens
+  // get their own campaign token (google-pl-siri) and App Store Connect counts those downloads apart. Nothing stored.
+  try {
+    const q = new URLSearchParams(location.search);
+    if (q.get('utm_medium') === 'cpc') {
+      const src = (q.get('utm_source') || 'ads').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 8);
+      document.querySelectorAll('a[href*="apps.apple.com"]').forEach(a => {
+        const u = new URL(a.href);
+        u.searchParams.set('ct', `${src}-${u.searchParams.get('ct') || 'site'}`.slice(0, 40));
+        a.href = u.toString();
+      });
+    }
+  } catch (e) {}
+
   // Siri band: the language word and the real CarPlay screen change together every 3.5 s
   const band = document.querySelector('.band');
   if (band && !reduced) {

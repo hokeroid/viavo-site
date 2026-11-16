@@ -2,40 +2,41 @@
 page: siri
 lang: cs
 path: /cs/siri/
-title: "Siri česky v autě: stav v listopadu 2026 a co funguje už teď"
-description: "Siri zatím česky nemluví. Co to znamená v CarPlay a který hlasový asistent v češtině vám v autě už dnes otevře trasu, pustí hudbu a zavolá."
+title: "Siri česky: kdy bude? Stav v listopadu 2026 a co funguje v autě"
+description: "Siri zatím česky nemluví a Apple neoznámil, kdy začne. Co v CarPlay funguje česky už dnes: Gemini k povídání a Viavo na hovory, zprávy a hudbu."
 h1: "Umí Siri česky? Zatím ne. Tohle v autě funguje už dnes"
-updated: 2026-11-15
-sources: pages/facts-2026-11.md (every claim about Siri and the chatbots is there with a URL and the date it was read); Viavo claims from mobile/store/metadata/cs.json
-covers: keywords "siri česky", "umí siri česky", "kdy bude siri česky", "siri v češtině", "siri čeština", "hlasový asistent v češtině", "který hlasový asistent umí česky", "hey siri česky"
+updated: 2026-11-16
+sources: pages/facts-2026-11.md (every claim about Siri and the chatbots is there with a URL and the date it was read); press/research/refresh-2026-11-15.md (Siri list read 2026-11-15, Apple's Siri AI note of 2026-11-12, Gemini in CarPlay: Google blog 2026-11-11, Google help 14579026, iDrop News, autoevolution); example phrases from mobile/lib/l10n/app_cs.arb; Viavo claims from mobile/store/metadata/cs.json
+covers: keywords "siri česky", "umí siri česky", "mluví siri česky", "rozumí siri česky", "kdy bude siri česky", "kdy bude siri mluvit česky", "siri v češtině", "siri v češtině 2026", "siri čeština", "siri gemini čeština", "gemini v autě", "hlasový asistent v češtině", "který hlasový asistent umí česky", "hey siri česky"
 store: cz
 ct: cs-siri
 ---
 
-**Stručná odpověď.** K listopadu 2026 Siri česky nemluví: čeština mezi jejími jazyky není, takže v CarPlay přijímá příkazy jen v jiném jazyce, třeba v angličtině, a nemá český hlas, kterým by vám zprávy přečetla nahlas. Česky můžete diktovat na klávesnici iPhonu, ale nová Siri AI není na iPhonu v EU dostupná a češtinu mezi svými jazyky nemá. V autě se už teď česky domluvíte s aplikací Viavo: stačí na obrazovce CarPlay klepnout na jedno tlačítko a mluvit tak, jak jste zvyklí. Viavo otevře trasu, pustí hudbu, zavolá, přečte zprávy a odešle vaši odpověď. Mluví s vámi nahlas česky.
+**Stručná odpověď.** Apple zatím neoznámil, kdy bude Siri v češtině: k 16. listopadu 2026 čeština mezi jejími jazyky není. V CarPlay proto Siri přijímá příkazy jen v jiném jazyce, třeba v angličtině, a nemá český hlas, kterým by vám zprávy přečetla nahlas. Česky můžete diktovat na klávesnici iPhonu, ale nová Siri AI není v EU dostupná na iPhonu, iPadu ani Apple Watch a zatím umí jen anglicky, francouzsky, japonsky, korejsky, portugalsky a španělsky. Od 11. listopadu 2026 Google zavádí do CarPlay aplikaci Gemini a češtinu uvádí mezi jejími jazyky; oznámení Googlu mluví o rozhovoru, e-mailech a kalendáři, ne o hovorech, zprávách nebo hudbě. V autě se už teď česky domluvíte i s aplikací Viavo: stačí na obrazovce CarPlay klepnout na jedno tlačítko a mluvit tak, jak jste zvyklí. Viavo zavolá, přečte zprávy a odešle vaši odpověď, pustí hudbu a otevře trasu ve vaší navigaci. Mluví s vámi nahlas česky.
 
 ## Co to znamená v CarPlay
 
 - Siri v CarPlay přijímá příkazy jen v některém ze svých jazyků, třeba v angličtině.
 - Siri nemá český hlas, takže vám české zprávy nepřečte nahlas v češtině.
 - Zprávy se v CarPlay diktují přes Siri, takže českou zprávu tam nenadiktujete. (Diktování na klávesnici přímo v iPhonu češtinu podporuje.)
-- Nová Siri AI z iOS 27 není na iPhonu v EU dostupná a Apple uvádí, že zatím nemá žádný termín, kdy se to změní. Čeština mezi jejími jazyky stejně není.
+- Nová Siri AI z iOS 27 není na iPhonu v EU dostupná a Apple uvádí, že zatím nemá žádný termín, kdy se to změní. Čeština mezi jejími šesti jazyky stejně není.
 - AI chatboti jako ChatGPT, Claude nebo Perplexity v CarPlay fungují a ChatGPT se s vámi domluví i česky. Povídá se s nimi dobře, jenže ChatGPT ani Perplexity v praktickém testu serveru ZDNET nepustily hudbu, nezavolaly ani neposlaly zprávu. ChatGPT navíc nedokázal naplánovat trasu, protože nevidí, kde jste.
+- Od 11. listopadu 2026 Google zavádí do CarPlay aplikaci Gemini, a to celosvětově a ve všech jazycích Gemini Live; češtinu uvádí mezi jazyky Gemini pro iPhone. Oznámení Googlu slibuje přirozený rozhovor (Gemini můžete skočit do řeči nebo změnit téma), Kalendář Google, Gmail (nepřečtené e-maily, shrnutí, rychlá odpověď hlasem; v EU bez denního přehledu) a tipy na místa tam, kam jedete. Hovory, SMS, WhatsApp ani hudbu nezmiňuje. Podle serverů iDrop News a autoevolution se Gemini spouští klepnutím na ikonu na obrazovce auta, ne hlasem ani tlačítkem na volantu; autoevolution dodává, že se otevře přes celou obrazovku, takže během rozhovoru nevidíte mapu.
 
 ## Co dnes funguje česky
 
-Který hlasový asistent tedy v autě umí česky? Takhle to vypadá k 15. listopadu 2026:
+Který hlasový asistent tedy v autě umí česky? Takhle to vypadá v listopadu 2026:
 
-| | Siri | ChatGPT a Perplexity (test ZDNET) | Viavo |
-|---|---|---|---|
-| Rozumí česky | Ne | ChatGPT ano, u Perplexity nepotvrzeno | Ano |
-| Odpovídá nahlas česky | Ne | ChatGPT ano, u Perplexity nepotvrzeno | Ano, hlasem rodilého mluvčího |
-| Otevře trasu v Apple Maps, Google Maps nebo Waze | Ano, ale jen s příkazy v jiném jazyce | ChatGPT ne, Perplexity v Apple Maps | Ano, ve vaší navigaci |
-| Pustí hudbu v Apple Music, Spotify nebo YouTube Music | Ano, ale jen s příkazy v jiném jazyce | Ne | Ano |
-| Zavolá kontaktu | Ano, ale jen s příkazy v jiném jazyce | Ne | Ano, v iOS 27 i přes WhatsApp: „Zavolej Anně přes WhatsApp“ |
-| SMS | Ne, Siri český diktát nepřijme | Ne | V iOS 27: předčítání nových zpráv, odpověď hlasem, SMS komukoli z kontaktů. Ve starších verzích iOS se zpráva v telefonu otevře připravená, stačí klepnout na Odeslat |
-| WhatsApp | — | — | V iOS 27: předčítání nových zpráv, odpověď hlasem, hovory z obrazovky auta. Ve starších verzích iOS se zpráva v telefonu otevře připravená, stačí klepnout na Odeslat |
-| Spouští se tlačítkem na volantu | Ano | Ne | Ne, jedním tlačítkem na obrazovce auta |
+| | Siri | Gemini | ChatGPT a Perplexity (test ZDNET) | Viavo |
+|---|---|---|---|---|
+| Rozumí česky | Ne | Ano (na seznamu Googlu) | ChatGPT ano, u Perplexity nepotvrzeno | Ano |
+| Odpovídá nahlas česky | Ne | Ano | ChatGPT ano, u Perplexity nepotvrzeno | Ano, hlasem rodilého mluvčího |
+| Otevře trasu v Apple Maps, Google Maps nebo Waze | Ano, ale jen s příkazy v jiném jazyce | V Google Maps (podle tisku) | ChatGPT ne, Perplexity v Apple Maps | Ano, ve vaší navigaci |
+| Pustí hudbu v Apple Music, Spotify nebo YouTube Music | Ano, ale jen s příkazy v jiném jazyce | Není v oznámení Googlu | Ne | Ano |
+| Zavolá kontaktu | Ano, ale jen s příkazy v jiném jazyce | Není v oznámení Googlu | Ne | Ano, v iOS 27 i přes WhatsApp: „Zavolej Anně přes WhatsApp“ |
+| SMS | Ne, Siri český diktát nepřijme | Není v oznámení Googlu | Ne | V iOS 27: předčítání nových zpráv, odpověď hlasem, SMS komukoli z kontaktů. Ve starších verzích iOS se zpráva v telefonu otevře připravená, stačí klepnout na Odeslat |
+| WhatsApp | — | Není v oznámení Googlu | — | V iOS 27: předčítání nových zpráv, odpověď hlasem, hovory z obrazovky auta. Ve starších verzích iOS se zpráva v telefonu otevře připravená, stačí klepnout na Odeslat |
+| Spouští se tlačítkem na volantu | Ano | Ne, klepnutím na ikonu na obrazovce | Ne | Ne, jedním tlačítkem na obrazovce auta |
 
 ## Jak funguje WhatsApp s Viavo?
 
@@ -53,11 +54,11 @@ Při stání otevřete nastavení Viavo a projděte kroky: nainstalujte zkratku 
 
 Pět příkladů přímo z aplikace:
 
-- „Jeď domů přes benzinku“ – trasa se zastávkou
-- „Kde se tu dá dobře najíst?“ – dobré místo poblíž
-- „Pusť něco na odpočinek“ – hudba podle nálady
 - „Napiš Anně na WhatsApp: jsem na cestě“ – zpráva na WhatsApp
+- „Pusť něco na odpočinek“ – hudba podle nálady
+- „Kde se tu dá dobře najíst?“ – dobré místo poblíž
 - „Stihnu to do práce do devíti?“ – jestli to stihnete včas
+- „Jeď domů přes benzinku“ – trasa se zastávkou
 
 ## Jak začít
 
@@ -69,7 +70,9 @@ Pět příkladů přímo z aplikace:
 
 ## Časté otázky
 
-**Kdy bude Siri mluvit česky?** Apple zatím žádné datum neoznámil a pro novou Siri AI v EU podle vlastních slov nemá žádný termín. Sledujeme stránku apple.com/ios/feature-availability a tento článek aktualizujeme, jakmile se něco změní. Naposledy ověřeno 15. listopadu 2026.
+**Kdy bude Siri mluvit česky?** Apple zatím žádné datum neoznámil. Nová Siri AI začíná v šesti jazycích (angličtina, francouzština, japonština, korejština, portugalština a španělština) a na iPhonu v EU není; Apple podle vlastních slov zatím nemá ani termín, kdy se to změní. Sledujeme stránku apple.com/ios/feature-availability a tento článek aktualizujeme, jakmile se něco změní. Naposledy ověřeno 16. listopadu 2026.
+
+**Mluví Gemini v CarPlay česky?** Podle Googlu ano: čeština je na seznamu jazyků aplikace Gemini pro iPhone a do CarPlay Gemini přichází od 11. listopadu 2026. Oznámení Googlu mluví o rozhovoru, Gmailu a Kalendáři Google; hovory, zprávy ani hudbu nezmiňuje, a právě to Viavo dělá česky.
 
 **Dá se Viavo spouštět tlačítkem na volantu?** Ne. Tlačítko na volantu i „Hey Siri“ si Apple nechává pro Siri. Viavo spustíte jedním klepnutím na obrazovce auta.
 
