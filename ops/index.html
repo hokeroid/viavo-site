@@ -995,7 +995,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   function trialOutcome(d) {
     var label = reportLabel("trialOutcomes", d.outcome);
     if (d.outcome === "paid") return label + " " + dayLabel(d.ended_at) + (d.renewal_off ? ", продление выкл." : "");
-    if (d.outcome === "cancelled") return "отменил через " + after(d.started_at, d.ended_at);
+    if (d.outcome === "cancelled") return "отменил через " + after(d.started_at, d.cancelled_at || d.ended_at);
     if ((d.outcome === "expired" || d.outcome === "payment_failed") && d.ended_at) return label + " " + dayLabel(d.ended_at);
     return label;
   }
@@ -1023,7 +1023,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     // App Store events are kept since billing_since (28.10 20:12 UTC): a free week begun before it is not here
     var since = data.period.sales && data.period.sales.billing_since;
     var early = since && Date.parse(data.period.from) < Date.parse(since) ? " События App Store записываются с " + stamp(since) + ": пробные, начатые раньше, здесь не учтены." : "";
-    app.appendChild(el("p", { class: "sub", text: "Водители, у которых пробная неделя началась в эти дни (сутки UTC), и что с ними сейчас по событиям App Store. Конец пробной — первая оплата, отмена или истечение без оплаты. Ходы в таблице — в пробной → после её конца до сейчас, и день последнего хода." + early }));
+    app.appendChild(el("p", { class: "sub", text: "Водители, у которых пробная неделя началась в эти дни (сутки UTC), и что с ними сейчас по событиям App Store. Конец пробной — первая оплата или истечение без оплаты; отменённая неделя идёт до своего конца (до 19.11 отмена закрывала её сразу). Ходы в таблице — в пробной → после её конца до сейчас, и день последнего хода." + early }));
     if (!c.drivers.length) {
       app.appendChild(el("p", { class: "sub", text: "В эти дни пробную неделю никто не начал." }));
       return;
