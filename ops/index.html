@@ -1467,6 +1467,11 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     options.timeZone = "Europe/Belgrade";
     return new Intl.DateTimeFormat("ru-RU", options).format(new Date(iso));
   }
+  function personPaidDate(p) {
+    if (p.paid_at) return personDate(p.paid_at);
+    // Billing records began on 28 October 2026; older purchases may have no row.
+    return ["paid", "paid_renewal_off", "paid_ended"].includes(p.status) ? "до 28.10.2026, не записана" : "—";
+  }
   function languageName(code) {
     try { return new Intl.DisplayNames(["ru"], { type: "language" }).of(code); } catch (e) { return code || "—"; }
   }
@@ -1517,7 +1522,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       var row = personButton("", function () { peopleState.scroll = window.scrollY; openPerson(p.uid); }, "person-row");
       var status = personStatus(p);
       appendAll(row, [el("div", { class: "person-row-head" }, [el("b", { text: p.uid.slice(0, 8) + " · " + country(p.country || "unknown") }), status]),
-        el("div", { class: "sub", text: "Пробный: " + personDate(p.trial_started_at) + " · Оплата: " + personDate(p.paid_at) }),
+        el("div", { class: "sub", text: "Пробный: " + personDate(p.trial_started_at) + " · Оплата: " + personPaidDate(p) }),
         el("div", { text: "Запросов " + fmt(p.turns) + " (в машине " + fmt(p.car_turns) + ")" }),
         el("div", { class: "sub", text: "Последний: " + personDate(p.last_turn_at) })]);
       app.appendChild(row);
@@ -1591,7 +1596,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     app.appendChild(el("p", { class: "sub", text: "Время белградское · " + languageName(p.language) }));
     app.appendChild(personStatus(p));
     var facts = el("dl", { class: "person-facts" });
-    [["План", p.plan === "plus" ? "Plus" : p.plan === "trial" ? "пробный" : p.plan === "none" ? "без подписки" : "—"], ["Регистрация", personDate(p.signed_up_at)], ["Начало пробного", personDate(p.trial_started_at)], ["Первая оплата", personDate(p.paid_at)],
+    [["План", p.plan === "plus" ? "Plus" : p.plan === "trial" ? "пробный" : p.plan === "none" ? "без подписки" : "—"], ["Регистрация", personDate(p.signed_up_at)], ["Начало пробного", personDate(p.trial_started_at)], ["Первая оплата", personPaidDate(p)],
       ["Конец триала", personDate(p.trial_ends_at)], ["Доступ до", personDate(p.plan_expires_at)], ["Отменил триал", personDate(p.trial_cancelled_at)], ["Продление выключено", personDate(p.renewal_off_at)],
       ["Возврат", personDate(p.refunded_at)], ["Запросы за 90 дней", fmt(p.turns) + " (в машине " + fmt(p.car_turns) + ")"], ["Последний запрос", personDate(p.last_turn_at)],
       ["Пакеты / отзывы", fmt(p.packs) + " / " + fmt(p.feedback)], ["Версия приложения", p.app_version || "—"], ["Память", p.memory_enabled == null ? "—" : p.memory_enabled ? "включена" : "выключена"]
@@ -1638,7 +1643,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         }
         head.appendChild(translate);
       }
-      if (!hasTexts && turns.length && !retentionShown) {
+      if (!hasTexts && turns.length && day < d.texts_since && !retentionShown) {
         section.appendChild(el("p", { class: "sub", text: "Тексты разговоров хранятся 7 дней; раньше — шаблон запроса, итог и дневные саммари. Тексты в базе — с " + dayLabel(d.texts_since) + "." })); retentionShown = true;
       }
       if (summaries[day]) section.appendChild(el("div", { class: "person-summary person-text" }, [el("b", { text: "Итог дня" }), el("div", { text: summaries[day] })]));
