@@ -108,6 +108,24 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .cohort td:first-child span, .cohort td:nth-child(2) span, .cohort td:nth-child(4) span { display: block; white-space: nowrap; }
 .cohort td:nth-child(3) { overflow-wrap: normal; min-width: 84px; }
 .cohort td:nth-child(4) .code { font-size: 11.5px; }
+.people-counts, .people-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.people-counts { font-size: 12px; color: var(--hint); }
+.people-filters button { padding: 8px 10px; white-space: normal; }
+.people-filters button[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); }
+.person-row { width: 100%; text-align: left; font: inherit; color: var(--text); background: var(--card); border: 1px solid var(--grid); border-radius: 12px; padding: 12px; margin: 5px 0; cursor: pointer; overflow-wrap: anywhere; }
+.person-row-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-bottom: 7px; }
+.person-status { border: 1px solid var(--axis); padding: 2px 7px; border-radius: 8px; font-size: 12px; }
+.person-row .sub { margin: 3px 0 0; }
+.person-facts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); font-size: 13px; gap: 6px 12px; }
+.person-facts dt { color: var(--hint); } .person-facts dd { margin: 0; overflow-wrap: anywhere; }
+.person-event { border-bottom: 1px solid var(--grid); padding: 9px 0; overflow-wrap: anywhere; }
+.person-day { margin-top: 18px; } .person-day h3 { margin: 0; }
+.person-summary { background: var(--card); border-radius: 10px; padding: 10px; margin: 8px 0; color: var(--hint); font-size: 13px; }
+.person-turn { padding: 12px 0; border-bottom: 1px solid var(--grid); }
+.person-text { white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0; }
+.person-text + .person-text, .person-meta { margin-top: 5px; }
+.person-translation { border-left: 2px solid var(--accent); padding-left: 9px; margin: 5px 0; font-size: 14px; }
+.person-day button { white-space: normal; } button:disabled { opacity: .6; cursor: default; }
 footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
 </style>
 </head>
@@ -124,7 +142,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   var initData = tg && tg.initData ? tg.initData : "";
   var app = document.getElementById("app");
   var tip = document.getElementById("tip");
-  var state = { days: 7, data: null };
+  var state = { days: 7, data: null, view: "report" };
   var seq = 0, redrawers = [], resizeTimer, tipChart = null;
 
   // Markets keep their colour whatever the period shows (colour follows the entity).
@@ -180,7 +198,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   }
   function feedbackKind(kind) { return kind === "feature" ? "фича" : kind === "bug" ? "баг" : kind === "paywall_exit" ? "пейвол" : kind; }
   function reportLabel(kind, code) {
-    var labels = state.data && state.data.labels && state.data.labels[kind];
+    var source = state.view === "person" && peopleState.person ? peopleState.person : state.view === "people" ? peopleState.data : state.data;
+    var labels = source && source.labels && source.labels[kind];
     return labels && Object.prototype.hasOwnProperty.call(labels, code) ? labels[code] : code;
   }
   function exitReason(reason) { return reportLabel("exitReasons", reason); }
@@ -968,11 +987,11 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
   function periodSwitch() {
     var row = el("div", { class: "row" });
     // the periods up to now, then «Неделю назад» apart (VIA-581): whole days 14 to 8 days ago, a look back
-    [[0, 1, 7, 14, 30], ["week_ago"]].forEach(function (group) {
-      var seg = el("div", { class: "seg", role: "group", "aria-label": group[0] === "week_ago" ? "Неделю назад" : "Период" });
+    [[0, 1, 7, 14, 30], ["week_ago"], ["people"]].forEach(function (group) {
+      var seg = el("div", { class: "seg", role: "group", "aria-label": group[0] === "people" ? "Люди" : group[0] === "week_ago" ? "Неделю назад" : "Период" });
       group.forEach(function (d) {
-        var b = el("button", { type: "button", "aria-pressed": d === state.days ? "true" : "false", text: d === "week_ago" ? "Неделю назад" : d === 0 ? "Сегодня" : d === 1 ? "Вчера" : d + " д." });
-        b.addEventListener("click", function () { if (state.days !== d) load(d); });
+        var b = el("button", { type: "button", "aria-pressed": (d === "people" ? state.view !== "report" : state.view === "report" && d === state.days) ? "true" : "false", text: d === "people" ? "Люди" : d === "week_ago" ? "Неделю назад" : d === 0 ? "Сегодня" : d === 1 ? "Вчера" : d + " д." });
+        b.addEventListener("click", function () { if (d === "people") loadPeople(); else if (state.view !== "report" || state.days !== d) load(d); });
         seg.appendChild(b);
       });
       row.appendChild(seg);
@@ -1435,12 +1454,263 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     return fig;
   }
 
+  // ---------- People (VIA-709). Private answers live only in this page's memory.
+  var peopleState = { data: null, filter: "all", scroll: 0, person: null, translations: Object.create(null), translating: Object.create(null) };
+  var PERSON_FILTERS = [["all", "Все"], ["paid", "Платят"], ["paid_renewal_off", "Продление выкл."], ["on_trial", "На пробном"], ["trial_cancelled", "Пробный отменён"], ["gone", "Ушли"]];
+  function personLabel(kind, code) {
+    var label = reportLabel(kind, code);
+    return el("span", { class: label === code ? "code" : null, text: label || "—" });
+  }
+  function personDate(iso, timeOnly) {
+    if (!iso) return "—";
+    var options = timeOnly ? { hour: "2-digit", minute: "2-digit" } : { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" };
+    options.timeZone = "Europe/Belgrade";
+    return new Intl.DateTimeFormat("ru-RU", options).format(new Date(iso));
+  }
+  function languageName(code) {
+    try { return new Intl.DisplayNames(["ru"], { type: "language" }).of(code); } catch (e) { return code || "—"; }
+  }
+  function personButton(text, click, className) {
+    var b = el("button", { type: "button", class: className || "tbtn", text: text });
+    b.addEventListener("click", click); return b;
+  }
+  function clearPeopleView() { hideTip(); redrawers = []; clear(app); app.classList.remove("loading"); }
+  function matchesPerson(p, filter) {
+    return filter === "all" || (filter === "gone" ? ["trial_lost", "paid_ended", "refunded", "deleted"].includes(p.status) : p.status === filter);
+  }
+  function renderPeople() {
+    state.view = "people"; clearPeopleView();
+    app.appendChild(el("h1", { text: "Люди" })); periodSwitch();
+    var people = peopleState.data.people;
+    app.appendChild(el("p", { class: "sub", text: "Все, кто начинал пробный период или брал Plus. Команда исключена. Запросы — за 90 дней; время белградское." }));
+    var counts = el("div", { class: "people-counts" });
+    Object.keys(peopleState.data.labels.personStatuses).forEach(function (status) {
+      var n = people.filter(function (p) { return p.status === status; }).length;
+      counts.appendChild(el("span", null, [personLabel("personStatuses", status), " · " + n]));
+    });
+    app.appendChild(counts);
+    var filters = el("div", { class: "people-filters", role: "group", "aria-label": "Статус водителя" });
+    PERSON_FILTERS.forEach(function (f) {
+      var b = personButton(f[1] + " " + people.filter(function (p) { return matchesPerson(p, f[0]); }).length, function () { peopleState.filter = f[0]; renderPeople(); });
+      b.setAttribute("aria-pressed", String(peopleState.filter === f[0])); filters.appendChild(b);
+    });
+    app.appendChild(filters);
+    var rows = people.filter(function (p) { return matchesPerson(p, peopleState.filter); }).slice().sort(function (a, b) {
+      return (Date.parse(b.last_turn_at || b.trial_started_at || b.paid_at || b.signed_up_at) || 0) - (Date.parse(a.last_turn_at || a.trial_started_at || a.paid_at || a.signed_up_at) || 0) || a.uid.localeCompare(b.uid);
+    });
+    if (!rows.length) app.appendChild(el("p", { class: "sub", text: "В этом списке пока никого нет." }));
+    rows.forEach(function (p) {
+      var row = personButton("", function () { peopleState.scroll = window.scrollY; openPerson(p.uid); }, "person-row");
+      var status = personLabel("personStatuses", p.status); status.classList.add("person-status");
+      appendAll(row, [el("div", { class: "person-row-head" }, [el("b", { text: p.uid.slice(0, 8) + " · " + country(p.country || "unknown") }), status]),
+        el("div", { class: "sub", text: "Пробный: " + personDate(p.trial_started_at) + " · Оплата: " + personDate(p.paid_at) }),
+        el("div", { text: "Запросов " + fmt(p.turns) + " (в машине " + fmt(p.car_turns) + ")" }),
+        el("div", { class: "sub", text: "Последний: " + personDate(p.last_turn_at) })]);
+      app.appendChild(row);
+    });
+  }
+  function peopleRequest(route, body) {
+    var controller = new AbortController(), timeout = setTimeout(function () { controller.abort(); }, route === "translate" ? 60000 : 20000);
+    return fetch(API.replace(/\/report$/, "/" + route), {
+      method: "POST", headers: { "Content-Type": "application/json", "X-Telegram-Init-Data": initData }, body: JSON.stringify(body), signal: controller.signal
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (data) {
+        if (!r.ok) {
+          if (r.status === 401) throw new Error("Telegram не подтвердил владельца. Откройте отчёт из бота ещё раз. Если ошибка повторяется, сервер ещё не умеет показывать людей.");
+          if (r.status === 404 && data.error === "not_found") throw new Error("Водитель больше не входит в этот список.");
+          if (r.status === 404 || r.status === 405) throw new Error("Сервер ещё не умеет показывать людей. Дождитесь обновления.");
+          if (data.error === "day_too_large") throw new Error("За день слишком много текста для перевода (предел — 40 000 знаков или 500 сообщений).");
+          if (route === "translate") throw new Error("Перевод не получен. Попробуйте ещё раз.");
+          throw new Error("Сервер ответил " + r.status);
+        }
+        return data;
+      });
+    }).catch(function (e) {
+      if (controller.signal.aborted) throw new Error("Сервер не ответил вовремя. Попробуйте ещё раз.");
+      if (e instanceof TypeError) throw new Error("Не удалось связаться с сервером. Возможно, сервер ещё не умеет показывать людей.");
+      throw e;
+    }).finally(function () { clearTimeout(timeout); });
+  }
+  function peopleError(error, retry, back) {
+    clearPeopleView(); periodSwitch();
+    if (back) app.appendChild(personButton("← Все люди", backToPeople));
+    app.appendChild(el("p", { class: "err", text: error.message || "Не удалось загрузить людей" }));
+    app.appendChild(personButton("Попробовать ещё раз", retry));
+  }
+  function loadPeople() {
+    var request = ++seq; state.view = "people";
+    if (peopleState.data) { renderPeople(); return; }
+    clearPeopleView(); periodSwitch(); app.appendChild(el("p", { class: "sub", text: "Загружаю людей…" }));
+    peopleRequest("people", {}).then(function (data) {
+      if (request !== seq) return;
+      if (!data || !Array.isArray(data.people) || !data.labels || !data.labels.personStatuses || !data.labels.categories || !data.people.every(validPerson)) throw new Error("Сервер ещё не умеет показывать людей: ответ не содержит списка.");
+      peopleState.data = data; renderPeople();
+    }).catch(function (e) { if (request === seq) peopleError(e, loadPeople); });
+  }
+  function validPerson(p) { return p && typeof p.uid === "string" && /^[0-9a-f-]{36}$/i.test(p.uid) && typeof p.status === "string" && typeof p.turns === "number" && typeof p.car_turns === "number"; }
+  function validPersonAnswer(d, uid) {
+    return d && validPerson(d.person) && d.person.uid === uid && d.labels && d.labels.categories && d.labels.personStatuses &&
+      ["billing", "turns", "summaries", "feedback", "paywall"].every(function (k) { return Array.isArray(d[k]); }) &&
+      typeof d.has_more === "boolean" && d.turns.every(function (t) { return t && typeof t.id === "string" && Number.isFinite(Date.parse(t.at)) && /^\d{4}-\d{2}-\d{2}$/.test(t.day); }) &&
+      (!d.has_more || (Number.isFinite(Date.parse(d.next_before)) && typeof d.next_before_id === "string"));
+  }
+  function backToPeople() { ++seq; renderPeople(); window.scrollTo(0, peopleState.scroll); }
+  function openPerson(uid) {
+    var request = ++seq; state.view = "person"; peopleState.person = null; peopleState.translations = Object.create(null); peopleState.translating = Object.create(null);
+    clearPeopleView(); app.appendChild(personButton("← Все люди", backToPeople)); app.appendChild(el("p", { class: "sub", text: "Загружаю историю…" })); window.scrollTo(0, 0);
+    peopleRequest("person", { uid: uid }).then(function (data) {
+      if (request !== seq) return;
+      if (!validPersonAnswer(data, uid)) throw new Error("Сервер ещё не умеет показывать историю: ответ неполный.");
+      peopleState.person = data; renderPerson();
+    }).catch(function (e) { if (request === seq) peopleError(e, function () { openPerson(uid); }, true); });
+  }
+  function personText(text, id, bold) {
+    var box = el("div", { class: "person-text" }, [el(bold ? "strong" : "div", { text: text })]);
+    if (id) box.setAttribute("data-message", id);
+    return box;
+  }
+  function renderPerson() {
+    clearPeopleView();
+    var d = peopleState.person, p = d.person;
+    app.appendChild(personButton("← Все люди", backToPeople));
+    app.appendChild(el("h1", { text: p.uid.slice(0, 8) + " · " + country(p.country || "unknown") }));
+    app.appendChild(el("p", { class: "sub", text: "Время белградское · " + languageName(p.language) }));
+    app.appendChild(personLabel("personStatuses", p.status));
+    var facts = el("dl", { class: "person-facts" });
+    [["План", p.plan === "plus" ? "Plus" : p.plan === "trial" ? "пробный" : p.plan === "none" ? "без подписки" : "—"], ["Регистрация", personDate(p.signed_up_at)], ["Начало пробного", personDate(p.trial_started_at)], ["Первая оплата", personDate(p.paid_at)],
+      ["Доступ до", personDate(p.plan_expires_at)], ["Пробный отменён", personDate(p.trial_cancelled_at)], ["Продление выключено", personDate(p.renewal_off_at)],
+      ["Возврат", personDate(p.refunded_at)], ["Запросы за 90 дней", fmt(p.turns) + " (в машине " + fmt(p.car_turns) + ")"], ["Последний запрос", personDate(p.last_turn_at)],
+      ["Пакеты / отзывы", fmt(p.packs) + " / " + fmt(p.feedback)], ["Версия приложения", p.app_version || "—"], ["Память", p.memory_enabled == null ? "—" : p.memory_enabled ? "включена" : "выключена"]
+    ].forEach(function (f) { appendAll(facts, [el("dt", { text: f[0] }), el("dd", { text: f[1] })]); });
+    var navigators = { apple_maps: "Карты Apple", google_maps: "Google Карты", waze: "Waze", yandex_maps: "Яндекс Карты", yandex_navigator: "Яндекс Навигатор" };
+    if (p.navigator) appendAll(facts, [el("dt", { text: "Навигатор" }), el("dd", { class: navigators[p.navigator] ? null : "code", text: navigators[p.navigator] || p.navigator })]);
+    app.appendChild(facts);
+    app.appendChild(el("h2", { text: "Оплаты и пробный период" }));
+    d.billing.forEach(function (b) {
+      // EXPIRATION may be a paid subscription's end here, unlike old sale pings.
+      var label = b.event_type === "EXPIRATION" && !b.kind ? "доступ закончился" : b.event_type === "PRODUCT_CHANGE" ? "смена подписки" : b.event_type === "BILLING_ISSUE" ? "оплата не прошла" : saleEventName(b);
+      app.appendChild(el("div", { class: "person-event" }, [el("div", { class: "sub", text: personDate(b.event_at) }), el("span", { class: label === b.event_type ? "code" : null, text: label + " · " + productName(b.product_id) }),
+        b.expiration_at ? el("div", { class: "sub", text: "Доступ до " + personDate(b.expiration_at) }) : null]));
+    });
+    if (!d.billing.length) app.appendChild(el("p", { class: "sub", text: "Событий оплаты в базе нет." }));
+    app.appendChild(el("h2", { text: "Отзывы" }));
+    if (!d.feedback.length) app.appendChild(el("p", { class: "sub", text: "Отзывов нет." }));
+    d.feedback.forEach(function (f) {
+      var box = el("div", { class: "person-event person-text" }, [el("div", { class: "sub", text: personDate(f.created_at) + " · " + feedbackKind(f.kind) })]);
+      [[f.text, f.text_ru], [f.transcript, f.transcript_ru]].forEach(function (pair) {
+        if (!pair[0] && !pair[1]) return;
+        box.appendChild(el("div", { text: pair[1] || pair[0] }));
+        if (pair[1] && pair[1] !== pair[0]) box.appendChild(el("div", { class: "sub", text: pair[0] }));
+        if (!pair[1]) box.appendChild(el("span", { class: "sub", text: "без перевода" }));
+      }); app.appendChild(box);
+    });
+    app.appendChild(el("h2", { text: "Разговоры" }));
+    if (p.deleted) app.appendChild(el("p", { class: "sub", text: "Аккаунт удалён. История разговоров недоступна." }));
+    else if (!d.turns.length) app.appendChild(el("p", { class: "sub", text: "Сохранённых запросов и приветствий нет." }));
+    var days = Object.create(null), summaries = Object.create(null), paywall = Object.create(null);
+    d.turns.forEach(function (t) { (days[t.day] || (days[t.day] = [])).push(t); });
+    var oldest = d.turns.length ? d.turns[d.turns.length - 1].day : null;
+    d.summaries.forEach(function (s) { summaries[s.session_date] = s.summary; if (!d.has_more || !oldest || s.session_date >= oldest) days[s.session_date] = days[s.session_date] || []; });
+    d.paywall.forEach(function (w) { paywall[w.day] = w.n; days[w.day] = days[w.day] || []; });
+    var retentionShown = false;
+    Object.keys(days).sort().reverse().forEach(function (day) {
+      var turns = days[day], hasTexts = turns.some(function (t) { return t.request || t.reply; });
+      var section = el("section", { class: "person-day", "data-day": day });
+      var head = el("div", { class: "row" }, [el("h3", { text: dayLabel(day) + "." + day.slice(0, 4) })]); section.appendChild(head);
+      if (hasTexts) {
+        var translate = personButton("Перевести на русский", function () { translateDay(day, translate, section); });
+        if (peopleState.translations[day] || peopleState.translating[day]) {
+          translate.disabled = true; translate.textContent = peopleState.translating[day] ? "Перевожу…" : peopleState.translations[day].length ? "Переведено" : "Тексты уже удалены";
+        }
+        head.appendChild(translate);
+      }
+      if (!hasTexts && turns.length && !retentionShown) {
+        section.appendChild(el("p", { class: "sub", text: "Тексты разговоров хранятся 7 дней; раньше — шаблон запроса, итог и дневные саммари. Тексты в базе — с " + dayLabel(d.texts_since) + "." })); retentionShown = true;
+      }
+      if (summaries[day]) section.appendChild(el("div", { class: "person-summary person-text" }, [el("b", { text: "Итог дня" }), el("div", { text: summaries[day] })]));
+      if (paywall[day]) section.appendChild(el("p", { class: "sub", text: "Экран подписки показан: " + fmt(paywall[day]) }));
+      turns.forEach(function (t) {
+        var box = el("article", { class: "person-turn" });
+        var surface = t.surface === "followup" ? "продолжение" : t.surface === "push" ? "пуш" : t.carplay ? "машина" : t.surface === "phone" ? "телефон" : t.surface || "место не записано";
+        box.appendChild(el("div", { class: "sub", text: personDate(t.at, true) + " · " + surface + (t.kind === "opening" ? " · приветствие" : t.kind === "untracked" ? " · без записи аналитики" : "") }));
+        if (t.request) box.appendChild(personText(t.request, t.request_id, true));
+        if (t.reply) box.appendChild(personText((t.request ? "→ " : "") + t.reply, t.history_id, false));
+        if (!t.request && !t.reply) box.appendChild(el("div", { class: "person-text" }, [el("strong", { text: t.template || (t.kind === "opening" ? "Приветствие" : "Шаблон не записан") }), el("div", { class: "sub", text: "шаблон, текст не хранится" })]));
+        var meta = el("div", { class: "sub person-meta" });
+        [t.category ? personLabel("categories", t.category) : null, (t.outcome_effective || t.outcome) ? personLabel("outcomes", t.outcome_effective || t.outcome) : null,
+          t.total_ms != null ? fmt(t.total_ms / 1000, 1) + " с" : null, t.quota_units != null ? fmt(t.quota_units) + " ед." : null].filter(function (x) { return x != null; }).forEach(function (x, i) { if (i) appendAll(meta, " · "); appendAll(meta, x); });
+        box.appendChild(meta);
+        if (t.device_outcome && typeof t.device_outcome === "object") {
+          var device = t.device_outcome;
+          box.appendChild(el("div", { class: "sub" }, ["Предыдущее действие телефона: ", personLabel("actions", device.action), " · ", el("span", { class: "code", text: device.error ? deviceErrorLabel(device.error) : "ошибка не указана" })]));
+        }
+        section.appendChild(box);
+      });
+      app.appendChild(section);
+      if (peopleState.translations[day]) showTranslations(day, section);
+    });
+    if (d.has_more) {
+      var more = personButton("Показать раньше", function () { loadEarlier(more); }); app.appendChild(more);
+    }
+  }
+  function showTranslations(day, section) {
+    var items = peopleState.translations[day];
+    if (!items) return;
+    section.querySelectorAll("[data-message]").forEach(function (node) {
+      var item = items.find(function (i) { return i.id === node.getAttribute("data-message"); });
+      if (item && !node.querySelector(".person-translation")) node.appendChild(el("div", { class: "person-translation", text: "По-русски: " + item.ru }));
+    });
+  }
+  function translateDay(day, button, section) {
+    var uid = peopleState.person.person.uid, request = seq;
+    peopleState.translating[day] = true; button.disabled = true; button.textContent = "Перевожу…";
+    var oldError = section.querySelector(".err"); if (oldError) oldError.remove();
+    peopleRequest("translate", { uid: uid, day: day }).then(function (data) {
+      if (request !== seq) return;
+      if (!data || !Array.isArray(data.items) || !data.items.every(function (i) { return i && typeof i.id === "string" && typeof i.ru === "string"; })) throw new Error("Сервер ответил без перевода.");
+      delete peopleState.translating[day]; peopleState.translations[day] = data.items;
+      // Paging may have rebuilt this section while the translation ran.
+      var current = app.querySelector('[data-day="' + day + '"]');
+      if (current) {
+        showTranslations(day, current);
+        current.querySelector("button").disabled = true;
+        current.querySelector("button").textContent = data.items.length ? "Переведено" : "Тексты уже удалены";
+      }
+    }).catch(function (e) {
+      if (request !== seq) return;
+      delete peopleState.translating[day];
+      var current = app.querySelector('[data-day="' + day + '"]');
+      if (current) {
+        current.appendChild(el("p", { class: "err", text: e.message }));
+        current.querySelector("button").disabled = false; current.querySelector("button").textContent = "Повторить перевод";
+      }
+    });
+  }
+  function loadEarlier(button) {
+    var d = peopleState.person, request = seq, uid = d.person.uid;
+    button.disabled = true; button.textContent = "Загружаю…";
+    var oldError = app.querySelector(".paging-error"); if (oldError) oldError.remove();
+    peopleRequest("person", { uid: uid, before: d.next_before, before_id: d.next_before_id }).then(function (next) {
+      if (request !== seq) return;
+      if (!validPersonAnswer(next, uid)) throw new Error("Сервер ответил без истории.");
+      var scroll = window.scrollY;
+      var ids = new Set(d.turns.map(function (t) { return t.id; }));
+      next.turns = d.turns.concat(next.turns.filter(function (t) { return !ids.has(t.id); }));
+      var wall = Object.create(null); d.paywall.concat(next.paywall).forEach(function (w) { wall[w.day] = w; }); next.paywall = Object.values(wall);
+      peopleState.person = next; renderPerson(); window.scrollTo(0, scroll);
+    }).catch(function (e) {
+      if (request !== seq) return;
+      button.disabled = false; button.textContent = "Показать раньше"; app.appendChild(el("p", { class: "err paging-error", text: e.message }));
+    });
+  }
+
   // ---------- load
   function load(days) {
     var request = ++seq;
     var controller = new AbortController();
     var timeout = setTimeout(function () { controller.abort(); }, 20000);
     state.days = days;
+    state.view = "report";
     app.classList.add("loading");
     fetch(API, {
       method: "POST",
@@ -1464,6 +1734,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       hideTip();
       redrawers = [];
       clear(app);
+      periodSwitch();
       app.appendChild(el("p", { class: "err", text: "Не удалось загрузить отчёт: " + (controller.signal.aborted ? "Сервер не ответил за 20 с" : (e && e.message ? e.message : String(e))) }));
       var again = el("button", { class: "tbtn", type: "button", text: "Попробовать ещё раз" });
       again.addEventListener("click", function () { load(state.days); });
