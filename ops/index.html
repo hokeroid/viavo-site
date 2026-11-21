@@ -588,7 +588,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       });
       app.appendChild(tiles);
     } else app.appendChild(el("p", { class: "sub", text: "Сервер ещё не делит продажи на пробные и оплаты: события продаж — в таблице ниже." }));
-    app.appendChild(el("p", { text: "Подписчиков сейчас " + fmt(s.subscribers) + " · на пробном " + fmt(s.trials) }));
+    app.appendChild(el("p", { text: "Подписчиков сейчас " + fmt(s.subscribers) + (typeof s.renewing === "number" ? " (с продлением " + fmt(s.renewing) + ")" : "") + " · на пробном " + fmt(s.trials) }));
     if (s.kinds) {
       var notes = ["В плитках — водители, каждый один раз на вид; пакеты и возвраты — штуки. Отмена подписки — выключено продление, доступ до конца оплаченного срока."];
       if (windowEarly || baseEarly) {
