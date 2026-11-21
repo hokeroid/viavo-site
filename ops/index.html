@@ -1635,6 +1635,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
     var retentionShown = false;
     Object.keys(days).sort().reverse().forEach(function (day) {
       var turns = days[day], hasTexts = turns.some(function (t) { return t.request || t.reply; });
+      // VIA-711: count the original shown texts, including stored action notes.
+      var dayChars = turns.reduce(function (n, t) { return n + Array.from(t.request || "").length + Array.from(t.reply || "").length; }, 0);
       var section = el("section", { class: "person-day", "data-day": day });
       var head = el("div", { class: "row" }, [el("h3", { text: dayLabel(day) + "." + day.slice(0, 4) })]); section.appendChild(head);
       var cached = peopleState.translations[day] || [];
@@ -1652,7 +1654,7 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       if (!hasTexts && turns.length && (!d.texts_since || day < d.texts_since) && !retentionShown) {
         section.appendChild(el("p", { class: "sub", text: (d.texts_since ? "Тексты разговоров есть с " + dayLabel(d.texts_since) + "." + d.texts_since.slice(0, 4) + "; раньше — шаблон запроса, итог и дневные саммари." : "Тексты разговоров не сохранились; доступны шаблон запроса, итог и дневные саммари.") })); retentionShown = true;
       }
-      if (summaries[day]) section.appendChild(el("div", { class: "person-summary person-text" }, [el("b", { text: "Итог дня" }), el("div", { text: summaries[day] })]));
+      if (summaries[day] && (!hasTexts || dayChars > 3600)) section.appendChild(el("div", { class: "person-summary person-text" }, [el("b", { text: "Итог дня" }), el("div", { text: summaries[day] })]));
       if (paywall[day]) section.appendChild(el("p", { class: "sub", text: "Экран подписки показан: " + fmt(paywall[day]) }));
       turns.forEach(function (t) {
         var box = el("article", { class: "person-turn" });
