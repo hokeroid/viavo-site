@@ -1583,9 +1583,10 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       peopleState.person = data; renderPerson();
     }).catch(function (e) { if (request === seq) peopleError(e, function () { openPerson(uid); }, true); });
   }
-  function personText(text, id, bold) {
+  function personText(text, id, bold, ru) {
     var box = el("div", { class: "person-text" }, [el(bold ? "strong" : "div", { text: text })]);
     if (id) box.setAttribute("data-message", id);
+    if (ru) box.appendChild(el("div", { class: "person-translation", text: "По-русски: " + ru }));
     return box;
   }
   function renderPerson() {
@@ -1636,15 +1637,20 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       var turns = days[day], hasTexts = turns.some(function (t) { return t.request || t.reply; });
       var section = el("section", { class: "person-day", "data-day": day });
       var head = el("div", { class: "row" }, [el("h3", { text: dayLabel(day) + "." + day.slice(0, 4) })]); section.appendChild(head);
-      if (hasTexts) {
+      var cached = peopleState.translations[day] || [];
+      function translated(id, ru) { return ru || cached.some(function (i) { return i.id === id && i.ru; }); }
+      var missing = turns.some(function (t) {
+        return (t.request && !translated(t.request_id, t.request_ru)) || (t.reply && !translated(t.history_id, t.reply_ru));
+      });
+      if (missing) {
         var translate = personButton("Перевести на русский", function () { translateDay(day, translate, section); });
-        if (peopleState.translations[day] || peopleState.translating[day]) {
-          translate.disabled = true; translate.textContent = peopleState.translating[day] ? "Перевожу…" : peopleState.translations[day].length ? "Переведено" : "Тексты уже удалены";
+        if (peopleState.translating[day]) {
+          translate.disabled = true; translate.textContent = "Перевожу…";
         }
         head.appendChild(translate);
       }
-      if (!hasTexts && turns.length && day < d.texts_since && !retentionShown) {
-        section.appendChild(el("p", { class: "sub", text: "Тексты разговоров хранятся 7 дней; раньше — шаблон запроса, итог и дневные саммари. Тексты в базе — с " + dayLabel(d.texts_since) + "." })); retentionShown = true;
+      if (!hasTexts && turns.length && (!d.texts_since || day < d.texts_since) && !retentionShown) {
+        section.appendChild(el("p", { class: "sub", text: (d.texts_since ? "Тексты разговоров есть с " + dayLabel(d.texts_since) + "." + d.texts_since.slice(0, 4) + "; раньше — шаблон запроса, итог и дневные саммари." : "Тексты разговоров не сохранились; доступны шаблон запроса, итог и дневные саммари.") })); retentionShown = true;
       }
       if (summaries[day]) section.appendChild(el("div", { class: "person-summary person-text" }, [el("b", { text: "Итог дня" }), el("div", { text: summaries[day] })]));
       if (paywall[day]) section.appendChild(el("p", { class: "sub", text: "Экран подписки показан: " + fmt(paywall[day]) }));
@@ -1652,8 +1658,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
         var box = el("article", { class: "person-turn" });
         var surface = t.surface === "followup" ? "продолжение" : t.surface === "push" ? "пуш" : t.carplay ? "машина" : t.surface === "phone" ? "телефон" : t.surface || "место не записано";
         box.appendChild(el("div", { class: "sub", text: personDate(t.at, true) + " · " + surface + (t.kind === "opening" ? " · приветствие" : t.kind === "untracked" ? " · без записи аналитики" : "") }));
-        if (t.request) box.appendChild(personText(t.request, t.request_id, true));
-        if (t.reply) box.appendChild(personText((t.request ? "→ " : "") + t.reply, t.history_id, false));
+        if (t.request) box.appendChild(personText(t.request, t.request_id, true, t.request_ru));
+        if (t.reply) box.appendChild(personText((t.request ? "→ " : "") + t.reply, t.history_id, false, t.reply_ru));
         if (!t.request && !t.reply) box.appendChild(el("div", { class: "person-text" }, [el("strong", { text: t.template || (t.kind === "opening" ? "Приветствие" : "Шаблон не записан") }), el("div", { class: "sub", text: "шаблон, текст не хранится" })]));
         var meta = el("div", { class: "sub person-meta" });
         [t.category ? personLabel("categories", t.category) : null, (t.outcome_effective || t.outcome) ? personLabel("outcomes", t.outcome_effective || t.outcome) : null,
@@ -1692,8 +1698,12 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       var current = app.querySelector('[data-day="' + day + '"]');
       if (current) {
         showTranslations(day, current);
-        current.querySelector("button").disabled = true;
-        current.querySelector("button").textContent = data.items.length ? "Переведено" : "Тексты уже удалены";
+        var translate = current.querySelector("button");
+        var missing = Array.from(current.querySelectorAll("[data-message]")).some(function (node) { return !node.querySelector(".person-translation"); });
+        if (translate) {
+          if (!missing) translate.remove();
+          else { translate.disabled = false; translate.textContent = "Перевести на русский"; }
+        }
       }
     }).catch(function (e) {
       if (request !== seq) return;
@@ -1701,7 +1711,8 @@ footer { color: var(--muted); font-size: 12px; margin-top: 24px; }
       var current = app.querySelector('[data-day="' + day + '"]');
       if (current) {
         current.appendChild(el("p", { class: "err", text: e.message }));
-        current.querySelector("button").disabled = false; current.querySelector("button").textContent = "Повторить перевод";
+        var retry = current.querySelector("button");
+        if (retry) { retry.disabled = false; retry.textContent = "Повторить перевод"; }
       }
     });
   }
