@@ -28,43 +28,42 @@ PT = '127870899'  # App Store Connect provider token (providerId) for campaign l
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / '_build'
 
-# code, url folder, hreflang, native name, English name, direction, App Store country ('' = the visitor's own store),
-# og locale, badge file. Serbian pages are written in Latin script. Viavo is not in the Russian or Chinese stores.
+# Code, URL folder, hreflang, native and English names, direction and Open Graph locale.
 LANGS = [
-    ('ar', 'ar', 'ar', 'العربية', 'Arabic', 'rtl', 'sa', 'ar_AR'),
-    ('bg', 'bg', 'bg', 'Български', 'Bulgarian', 'ltr', 'bg', 'bg_BG'),
-    ('zh-hans', 'zh-hans', 'zh-Hans', '简体中文', 'Chinese Simplified', 'ltr', '', 'zh_CN'),
-    ('zh-hant', 'zh-hant', 'zh-Hant', '繁體中文', 'Chinese Traditional', 'ltr', 'tw', 'zh_TW'),
-    ('hr', 'hr', 'hr', 'Hrvatski', 'Croatian', 'ltr', 'hr', 'hr_HR'),
-    ('cs', 'cs', 'cs', 'Čeština', 'Czech', 'ltr', 'cz', 'cs_CZ'),
-    ('nl', 'nl', 'nl', 'Nederlands', 'Dutch', 'ltr', 'nl', 'nl_NL'),
-    ('en', '', 'en', 'English', 'English', 'ltr', '', 'en_US'),
-    ('fr', 'fr', 'fr', 'Français', 'French', 'ltr', 'fr', 'fr_FR'),
-    ('de', 'de', 'de', 'Deutsch', 'German', 'ltr', 'de', 'de_DE'),
-    ('el', 'el', 'el', 'Ελληνικά', 'Greek', 'ltr', 'gr', 'el_GR'),
-    ('he', 'he', 'he', 'עברית', 'Hebrew', 'rtl', 'il', 'he_IL'),
-    ('hi', 'hi', 'hi', 'हिन्दी', 'Hindi', 'ltr', 'in', 'hi_IN'),
-    ('hu', 'hu', 'hu', 'Magyar', 'Hungarian', 'ltr', 'hu', 'hu_HU'),
-    ('id', 'id', 'id', 'Bahasa Indonesia', 'Indonesian', 'ltr', 'id', 'id_ID'),
-    ('it', 'it', 'it', 'Italiano', 'Italian', 'ltr', 'it', 'it_IT'),
-    ('ja', 'ja', 'ja', '日本語', 'Japanese', 'ltr', 'jp', 'ja_JP'),
-    ('ko', 'ko', 'ko', '한국어', 'Korean', 'ltr', 'kr', 'ko_KR'),
-    ('pl', 'pl', 'pl', 'Polski', 'Polish', 'ltr', 'pl', 'pl_PL'),
-    ('pt', 'pt', 'pt', 'Português', 'Portuguese', 'ltr', 'br', 'pt_BR'),
-    ('ro', 'ro', 'ro', 'Română', 'Romanian', 'ltr', 'ro', 'ro_RO'),
-    ('ru', 'ru', 'ru', 'Русский', 'Russian', 'ltr', '', 'ru_RU'),
-    ('sr', 'sr', 'sr-Latn', 'Srpski', 'Serbian', 'ltr', 'rs', 'sr_RS'),
-    ('sk', 'sk', 'sk', 'Slovenčina', 'Slovak', 'ltr', 'sk', 'sk_SK'),
-    ('sl', 'sl', 'sl', 'Slovenščina', 'Slovenian', 'ltr', 'si', 'sl_SI'),
-    ('es', 'es', 'es', 'Español', 'Spanish', 'ltr', 'es', 'es_ES'),
-    ('sv', 'sv', 'sv', 'Svenska', 'Swedish', 'ltr', 'se', 'sv_SE'),
-    ('th', 'th', 'th', 'ไทย', 'Thai', 'ltr', 'th', 'th_TH'),
-    ('tr', 'tr', 'tr', 'Türkçe', 'Turkish', 'ltr', 'tr', 'tr_TR'),
-    ('uk', 'uk', 'uk', 'Українська', 'Ukrainian', 'ltr', 'ua', 'uk_UA'),
-    ('ur', 'ur', 'ur', 'اردو', 'Urdu', 'rtl', 'pk', 'ur_PK'),
-    ('vi', 'vi', 'vi', 'Tiếng Việt', 'Vietnamese', 'ltr', 'vn', 'vi_VN'),
+    ('ar', 'ar', 'ar', 'العربية', 'Arabic', 'rtl', 'ar_AR'),
+    ('bg', 'bg', 'bg', 'Български', 'Bulgarian', 'ltr', 'bg_BG'),
+    ('zh-hans', 'zh-hans', 'zh-Hans', '简体中文', 'Chinese Simplified', 'ltr', 'zh_CN'),
+    ('zh-hant', 'zh-hant', 'zh-Hant', '繁體中文', 'Chinese Traditional', 'ltr', 'zh_TW'),
+    ('hr', 'hr', 'hr', 'Hrvatski', 'Croatian', 'ltr', 'hr_HR'),
+    ('cs', 'cs', 'cs', 'Čeština', 'Czech', 'ltr', 'cs_CZ'),
+    ('nl', 'nl', 'nl', 'Nederlands', 'Dutch', 'ltr', 'nl_NL'),
+    ('en', '', 'en', 'English', 'English', 'ltr', 'en_US'),
+    ('fr', 'fr', 'fr', 'Français', 'French', 'ltr', 'fr_FR'),
+    ('de', 'de', 'de', 'Deutsch', 'German', 'ltr', 'de_DE'),
+    ('el', 'el', 'el', 'Ελληνικά', 'Greek', 'ltr', 'el_GR'),
+    ('he', 'he', 'he', 'עברית', 'Hebrew', 'rtl', 'he_IL'),
+    ('hi', 'hi', 'hi', 'हिन्दी', 'Hindi', 'ltr', 'hi_IN'),
+    ('hu', 'hu', 'hu', 'Magyar', 'Hungarian', 'ltr', 'hu_HU'),
+    ('id', 'id', 'id', 'Bahasa Indonesia', 'Indonesian', 'ltr', 'id_ID'),
+    ('it', 'it', 'it', 'Italiano', 'Italian', 'ltr', 'it_IT'),
+    ('ja', 'ja', 'ja', '日本語', 'Japanese', 'ltr', 'ja_JP'),
+    ('ko', 'ko', 'ko', '한국어', 'Korean', 'ltr', 'ko_KR'),
+    ('pl', 'pl', 'pl', 'Polski', 'Polish', 'ltr', 'pl_PL'),
+    ('pt', 'pt', 'pt', 'Português', 'Portuguese', 'ltr', 'pt_BR'),
+    ('ro', 'ro', 'ro', 'Română', 'Romanian', 'ltr', 'ro_RO'),
+    ('ru', 'ru', 'ru', 'Русский', 'Russian', 'ltr', 'ru_RU'),
+    ('sr', 'sr', 'sr-Latn', 'Srpski', 'Serbian', 'ltr', 'sr_RS'),
+    ('sk', 'sk', 'sk', 'Slovenčina', 'Slovak', 'ltr', 'sk_SK'),
+    ('sl', 'sl', 'sl', 'Slovenščina', 'Slovenian', 'ltr', 'sl_SI'),
+    ('es', 'es', 'es', 'Español', 'Spanish', 'ltr', 'es_ES'),
+    ('sv', 'sv', 'sv', 'Svenska', 'Swedish', 'ltr', 'sv_SE'),
+    ('th', 'th', 'th', 'ไทย', 'Thai', 'ltr', 'th_TH'),
+    ('tr', 'tr', 'tr', 'Türkçe', 'Turkish', 'ltr', 'tr_TR'),
+    ('uk', 'uk', 'uk', 'Українська', 'Ukrainian', 'ltr', 'uk_UA'),
+    ('ur', 'ur', 'ur', 'اردو', 'Urdu', 'rtl', 'ur_PK'),
+    ('vi', 'vi', 'vi', 'Tiếng Việt', 'Vietnamese', 'ltr', 'vi_VN'),
 ]
-L = {x[0]: dict(zip(('code', 'folder', 'hreflang', 'native', 'english', 'dir', 'cc', 'og'), x)) for x in LANGS}
+L = {x[0]: dict(zip(('code', 'folder', 'hreflang', 'native', 'english', 'dir', 'og'), x)) for x in LANGS}
 SITE_ONLY = {'bg'}
 GAP = ['pl', 'cs', 'sk', 'ro', 'el', 'hu', 'hr', 'sr', 'uk']  # Siri does not speak these (apple.com feature availability, VIA-466)
 # Pages that open with the Siri band (their language has no Siri, or the global English page). Elsewhere Siri speaks the
@@ -114,9 +113,8 @@ def rel(depth):
 
 
 def store_url(lang, campaign=None):
-    cc = L[lang]['cc']
     q = f'ct={campaign or "site-" + lang}' + (f'&pt={PT}&mt=8' if PT else '')
-    return f'https://apps.apple.com/{cc + "/" if cc else ""}app/viavo/id{APP_ID}?{q}'
+    return f'https://apps.apple.com/app/viavo/id{APP_ID}?{q}'
 
 
 def page_url(lang, path=''):
@@ -331,10 +329,10 @@ def home(lang, T, available):
                      f'<p class="done"><svg aria-hidden="true"><use href="#i-road"/></svg><span>{brandsafe(T["done"][0])}</span></p></div>')
     out.append(f'''<main id="main">
 <section class="hero" id="top"><div class="wrap">
-<p class="eyebrow">{brandsafe(T["eyebrow"])}</p>
-<h1 class="h1"><span>{brandsafe(T["h1a"])}</span><span class="b">{brandsafe(T["h1b"])}</span></h1>
+<h1 class="h1"><span>{brandsafe(T["h1a"])}</span> <span class="b">{brandsafe(T["h1b"])}</span></h1>
 <p class="lead">{brandsafe(T["sub"])}</p>
 <div class="cta-row">{badge(lang, r, f"site-{lang}-hero").replace("{alt}", alt_badge)}{qr(lang, T, r)}</div>
+<p class="hero-demo"><a class="ul" href="#say">{e(T["demoLabel"])}</a></p>
 <div class="hero-shot{"" if lang in STORY else " solo"}{" talking" if talk else ""}"><div class="glow"></div><div class="car"><div class="scr">{picture(talk or hero_screen(lang), (1080, 1920), "(max-width:760px) 230vw, 1060px", T["heroAlt"], r, 1920, 1080, eager=True)}</div></div>{talk_card}</div>
 </div></section>
 ''')
@@ -371,7 +369,8 @@ def home(lang, T, available):
 <span class="done"><svg aria-hidden="true"><use href="#i-{icon}"/></svg><span>{brandsafe(T["done"][i])}</span></span></span></button>''' for i, (scr, icon) in enumerate(CONVO))
     phones = ''.join(picture(f'phone-{pl}-{scr}', (660,), '300px', T['examples'][i], r, 1320, 2868, hidden=i > 0) for i, (scr, _) in enumerate(CONVO))
     out.append(f'''<section class="sec say" id="say" style="--q:'{q[0]}' '{q[1]}'"><div class="wrap grid">
-<div class="txt"><h2 class="h2">{brandsafe(T["say"])}</h2><p class="lead">{brandsafe(T["sayLead"])}</p><div class="convo">{exs}</div></div>
+<div class="txt"><h2 class="h2">{brandsafe(T["say"])}</h2><p class="lead">{brandsafe(T["sayLead"])}</p><div class="convo">{exs}</div>
+<div class="demo-download">{badge(lang, r, f"site-{lang}-demo").replace("{alt}", alt_badge)}{qr(lang, T, r)}</div></div>
 <div class="ph"><div class="phone"><div class="scr">{phones}<div class="island"></div></div></div></div>
 </div></section>
 ''')
@@ -631,6 +630,8 @@ def answer_page(lang, slug, meta, body, T, available, pages):
     page_paths = {code: (L[code]['folder'] + '/' if L[code]['folder'] else '') + slug + '/' for code in same}
     out = [page_head, '<body>', SYMBOLS, header(T, lang, r, available, page_paths=page_paths, campaign=campaign)]
     home_href = r + (folder + '/' if folder else '')
+    if slug == 'whatsapp-carplay':
+        out_html.append(f'<p><a href="{home_href}#say">{e(T["demoLabel"])}</a></p>')
     out.append(f'''<main id="main" class="answer">
 <div class="wrap ans-head"><p class="eyebrow"><a href="{home_href}">Viavo</a></p><h1>{inline(meta["h1"])}</h1></div>
 <div class="wrap"><article class="prose ans">{"".join(out_html)}</article></div>
@@ -744,8 +745,7 @@ def main():
         ANSWER_LINKS.setdefault(lang_, []).append((slug, answer_label(meta)))
     qr_dir = ROOT / 'assets/qr'
     qr_dir.mkdir(exist_ok=True)
-    for entry in ('answers', 'whatsapp', 'site'):
-        token = f'seo-google-{entry}'
+    for token in ('seo-google-answers', 'seo-google-whatsapp', 'seo-google-site', 'google-paid-qr', 'ads-paid-qr'):
         (qr_dir / f'{token}.svg').write_text(qrcode.svg(qrcode.build(store_url('en', token))))
     for (lang_, slug), (meta, body) in answers.items():
         if re.search(r'^\[[^\]]+\]$', body, flags=re.M):

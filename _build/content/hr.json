@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: glasovni AI asistent na hrvatskom za CarPlay",
-  "description": "Pritisni jedan gumb i reci što trebaš. Viavo otvara rutu sa stankom, zove, piše poruke, pušta glazbu i radio te odgovara naglas na 31 jeziku, izvornim glasom.",
-  "ogTitle": "Reci na svom jeziku. Viavo to obavi."
+  "title": "Glasovni asistent za CarPlay na hrvatskom | Viavo",
+  "description": "Dodirni Viavo i reci „Vodi me kući uz stajanje na benzinskoj postaji”. Ruta će se otvoriti u tvojoj navigaciji. Možeš i nazvati kontakt ili pustiti radijsku postaju po imenu.",
+  "ogTitle": "Glasovni asistent za CarPlay na hrvatskom | Viavo"
  },
  "qo": "„",
  "qc": "“",
@@ -11,9 +11,10 @@
  "nPress": "Za medije",
  "nLangMenu": "Jezik",
  "eyebrow": "AI asistent za CarPlay",
- "h1a": "Reci na svom jeziku.",
- "h1b": "Viavo to obavi.",
- "sub": "Rute s usputnim zaustavljanjem, pozivi, poruke, glazba i radio. Pritisni jedan gumb i reci što trebaš na bilo kojem od 31 jezika, kao da razgovaraš s čovjekom.",
+ "h1a": "Glasovni asistent za CarPlay",
+ "h1b": "na hrvatskom",
+ "sub": "Dodirni Viavo i reci „Vodi me kući uz stajanje na benzinskoj postaji”. Ruta će se otvoriti u tvojoj navigaciji. Možeš i nazvati kontakt ili pustiti radijsku postaju po imenu.",
+ "demoLabel": "Pogledaj primjere naredbi",
  "heroAlt": "Viavo na zaslonu CarPlaya",
  "bandPre": "Siri ne govori ",
  "bandPost": ".",

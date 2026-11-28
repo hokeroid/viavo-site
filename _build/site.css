@@ -77,6 +77,8 @@ button{font:inherit;color:inherit}
 .h1{font-size:var(--h1);line-height:var(--h1lh)}
 .h1>span{display:block}
 .h1 .b{color:var(--ice)}
+.hero-demo{margin:16px auto 0;text-align:center}.hero-demo .ul{display:inline-flex;align-items:center;min-height:44px}
+#say{scroll-margin-top:72px}.demo-download{display:flex;align-items:center;gap:20px;margin-top:24px;flex-wrap:wrap}
 .hero .lead{max-width:640px;margin:28px auto 0}
 .cta-row{margin-top:36px;display:flex;align-items:center;justify-content:center;gap:32px}
 .badge img{height:54px;width:auto}
@@ -244,7 +246,9 @@ html:lang(ur) .ans-head h1,html:lang(ur) .h2{line-height:1.5}
 .says span{color:var(--sec);font-size:16px}
 .zips{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 .facts .h2{grid-column:1/-1;margin-bottom:40px}
-.press .hero .lead{margin:32px 0 0;max-width:800px;color:var(--text);font-size:24px}
+.press .hero-demo{margin:16px auto 0;text-align:center}.hero-demo .ul{display:inline-flex;align-items:center;min-height:44px}
+#say{scroll-margin-top:72px}.demo-download{display:flex;align-items:center;gap:20px;margin-top:24px;flex-wrap:wrap}
+.hero .lead{margin:32px 0 0;max-width:800px;color:var(--text);font-size:24px}
 .facts{row-gap:0}
 .fact{grid-column:span 4;padding:20px 0 28px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
 .fact>span{font-size:14px;color:var(--cap)}
@@ -349,7 +353,9 @@ html:lang(ur) .ans-head h1,html:lang(ur) .h2{line-height:1.5}
   .btn-store{display:none}
   .hero{padding-top:40px}
   .h1{line-height:1.04;text-wrap:balance}
-  .hero .lead{margin-top:20px}
+  .hero-demo{margin:16px auto 0;text-align:center}.hero-demo .ul{display:inline-flex;align-items:center;min-height:44px}
+#say{scroll-margin-top:72px}.demo-download{display:flex;align-items:center;gap:20px;margin-top:24px;flex-wrap:wrap}
+.hero .lead{margin-top:20px}
   .cta-row{margin-top:28px}
   .badge img{height:48px}
   .hero-shot{margin-top:40px;margin-bottom:-160px}

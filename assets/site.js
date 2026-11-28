@@ -67,9 +67,12 @@
         u.searchParams.set('mt', '8');
         a.href = u.toString();
       });
-      if (['seo-google-answers', 'seo-google-whatsapp', 'seo-google-site'].includes(channel)) {
+      const qrCampaign = channel.startsWith('paid-')
+        ? (channel === 'paid-google' ? 'google-paid-qr' : 'ads-paid-qr')
+        : channel;
+      if (['seo-google-answers', 'seo-google-whatsapp', 'seo-google-site', 'google-paid-qr', 'ads-paid-qr'].includes(qrCampaign)) {
         document.querySelectorAll('img[data-qr-dir]').forEach(img => {
-          img.src = img.dataset.qrDir + channel + '.svg';
+          img.src = img.dataset.qrDir + qrCampaign + '.svg';
         });
       }
     }

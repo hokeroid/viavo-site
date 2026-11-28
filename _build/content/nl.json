@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: AI-spraakassistent voor CarPlay, in 31 talen",
-  "description": "Druk op één knop en zeg het op jouw manier. Viavo opent routes met een tussenstop, belt, stuurt berichten, zet muziek en radio op en antwoordt hardop. 31 talen.",
-  "ogTitle": "Zeg het op jouw manier. Viavo doet het."
+  "title": "Spraakassistent voor CarPlay in het Nederlands | Viavo",
+  "description": "Tik op Viavo en zeg ‘Breng me naar huis met een tussenstop bij een tankstation’. De route opent in je navigatie-app. Je kunt ook een contact bellen of een radiozender aanzetten door de naam te noemen.",
+  "ogTitle": "Spraakassistent voor CarPlay in het Nederlands | Viavo"
  },
  "qo": "„",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Pers",
  "nLangMenu": "Taal",
  "eyebrow": "AI-assistent voor CarPlay",
- "h1a": "Zeg het op jouw manier.",
- "h1b": "Viavo doet het.",
- "sub": "Routes met een tussenstop, bellen, berichten, muziek en radio. Druk op één knop en zeg het zoals je het tegen iemand zou zeggen, in een van de 31 talen.",
+ "h1a": "Spraakassistent voor CarPlay",
+ "h1b": "in het Nederlands",
+ "sub": "Tik op Viavo en zeg ‘Breng me naar huis met een tussenstop bij een tankstation’. De route opent in je navigatie-app. Je kunt ook een contact bellen of een radiozender aanzetten door de naam te noemen.",
+ "demoLabel": "Bekijk voorbeeldopdrachten",
  "heroAlt": "Viavo op een CarPlay-scherm",
  "bandPre": "Siri spreekt geen ",
  "bandPost": ".",

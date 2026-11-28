@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: CarPlay için yapay zekâlı sesli asistan, 31 dilde",
-  "description": "Tek düğmeye basın, kendi sözlerinizle söyleyin. Viavo molalı rota açar, arar, mesaj yazar, müzik ve radyo çalar, sesli yanıtlar. 31 dil, her birinde doğal ses.",
-  "ogTitle": "Kendi sözlerinizle söyleyin. Viavo halleder."
+  "title": "CarPlay için Türkçe sesli asistan | Viavo",
+  "description": "Viavo’ya dokunup “Beni eve götür, yolda benzinliğe uğrayalım” deyin. Durak eklenmiş rota navigasyon uygulamanızda açılır. Adını söyleyerek bir kişiyi arayabilir veya bir radyo istasyonunu açabilirsiniz.",
+  "ogTitle": "CarPlay için Türkçe sesli asistan | Viavo"
  },
  "qo": "“",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Basın",
  "nLangMenu": "Dil",
  "eyebrow": "CarPlay için yapay zekâ asistanı",
- "h1a": "Kendi sözlerinizle söyleyin.",
- "h1b": "Viavo halleder.",
- "sub": "Molalı rotalar, aramalar, mesajlar, müzik ve radyo. Tek düğmeye basın ve bir insana nasıl söylerseniz öyle söyleyin, 31 dilin herhangi birinde.",
+ "h1a": "CarPlay için",
+ "h1b": "Türkçe sesli asistan",
+ "sub": "Viavo’ya dokunup “Beni eve götür, yolda benzinliğe uğrayalım” deyin. Durak eklenmiş rota navigasyon uygulamanızda açılır. Adını söyleyerek bir kişiyi arayabilir veya bir radyo istasyonunu açabilirsiniz.",
+ "demoLabel": "Sesli komut örneklerini görün",
  "heroAlt": "CarPlay ekranında Viavo",
  "bandPre": "Siri ",
  "bandPost": " konuşmuyor.",

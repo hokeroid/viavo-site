@@ -1,7 +1,8 @@
 {
- "meta": {"title":"Glasovni pomočnik za CarPlay v slovenščini | Viavo","description":"Na zaslonu avta tapnite Viavo in v slovenščini povejte, kam želite iti, koga naj pokliče ali katero glasbo želite slišati. Za iPhone in Apple CarPlay.","ogTitle":"Na poti povejte po slovensko. Viavo poskrbi za ostalo."},
+ "meta": {"title":"Glasovni pomočnik za CarPlay v slovenščini | Viavo","description":"Tapnite Viavo in recite »Pelji me domov, vmes se ustavi na bencinski črpalki«. Pot s postankom se odpre v vaši navigaciji. Z glasom lahko tudi pokličete stik ali izberete radijsko postajo.","ogTitle":"Glasovni pomočnik za CarPlay v slovenščini | Viavo"},
  "qo":"»","qc":"«","nFeatures":"Funkcije","nLanguages":"Jeziki","nPress":"Za medije","nLangMenu":"Jezik","eyebrow":"Glasovni pomočnik za CarPlay",
- "h1a":"V avtu povejte po slovensko.","h1b":"Viavo vas razume.","sub":"Poiščite postanek na poti, pokličite stik ali poslušajte novo sporočilo. Na zaslonu CarPlay tapnite Viavo in povejte, kaj potrebujete.","heroAlt":"Viavo na zaslonu CarPlay",
+ "h1a":"Glasovni pomočnik za CarPlay","h1b":"v slovenščini","sub":"Tapnite Viavo in recite »Pelji me domov, vmes se ustavi na bencinski črpalki«. Pot s postankom se odpre v vaši navigaciji. Z glasom lahko tudi pokličete stik ali izberete radijsko postajo.","demoLabel": "Oglejte si primere ukazov",
+ "heroAlt":"Viavo na zaslonu CarPlay",
  "bandPre":"Siri ne govori teh jezikov: ","bandPost":".","bandTail":"Viavo jih govori.","bandWords":{"pl":"poljščina","cs":"češčina","sk":"slovaščina","ro":"romunščina","el":"grščina","hu":"madžarščina","hr":"hrvaščina","sr":"srbščina","uk":"ukrajinščina"},"bandSub":"Viavo lahko uporabljate v vseh teh jezikih.",
  "say":"Kaj lahko rečete v avtu?","sayLead":"Izberite primer in si oglejte, kako Viavo odgovori ali izvede vašo zahtevo.",
  "examples":["Pelji me domov, vmes se ustavi na bencinski črpalki","Poišči dobro restavracijo na poti","Predvajaj nekaj za na pot","Kdo mi je pisal?"],

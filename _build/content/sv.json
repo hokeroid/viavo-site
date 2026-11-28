@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: AI-röstassistent för CarPlay, på 31 språk",
-  "description": "Tryck och prata fritt. Viavo öppnar rutter med stopp, ringer, skriver meddelanden, spelar musik och radio och svarar högt. 31 språk, alla med naturligt uttal.",
-  "ogTitle": "Säg det på ditt språk. Viavo fixar det."
+  "title": "Röstassistent för CarPlay på svenska | Viavo",
+  "description": "Tryck på Viavo och säg ”Kör mig hem med ett stopp på en bensinstation”. Rutten öppnas i din navigationsapp. Du kan också ringa en kontakt eller starta en radiokanal genom att säga namnet.",
+  "ogTitle": "Röstassistent för CarPlay på svenska | Viavo"
  },
  "qo": "”",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Press",
  "nLangMenu": "Språk",
  "eyebrow": "AI-assistent för CarPlay",
- "h1a": "Säg det på ditt språk.",
- "h1b": "Viavo fixar det.",
- "sub": "Rutter med stopp på vägen, samtal, meddelanden, musik och radio. Tryck på en knapp och säg det precis som till en människa, på något av 31 språk.",
+ "h1a": "Röstassistent för CarPlay",
+ "h1b": "på svenska",
+ "sub": "Tryck på Viavo och säg ”Kör mig hem med ett stopp på en bensinstation”. Rutten öppnas i din navigationsapp. Du kan också ringa en kontakt eller starta en radiokanal genom att säga namnet.",
+ "demoLabel": "Se exempel på röstkommandon",
  "heroAlt": "Viavo på en CarPlay-skärm",
  "bandPre": "Siri talar inte ",
  "bandPost": ".",

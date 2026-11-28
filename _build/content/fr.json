@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo : assistant vocal IA pour CarPlay, en 31 langues",
-  "description": "Un bouton, vos mots : Viavo ouvre l’itinéraire avec un arrêt, appelle, écrit, lance musique et radio, répond à voix haute. 31 langues, autant de voix natives.",
-  "ogTitle": "Dites-le avec vos mots. Viavo s’en charge."
+  "title": "Assistant vocal pour CarPlay en français | Viavo",
+  "description": "Touchez Viavo et dites « Ramène-moi à la maison en passant par une station-service ». L’itinéraire s’ouvre dans votre appli de navigation. Vous pouvez aussi appeler un contact ou écouter une station de radio.",
+  "ogTitle": "Assistant vocal pour CarPlay en français | Viavo"
  },
  "qo": "« ",
  "qc": " »",
@@ -11,9 +11,10 @@
  "nPress": "Presse",
  "nLangMenu": "Langue",
  "eyebrow": "Assistant IA pour CarPlay",
- "h1a": "Dites-le avec vos mots.",
- "h1b": "Viavo s’en charge.",
- "sub": "Itinéraires avec un arrêt en chemin, appels, messages, musique et radio. Appuyez sur un bouton et parlez comme vous parleriez à quelqu’un, dans l’une des 31 langues.",
+ "h1a": "Assistant vocal pour CarPlay",
+ "h1b": "en français",
+ "sub": "Touchez Viavo et dites « Ramène-moi à la maison en passant par une station-service ». L’itinéraire s’ouvre dans votre appli de navigation. Vous pouvez aussi appeler un contact ou écouter une station de radio.",
+ "demoLabel": "Voir des exemples de commandes",
  "heroAlt": "Viavo sur un écran CarPlay",
  "bandPre": "Siri ne parle pas ",
  "bandPost": ".",

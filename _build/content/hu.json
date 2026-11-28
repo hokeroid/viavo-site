@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: AI-hangasszisztens CarPlay-hez, 31 nyelven",
-  "description": "Nyomd meg a gombot, mondd, ahogy szoktad, és a Viavo útvonalat tervez megállóval, telefonál, üzenetet ír, zenét és rádiót indít. 31 nyelven, anyanyelvi hanggal.",
-  "ogTitle": "Mondd el a saját nyelveden. A Viavo elintézi."
+  "title": "Magyar hangasszisztens CarPlayhez | Viavo",
+  "description": "Koppints a Viavóra, és mondd: „Vigyél haza, útközben álljunk meg tankolni.” Az útvonal megnyílik a navigációs alkalmazásodban. Egy név bemondásával fel is hívhatsz valakit, vagy rádióadót választhatsz.",
+  "ogTitle": "Magyar hangasszisztens CarPlayhez | Viavo"
  },
  "qo": "„",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Sajtó",
  "nLangMenu": "Nyelv",
  "eyebrow": "AI-asszisztens CarPlay-hez",
- "h1a": "Mondd el a saját nyelveden.",
- "h1b": "A Viavo elintézi.",
- "sub": "Útvonal megállóval, hívások, üzenetek, zene és rádió. Nyomd meg az egyetlen gombot, és mondd úgy, ahogy egy embernek mondanád, a 31 nyelv bármelyikén.",
+ "h1a": "Magyar hangasszisztens",
+ "h1b": "CarPlayhez",
+ "sub": "Koppints a Viavóra, és mondd: „Vigyél haza, útközben álljunk meg tankolni.” Az útvonal megnyílik a navigációs alkalmazásodban. Egy név bemondásával fel is hívhatsz valakit, vagy rádióadót választhatsz.",
+ "demoLabel": "Példák hangutasításokra",
  "heroAlt": "A Viavo egy CarPlay-kijelzőn",
  "bandPre": "A Siri nem beszél ",
  "bandPost": ".",

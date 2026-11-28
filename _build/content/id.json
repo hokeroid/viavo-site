@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: asisten suara AI untuk CarPlay, dalam 31 bahasa",
-  "description": "Satu tombol, bicara seperti biasa. Viavo membuka rute dengan tempat singgah, menelepon, mengirim pesan, memutar musik dan radio, dan menjawab dengan suara.",
-  "ogTitle": "Ucapkan dalam bahasa Anda. Viavo kerjakan."
+  "title": "Asisten suara untuk CarPlay dalam bahasa Indonesia | Viavo",
+  "description": "Ketuk Viavo dan katakan, “Antar saya pulang, mampir dulu ke pom bensin.” Rute akan terbuka di aplikasi navigasi Anda. Anda juga bisa menelepon kontak atau memutar stasiun radio dengan menyebutkan namanya.",
+  "ogTitle": "Asisten suara untuk CarPlay dalam bahasa Indonesia | Viavo"
  },
  "qo": "“",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Pers",
  "nLangMenu": "Bahasa",
  "eyebrow": "Asisten AI untuk CarPlay",
- "h1a": "Ucapkan dalam bahasa Anda.",
- "h1b": "Viavo kerjakan.",
- "sub": "Rute dengan tempat singgah, panggilan, pesan, musik, dan radio. Tekan satu tombol dan ucapkan seperti saat bicara dengan orang lain, dalam salah satu dari 31 bahasa.",
+ "h1a": "Asisten suara untuk CarPlay",
+ "h1b": "dalam bahasa Indonesia",
+ "sub": "Ketuk Viavo dan katakan, “Antar saya pulang, mampir dulu ke pom bensin.” Rute akan terbuka di aplikasi navigasi Anda. Anda juga bisa menelepon kontak atau memutar stasiun radio dengan menyebutkan namanya.",
+ "demoLabel": "Lihat contoh perintah",
  "heroAlt": "Viavo di layar CarPlay",
  "bandPre": "Siri tidak bisa berbahasa ",
  "bandPost": ".",

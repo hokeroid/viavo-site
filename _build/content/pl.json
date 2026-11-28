@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: asystent głosowy AI do CarPlay, w 31 językach",
-  "description": "Naciśnij i mów po swojemu. Viavo otwiera trasy z przystankiem, dzwoni, pisze wiadomości, włącza muzykę i radio, odpowiada na głos. 31 języków z rodzimą wymową.",
-  "ogTitle": "Powiedz to w swoim języku. Viavo to zrobi."
+  "title": "Asystent głosowy do CarPlay po polsku | Viavo",
+  "description": "Dotknij Viavo i powiedz „Prowadź mnie do domu przez stację benzynową”. Trasa z przystankiem otworzy się w Twojej nawigacji. Możesz też głosem zadzwonić do kogoś z kontaktów lub włączyć ulubioną stację radiową.",
+  "ogTitle": "Asystent głosowy do CarPlay po polsku | Viavo"
  },
  "qo": "„",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Dla mediów",
  "nLangMenu": "Język",
  "eyebrow": "Asystent AI do CarPlay",
- "h1a": "Powiedz to w swoim języku.",
- "h1b": "Viavo to zrobi.",
- "sub": "Trasy z przystankiem po drodze, połączenia, wiadomości, muzyka i radio. Naciśnij jeden przycisk i mów jak do człowieka, w dowolnym z 31 języków.",
+ "h1a": "Asystent głosowy do CarPlay",
+ "h1b": "po polsku",
+ "sub": "Dotknij Viavo i powiedz „Prowadź mnie do domu przez stację benzynową”. Trasa z przystankiem otworzy się w Twojej nawigacji. Możesz też głosem zadzwonić do kogoś z kontaktów lub włączyć ulubioną stację radiową.",
+ "demoLabel": "Zobacz przykładowe polecenia",
  "heroAlt": "Viavo na ekranie CarPlay",
  "bandPre": "Siri nie mówi ",
  "bandPost": ".",

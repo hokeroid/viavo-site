@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: asistent vocal cu AI pentru CarPlay, în limba română",
-  "description": "Apăsați un buton și spuneți-o cum vă vine. Viavo deschide trasee cu oprire, sună, scrie mesaje, pune muzică și radio și răspunde cu voce tare. 31 de limbi.",
-  "ogTitle": "Spuneți-o în limba dvs. Viavo face restul."
+  "title": "Asistent vocal pentru CarPlay în română | Viavo",
+  "description": "Atingeți Viavo și spuneți „Du-mă acasă cu o oprire la benzinărie”. Traseul se deschide în aplicația de navigație. De asemenea, puteți suna un contact sau porni un post de radio spunându-i numele.",
+  "ogTitle": "Asistent vocal pentru CarPlay în română | Viavo"
  },
  "qo": "„",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Presă",
  "nLangMenu": "Limbă",
  "eyebrow": "Asistent cu AI pentru CarPlay",
- "h1a": "Spuneți-o în limba dvs.",
- "h1b": "Viavo face restul.",
- "sub": "Trasee cu o oprire pe drum, apeluri, mesaje, muzică și radio. Apăsați un singur buton și spuneți ce vă trebuie, așa cum i-ați spune unui om, în oricare dintre cele 31 de limbi.",
+ "h1a": "Asistent vocal pentru CarPlay",
+ "h1b": "în română",
+ "sub": "Atingeți Viavo și spuneți „Du-mă acasă cu o oprire la benzinărie”. Traseul se deschide în aplicația de navigație. De asemenea, puteți suna un contact sau porni un post de radio spunându-i numele.",
+ "demoLabel": "Vedeți exemple de comenzi",
  "heroAlt": "Viavo pe un ecran CarPlay",
  "bandPre": "Siri nu vorbește ",
  "bandPost": ".",

@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: KI-Sprachassistent für CarPlay, in 31 Sprachen",
-  "description": "Drück die Taste und sag es mit deinen Worten. Viavo öffnet Routen mit Zwischenstopp, ruft an, schreibt, spielt Musik und Radio und antwortet laut. 31 Sprachen.",
-  "ogTitle": "Sag’s mit deinen Worten. Viavo erledigt’s."
+  "title": "Sprachassistent für CarPlay auf Deutsch | Viavo",
+  "description": "Tippe auf Viavo und sag „Bring mich nach Hause, mit einem Stopp an der Tankstelle“. Die Route öffnet sich in deiner Navi-App. Du kannst auch einen Kontakt anrufen oder einen Radiosender einschalten.",
+  "ogTitle": "Sprachassistent für CarPlay auf Deutsch | Viavo"
  },
  "qo": "„",
  "qc": "“",
@@ -11,9 +11,10 @@
  "nPress": "Presse",
  "nLangMenu": "Sprache",
  "eyebrow": "KI-Assistent für CarPlay",
- "h1a": "Sag’s mit deinen Worten.",
- "h1b": "Viavo erledigt’s.",
- "sub": "Routen mit Zwischenstopp, Anrufe, Nachrichten, Musik und Radio. Drück die Taste und sprich wie mit einem Menschen, in einer von 31 Sprachen.",
+ "h1a": "Sprachassistent für CarPlay",
+ "h1b": "auf Deutsch",
+ "sub": "Tippe auf Viavo und sag „Bring mich nach Hause, mit einem Stopp an der Tankstelle“. Die Route öffnet sich in deiner Navi-App. Du kannst auch einen Kontakt anrufen oder einen Radiosender einschalten.",
+ "demoLabel": "Sprachbefehle ausprobieren",
  "heroAlt": "Viavo auf einem CarPlay-Display",
  "bandPre": "Siri spricht kein ",
  "bandPost": ".",

@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: AI voice assistant for CarPlay, in 31 languages",
-  "description": "Press one button and say it your way. Viavo opens routes with a stop, calls, messages, plays music and radio, and answers out loud. 31 languages, a native voice in each.",
-  "ogTitle": "Say it in your language. Viavo gets it done.",
+  "title": "A voice assistant for Apple CarPlay | Viavo",
+  "description": "Tap Viavo and say “Take me home with a stop for gas.” The route opens in your navigation app. You can also call a contact or put on a radio station by name.",
+  "ogTitle": "A voice assistant for Apple CarPlay | Viavo",
   "pressTitle": "Press kit · Viavo",
   "pressDescription": "Facts, logos, the app icon and real CarPlay and iPhone screenshots of Viavo, the AI voice assistant for CarPlay."
  },
@@ -13,9 +13,10 @@
  "nPress": "Press",
  "nLangMenu": "Language",
  "eyebrow": "AI assistant for CarPlay",
- "h1a": "Say it in your language.",
- "h1b": "Viavo gets it done.",
- "sub": "Routes with a stop, calls, messages, music and radio. Press one button and say it the way you would to a person, in any of 31 languages.",
+ "h1a": "A voice assistant",
+ "h1b": "for Apple CarPlay",
+ "sub": "Tap Viavo and say “Take me home with a stop for gas.” The route opens in your navigation app. You can also call a contact or put on a radio station by name.",
+ "demoLabel": "See example commands",
  "heroAlt": "Viavo on a CarPlay screen",
  "bandPre": "Siri doesn’t speak ",
  "bandPost": ".",

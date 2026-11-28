@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: hlasový AI asistent v češtině pro CarPlay",
-  "description": "Stiskněte tlačítko a mluvte po svém. Viavo otevře trasu se zastávkou, zavolá, napíše zprávu, pustí hudbu i rádio a odpoví nahlas. 31 jazyků s rodilým hlasem.",
-  "ogTitle": "Řekněte to svým jazykem. Viavo to zařídí."
+  "title": "Hlasový asistent pro CarPlay v češtině | Viavo",
+  "description": "Klepněte na Viavo a řekněte „Vezmi mě domů se zastávkou na benzínce“. Trasa se otevře ve vaší navigaci. Hlasem můžete také zavolat někomu z kontaktů nebo pustit rádio.",
+  "ogTitle": "Hlasový asistent pro CarPlay v češtině | Viavo"
  },
  "qo": "„",
  "qc": "“",
@@ -11,9 +11,10 @@
  "nPress": "Pro média",
  "nLangMenu": "Jazyk",
  "eyebrow": "AI asistent pro CarPlay",
- "h1a": "Řekněte to svým jazykem.",
- "h1b": "Viavo to zařídí.",
- "sub": "Trasy se zastávkou po cestě, hovory, zprávy, hudba i rádio. Stiskněte jedno tlačítko a řekněte to kterýmkoli z 31 jazyků, jako byste mluvili s člověkem.",
+ "h1a": "Hlasový asistent pro CarPlay",
+ "h1b": "v češtině",
+ "sub": "Klepněte na Viavo a řekněte „Vezmi mě domů se zastávkou na benzínce“. Trasa se otevře ve vaší navigaci. Hlasem můžete také zavolat někomu z kontaktů nebo pustit rádio.",
+ "demoLabel": "Ukázky hlasových příkazů",
  "heroAlt": "Viavo na obrazovce CarPlay",
  "bandPre": "Siri nemluví ",
  "bandPost": ".",

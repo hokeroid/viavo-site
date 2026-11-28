@@ -1,8 +1,8 @@
 {
  "meta": {
-  "title": "Viavo: Trợ lý ảo AI cho CarPlay, 31 ngôn ngữ, có tiếng Việt",
-  "description": "Nhấn nút, nói theo cách của bạn. Viavo mở lộ trình kèm điểm dừng, gọi điện, nhắn tin, bật nhạc và radio, trả lời thành tiếng. 31 ngôn ngữ, đều có giọng bản ngữ.",
-  "ogTitle": "Nói bằng tiếng của bạn. Viavo lo phần còn lại."
+  "title": "Trợ lý giọng nói cho CarPlay bằng tiếng Việt | Viavo",
+  "description": "Chạm vào Viavo và nói “Dẫn tôi về nhà, ghé trạm xăng trên đường”. Lộ trình có điểm dừng sẽ mở trong ứng dụng chỉ đường. Bạn cũng có thể gọi cho một người trong danh bạ hoặc mở đài phát thanh theo tên.",
+  "ogTitle": "Trợ lý giọng nói cho CarPlay bằng tiếng Việt | Viavo"
  },
  "qo": "“",
  "qc": "”",
@@ -11,9 +11,10 @@
  "nPress": "Báo chí",
  "nLangMenu": "Ngôn ngữ",
  "eyebrow": "Trợ lý AI cho CarPlay",
- "h1a": "Nói bằng tiếng của bạn.",
- "h1b": "Viavo lo phần còn lại.",
- "sub": "Lộ trình kèm điểm dừng, cuộc gọi, tin nhắn, nhạc và radio. Nhấn một nút và nói như khi trò chuyện với người thật, bằng một trong 31 ngôn ngữ.",
+ "h1a": "Trợ lý giọng nói cho CarPlay",
+ "h1b": "bằng tiếng Việt",
+ "sub": "Chạm vào Viavo và nói “Dẫn tôi về nhà, ghé trạm xăng trên đường”. Lộ trình có điểm dừng sẽ mở trong ứng dụng chỉ đường. Bạn cũng có thể gọi cho một người trong danh bạ hoặc mở đài phát thanh theo tên.",
+ "demoLabel": "Xem ví dụ về lệnh thoại",
  "heroAlt": "Viavo trên màn hình CarPlay",
  "bandPre": "Siri không nói được ",
  "bandPost": ".",
