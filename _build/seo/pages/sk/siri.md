@@ -12,7 +12,11 @@ store: sk
 ct: sk-siri
 ---
 
-**Stručná odpoveď.** Apple zatiaľ neoznámil, kedy bude Siri hovoriť po slovensky: k 16. novembru 2026 slovenčina medzi jej jazykmi nie je. V CarPlay preto Siri prijíma príkazy len v inom jazyku, napríklad v angličtine, a nemá slovenský hlas, ktorým by vám prečítala správy nahlas. Po slovensky môžete diktovať na klávesnici iPhonu, no nová Siri AI nie je v EÚ dostupná na iPhone, iPade ani Apple Watch a zatiaľ ovláda len angličtinu, francúzštinu, japončinu, kórejčinu, portugalčinu a španielčinu. Od 11. novembra 2026 Google zavádza do CarPlay aplikáciu Gemini a slovenčinu uvádza medzi jej jazykmi; oznámenie Googlu spomína rozhovor, emaily a kalendár, nie hovory, správy či hudbu. V aute sa už dnes po slovensky dohovoríte aj s aplikáciou Viavo: stačí na obrazovke CarPlay klepnúť na jedno tlačidlo a hovoriť, ako ste zvyknutí. Viavo zavolá, prečíta správy a odošle vašu odpoveď, pustí hudbu a otvorí trasu vo vašej navigácii. Odpovedá vám nahlas po slovensky.
+**Stručná odpoveď.** Siri zatiaľ nevie po slovensky a Apple neoznámil, kedy sa to zmení. Ak chceš počas jazdy niekomu zavolať, ťukni v CarPlay na Viavo a povedz: „Zavolaj mame.“ Viavo vyhľadá kontakt a začne hovor.
+
+[Stiahnuť v App Store]
+
+[Pozrite si príklady príkazov a odpovedí Viavo](https://viavo.app/sk/#say)
 
 ## Čo to znamená v CarPlay
 

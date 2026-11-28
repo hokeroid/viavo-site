@@ -11,7 +11,11 @@ covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri in romana", "siri în limba 
 cta: App Store, Romania store, ct=ro-siri
 ---
 
-**Pe scurt.** Siri în română nu există încă, iar Apple nu a spus când va apărea: pe 16 noiembrie 2026, româna nu se numără printre limbile lui Siri de pe pagina oficială Apple (apple.com/ios/feature-availability). De aceea, în CarPlay Siri acceptă comenzi doar într-o altă limbă, de exemplu în engleză, și nu are o voce în română cu care să vă citească mesajele cu glas tare. Pe tastatura iPhone-ului puteți dicta în română. Noua Siri AI, potrivit notei Apple din 12 noiembrie 2026, funcționează în engleză, franceză, japoneză, coreeană, portugheză și spaniolă și nu este disponibilă pe iPhone în UE. Din 11 noiembrie 2026, în CarPlay există și Gemini, iar Google include româna printre limbile lui; anunțul Google vorbește despre conversație, e-mail și calendar, nu și despre apeluri, mesaje sau muzică. De acestea se ocupă Viavo, în română: atingeți un singur buton pe ecranul CarPlay și spuneți ce vă trebuie, așa cum vorbiți de obicei, iar Viavo sună, vă citește mesajele, trimite răspunsurile pe care i le dictați, pune muzică și deschide traseul. Vă răspunde cu voce tare, în română.
+**Pe scurt.** Siri încă nu vorbește română, iar Apple nu a anunțat o dată. Dacă doriți să sunați pe cineva în timp ce conduceți, atingeți Viavo pe ecranul CarPlay și spuneți „Sun-o pe Ana”. Viavo o găsește în contacte și inițiază apelul.
+
+[Descarcă din App Store]
+
+[Vedeți exemple de comenzi și răspunsuri în Viavo](https://viavo.app/ro/#say)
 
 ## Ce înseamnă asta în CarPlay
 

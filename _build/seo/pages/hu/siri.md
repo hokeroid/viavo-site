@@ -10,7 +10,11 @@ sources: pages/update-2026-11-16.md (brief); pages/facts-2026-11.md (every claim
 covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri magyarul", "magyar siri", "mikor lesz magyar siri", "lesz magyar siri", "siri tud magyarul", "siri beszél magyarul", "siri ért magyarul", "siri magyar", "magyar hangasszisztens", "hangasszisztens magyarul", "hangvezérlés autóban", "hangvezérlés magyarul"
 ---
 
-**Röviden.** A Siri még nem tud magyarul, és az Apple semmilyen időpontot nem közölt: 2026. november 16-án a magyar nincs a Siri nyelvei között az Apple hivatalos oldalán (apple.com/ios/feature-availability). Ezért a CarPlay-ben a Siri csak más nyelven, például angolul fogad el parancsot, és nincs magyar hangja, amellyel felolvashatná az üzeneteidet. Az iPhone billentyűzetén magyarul is diktálhatsz. Az új Siri AI az Apple 2026. november 12-i tájékoztatója szerint angol, francia, japán, koreai, portugál és spanyol nyelven működik, iPhone-on pedig az EU-ban nem érhető el. A Gemini 2026. november 11-e óta a CarPlay-ben is elérhető, és a Google a magyart is felsorolja a nyelvei között; a bejelentése azonban beszélgetésről, e-mailekről és naptárról szól, hívásokról, üzenetekről és zenéről nem. Ezeket a Viavo magyarul elintézi. Egy koppintással indul a CarPlay-kijelzőn: mondd el a saját szavaiddal, mire van szükséged, és a Viavo telefonál, felolvassa az üzeneteidet, elküldi a lediktált választ, zenét indít, útvonalat tervez, és magyarul, hangosan válaszol.
+**Röviden.** A Siri még nem beszél magyarul, és az Apple nem közölte, mikortól lesz elérhető magyarul. Ha vezetés közben telefonálnál, koppints a Viavóra a CarPlay kijelzőjén, és mondd: „Hívd fel Annát!” A Viavo megkeresi Annát a névjegyeid között, és elindítja a hívást.
+
+[Letöltés az App Store-ból]
+
+[Nézd meg, mit mondhatsz a Viavónak, és hogyan válaszol](https://viavo.app/hu/#say)
 
 ## Mit jelent ez a CarPlay-ben?
 
@@ -45,6 +49,8 @@ A Viavo felolvassa a csatlakoztatás után érkező új WhatsApp-üzeneteket és
 A válasz csak akkor megy el, ha megerősítetted a címzettet és a szöveget. WhatsAppon a Viavo azoknak válaszol, akik a csatlakoztatás óta írtak neked; SMS-t bárkinek küldhetsz a kontaktjaid közül, a számot pedig a telefon maga írja be. WhatsAppon bárkit felhívhatsz a kontaktjaid közül, az autó kijelzőjéről is: elég annyit mondanod, hogy „Hívd fel Annát WhatsAppon”.
 
 Parkolás közben nyisd meg a Viavo beállításait, és kövesd a lépéseket: telepítsd a Viavo-parancsot, kapcsold be az automatizálását, és futtasd az ellenőrzést. Ugyanez az automatizálás kezeli a WhatsAppot, az SMS-eket, a WhatsApp- és Viber-hívásokat, és megnyitja a Viavót, amikor a CarPlay csatlakozik.
+
+[WhatsApp-üzenetek felolvasása és megválaszolása magyarul a CarPlayen](https://viavo.app/hu/whatsapp-carplay/)
 
 [Hogyan kezeli a Viavo az üzeneteidet](https://viavo.app/messengers/)
 

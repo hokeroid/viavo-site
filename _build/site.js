@@ -27,17 +27,51 @@
     if (a) { try { hit('appstore_click', new URL(a.href).searchParams.get('ct')); } catch (e) {} }
   });
 
-  // Paid search (VIA-645): an ad's final URL carries utm_medium=cpc, so the App Store buttons on the page it opens
-  // get their own campaign token (google-pl-siri) and App Store Connect counts those downloads apart. Nothing stored.
+  // Keep the acquisition channel across same-tab navigation. Only a short
+  // channel code persists, and a fresh external entry replaces it.
   try {
     const q = new URLSearchParams(location.search);
-    if (q.get('utm_medium') === 'cpc') {
-      const src = (q.get('utm_source') || 'ads').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 8);
+    let host = document.referrer ? new URL(document.referrer).hostname : '';
+    let previous = '';
+    try {
+      const redirected = sessionStorage.getItem('viavo_redirect_ref');
+      sessionStorage.removeItem('viavo_redirect_ref');
+      if (redirected !== null && (!host || host === location.hostname)) host = redirected;
+      previous = sessionStorage.getItem('viavo_acquisition') || '';
+    } catch (e) {}
+    const medium = (q.get('utm_medium') || '').toLowerCase();
+    const source = (q.get('utm_source') || '').toLowerCase();
+    const googleAd = ['gclid', 'gbraid', 'wbraid'].some(k => q.has(k));
+    let channel = '';
+    if (googleAd || ['cpc', 'ppc', 'paidsearch', 'paid'].includes(medium)) {
+      channel = 'paid-' + (googleAd ? 'google' : source.replace(/[^a-z0-9]/g, '').slice(0, 8) || 'ads');
+    } else if ((source === 'google' && medium === 'organic') ||
+               (!source && !medium && !q.has('utm_campaign') && !q.has('fbclid') &&
+                /^(?:www\.)?google\.(?:[a-z]{2,3}|co\.[a-z]{2}|com\.[a-z]{2})$/.test(host))) {
+      const article = location.pathname.replace(/\/index\.html$/, '/').split('/').filter(Boolean).pop();
+      const entry = article === 'whatsapp-carplay' ? 'whatsapp' :
+        ['siri', 'chatgpt-carplay'].includes(article) ? 'answers' : 'site';
+      channel = 'seo-google-' + entry;
+    } else if (host === location.hostname && !source && !medium && !q.has('utm_campaign') && !q.has('fbclid')) {
+      channel = previous;
+    }
+    try { sessionStorage.setItem('viavo_acquisition', channel); } catch (e) {}
+    if (channel) {
       document.querySelectorAll('a[href*="apps.apple.com"]').forEach(a => {
         const u = new URL(a.href);
-        u.searchParams.set('ct', `${src}-${u.searchParams.get('ct') || 'site'}`.slice(0, 40));
+        if (u.hostname !== 'apps.apple.com' || !/\/id6761760437(?:\/|$)/.test(u.pathname)) return;
+        const token = channel.startsWith('seo-google-') ? channel :
+          (channel.slice(5) + '-' + (u.searchParams.get('ct') || 'site')).slice(0, 40);
+        u.searchParams.set('ct', token);
+        u.searchParams.set('pt', '127870899');
+        u.searchParams.set('mt', '8');
         a.href = u.toString();
       });
+      if (['seo-google-answers', 'seo-google-whatsapp', 'seo-google-site'].includes(channel)) {
+        document.querySelectorAll('img[data-qr-dir]').forEach(img => {
+          img.src = img.dataset.qrDir + channel + '.svg';
+        });
+      }
     }
   } catch (e) {}
 

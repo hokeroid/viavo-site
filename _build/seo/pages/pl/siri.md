@@ -10,7 +10,11 @@ sources: pages/facts-2026-11.md (each claim about Siri, CarPlay and the chatbots
 covers: keywords "siri po polsku", "kiedy siri po polsku", "siri po polsku kiedy", "czy siri mówi po polsku", "czy siri mówi już po polsku", "kiedy siri przemówi po polsku", "siri po polsku ios 27", "siri po polsku 2026", "siri ai w polsce", "alternatywa dla siri po polsku", "który asystent głosowy mówi po polsku", "asystent głosowy po polsku", "asystent głosowy w samochodzie", "gemini w samochodzie", "carplay czytanie sms po polsku"
 ---
 
-**Krótka odpowiedź.** Apple nie podał, kiedy Siri zacznie mówić po polsku: według stanu na 16 listopada 2026 roku polskiego nie ma na liście jej języków. Dlatego w CarPlay Siri przyjmuje polecenia tylko w innym języku, na przykład po angielsku, i nie ma polskiego głosu, którym mogłaby czytać na głos Twoje wiadomości. Tekst po polsku można dyktować z klawiatury iPhone’a, ale nowej Siri AI w Unii Europejskiej nie ma na iPhonie, iPadzie ani Apple Watch, a jej języki to na razie angielski, francuski, japoński, koreański, portugalski i hiszpański. Od 11 listopada 2026 roku Google wprowadza do CarPlay aplikację Gemini i wymienia polski wśród jej języków; w zapowiedzi Google jest mowa o rozmowie, poczcie i kalendarzu, ale nie o połączeniach, wiadomościach czy muzyce. W samochodzie możesz już dziś rozmawiać po polsku z Viavo, asystentem głosowym dla kierowców na iPhonie i w CarPlay. Stukasz jeden przycisk na ekranie samochodu i mówisz po swojemu, a Viavo dzwoni, czyta i wysyła wiadomości, włącza muzykę, otwiera trasę w Twojej nawigacji i odpowiada Ci na głos po polsku.
+**Krótka odpowiedź.** Siri nie mówi po polsku. Apple nie podał daty, kiedy to się zmieni. W samochodzie możesz już dziś nacisnąć przycisk Viavo w CarPlay i powiedzieć: „Zadzwoń do Ani”. Viavo odszuka kontakt i rozpocznie połączenie.
+
+[Pobierz w App Store]
+
+[Zobacz przykładowe polecenia i odpowiedzi Viavo](https://viavo.app/pl/#say)
 
 ## Co to oznacza w CarPlay
 
@@ -45,6 +49,8 @@ Viavo odczytuje na głos nowe wiadomości z WhatsAppa i SMS-y, które przyjdą
 Viavo wysyła odpowiedź dopiero wtedy, gdy potwierdzisz odbiorcę i treść. Na WhatsAppie odpowiada osobom, które napisały do Ciebie po konfiguracji; SMS-a możesz wysłać do każdego z kontaktów, a telefon sam wpisze numer. Przez WhatsApp zadzwonisz do każdego, kogo masz w kontaktach, także z ekranu samochodu: wystarczy powiedzieć „Zadzwoń do Ani przez WhatsApp”.
 
 Na postoju otwórz ustawienia Viavo i wykonaj kolejne kroki: zainstaluj skrót Viavo, włącz jego automatyzację i przetestuj ją. Ta sama automatyzacja obsługuje WhatsApp, SMS-y i połączenia przez WhatsApp i Viber, a gdy połączy się CarPlay, otwiera Viavo.
+
+[Jak odsłuchać WhatsApp i odpowiedzieć po polsku w CarPlay](https://viavo.app/pl/whatsapp-carplay/)
 
 [Jak Viavo obchodzi się z Twoimi wiadomościami](https://viavo.app/messengers/)
 

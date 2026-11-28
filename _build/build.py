@@ -169,6 +169,7 @@ def auto_lang_script(available):
         "new Blob([JSON.stringify({e:'lang_auto',p:location.pathname,l:'en',s:id,r:document.referrer,us:Q.get('utm_source')||'',"
         "um:Q.get('utm_medium')||'',uc:Q.get('utm_campaign')||'',ct:'',tz:Intl.DateTimeFormat().resolvedOptions().timeZone||'',"
         "bl:navigator.language||''})],{type:'text/plain'}))}}catch(x){}"
+        "try{sessionStorage.setItem('viavo_redirect_ref',document.referrer?new URL(document.referrer).hostname:'')}catch(x){}"
         "location.replace(F[c]+'/'+location.search+location.hash)}}catch(e){}})();"
     ) % json.dumps(folders, separators=(',', ':'))
     return f'<script>{js}</script>\n'
@@ -212,7 +213,7 @@ def head(lang, title, desc, canonical, r, alternates='', og_image=None, og_title
 '''
 
 
-def header(T, lang, r, available, here=None, page_paths=None):
+def header(T, lang, r, available, here=None, page_paths=None, campaign=None):
     items = []
     for code, *_ in LANGS:
         if code not in available:
@@ -228,7 +229,7 @@ def header(T, lang, r, available, here=None, page_paths=None):
 <nav class="nav" aria-label="Viavo"><a href="{home}#features">{e(T["nFeatures"])}</a><a href="{home}#languages">{e(T["nLanguages"])}</a><a href="{r}press/"{press_cur}>{e(T["nPress"])}</a></nav>
 <div class="hdr-r">
 <details class="lang"><summary aria-label="{e(T["nLangMenu"])}"><span>{L[lang]["native"]}</span><span class="chev"></span></summary><ul>{"".join(items)}</ul></details>
-<a class="btn-store" href="{e(store_url(lang))}">App Store</a>
+<a class="btn-store" href="{e(store_url(lang, campaign))}">App Store</a>
 </div></div></header>
 '''
 
@@ -238,13 +239,14 @@ def badge(lang, r, campaign=None, cls='badge'):
     return f'<a class="{cls}" href="{e(store_url(lang, campaign))}"><img src="{r}assets/badges/{b}.svg" alt="{{alt}}" width="160" height="54"></a>'
 
 
-def qr(lang, T, r):
-    if not exists(f'assets/qr/{lang}.svg'):
+def qr(lang, T, r, campaign=None):
+    name = campaign or lang
+    if not exists(f'assets/qr/{name}.svg'):
         return ''
-    return f'<div class="qr"><img src="{r}assets/qr/{lang}.svg" alt="" width="64" height="64" loading="lazy"><span>{e(T["scan"])}</span></div>'
+    return f'<div class="qr"><img data-qr-dir="{r}assets/qr/" src="{r}assets/qr/{name}.svg" alt="" width="64" height="64" loading="lazy"><span>{e(T["scan"])}</span></div>'
 
 
-def footer(T, lang, r, available):
+def footer(T, lang, r, available, campaign=None):
     home = r + (L[lang]['folder'] + '/' if L[lang]['folder'] and lang in available else '')
     ru = lang in ('ru', 'uk')
     def legal(section):
@@ -256,7 +258,7 @@ def footer(T, lang, r, available):
     langs = ''.join(f'<li><a href="{r}{L[c]["folder"] + "/" if L[c]["folder"] else ""}" lang="{L[c]["hreflang"]}">{L[c]["native"]}</a></li>'
                     for c, *_ in LANGS if c in available)
     return f'''<footer class="wrap grid ftr">
-<div class="brand"><a class="logo" href="{home}" aria-label="Viavo">{MARK}<span>viavo</span></a><small>{brandsafe(T["eyebrow"])}</small>{badge(lang, r, "site-" + lang + "-footer").replace("{alt}", e(T["badgeAlt"]))}</div>
+<div class="brand"><a class="logo" href="{home}" aria-label="Viavo">{MARK}<span>viavo</span></a><small>{brandsafe(T["eyebrow"])}</small>{badge(lang, r, campaign or "site-" + lang + "-footer").replace("{alt}", e(T["badgeAlt"]))}</div>
 <nav aria-label="{e(T["fPrivacy"])}"><a href="{legal("privacy")}">{e(T["fPrivacy"])}</a><a href="{legal("terms")}">{e(T["fTerms"])}</a><a href="{legal("messengers")}">{e(T["fMessengers"])}</a><a href="{legal("support")}">{e(T["fSupport"])}</a><a href="{r}press/">{e(T["fPress"])}</a>{answers}</nav>
 <ul class="fl">{langs}</ul>
 <div class="bot"><span>© 2026 Viavo</span><span>{brandsafe(T["tm"])}</span></div>
@@ -399,9 +401,11 @@ def home(lang, T, available):
 
     # WhatsApp availability and setup, localized alongside the feature and FAQ copy.
     wa = T['whatsapp']
+    guides = ''.join(f'<p><a href="{r}{folder_}{slug}/">{e(label)}</a></p>'
+                     for slug, label in ANSWER_LINKS.get(lang, []) if slug == 'whatsapp-carplay')
     out.append(f'''<section class="sec works" id="whatsapp"><div class="wrap grid">
 <div class="txt"><h2 class="h2">{brandsafe(wa["title"])}</h2><p class="lead">{brandsafe(wa["availability"])}</p></div>
-<div class="prose"><p>{brandsafe(wa["receive"])}</p><p>{brandsafe(wa["send"])}</p><p>{brandsafe(wa["setup"])}</p>
+<div class="prose"><p>{brandsafe(wa["receive"])}</p><p>{brandsafe(wa["send"])}</p><p>{brandsafe(wa["setup"])}</p>{guides}
 <p><a href="{r}messengers/{"ru/" if lang in ('ru', 'uk') else ""}">{e(T["lMessages"])}</a></p></div>
 </div></section>
 ''')
@@ -572,6 +576,7 @@ def answer_page(lang, slug, meta, body, T, available, pages):
         alts = ''.join(f'<link rel="alternate" hreflang="{L[c]["hreflang"]}" href="{BASE_URL}/{(L[c]["folder"] + "/" if L[c]["folder"] else "") + slug}/">\n' for c in same)
         if 'en' in same:
             alts += f'<link rel="alternate" hreflang="x-default" href="{BASE_URL}/{slug}/">\n'
+    campaign = f'{lang}-{slug}'
     blocks = answer_blocks(body)
     # split into sections by h2
     sections, cur = [], {'h2': None, 'blocks': []}
@@ -607,8 +612,8 @@ def answer_page(lang, slug, meta, body, T, available, pages):
                 out_html.append('<ol>' + ''.join(f'<li>{inline(re.sub(r"^\d+\. ", "", l))}</li>' for l in b) + '</ol>')
             elif len(b) == 1 and re.match(r'^\[[^\]]+\]$', first):
                 label = first[1:-1]
-                bimg = lang if exists(f'assets/badges/{lang}.svg') else 'en'
-                out_html.append(f'<p class="ans-cta"><a class="badge" href="{e(store_url(lang, f"{lang}-{slug}"))}"><img src="{r}assets/badges/{bimg}.svg" alt="{e(label)}" width="160" height="54"></a></p>')
+                download = badge(lang, r, campaign).replace('{alt}', e(label))
+                out_html.append(f'<div class="ans-cta cta-row">{download}{qr(lang, T, r, campaign)}</div>')
             else:
                 para = ' '.join(b)
                 cls = ' class="short"' if not out_html and para.startswith('**') else (' class="note"' if para.startswith('*') and not para.startswith('**') else '')
@@ -621,14 +626,14 @@ def answer_page(lang, slug, meta, body, T, available, pages):
         jsonld = '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace('</', '<\\/') + '</script>\n'
     page_head = head(lang, meta['title'], meta['description'], canonical, r, alts).replace('<!-- seo:head -->', '<!-- seo:head -->\n' + jsonld)
     page_paths = {code: (L[code]['folder'] + '/' if L[code]['folder'] else '') + slug + '/' for code in same}
-    out = [page_head, '<body>', SYMBOLS, header(T, lang, r, available, page_paths=page_paths)]
+    out = [page_head, '<body>', SYMBOLS, header(T, lang, r, available, page_paths=page_paths, campaign=campaign)]
     home_href = r + (folder + '/' if folder else '')
     out.append(f'''<main id="main" class="answer">
 <div class="wrap ans-head"><p class="eyebrow"><a href="{home_href}">Viavo</a></p><h1>{inline(meta["h1"])}</h1></div>
 <div class="wrap"><article class="prose ans">{"".join(out_html)}</article></div>
 </main>
 ''')
-    out.append(footer(T, lang, r, available))
+    out.append(footer(T, lang, r, available, campaign))
     out.append('</body>\n</html>\n')
     return rel_path, typeset(lang, ''.join(out))
 
@@ -645,7 +650,7 @@ def answer_index():
 
 
 def answer_label(meta):
-    return meta['title'].split(':')[0].strip()
+    return meta.get('link_label') or meta['title'].split(':')[0].strip()
 
 
 LEGAL_UI = {
@@ -734,11 +739,18 @@ def main():
     pages, answers = answer_index() if ANSWERS_LIVE else ({}, {})
     for (lang_, slug), (meta, _) in answers.items():
         ANSWER_LINKS.setdefault(lang_, []).append((slug, answer_label(meta)))
+    qr_dir = ROOT / 'assets/qr'
+    qr_dir.mkdir(exist_ok=True)
+    for entry in ('answers', 'whatsapp', 'site'):
+        token = f'seo-google-{entry}'
+        (qr_dir / f'{token}.svg').write_text(qrcode.svg(qrcode.build(store_url('en', token))))
     for (lang_, slug), (meta, body) in answers.items():
+        if re.search(r'^\[[^\]]+\]$', body, flags=re.M):
+            campaign = f'{lang_}-{slug}'
+            (qr_dir / f'{campaign}.svg').write_text(qrcode.svg(qrcode.build(store_url(lang_, campaign))))
         rel_path, page = answer_page(lang_, slug, meta, body, {**en, **content.get(lang_, {})}, available, pages)
         (ROOT / rel_path).mkdir(parents=True, exist_ok=True)
         (ROOT / rel_path / 'index.html').write_text(page)
-    (ROOT / 'assets/qr').mkdir(exist_ok=True)
     for c in available:
         (ROOT / f'assets/qr/{c}.svg').write_text(qrcode.svg(qrcode.build(store_url(c, f'site-{c}-qr'))))
     for c, T in content.items():

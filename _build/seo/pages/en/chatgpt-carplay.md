@@ -10,7 +10,11 @@ sources: pages/facts-2026-11.md (every claim about other products is there with 
 covers: Q1, Q2, Q3, Q10, Q14; keywords "chatgpt carplay", "ai assistant carplay", "siri alternative carplay"
 ---
 
-**Short answer.** Since iOS 26.4, ChatGPT and other AI chatbots run in CarPlay as voice chats: good to talk to, but when ZDNET tested ChatGPT and Perplexity, neither played music, made a call or sent a message, and ChatGPT couldn't plan a route because it can't see your location. Viavo understands plain speech in 29 languages and does those things: it opens the route in your navigator, plays your music, calls (on iOS 27 also inside WhatsApp) and reads and answers your messages.
+**Short answer.** You can talk to ChatGPT through CarPlay on iOS 26.4 or later. For a call on the road, tap Viavo and say “Call Anna”. Viavo finds her in your contacts and starts the call.
+
+[Download on the App Store]
+
+[See what you can say and how Viavo responds](https://viavo.app/#say)
 
 ## Which chatbots are in CarPlay
 

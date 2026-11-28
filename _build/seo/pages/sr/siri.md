@@ -10,7 +10,11 @@ sources: pages/facts-2026-11.md, pages/update-2026-11-16.md, press/research/refr
 covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri na srpskom", "siri srpski", "da li siri govori srpski", "kada će siri na srpskom", "glasovni asistent na srpskom", "ai asistent na srpskom", "gemini srpski", "gemini carplay"
 ---
 
-**Ukratko.** Apple još nije rekao kada će Siri progovoriti srpski: na dan 16. novembra 2026. srpskog nema na spisku jezika koje Siri podržava (apple.com/ios/feature-availability). Zato u CarPlay-u Siri prima komande samo na nekom drugom jeziku, na primer na engleskom, i nema srpski glas kojim bi ti naglas pročitala poruke. Apple srpski ne navodi ni među jezicima za diktiranje preko tastature, a nova Siri AI zasad radi samo na šest jezika (engleski, francuski, japanski, korejski, portugalski i španski), među kojima srpskog nema. Od 11. novembra Google postepeno uvodi Gemini u CarPlay i srpski navodi među njegovim jezicima. U kolima već sada možeš da pričaš na srpskom sa Viavom: pritisni jedno dugme na ekranu automobila i svojim rečima reci šta ti treba, a Viavo zove kontakte, čita i šalje poruke, pušta muziku, otvara rutu u tvojoj navigaciji i naglas ti odgovara na srpskom.
+**Ukratko.** Siri još ne govori srpski, a Apple nije objavio kada će to biti moguće. Ako želiš nekoga da pozoveš dok voziš, dodirni Viavo na CarPlay ekranu i reci: „Pozovi Anu.“ Viavo će pronaći Anu u kontaktima i pokrenuti poziv.
+
+[Preuzmi sa App Store-a]
+
+[Pogledajte primere komandi i odgovora u aplikaciji Viavo](https://viavo.app/sr/#say)
 
 ## Šta to znači u CarPlay-u
 

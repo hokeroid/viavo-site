@@ -12,7 +12,11 @@ store: cz
 ct: cs-siri
 ---
 
-**Stručná odpověď.** Apple zatím neoznámil, kdy bude Siri v češtině: k 16. listopadu 2026 čeština mezi jejími jazyky není. V CarPlay proto Siri přijímá příkazy jen v jiném jazyce, třeba v angličtině, a nemá český hlas, kterým by vám zprávy přečetla nahlas. Česky můžete diktovat na klávesnici iPhonu, ale nová Siri AI není v EU dostupná na iPhonu, iPadu ani Apple Watch a zatím umí jen anglicky, francouzsky, japonsky, korejsky, portugalsky a španělsky. Od 11. listopadu 2026 Google zavádí do CarPlay aplikaci Gemini a češtinu uvádí mezi jejími jazyky; oznámení Googlu mluví o rozhovoru, e-mailech a kalendáři, ne o hovorech, zprávách nebo hudbě. V autě se už teď česky domluvíte i s aplikací Viavo: stačí na obrazovce CarPlay klepnout na jedno tlačítko a mluvit tak, jak jste zvyklí. Viavo zavolá, přečte zprávy a odešle vaši odpověď, pustí hudbu a otevře trasu ve vaší navigaci. Mluví s vámi nahlas česky.
+**Stručná odpověď.** Siri česky zatím neumí a Apple neoznámil, kdy se to změní. Chcete za jízdy někomu zavolat česky? V CarPlay klepněte na Viavo a řekněte „Zavolej mámě“. Viavo najde kontakt a zahájí hovor.
+
+[Stáhnout v App Store]
+
+[Podívejte se na příklady příkazů a odpovědí Viavo](https://viavo.app/cs/#say)
 
 ## Co to znamená v CarPlay
 
@@ -47,6 +51,8 @@ Viavo nahlas přečte nové zprávy z WhatsAppu a SMS, které přijdou po připo
 Odpověď odejde teprve poté, co potvrdíte příjemce a text. Na WhatsAppu Viavo odpovídá lidem, kteří vám od připojení napsali; SMS můžete poslat komukoli z kontaktů a číslo doplní telefon sám. Přes WhatsApp zavoláte komukoli z kontaktů, i z obrazovky auta: stačí říct „Zavolej Anně přes WhatsApp“.
 
 Při stání otevřete nastavení Viavo a projděte kroky: nainstalujte zkratku Viavo, zapněte její automatizaci a vyzkoušejte ji. Stejná automatizace obsluhuje WhatsApp, SMS i hovory přes WhatsApp a Viber, a když se připojí CarPlay, otevře Viavo.
+
+[Jak si v CarPlay poslechnout zprávu z WhatsAppu a odpovědět česky](https://viavo.app/cs/whatsapp-carplay/)
 
 [Jak Viavo zachází s vašimi zprávami](https://viavo.app/messengers/)
 

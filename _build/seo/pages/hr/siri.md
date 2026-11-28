@@ -10,7 +10,11 @@ sources: pages/facts-2026-11.md, pages/update-2026-11-16.md, press/research/refr
 covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri hrvatski", "siri hrvatski jezik", "siri na hrvatskom", "ima li siri na hrvatskom", "kada će siri na hrvatskom", "iphone siri na hrvatskom", "glasovni asistent na hrvatskom", "gemini hrvatski", "gemini carplay"; "siri na srpskom" only as a link to /sr/siri/
 ---
 
-**Ukratko.** Apple još nije rekao kada će Siri progovoriti hrvatski: na dan 16. studenoga 2026. hrvatskog nema na popisu jezika koje Siri podržava (apple.com/ios/feature-availability). Zato u CarPlayu Siri prima naredbe samo na nekom drugom jeziku, primjerice na engleskom, i nema hrvatski glas kojim bi ti naglas pročitala poruke. Hrvatski možeš diktirati preko tipkovnice iPhonea, a nova Siri AI zasad radi samo na šest jezika (engleski, francuski, japanski, korejski, portugalski i španjolski) i na iPhoneu u EU-u je uopće nema. Od 11. studenoga Google postupno uvodi Gemini u CarPlay i hrvatski navodi među njegovim jezicima. U autu već sada možeš razgovarati na hrvatskom s Viavom: dodirni jedan gumb na zaslonu automobila i svojim riječima reci što trebaš, a Viavo zove kontakte, čita i šalje poruke, pušta glazbu i otvara rutu u tvojoj navigaciji te ti naglas odgovara na hrvatskom.
+**Ukratko.** Siri još ne govori hrvatski, a Apple nije objavio kada će to omogućiti. Ako želiš nekoga nazvati u vožnji, dodirni Viavo na zaslonu CarPlaya i reci: „Nazovi Anu.“ Viavo će pronaći Anu u kontaktima i pokrenuti poziv.
+
+[Preuzmi u App Storeu]
+
+[Pogledajte primjere naredbi i odgovora u aplikaciji Viavo](https://viavo.app/hr/#say)
 
 ## Što to znači u CarPlayu
 
