@@ -15,7 +15,7 @@
   --header:rgba(244,243,239,.84);--shadow:0 40px 80px rgba(21,22,27,.16);--glow:rgba(255,178,36,.34);--hover:rgba(21,22,27,.05);
 }}
 /* Space Grotesk has no Cyrillic, Greek or Hebrew: those pages set headlines in Manrope / Noto Sans Hebrew */
-:lang(ru),:lang(uk),:lang(sr),:lang(el){--fh:Manrope,system-ui,sans-serif;--hls:-.03em;--h1:76px;--h1lh:1.06;--els:.08em}
+:lang(bg),:lang(ru),:lang(uk),:lang(sr),:lang(el){--fh:Manrope,system-ui,sans-serif;--hls:-.03em;--h1:76px;--h1lh:1.06;--els:.08em}
 :lang(he){--fh:'Noto Sans Hebrew',Manrope,system-ui,sans-serif;--fb:'Noto Sans Hebrew',Manrope,system-ui,sans-serif;--hls:-.015em;--h1:76px;--h1lh:1.1;--ecase:none;--els:0}
 :lang(ar){--fh:system-ui,'Geeza Pro','Noto Sans Arabic',sans-serif;--fb:system-ui,'Geeza Pro','Noto Sans Arabic',sans-serif;--hls:0;--h1lh:1.25;--ecase:none;--els:0}
 :lang(hi){--fh:system-ui,'Kohinoor Devanagari','Noto Sans Devanagari',sans-serif;--fb:system-ui,'Kohinoor Devanagari','Noto Sans Devanagari',sans-serif;--hls:0;--h1lh:1.25;--ecase:none;--els:0}
@@ -334,7 +334,7 @@ button{font:inherit;color:inherit}
 /* phone */
 @media (max-width:760px){
   :root{--h1:44px;--h2:34px;--pad:88px;--wrap:calc(100% - 40px)}
-  :lang(ru),:lang(uk),:lang(sr),:lang(el){--h1:38px}
+  :lang(bg),:lang(ru),:lang(uk),:lang(sr),:lang(el){--h1:38px}
   :lang(he){--h1:40px}
   body{font-size:16px}
   .grid{display:flex;flex-direction:column;align-items:stretch}

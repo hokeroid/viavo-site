@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-FONTS = {'he': "'Noto Sans Hebrew'", 'ru': 'Manrope', 'uk': 'Manrope', 'el': 'Manrope', 'sr': 'Manrope'}
+FONTS = {'he': "'Noto Sans Hebrew'", 'bg': 'Manrope', 'ru': 'Manrope', 'uk': 'Manrope', 'el': 'Manrope', 'sr': 'Manrope'}
 
 
 def card(lang, T):

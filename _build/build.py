@@ -5,7 +5,7 @@
 
 Sources: _build/content/<lang>.json (page copy), _build/site.css, _build/site.js,
 _build/legal-src/** (the legal texts, copied verbatim into the new layout), assets/** (images, fonts, badges).
-Outputs: index.html, <lang>/index.html, press/index.html, privacy|terms|messengers[/ru]|support/index.html.
+Outputs: language homes and answer pages, press, legal pages and localized support.
 ops/ (the internal report, VIA-399) is never touched. Root files for search (sitemap, robots, llms.txt) belong
 to VIA-473; every page carries a <!-- seo:head --> marker for their additions.
 """
@@ -32,6 +32,7 @@ SRC = ROOT / '_build'
 # og locale, badge file. Serbian pages are written in Latin script. Viavo is not in the Russian or Chinese stores.
 LANGS = [
     ('ar', 'ar', 'ar', 'العربية', 'Arabic', 'rtl', 'sa', 'ar_AR'),
+    ('bg', 'bg', 'bg', 'Български', 'Bulgarian', 'ltr', 'bg', 'bg_BG'),
     ('zh-hans', 'zh-hans', 'zh-Hans', '简体中文', 'Chinese Simplified', 'ltr', '', 'zh_CN'),
     ('zh-hant', 'zh-hant', 'zh-Hant', '繁體中文', 'Chinese Traditional', 'ltr', 'tw', 'zh_TW'),
     ('hr', 'hr', 'hr', 'Hrvatski', 'Croatian', 'ltr', 'hr', 'hr_HR'),
@@ -62,6 +63,7 @@ LANGS = [
     ('vi', 'vi', 'vi', 'Tiếng Việt', 'Vietnamese', 'ltr', 'vn', 'vi_VN'),
 ]
 L = {x[0]: dict(zip(('code', 'folder', 'hreflang', 'native', 'english', 'dir', 'cc', 'og'), x)) for x in LANGS}
+SITE_ONLY = {'bg'}
 GAP = ['pl', 'cs', 'sk', 'ro', 'el', 'hu', 'hr', 'sr', 'uk']  # Siri does not speak these (apple.com feature availability, VIA-466)
 # Pages that open with the Siri band (their language has no Siri, or the global English page). Elsewhere Siri speaks the
 # reader's language, so a general, smaller band about the nine sits further down, without a screen.
@@ -210,13 +212,13 @@ def head(lang, title, desc, canonical, r, alternates='', og_image=None, og_title
 '''
 
 
-def header(T, lang, r, available, here=None, current_path=''):
+def header(T, lang, r, available, here=None, page_paths=None):
     items = []
     for code, *_ in LANGS:
         if code not in available:
             continue
         cur = ' aria-current="true"' if code == lang else ''
-        href = r + (L[code]['folder'] + '/' if L[code]['folder'] else '') + current_path
+        href = r + (page_paths or {}).get(code, L[code]['folder'] + '/' if L[code]['folder'] else '')
         items.append(f'<li><a href="{href}" lang="{L[code]["hreflang"]}" hreflang="{L[code]["hreflang"]}"{cur}>{L[code]["native"]}</a></li>')
     home = r + (L[lang]['folder'] + '/' if L[lang]['folder'] and lang in available else '')
     press_cur = ' aria-current="page"' if here == 'press' else ''
@@ -245,14 +247,17 @@ def qr(lang, T, r):
 def footer(T, lang, r, available):
     home = r + (L[lang]['folder'] + '/' if L[lang]['folder'] and lang in available else '')
     ru = lang in ('ru', 'uk')
-    legal = lambda p: f'{r}{p}/' + ('ru/' if ru and p != 'support' else '')
+    def legal(section):
+        locale = 'ru' if ru else lang
+        suffix = f'{locale}/' if (SRC / 'legal-src' / section / locale / 'index.html').is_file() else ''
+        return f'{r}{section}/{suffix}'
     folder = L[lang]['folder'] + '/' if L[lang]['folder'] else ''
     answers = ''.join(f'<a href="{r}{folder}{slug}/">{e(label)}</a>' for slug, label in ANSWER_LINKS.get(lang, []))
     langs = ''.join(f'<li><a href="{r}{L[c]["folder"] + "/" if L[c]["folder"] else ""}" lang="{L[c]["hreflang"]}">{L[c]["native"]}</a></li>'
                     for c, *_ in LANGS if c in available)
     return f'''<footer class="wrap grid ftr">
 <div class="brand"><a class="logo" href="{home}" aria-label="Viavo">{MARK}<span>viavo</span></a><small>{brandsafe(T["eyebrow"])}</small>{badge(lang, r, "site-" + lang + "-footer").replace("{alt}", e(T["badgeAlt"]))}</div>
-<nav aria-label="{e(T["fPrivacy"])}"><a href="{legal("privacy")}">{e(T["fPrivacy"])}</a><a href="{legal("terms")}">{e(T["fTerms"])}</a><a href="{legal("messengers")}">{e(T["fMessengers"])}</a><a href="{r}support/">{e(T["fSupport"])}</a><a href="{r}press/">{e(T["fPress"])}</a>{answers}</nav>
+<nav aria-label="{e(T["fPrivacy"])}"><a href="{legal("privacy")}">{e(T["fPrivacy"])}</a><a href="{legal("terms")}">{e(T["fTerms"])}</a><a href="{legal("messengers")}">{e(T["fMessengers"])}</a><a href="{legal("support")}">{e(T["fSupport"])}</a><a href="{r}press/">{e(T["fPress"])}</a>{answers}</nav>
 <ul class="fl">{langs}</ul>
 <div class="bot"><span>© 2026 Viavo</span><span>{brandsafe(T["tm"])}</span></div>
 </footer>
@@ -349,7 +354,7 @@ def home(lang, T, available):
 <div class="gap">{rows}</div></div>
 </div></section>
 ''')
-    else:
+    elif lang not in SITE_ONLY:
         plain = rows.replace('<div class="on">', '<div>')
         general = (f'<section class="sec band-g" id="story"><div class="wrap"><h2 class="h2">{brandsafe(T["bandSub"])}</h2>'
                    f'<div class="gap">{plain}</div></div></section>\n')
@@ -404,12 +409,14 @@ def home(lang, T, available):
     # languages
     cells = ''
     for c, *_ in LANGS:
-        dot = '<span class="dot" aria-hidden="true"></span>' if c in GAP else ''
+        if c in SITE_ONLY:
+            continue
+        dot = '<span class="dot" aria-hidden="true"></span>' if c in GAP and lang not in SITE_ONLY else ''
         tag = 'a' if c in available else 'div'
         href = f' href="{r}{L[c]["folder"] + "/" if L[c]["folder"] else ""}"' if c in available else ''
         cells += f'<li><{tag}{href} lang="{L[c]["hreflang"]}"><b>{L[c]["native"]}</b><span lang="{L[lang]["hreflang"]}">{e(names.get(c, L[c]["english"]))}</span>{dot}</{tag}></li>'
     out.append(f'''<section class="sec langs" id="languages"><div class="wrap grid">
-<div class="txt"><h2 class="h2">{brandsafe(T["langsTitle"])}</h2><p class="legend"><span class="dot"></span><span>{brandsafe(T["legend"])}</span></p></div>
+<div class="txt"><h2 class="h2">{brandsafe(T["langsTitle"])}</h2><p class="legend">{'<span class="dot"></span>' if lang not in SITE_ONLY else ''}<span>{brandsafe(T["legend"])}</span></p></div>
 <ul class="lgrid">{cells}</ul>
 </div></section>
 ''')
@@ -427,7 +434,7 @@ def home(lang, T, available):
         links = ''
         if i == 0:
             links = ''.join(f'<div class="links"><a class="ul" href="{r}{folder_}{slug}/">{e(label)} →</a></div>'
-                            for slug, label in ANSWER_LINKS.get(lang, []) if slug == 'chatgpt-carplay')
+                            for slug, label in ANSWER_LINKS.get(lang, []) if slug != 'siri')
         if i == len(T['faqItems']) - 1:
             links = (f'<div class="links"><a class="ul" href="{r}privacy/{"ru/" if ru else ""}">{e(T["lPrivacy"])}</a>'
                      f'<a class="ul" href="{r}messengers/{"ru/" if ru else ""}">{e(T["lMessages"])}</a></div>')
@@ -454,7 +461,7 @@ def press(T, available):
     lang, r = 'en', '../'
     m = T['meta']
     out = [head(lang, m['pressTitle'], m['pressDescription'], f'{BASE_URL}/press/', r), '<body>', SYMBOLS,
-           header(T, lang, r, {'en'}, here='press')]
+           header(T, lang, r, available, here='press', page_paths={'en': 'press/'})]
     p = json.loads((SRC / 'content/press.json').read_text())
     facts = ''.join(f'<div class="fact"><span>{e(k)}</span><b>{brandsafe(v)}</b></div>' for k, v in p['facts'])
     tile = lambda href, img, label, cls: f'<a href="{href}" download><span class="tile {cls}">{img}</span><span>↓ {e(label)}</span></a>'
@@ -613,7 +620,8 @@ def answer_page(lang, slug, meta, body, T, available, pages):
                 'mainEntity': [{'@type': 'Question', 'name': plain(q_), 'acceptedAnswer': {'@type': 'Answer', 'text': plain(a_)}} for q_, a_ in faq]}
         jsonld = '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace('</', '<\\/') + '</script>\n'
     page_head = head(lang, meta['title'], meta['description'], canonical, r, alts).replace('<!-- seo:head -->', '<!-- seo:head -->\n' + jsonld)
-    out = [page_head, '<body>', SYMBOLS, header(T, lang, r, available, current_path='')]
+    page_paths = {code: (L[code]['folder'] + '/' if L[code]['folder'] else '') + slug + '/' for code in same}
+    out = [page_head, '<body>', SYMBOLS, header(T, lang, r, available, page_paths=page_paths)]
     home_href = r + (folder + '/' if folder else '')
     out.append(f'''<main id="main" class="answer">
 <div class="wrap ans-head"><p class="eyebrow"><a href="{home_href}">Viavo</a></p><h1>{inline(meta["h1"])}</h1></div>
@@ -642,9 +650,11 @@ def answer_label(meta):
 
 LEGAL_UI = {
     'en': {'privacy': 'Privacy Policy', 'terms': 'Terms', 'messengers': 'How Viavo handles your messages', 'support': 'Support',
-           'contents': 'Contents', 'other': 'По-русски'},
+           'contents': 'Contents'},
     'ru': {'privacy': 'Конфиденциальность', 'terms': 'Условия', 'messengers': 'Как Viavo обращается с сообщениями', 'support': 'Поддержка',
-           'contents': 'Содержание', 'other': 'English'},
+           'contents': 'Содержание'},
+    'bg': {'privacy': 'Поверителност (EN)', 'terms': 'Условия (EN)', 'messengers': 'Съобщения (EN)', 'support': 'Помощ',
+           'contents': 'Съдържание'},
 }
 
 
@@ -655,7 +665,7 @@ def slug(text, i):
 def legal(path, T, available):
     """Wraps a legal page's verbatim text in the new layout; only the chrome around it changes."""
     src = (SRC / 'legal-src' / path / 'index.html').read_text()
-    lang = 'ru' if path.endswith('/ru') else 'en'
+    lang = path.partition('/')[2] or 'en'
     base = path.split('/')[0]
     depth = path.count('/') + 1
     r = rel(depth)
@@ -679,24 +689,23 @@ def legal(path, T, available):
     ui = LEGAL_UI[lang]
     tabs = []
     for key in ('privacy', 'terms', 'messengers', 'support'):
-        target = f'{r}{key}/' + ('ru/' if lang == 'ru' and key != 'support' else '')
+        target = f'{r}{key}/' + (f'{lang}/' if (SRC / 'legal-src' / key / lang / 'index.html').exists() else '')
         cur = ' aria-current="page"' if key == base else ''
         tabs.append(f'<a href="{target}"{cur}>{e(ui[key])}</a>')
-    other = ''
-    if base != 'support':
-        other_href = (f'{r}{base}/' if lang == 'ru' else f'{r}{base}/ru/')
-        other = f'<a class="alt-lang" href="{other_href}" hreflang="{"en" if lang == "ru" else "ru"}">{ui["other"]}</a>'
+    variants = {'en': f'{base}/'}
+    variants.update({item.parent.name: f'{base}/{item.parent.name}/' for item in sorted((SRC / 'legal-src' / base).glob('*/index.html'))})
+    other = ''.join(f'<a class="alt-lang" href="{r}{target}" hreflang="{code}">{e(L[code]["native"])}</a>'
+                    for code, target in variants.items() if code != lang)
     toc_html = ''.join(f'<li><a href="#{i}">{e(t)}</a></li>' for i, t in toc)
     canonical = f'{BASE_URL}/{path}/'
     alts = ''
-    if base != 'support':
-        alts = (f'<link rel="alternate" hreflang="en" href="{BASE_URL}/{base}/">\n'
-                f'<link rel="alternate" hreflang="ru" href="{BASE_URL}/{base}/ru/">\n'
-                f'<link rel="alternate" hreflang="x-default" href="{BASE_URL}/{base}/">\n')
+    if len(variants) > 1:
+        alts = ''.join(f'<link rel="alternate" hreflang="{code}" href="{BASE_URL}/{target}">\n'
+                       for code, target in {**variants, 'x-default': variants['en']}.items())
     TT = T[lang] if lang in T else T['en']
     desc = re.sub(r'<[^>]+>', '', meta)[:155] if meta else title
-    out = [head(lang, title, desc, canonical, r, alts, og_image=f'{BASE_URL}/assets/og/en.jpg'), '<body>', SYMBOLS,
-           header(TT, lang, r, available, current_path='')]
+    out = [head(lang, title, desc, canonical, r, alts, og_image=f'{BASE_URL}/assets/og/{lang}.jpg'), '<body>', SYMBOLS,
+           header(TT, lang, r, available, page_paths=variants)]
     toc_block = (f'<nav class="toc" aria-label="{e(ui["contents"])}"><b>{e(ui["contents"])}</b><ol>{toc_html}</ol></nav>' if toc else '')
     toc_m = (f'<details class="toc-m"><summary>{e(ui["contents"])}<span class="chev"></span></summary><ol>{toc_html}</ol></details>' if toc else '')
     out.append(f'''<main id="main">
@@ -746,18 +755,12 @@ def main():
     (ROOT / '404.html').write_text(not_found(en, available))
     for f in (SRC / 'seo/root').glob('*'):  # robots.txt, sitemap.xml, llms.txt, IndexNow key — owned by VIA-473
         (ROOT / f.name).write_bytes(f.read_bytes())
-    T = {'en': en, 'ru': {**en, **content.get('ru', {}), **({} if 'ru' in content else LEGAL_FALLBACK_RU)}}
-    for path in ('privacy', 'privacy/ru', 'terms', 'terms/ru', 'messengers', 'messengers/ru', 'support'):
-        (ROOT / path / 'index.html').write_text(legal(path, T, available))
+    for source in sorted((SRC / 'legal-src').rglob('index.html')):
+        path = source.parent.relative_to(SRC / 'legal-src').as_posix()
+        (ROOT / path).mkdir(parents=True, exist_ok=True)
+        (ROOT / path / 'index.html').write_text(legal(path, content, available))
     print('built', sorted(available), 'base', BASE_URL)
 
-
-# Russian chrome for the Russian legal pages while ru.json is not there yet
-LEGAL_FALLBACK_RU = {'nFeatures': 'Возможности', 'nLanguages': 'Языки', 'nPress': 'Пресса', 'nLangMenu': 'Язык',
-                     'eyebrow': 'ИИ-ассистент для CarPlay', 'fPrivacy': 'Конфиденциальность', 'fTerms': 'Условия',
-                     'fMessengers': 'Мессенджеры', 'fSupport': 'Поддержка', 'fPress': 'Пресса', 'badgeAlt': 'Загрузите в App Store',
-                     'tm': 'Apple, логотип Apple, CarPlay, iPhone и Siri — товарные знаки Apple Inc. App Store — знак обслуживания Apple Inc.',
-                     'skip': 'К содержанию'}
 
 if __name__ == '__main__':
     main()

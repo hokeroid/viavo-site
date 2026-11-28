@@ -24,6 +24,7 @@ On iOS 27 or later, through the one Viavo automation in Apple Shortcuts: Viavo r
 - [Support](https://viavo.app/support/)
 
 ## Other languages
+- [Български](https://viavo.app/bg/): Bulgarian website and [help](https://viavo.app/support/bg/). [Voice assistant for CarPlay: Bulgarian availability](https://viavo.app/bg/glasov-asistent-carplay/) distinguishes the website translation from app interface and voice support.
 - [Polski](https://viavo.app/pl/)
 - [Italiano](https://viavo.app/it/)
 - [Hrvatski](https://viavo.app/hr/)
