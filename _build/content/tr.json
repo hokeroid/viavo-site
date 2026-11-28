@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: CarPlay için yapay zekâlı sesli asistan, 29 dilde",
-  "description": "Tek düğmeye basın, kendi sözlerinizle söyleyin. Viavo molalı rota açar, arar, mesaj yazar, müzik ve radyo çalar, sesli yanıtlar. 29 dil, her birinde doğal ses.",
+  "title": "Viavo: CarPlay için yapay zekâlı sesli asistan, 31 dilde",
+  "description": "Tek düğmeye basın, kendi sözlerinizle söyleyin. Viavo molalı rota açar, arar, mesaj yazar, müzik ve radyo çalar, sesli yanıtlar. 31 dil, her birinde doğal ses.",
   "ogTitle": "Kendi sözlerinizle söyleyin. Viavo halleder."
  },
  "qo": "“",
@@ -13,7 +13,7 @@
  "eyebrow": "CarPlay için yapay zekâ asistanı",
  "h1a": "Kendi sözlerinizle söyleyin.",
  "h1b": "Viavo halleder.",
- "sub": "Molalı rotalar, aramalar, mesajlar, müzik ve radyo. Tek düğmeye basın ve bir insana nasıl söylerseniz öyle söyleyin, 29 dilin herhangi birinde.",
+ "sub": "Molalı rotalar, aramalar, mesajlar, müzik ve radyo. Tek düğmeye basın ve bir insana nasıl söylerseniz öyle söyleyin, 31 dilin herhangi birinde.",
  "heroAlt": "CarPlay ekranında Viavo",
  "bandPre": "Siri ",
  "bandPost": " konuşmuyor.",
@@ -126,9 +126,11 @@
   "Calendar": "Takvim",
   "Reminders": "Anımsatıcılar"
  },
- "langsTitle": "29 dil, her birinde doğal bir ses",
+ "langsTitle": "31 dil, her birinde doğal bir ses",
  "legend": "Siri bu dili konuşmuyor",
  "langNames": {
+  "sl": "Slovence",
+  "ur": "Urduca",
   "ar": "Arapça",
   "zh-hans": "Çince (Basitleştirilmiş)",
   "zh-hant": "Çince (Geleneksel)",
@@ -182,7 +184,7 @@
   ],
   [
    "Viavo hangi dilleri konuşuyor?",
-   "29 dil: Almanca, Arapça, Çekçe, Çince (Basitleştirilmiş ve Geleneksel), Endonezce, Felemenkçe, Fransızca, Hırvatça, Hintçe, İbranice, İngilizce, İspanyolca, İsveççe, İtalyanca, Japonca, Korece, Lehçe, Macarca, Portekizce, Rumence, Rusça, Sırpça, Slovakça, Tayca, Türkçe, Ukraynaca, Vietnamca ve Yunanca. Her dilde uygulamanın ekranları ve anadili gibi konuşan bir ses var, kadın ya da erkek."
+   "31 dil: Slovence, Urduca, Almanca, Arapça, Çekçe, Çince (Basitleştirilmiş ve Geleneksel), Endonezce, Felemenkçe, Fransızca, Hırvatça, Hintçe, İbranice, İngilizce, İspanyolca, İsveççe, İtalyanca, Japonca, Korece, Lehçe, Macarca, Portekizce, Rumence, Rusça, Sırpça, Slovakça, Tayca, Türkçe, Ukraynaca, Vietnamca ve Yunanca. Her dilde uygulamanın ekranları ve anadili gibi konuşan bir ses var, kadın ya da erkek."
   ],
   [
    "Siri'nin yerini mi alıyor?",

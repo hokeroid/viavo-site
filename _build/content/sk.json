@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Viavo: hlasový AI asistent v slovenčine pre CarPlay",
-  "description": "Klepnite na jedno tlačidlo a povedzte to po svojom. Viavo otvorí trasu so zastávkou, zavolá, napíše správu, pustí hudbu aj rádio a odpovie nahlas. 29 jazykov, každý s hlasom rodeného hovoriaceho.",
+  "description": "Klepnite na jedno tlačidlo a povedzte to po svojom. Viavo otvorí trasu so zastávkou, zavolá, napíše správu, pustí hudbu aj rádio a odpovie nahlas. 31 jazykov, každý s hlasom rodeného hovoriaceho.",
   "ogTitle": "Povedzte to vo svojom jazyku. Viavo to zariadi.",
   "pressTitle": "Pre médiá · Viavo",
   "pressDescription": "Fakty, logá, ikona aplikácie a skutočné snímky obrazovky z CarPlay a iPhonu: Viavo, hlasový AI asistent pre CarPlay."
@@ -15,7 +15,7 @@
  "eyebrow": "AI asistent pre CarPlay",
  "h1a": "Povedzte to vo svojom jazyku.",
  "h1b": "Viavo to zariadi.",
- "sub": "Trasy so zastávkou po ceste, hovory, správy, hudba aj rádio. Klepnite na jedno tlačidlo a povedzte to tak, ako by ste to povedali človeku, v ktoromkoľvek z 29 jazykov.",
+ "sub": "Trasy so zastávkou po ceste, hovory, správy, hudba aj rádio. Klepnite na jedno tlačidlo a povedzte to tak, ako by ste to povedali človeku, v ktoromkoľvek z 31 jazykov.",
  "heroAlt": "Viavo na obrazovke CarPlay",
  "bandPre": "Siri nevie ",
  "bandPost": ".",
@@ -128,9 +128,11 @@
   "Calendar": "Kalendár",
   "Reminders": "Pripomienky"
  },
- "langsTitle": "29 jazykov, každý s hlasom rodeného hovoriaceho",
+ "langsTitle": "31 jazykov, každý s hlasom rodeného hovoriaceho",
  "legend": "Siri tento jazyk neovláda",
  "langNames": {
+  "sl": "slovinčina",
+  "ur": "urdčina",
   "ar": "Arabčina",
   "zh-hans": "Čínština (zjednodušená)",
   "zh-hant": "Čínština (tradičná)",
@@ -184,7 +186,7 @@
   ],
   [
    "Ktoré jazyky Viavo ovláda?",
-   "Je ich 29: angličtina, arabčina, čeština, čínština (zjednodušená aj tradičná), francúzština, gréčtina, hebrejčina, hindčina, holandčina, chorvátčina, indonézština, japončina, kórejčina, maďarčina, nemčina, poľština, portugalčina, rumunčina, ruština, slovenčina, srbčina, španielčina, švédčina, taliančina, thajčina, turečtina, ukrajinčina a vietnamčina. V každom z nich sú obrazovky aplikácie aj hlas rodeného hovoriaceho, ženský alebo mužský."
+   "Je ich 31: slovinčina, urdčina, angličtina, arabčina, čeština, čínština (zjednodušená aj tradičná), francúzština, gréčtina, hebrejčina, hindčina, holandčina, chorvátčina, indonézština, japončina, kórejčina, maďarčina, nemčina, poľština, portugalčina, rumunčina, ruština, slovenčina, srbčina, španielčina, švédčina, taliančina, thajčina, turečtina, ukrajinčina a vietnamčina. V každom z nich sú obrazovky aplikácie aj hlas rodeného hovoriaceho, ženský alebo mužský."
   ],
   [
    "Nahrádza Viavo Siri?",

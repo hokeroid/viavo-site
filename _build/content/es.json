@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: asistente de voz con IA para CarPlay, en 29 idiomas",
-  "description": "Toca un botón y dilo a tu manera. Viavo abre rutas con parada, llama, escribe mensajes, pone música y radio, y responde en voz alta. 29 idiomas, con voz nativa.",
+  "title": "Viavo: asistente de voz con IA para CarPlay, en 31 idiomas",
+  "description": "Toca un botón y dilo a tu manera. Viavo abre rutas con parada, llama, escribe mensajes, pone música y radio, y responde en voz alta. 31 idiomas, con voz nativa.",
   "ogTitle": "Dilo a tu manera. Viavo lo hace."
  },
  "qo": "«",
@@ -13,7 +13,7 @@
  "eyebrow": "Asistente de IA para CarPlay",
  "h1a": "Dilo a tu manera.",
  "h1b": "Viavo lo hace.",
- "sub": "Rutas con parada, llamadas, mensajes, música y radio. Toca un botón y dilo como se lo dirías a una persona, en cualquiera de los 29 idiomas.",
+ "sub": "Rutas con parada, llamadas, mensajes, música y radio. Toca un botón y dilo como se lo dirías a una persona, en cualquiera de los 31 idiomas.",
  "heroAlt": "Viavo en la pantalla de CarPlay",
  "bandPre": "Siri no habla ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Calendario",
   "Reminders": "Recordatorios"
  },
- "langsTitle": "29 idiomas, con voz nativa en cada uno",
+ "langsTitle": "31 idiomas, con voz nativa en cada uno",
  "legend": "Siri no lo habla",
  "langNames": {
+  "sl": "esloveno",
+  "ur": "urdu",
   "ar": "Árabe",
   "zh-hans": "Chino (simplificado)",
   "zh-hant": "Chino (tradicional)",
@@ -182,7 +184,7 @@
   ],
   [
    "¿Qué idiomas habla Viavo?",
-   "29: alemán, árabe, checo, chino (simplificado y tradicional), coreano, croata, eslovaco, español, francés, griego, hebreo, hindi, húngaro, indonesio, inglés, italiano, japonés, neerlandés, polaco, portugués, rumano, ruso, serbio, sueco, tailandés, turco, ucraniano y vietnamita. En cada uno, las pantallas de la app y una voz nativa, de mujer o de hombre."
+   "31: esloveno, urdu, alemán, árabe, checo, chino (simplificado y tradicional), coreano, croata, eslovaco, español, francés, griego, hebreo, hindi, húngaro, indonesio, inglés, italiano, japonés, neerlandés, polaco, portugués, rumano, ruso, serbio, sueco, tailandés, turco, ucraniano y vietnamita. En cada uno, las pantallas de la app y una voz nativa, de mujer o de hombre."
   ],
   [
    "¿Reemplaza a Siri?",

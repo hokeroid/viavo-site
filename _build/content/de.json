@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: KI-Sprachassistent für CarPlay, in 29 Sprachen",
-  "description": "Drück die Taste und sag es mit deinen Worten. Viavo öffnet Routen mit Zwischenstopp, ruft an, schreibt, spielt Musik und Radio und antwortet laut. 29 Sprachen.",
+  "title": "Viavo: KI-Sprachassistent für CarPlay, in 31 Sprachen",
+  "description": "Drück die Taste und sag es mit deinen Worten. Viavo öffnet Routen mit Zwischenstopp, ruft an, schreibt, spielt Musik und Radio und antwortet laut. 31 Sprachen.",
   "ogTitle": "Sag’s mit deinen Worten. Viavo erledigt’s."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "KI-Assistent für CarPlay",
  "h1a": "Sag’s mit deinen Worten.",
  "h1b": "Viavo erledigt’s.",
- "sub": "Routen mit Zwischenstopp, Anrufe, Nachrichten, Musik und Radio. Drück die Taste und sprich wie mit einem Menschen, in einer von 29 Sprachen.",
+ "sub": "Routen mit Zwischenstopp, Anrufe, Nachrichten, Musik und Radio. Drück die Taste und sprich wie mit einem Menschen, in einer von 31 Sprachen.",
  "heroAlt": "Viavo auf einem CarPlay-Display",
  "bandPre": "Siri spricht kein ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Kalender",
   "Reminders": "Erinnerungen"
  },
- "langsTitle": "29 Sprachen, jede mit muttersprachlicher Stimme",
+ "langsTitle": "31 Sprachen, jede mit muttersprachlicher Stimme",
  "legend": "Siri spricht sie nicht",
  "langNames": {
+  "sl": "Slowenisch",
+  "ur": "Urdu",
   "ar": "Arabisch",
   "zh-hans": "Chinesisch (vereinfacht)",
   "zh-hant": "Chinesisch (traditionell)",
@@ -182,7 +184,7 @@
   ],
   [
    "Welche Sprachen spricht Viavo?",
-   "29: Arabisch, Chinesisch (vereinfacht und traditionell), Deutsch, Englisch, Französisch, Griechisch, Hebräisch, Hindi, Indonesisch, Italienisch, Japanisch, Koreanisch, Kroatisch, Niederländisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Schwedisch, Serbisch, Slowakisch, Spanisch, Thailändisch, Tschechisch, Türkisch, Ukrainisch, Ungarisch und Vietnamesisch. In jeder Sprache gibt es die App-Oberfläche und eine muttersprachliche Stimme, weiblich oder männlich."
+   "31: Slowenisch, Urdu, Arabisch, Chinesisch (vereinfacht und traditionell), Deutsch, Englisch, Französisch, Griechisch, Hebräisch, Hindi, Indonesisch, Italienisch, Japanisch, Koreanisch, Kroatisch, Niederländisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Schwedisch, Serbisch, Slowakisch, Spanisch, Thailändisch, Tschechisch, Türkisch, Ukrainisch, Ungarisch und Vietnamesisch. In jeder Sprache gibt es die App-Oberfläche und eine muttersprachliche Stimme, weiblich oder männlich."
   ],
   [
    "Ersetzt Viavo Siri?",

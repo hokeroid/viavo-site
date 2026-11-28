@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Viavo: hlasový AI asistent v češtině pro CarPlay",
-  "description": "Stiskněte tlačítko a mluvte po svém. Viavo otevře trasu se zastávkou, zavolá, napíše zprávu, pustí hudbu i rádio a odpoví nahlas. 29 jazyků s rodilým hlasem.",
+  "description": "Stiskněte tlačítko a mluvte po svém. Viavo otevře trasu se zastávkou, zavolá, napíše zprávu, pustí hudbu i rádio a odpoví nahlas. 31 jazyků s rodilým hlasem.",
   "ogTitle": "Řekněte to svým jazykem. Viavo to zařídí."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "AI asistent pro CarPlay",
  "h1a": "Řekněte to svým jazykem.",
  "h1b": "Viavo to zařídí.",
- "sub": "Trasy se zastávkou po cestě, hovory, zprávy, hudba i rádio. Stiskněte jedno tlačítko a řekněte to kterýmkoli z 29 jazyků, jako byste mluvili s člověkem.",
+ "sub": "Trasy se zastávkou po cestě, hovory, zprávy, hudba i rádio. Stiskněte jedno tlačítko a řekněte to kterýmkoli z 31 jazyků, jako byste mluvili s člověkem.",
  "heroAlt": "Viavo na obrazovce CarPlay",
  "bandPre": "Siri nemluví ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Kalendář",
   "Reminders": "Připomínky"
  },
- "langsTitle": "29 jazyků, každý s rodilým mluvčím",
+ "langsTitle": "31 jazyků, každý s rodilým mluvčím",
  "legend": "Siri tímto jazykem nemluví",
  "langNames": {
+  "sl": "slovinština",
+  "ur": "urdština",
   "ar": "Arabština",
   "zh-hans": "Čínština (zjednodušená)",
   "zh-hant": "Čínština (tradiční)",
@@ -182,7 +184,7 @@
   ],
   [
    "Jakými jazyky Viavo mluví?",
-   "Je jich 29: angličtina, arabština, čeština, čínština (zjednodušená i tradiční), francouzština, hebrejština, hindština, chorvatština, indonéština, italština, japonština, korejština, maďarština, němčina, nizozemština, polština, portugalština, rumunština, ruština, řečtina, slovenština, srbština, španělština, švédština, thajština, turečtina, ukrajinština a vietnamština. V každém z nich jsou obrazovky aplikace i hlas rodilého mluvčího, ženský nebo mužský."
+   "Je jich 31: slovinština, urdština, angličtina, arabština, čeština, čínština (zjednodušená i tradiční), francouzština, hebrejština, hindština, chorvatština, indonéština, italština, japonština, korejština, maďarština, němčina, nizozemština, polština, portugalština, rumunština, ruština, řečtina, slovenština, srbština, španělština, švédština, thajština, turečtina, ukrajinština a vietnamština. V každém z nich jsou obrazovky aplikace i hlas rodilého mluvčího, ženský nebo mužský."
   ],
   [
    "Nahrazuje Viavo Siri?",

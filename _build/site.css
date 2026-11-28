@@ -18,6 +18,8 @@
 :lang(bg),:lang(ru),:lang(uk),:lang(sr),:lang(el){--fh:Manrope,system-ui,sans-serif;--hls:-.03em;--h1:76px;--h1lh:1.06;--els:.08em}
 :lang(he){--fh:'Noto Sans Hebrew',Manrope,system-ui,sans-serif;--fb:'Noto Sans Hebrew',Manrope,system-ui,sans-serif;--hls:-.015em;--h1:76px;--h1lh:1.1;--ecase:none;--els:0}
 :lang(ar){--fh:system-ui,'Geeza Pro','Noto Sans Arabic',sans-serif;--fb:system-ui,'Geeza Pro','Noto Sans Arabic',sans-serif;--hls:0;--h1lh:1.25;--ecase:none;--els:0}
+:lang(ur){--fh:system-ui,'Geeza Pro',sans-serif;--fb:system-ui,'Geeza Pro',sans-serif;--hls:0;--h1lh:1.5;--ecase:none;--els:0}
+html:lang(ur) .prose,html:lang(ur) .lead{line-height:1.85}
 :lang(hi){--fh:system-ui,'Kohinoor Devanagari','Noto Sans Devanagari',sans-serif;--fb:system-ui,'Kohinoor Devanagari','Noto Sans Devanagari',sans-serif;--hls:0;--h1lh:1.25;--ecase:none;--els:0}
 :lang(th){--fh:system-ui,Thonburi,'Noto Sans Thai',sans-serif;--fb:system-ui,Thonburi,'Noto Sans Thai',sans-serif;--hls:0;--h1lh:1.3;--ecase:none;--els:0}
 :lang(ja),:lang(ko),:lang(zh-Hans),:lang(zh-Hant){--fh:system-ui,'Hiragino Sans','PingFang SC','PingFang TC','Apple SD Gothic Neo','Noto Sans CJK',sans-serif;--fb:system-ui,'Hiragino Sans','PingFang SC','PingFang TC','Apple SD Gothic Neo','Noto Sans CJK',sans-serif;--hls:0;--h1lh:1.2;--ecase:none;--els:0}
@@ -78,6 +80,8 @@ button{font:inherit;color:inherit}
 .hero .lead{max-width:640px;margin:28px auto 0}
 .cta-row{margin-top:36px;display:flex;align-items:center;justify-content:center;gap:32px}
 .badge img{height:54px;width:auto}
+.store-text{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 15px;border:1px solid var(--line-strong);border-radius:10px;color:var(--text);font-weight:700;line-height:1.4;text-align:center}
+html:lang(ur) .ans-head h1,html:lang(ur) .h2{line-height:1.5}
 .qr{display:flex;align-items:center;gap:14px;text-align:start}
 .qr img{width:64px;height:64px;border-radius:8px;background:#fff;padding:4px;box-shadow:0 0 0 1px var(--line)}
 .qr>span{max-width:104px;font-weight:500;font-size:14px;line-height:1.35;color:var(--cap)}

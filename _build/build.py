@@ -55,11 +55,13 @@ LANGS = [
     ('ru', 'ru', 'ru', 'Русский', 'Russian', 'ltr', '', 'ru_RU'),
     ('sr', 'sr', 'sr-Latn', 'Srpski', 'Serbian', 'ltr', 'rs', 'sr_RS'),
     ('sk', 'sk', 'sk', 'Slovenčina', 'Slovak', 'ltr', 'sk', 'sk_SK'),
+    ('sl', 'sl', 'sl', 'Slovenščina', 'Slovenian', 'ltr', 'si', 'sl_SI'),
     ('es', 'es', 'es', 'Español', 'Spanish', 'ltr', 'es', 'es_ES'),
     ('sv', 'sv', 'sv', 'Svenska', 'Swedish', 'ltr', 'se', 'sv_SE'),
     ('th', 'th', 'th', 'ไทย', 'Thai', 'ltr', 'th', 'th_TH'),
     ('tr', 'tr', 'tr', 'Türkçe', 'Turkish', 'ltr', 'tr', 'tr_TR'),
     ('uk', 'uk', 'uk', 'Українська', 'Ukrainian', 'ltr', 'ua', 'uk_UA'),
+    ('ur', 'ur', 'ur', 'اردو', 'Urdu', 'rtl', 'pk', 'ur_PK'),
     ('vi', 'vi', 'vi', 'Tiếng Việt', 'Vietnamese', 'ltr', 'vn', 'vi_VN'),
 ]
 L = {x[0]: dict(zip(('code', 'folder', 'hreflang', 'native', 'english', 'dir', 'cc', 'og'), x)) for x in LANGS}
@@ -235,8 +237,9 @@ def header(T, lang, r, available, here=None, page_paths=None, campaign=None):
 
 
 def badge(lang, r, campaign=None, cls='badge'):
-    b = lang if exists(f'assets/badges/{lang}.svg') else 'en'
-    return f'<a class="{cls}" href="{e(store_url(lang, campaign))}"><img src="{r}assets/badges/{b}.svg" alt="{{alt}}" width="160" height="54"></a>'
+    if not exists(f'assets/badges/{lang}.svg'):
+        return f'<a class="{cls} store-text" href="{e(store_url(lang, campaign))}">{{alt}}</a>'
+    return f'<a class="{cls}" href="{e(store_url(lang, campaign))}"><img src="{r}assets/badges/{lang}.svg" alt="{{alt}}" width="160" height="54"></a>'
 
 
 def qr(lang, T, r, campaign=None):

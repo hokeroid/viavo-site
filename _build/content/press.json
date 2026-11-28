@@ -1,6 +1,6 @@
 {
  "title": "Viavo for press",
- "lead": "Viavo is a tap-to-talk AI voice assistant for drivers on iPhone and CarPlay. Press one button on the car screen, say what you need in your own words, and Viavo does it and answers out loud, with a native voice, in 29 languages.",
+ "lead": "Viavo is a tap-to-talk AI voice assistant for drivers on iPhone and CarPlay. Press one button on the car screen, say what you need in your own words, and Viavo does it and answers out loud, with a native voice, in 31 languages.",
  "whyTitle": "Why it exists",
  "why": [
   "Siri on CarPlay still doesn’t speak Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian or Ukrainian, and the new Siri AI isn’t available on iPhone in the EU. The chatbot apps that came to CarPlay mostly talk: OpenAI says ChatGPT in CarPlay can’t control other apps, and in ZDNET’s test ChatGPT and Perplexity couldn’t place a call, send a message or play music. Viavo speaks all of these languages and twenty more, understands everyday speech rather than fixed commands, and does the task.",
@@ -50,7 +50,7 @@
   ],
   [
    "Languages",
-   "29, a native female or male voice in each"
+   "31, a native female or male voice in each"
   ],
   [
    "Siri doesn’t speak, Viavo does",

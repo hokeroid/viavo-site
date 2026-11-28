@@ -3,7 +3,7 @@ page: chatgpt-carplay
 lang: en
 path: /chatgpt-carplay/   # en lives at the root; other languages at /<lang>/chatgpt-carplay/
 title: "ChatGPT in CarPlay: what it can't do, and an assistant that can"
-description: "ChatGPT and other chatbots now talk in CarPlay, but in a hands-on test ChatGPT and Perplexity didn't play music, call or text. Viavo does, in 29 languages."
+description: "ChatGPT and other chatbots now talk in CarPlay, but in a hands-on test ChatGPT and Perplexity didn't play music, call or text. Viavo does, in 31 languages."
 h1: "ChatGPT in CarPlay: what it can do, what it can't, and what does the rest"
 updated: 2026-11-15
 sources: pages/facts-2026-11.md (every claim about other products is there with a URL and the date it was read)
@@ -15,6 +15,8 @@ covers: Q1, Q2, Q3, Q10, Q14; keywords "chatgpt carplay", "ai assistant carplay"
 [Download on the App Store]
 
 [See what you can say and how Viavo responds](https://viavo.app/#say)
+
+[How to read and reply to WhatsApp messages in CarPlay](https://viavo.app/whatsapp-carplay/)
 
 ## Which chatbots are in CarPlay
 
@@ -46,7 +48,7 @@ Tap one button on the car screen and say it the way you'd say it to a person, in
 | Telegram and Slack: what's new, read, reply | No | Yes; Telegram voice messages in the sender's own voice |
 | Reminders, calendar, alarms | No | Yes |
 | Remembers what you tell it | Its own memory | Yes, and forgets when you ask |
-| A native voice in Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian, Ukrainian | — | Yes, 29 languages in all |
+| A native voice in Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian, Ukrainian | — | Yes, 31 languages in all |
 
 What Viavo doesn't do: the steering-wheel button stays with Siri, so Viavo starts with one tap on the car screen, or when you say "Viavo, listen" to Siri (iOS 26 or later). Before iOS 27, a WhatsApp or SMS draft waits for your tap on the phone. YouTube videos start on the phone, not on the car screen.
 
@@ -80,6 +82,6 @@ While parked, open Viavo’s Settings and follow the steps: install the Viavo sh
 
 **Is Viavo free?** You can try it for free: a new account starts with free credits or a free week of Viavo Plus (one free week per person). After that, Viavo Plus is a monthly or yearly subscription.
 
-**Which languages?** 29, each with a native voice, including nine that Siri doesn't speak: Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian and Ukrainian.
+**Which languages?** 31, each with a native voice, including nine that Siri doesn't speak: Polish, Czech, Slovak, Romanian, Greek, Hungarian, Croatian, Serbian and Ukrainian.
 
 *Last checked: 15 November 2026. Sources: Apple, OpenAI, Google, ZDNET.*

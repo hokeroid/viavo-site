@@ -17,6 +17,8 @@ cta: App Store, Romania store, ct=ro-siri
 
 [Vedeți exemple de comenzi și răspunsuri în Viavo](https://viavo.app/ro/#say)
 
+[Cum asculți mesajele WhatsApp și răspunzi în română în CarPlay](https://viavo.app/ro/whatsapp-carplay/)
+
 ## Ce înseamnă asta în CarPlay
 
 - În CarPlay, Siri acceptă comenzi doar într-una dintre limbile ei, de exemplu în engleză.

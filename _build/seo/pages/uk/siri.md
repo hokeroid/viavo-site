@@ -16,6 +16,8 @@ covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri українською", "с
 
 [Перегляньте приклади команд і відповідей Viavo](https://viavo.app/uk/#say)
 
+[Як слухати повідомлення WhatsApp і відповідати українською в CarPlay](https://viavo.app/uk/whatsapp-carplay/)
+
 ## Що це означає в CarPlay
 
 - Siri в CarPlay приймає команди лише однією зі своїх мов, наприклад англійською.

@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: AI-röstassistent för CarPlay, på 29 språk",
-  "description": "Tryck och prata fritt. Viavo öppnar rutter med stopp, ringer, skriver meddelanden, spelar musik och radio och svarar högt. 29 språk, alla med naturligt uttal.",
+  "title": "Viavo: AI-röstassistent för CarPlay, på 31 språk",
+  "description": "Tryck och prata fritt. Viavo öppnar rutter med stopp, ringer, skriver meddelanden, spelar musik och radio och svarar högt. 31 språk, alla med naturligt uttal.",
   "ogTitle": "Säg det på ditt språk. Viavo fixar det."
  },
  "qo": "”",
@@ -13,7 +13,7 @@
  "eyebrow": "AI-assistent för CarPlay",
  "h1a": "Säg det på ditt språk.",
  "h1b": "Viavo fixar det.",
- "sub": "Rutter med stopp på vägen, samtal, meddelanden, musik och radio. Tryck på en knapp och säg det precis som till en människa, på något av 29 språk.",
+ "sub": "Rutter med stopp på vägen, samtal, meddelanden, musik och radio. Tryck på en knapp och säg det precis som till en människa, på något av 31 språk.",
  "heroAlt": "Viavo på en CarPlay-skärm",
  "bandPre": "Siri talar inte ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Kalender",
   "Reminders": "Påminnelser"
  },
- "langsTitle": "29 språk, alla med naturligt uttal",
+ "langsTitle": "31 språk, alla med naturligt uttal",
  "legend": "Siri talar det inte",
  "langNames": {
+  "sl": "slovenska",
+  "ur": "urdu",
   "ar": "Arabiska",
   "zh-hans": "Kinesiska (förenklad)",
   "zh-hant": "Kinesiska (traditionell)",
@@ -182,7 +184,7 @@
   ],
   [
    "Vilka språk talar Viavo?",
-   "29: arabiska, engelska, franska, grekiska, hebreiska, hindi, indonesiska, italienska, japanska, kinesiska (förenklad och traditionell), koreanska, kroatiska, nederländska, polska, portugisiska, rumänska, ryska, serbiska, slovakiska, spanska, svenska, thailändska, tjeckiska, turkiska, tyska, ukrainska, ungerska och vietnamesiska. På varje språk finns appens skärmar och en röst med naturligt uttal, kvinnlig eller manlig."
+   "31: slovenska, urdu, arabiska, engelska, franska, grekiska, hebreiska, hindi, indonesiska, italienska, japanska, kinesiska (förenklad och traditionell), koreanska, kroatiska, nederländska, polska, portugisiska, rumänska, ryska, serbiska, slovakiska, spanska, svenska, thailändska, tjeckiska, turkiska, tyska, ukrainska, ungerska och vietnamesiska. På varje språk finns appens skärmar och en röst med naturligt uttal, kvinnlig eller manlig."
   ],
   [
    "Ersätter Viavo Siri?",

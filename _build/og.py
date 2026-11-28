@@ -21,14 +21,15 @@ def card(lang, T):
                 'carplay-en-idle')
     fonts = (ROOT / 'assets/fonts/fonts.css').read_text().replace('url(', f'url(file://{ROOT}/assets/fonts/')
     head = FONTS.get(lang, "'Space Grotesk'")
-    rtl = lang in ('he', 'ar')
+    rtl = lang in ('he', 'ar', 'ur')
+    headline_lh = '1.5' if lang == 'ur' else '1.04'
     return f'''<!doctype html><html dir="{'rtl' if rtl else 'ltr'}"><head><meta charset="utf-8"><style>{fonts}
 html,body{{margin:0;width:1200px;height:630px;background:#0B0C10;color:#F4F3EF;overflow:hidden}}
 .w{{position:relative;width:1200px;height:630px;font-family:Manrope,system-ui,sans-serif}}
 .glow{{position:absolute;inset:auto -120px -260px auto;width:900px;height:700px;background:radial-gradient(closest-side,rgba(255,178,36,.22),transparent)}}
 .logo{{position:absolute;top:56px;inset-inline-start:64px;display:flex;align-items:center;gap:14px;direction:ltr}}
 .logo span{{font:700 40px 'Space Grotesk',sans-serif;letter-spacing:-.03em}}
-h1{{position:absolute;top:150px;inset-inline-start:64px;width:560px;margin:0;font:700 64px/1.04 {head},Manrope,sans-serif;letter-spacing:-.03em}}
+h1{{position:absolute;top:150px;inset-inline-start:64px;width:560px;margin:0;font:700 64px/{headline_lh} {head},Manrope,sans-serif;letter-spacing:-.03em}}
 h1 b{{display:block;color:#8ED0FF;font-weight:700}}
 .car{{position:absolute;top:150px;inset-inline-end:-120px;width:640px;padding:12px;border-radius:26px;background:linear-gradient(180deg,#1E2027,#101116);border:1px solid rgba(255,255,255,.09);box-shadow:0 40px 80px rgba(0,0,0,.6)}}
 .car img{{display:block;width:100%;border-radius:15px}}

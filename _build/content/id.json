@@ -1,6 +1,6 @@
 {
  "meta": {
-  "title": "Viavo: asisten suara AI untuk CarPlay, dalam 29 bahasa",
+  "title": "Viavo: asisten suara AI untuk CarPlay, dalam 31 bahasa",
   "description": "Satu tombol, bicara seperti biasa. Viavo membuka rute dengan tempat singgah, menelepon, mengirim pesan, memutar musik dan radio, dan menjawab dengan suara.",
   "ogTitle": "Ucapkan dalam bahasa Anda. Viavo kerjakan."
  },
@@ -13,7 +13,7 @@
  "eyebrow": "Asisten AI untuk CarPlay",
  "h1a": "Ucapkan dalam bahasa Anda.",
  "h1b": "Viavo kerjakan.",
- "sub": "Rute dengan tempat singgah, panggilan, pesan, musik, dan radio. Tekan satu tombol dan ucapkan seperti saat bicara dengan orang lain, dalam salah satu dari 29 bahasa.",
+ "sub": "Rute dengan tempat singgah, panggilan, pesan, musik, dan radio. Tekan satu tombol dan ucapkan seperti saat bicara dengan orang lain, dalam salah satu dari 31 bahasa.",
  "heroAlt": "Viavo di layar CarPlay",
  "bandPre": "Siri tidak bisa berbahasa ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Kalender",
   "Reminders": "Pengingat"
  },
- "langsTitle": "29 bahasa, masing-masing dengan suara penutur asli",
+ "langsTitle": "31 bahasa, masing-masing dengan suara penutur asli",
  "legend": "Siri tidak bisa bahasa ini",
  "langNames": {
+  "sl": "Slovenia",
+  "ur": "Urdu",
   "ar": "Arab",
   "zh-hans": "Tionghoa (Sederhana)",
   "zh-hant": "Tionghoa (Tradisional)",
@@ -182,7 +184,7 @@
   ],
   [
    "Viavo bisa berbahasa apa saja?",
-   "29 bahasa: Arab, Belanda, Ceko, Hindi, Hungaria, Ibrani, Indonesia, Inggris, Italia, Jepang, Jerman, Korea, Kroasia, Polandia, Portugis, Prancis, Rumania, Rusia, Serbia, Slovakia, Spanyol, Swedia, Thai, Tionghoa (Sederhana dan Tradisional), Turki, Ukraina, Vietnam, dan Yunani. Setiap bahasa punya tampilan aplikasinya sendiri dan suara penutur asli, wanita atau pria."
+   "31 bahasa: Slovenia, Urdu, Arab, Belanda, Ceko, Hindi, Hungaria, Ibrani, Indonesia, Inggris, Italia, Jepang, Jerman, Korea, Kroasia, Polandia, Portugis, Prancis, Rumania, Rusia, Serbia, Slovakia, Spanyol, Swedia, Thai, Tionghoa (Sederhana dan Tradisional), Turki, Ukraina, Vietnam, dan Yunani. Setiap bahasa punya tampilan aplikasinya sendiri dan suara penutur asli, wanita atau pria."
   ],
   [
    "Apakah Viavo menggantikan Siri?",

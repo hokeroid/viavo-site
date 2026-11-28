@@ -18,6 +18,8 @@ ct: sk-siri
 
 [Pozrite si príklady príkazov a odpovedí Viavo](https://viavo.app/sk/#say)
 
+[Ako si v CarPlay vypočuť správu z WhatsAppu a odpovedať po slovensky](https://viavo.app/sk/whatsapp-carplay/)
+
 ## Čo to znamená v CarPlay
 
 - Siri v CarPlay prijíma príkazy len v niektorom zo svojich jazykov, napríklad v angličtine.

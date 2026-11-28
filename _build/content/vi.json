@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: Trợ lý ảo AI cho CarPlay, 29 ngôn ngữ, có tiếng Việt",
-  "description": "Nhấn nút, nói theo cách của bạn. Viavo mở lộ trình kèm điểm dừng, gọi điện, nhắn tin, bật nhạc và radio, trả lời thành tiếng. 29 ngôn ngữ, đều có giọng bản ngữ.",
+  "title": "Viavo: Trợ lý ảo AI cho CarPlay, 31 ngôn ngữ, có tiếng Việt",
+  "description": "Nhấn nút, nói theo cách của bạn. Viavo mở lộ trình kèm điểm dừng, gọi điện, nhắn tin, bật nhạc và radio, trả lời thành tiếng. 31 ngôn ngữ, đều có giọng bản ngữ.",
   "ogTitle": "Nói bằng tiếng của bạn. Viavo lo phần còn lại."
  },
  "qo": "“",
@@ -13,7 +13,7 @@
  "eyebrow": "Trợ lý AI cho CarPlay",
  "h1a": "Nói bằng tiếng của bạn.",
  "h1b": "Viavo lo phần còn lại.",
- "sub": "Lộ trình kèm điểm dừng, cuộc gọi, tin nhắn, nhạc và radio. Nhấn một nút và nói như khi trò chuyện với người thật, bằng một trong 29 ngôn ngữ.",
+ "sub": "Lộ trình kèm điểm dừng, cuộc gọi, tin nhắn, nhạc và radio. Nhấn một nút và nói như khi trò chuyện với người thật, bằng một trong 31 ngôn ngữ.",
  "heroAlt": "Viavo trên màn hình CarPlay",
  "bandPre": "Siri không nói được ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Lịch",
   "Reminders": "Lời nhắc"
  },
- "langsTitle": "29 ngôn ngữ, đều có giọng bản ngữ",
+ "langsTitle": "31 ngôn ngữ, đều có giọng bản ngữ",
  "legend": "Siri không nói được tiếng này",
  "langNames": {
+  "sl": "tiếng Slovenia",
+  "ur": "tiếng Urdu",
   "ar": "Tiếng Ả Rập",
   "zh-hans": "Tiếng Trung (Giản thể)",
   "zh-hant": "Tiếng Trung (Phồn thể)",
@@ -182,7 +184,7 @@
   ],
   [
    "Viavo nói được những ngôn ngữ nào?",
-   "29 ngôn ngữ: tiếng Ả Rập, Anh, Ba Lan, Bồ Đào Nha, Croatia, Do Thái, Đức, Hà Lan, Hàn, Hindi, Hungary, Hy Lạp, Indonesia, Nga, Nhật, Pháp, Romania, Séc, Serbia, Slovakia, Tây Ban Nha, Thái, Thổ Nhĩ Kỳ, Thụy Điển, Trung (giản thể và phồn thể), Ukraina, Việt và Ý. Ngôn ngữ nào cũng có giao diện ứng dụng và giọng bản ngữ, giọng nữ hoặc giọng nam."
+   "31 ngôn ngữ: tiếng Slovenia, tiếng Urdu, tiếng Ả Rập, Anh, Ba Lan, Bồ Đào Nha, Croatia, Do Thái, Đức, Hà Lan, Hàn, Hindi, Hungary, Hy Lạp, Indonesia, Nga, Nhật, Pháp, Romania, Séc, Serbia, Slovakia, Tây Ban Nha, Thái, Thổ Nhĩ Kỳ, Thụy Điển, Trung (giản thể và phồn thể), Ukraina, Việt và Ý. Ngôn ngữ nào cũng có giao diện ứng dụng và giọng bản ngữ, giọng nữ hoặc giọng nam."
   ],
   [
    "Viavo có thay thế Siri không?",

@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: AI-hangasszisztens CarPlay-hez, 29 nyelven",
-  "description": "Nyomd meg a gombot, mondd, ahogy szoktad, és a Viavo útvonalat tervez megállóval, telefonál, üzenetet ír, zenét és rádiót indít. 29 nyelven, anyanyelvi hanggal.",
+  "title": "Viavo: AI-hangasszisztens CarPlay-hez, 31 nyelven",
+  "description": "Nyomd meg a gombot, mondd, ahogy szoktad, és a Viavo útvonalat tervez megállóval, telefonál, üzenetet ír, zenét és rádiót indít. 31 nyelven, anyanyelvi hanggal.",
   "ogTitle": "Mondd el a saját nyelveden. A Viavo elintézi."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "AI-asszisztens CarPlay-hez",
  "h1a": "Mondd el a saját nyelveden.",
  "h1b": "A Viavo elintézi.",
- "sub": "Útvonal megállóval, hívások, üzenetek, zene és rádió. Nyomd meg az egyetlen gombot, és mondd úgy, ahogy egy embernek mondanád, a 29 nyelv bármelyikén.",
+ "sub": "Útvonal megállóval, hívások, üzenetek, zene és rádió. Nyomd meg az egyetlen gombot, és mondd úgy, ahogy egy embernek mondanád, a 31 nyelv bármelyikén.",
  "heroAlt": "A Viavo egy CarPlay-kijelzőn",
  "bandPre": "A Siri nem beszél ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Naptár",
   "Reminders": "Emlékeztetők"
  },
- "langsTitle": "29 nyelv, mindegyik anyanyelvi hangon",
+ "langsTitle": "31 nyelv, mindegyik anyanyelvi hangon",
  "legend": "A Siri nem beszéli",
  "langNames": {
+  "sl": "szlovén",
+  "ur": "urdu",
   "ar": "Arab",
   "zh-hans": "Kínai (egyszerűsített)",
   "zh-hant": "Kínai (hagyományos)",
@@ -182,7 +184,7 @@
   ],
   [
    "Milyen nyelveken beszél a Viavo?",
-   "29 nyelvet beszél: angol, arab, cseh, francia, görög, héber, hindi, holland, horvát, indonéz, japán, kínai (egyszerűsített és hagyományos), koreai, lengyel, magyar, német, olasz, orosz, portugál, román, spanyol, svéd, szerb, szlovák, thai, török, ukrán és vietnámi. Az app felülete mindegyiken elérhető, és mindegyikhez anyanyelvi hang tartozik, női vagy férfi."
+   "31 nyelvet beszél: szlovén, urdu, angol, arab, cseh, francia, görög, héber, hindi, holland, horvát, indonéz, japán, kínai (egyszerűsített és hagyományos), koreai, lengyel, magyar, német, olasz, orosz, portugál, román, spanyol, svéd, szerb, szlovák, thai, török, ukrán és vietnámi. Az app felülete mindegyiken elérhető, és mindegyikhez anyanyelvi hang tartozik, női vagy férfi."
   ],
   [
    "Helyettesíti a Sirit?",

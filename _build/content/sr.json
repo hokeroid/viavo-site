@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Viavo: glasovni AI asistent na srpskom za CarPlay",
-  "description": "Pritisni dugme i reci svojim rečima. Viavo otvara rutu uz stajanje, zove, piše poruke, pušta muziku i radio i odgovara naglas. Na 29 jezika, izvornim glasom.",
+  "description": "Pritisni dugme i reci svojim rečima. Viavo otvara rutu uz stajanje, zove, piše poruke, pušta muziku i radio i odgovara naglas. Na 31 jeziku, izvornim glasom.",
   "ogTitle": "Reci na svom jeziku. Viavo će to uraditi."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "AI asistent za CarPlay",
  "h1a": "Reci na svom jeziku.",
  "h1b": "Viavo će to uraditi.",
- "sub": "Rute uz usputno stajanje, pozivi, poruke, muzika i radio. Pritisni jedno dugme i reci kao da pričaš sa čovekom, na bilo kom od 29 jezika.",
+ "sub": "Rute uz usputno stajanje, pozivi, poruke, muzika i radio. Pritisni jedno dugme i reci kao da pričaš sa čovekom, na bilo kom od 31 jezika.",
  "heroAlt": "Viavo na ekranu CarPlay-a",
  "bandPre": "Siri ne govori ",
  "bandPost": ".",
@@ -123,9 +123,11 @@
   "home": "Kuća i planovi"
  },
  "appNames": {},
- "langsTitle": "29 jezika, svaki sa glasom izvornog govornika",
+ "langsTitle": "31 jezik, svaki sa glasom izvornog govornika",
  "legend": "Siri ga ne govori",
  "langNames": {
+  "sl": "slovenački",
+  "ur": "urdu",
   "ar": "Arapski",
   "zh-hans": "Kineski (pojednostavljeni)",
   "zh-hant": "Kineski (tradicionalni)",
@@ -179,7 +181,7 @@
   ],
   [
    "Koje jezike Viavo govori?",
-   "Viavo govori 29 jezika: arapski, češki, engleski, francuski, grčki, hebrejski, hindi, holandski, hrvatski, indonežanski, italijanski, japanski, kineski (pojednostavljeni i tradicionalni), korejski, mađarski, nemački, poljski, portugalski, rumunski, ruski, slovački, srpski, španski, švedski, tajski, turski, ukrajinski i vijetnamski. Za svaki jezik tu su ekrani aplikacije i glas izvornog govornika, ženski ili muški."
+   "Viavo govori 31 jezik: slovenački, urdu, arapski, češki, engleski, francuski, grčki, hebrejski, hindi, holandski, hrvatski, indonežanski, italijanski, japanski, kineski (pojednostavljeni i tradicionalni), korejski, mađarski, nemački, poljski, portugalski, rumunski, ruski, slovački, srpski, španski, švedski, tajski, turski, ukrajinski i vijetnamski. Za svaki jezik tu su ekrani aplikacije i glas izvornog govornika, ženski ili muški."
   ],
   [
    "Da li zamenjuje Siri?",

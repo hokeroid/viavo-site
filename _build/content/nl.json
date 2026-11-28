@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: AI-spraakassistent voor CarPlay, in 29 talen",
-  "description": "Druk op één knop en zeg het op jouw manier. Viavo opent routes met een tussenstop, belt, stuurt berichten, zet muziek en radio op en antwoordt hardop. 29 talen.",
+  "title": "Viavo: AI-spraakassistent voor CarPlay, in 31 talen",
+  "description": "Druk op één knop en zeg het op jouw manier. Viavo opent routes met een tussenstop, belt, stuurt berichten, zet muziek en radio op en antwoordt hardop. 31 talen.",
   "ogTitle": "Zeg het op jouw manier. Viavo doet het."
  },
  "qo": "„",
@@ -13,7 +13,7 @@
  "eyebrow": "AI-assistent voor CarPlay",
  "h1a": "Zeg het op jouw manier.",
  "h1b": "Viavo doet het.",
- "sub": "Routes met een tussenstop, bellen, berichten, muziek en radio. Druk op één knop en zeg het zoals je het tegen iemand zou zeggen, in een van de 29 talen.",
+ "sub": "Routes met een tussenstop, bellen, berichten, muziek en radio. Druk op één knop en zeg het zoals je het tegen iemand zou zeggen, in een van de 31 talen.",
  "heroAlt": "Viavo op een CarPlay-scherm",
  "bandPre": "Siri spreekt geen ",
  "bandPost": ".",
@@ -126,9 +126,11 @@
   "Calendar": "Agenda",
   "Reminders": "Herinneringen"
  },
- "langsTitle": "29 talen, elk met een moedertaalstem",
+ "langsTitle": "31 talen, elk met een moedertaalstem",
  "legend": "Siri spreekt deze taal niet",
  "langNames": {
+  "sl": "Sloveens",
+  "ur": "Urdu",
   "ar": "Arabisch",
   "zh-hans": "Chinees (vereenvoudigd)",
   "zh-hant": "Chinees (traditioneel)",
@@ -182,7 +184,7 @@
   ],
   [
    "Welke talen spreekt Viavo?",
-   "29: Arabisch, Chinees (vereenvoudigd en traditioneel), Duits, Engels, Frans, Grieks, Hebreeuws, Hindi, Hongaars, Indonesisch, Italiaans, Japans, Koreaans, Kroatisch, Nederlands, Oekraïens, Pools, Portugees, Roemeens, Russisch, Servisch, Slowaaks, Spaans, Thai, Tsjechisch, Turks, Vietnamees en Zweeds. In elke taal: de schermen van de app en een moedertaalstem, een vrouwen- of mannenstem."
+   "31: Sloveens, Urdu, Arabisch, Chinees (vereenvoudigd en traditioneel), Duits, Engels, Frans, Grieks, Hebreeuws, Hindi, Hongaars, Indonesisch, Italiaans, Japans, Koreaans, Kroatisch, Nederlands, Oekraïens, Pools, Portugees, Roemeens, Russisch, Servisch, Slowaaks, Spaans, Thai, Tsjechisch, Turks, Vietnamees en Zweeds. In elke taal: de schermen van de app en een moedertaalstem, een vrouwen- of mannenstem."
   ],
   [
    "Vervangt Viavo Siri?",

@@ -1,7 +1,7 @@
 {
  "meta": {
-  "title": "Viavo: AI voice assistant for CarPlay, in 29 languages",
-  "description": "Press one button and say it your way. Viavo opens routes with a stop, calls, messages, plays music and radio, and answers out loud. 29 languages, a native voice in each.",
+  "title": "Viavo: AI voice assistant for CarPlay, in 31 languages",
+  "description": "Press one button and say it your way. Viavo opens routes with a stop, calls, messages, plays music and radio, and answers out loud. 31 languages, a native voice in each.",
   "ogTitle": "Say it in your language. Viavo gets it done.",
   "pressTitle": "Press kit · Viavo",
   "pressDescription": "Facts, logos, the app icon and real CarPlay and iPhone screenshots of Viavo, the AI voice assistant for CarPlay."
@@ -15,7 +15,7 @@
  "eyebrow": "AI assistant for CarPlay",
  "h1a": "Say it in your language.",
  "h1b": "Viavo gets it done.",
- "sub": "Routes with a stop, calls, messages, music and radio. Press one button and say it the way you would to a person, in any of 29 languages.",
+ "sub": "Routes with a stop, calls, messages, music and radio. Press one button and say it the way you would to a person, in any of 31 languages.",
  "heroAlt": "Viavo on a CarPlay screen",
  "bandPre": "Siri doesn’t speak ",
  "bandPost": ".",
@@ -125,7 +125,7 @@
   "home": "Home and plans"
  },
  "appNames": {},
- "langsTitle": "29 languages, a native voice in each",
+ "langsTitle": "31 languages, a native voice in each",
  "legend": "Siri doesn’t speak it",
  "langNames": {},
  "steps": "Three steps to the road",
@@ -151,7 +151,7 @@
   ],
   [
    "Which languages does Viavo speak?",
-   "29: Arabic, Chinese (Simplified and Traditional), Croatian, Czech, Dutch, English, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Thai, Turkish, Ukrainian and Vietnamese. In each one, the app’s screens and a native voice, a woman’s or a man’s."
+   "31: Slovenian, Urdu, Arabic, Chinese (Simplified and Traditional), Croatian, Czech, Dutch, English, French, German, Greek, Hebrew, Hindi, Hungarian, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Thai, Turkish, Ukrainian and Vietnamese. In each one, the app’s screens and a native voice, a woman’s or a man’s."
   ],
   [
    "Does it replace Siri?",

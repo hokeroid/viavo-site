@@ -16,6 +16,8 @@ covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri hrvatski", "siri hrvatski je
 
 [Pogledajte primjere naredbi i odgovora u aplikaciji Viavo](https://viavo.app/hr/#say)
 
+[Kako preslušati WhatsApp poruku i odgovoriti na hrvatskom u CarPlayu](https://viavo.app/hr/whatsapp-carplay/)
+
 ## Što to znači u CarPlayu
 
 - Siri u CarPlayu prima naredbe samo na nekom od jezika koje podržava, primjerice na engleskom.

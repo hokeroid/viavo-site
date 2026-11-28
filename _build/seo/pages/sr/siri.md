@@ -16,6 +16,8 @@ covers: Q5, Q7, Q11, Q12, Q15–Q19; keywords "siri na srpskom", "siri srpski", 
 
 [Pogledajte primere komandi i odgovora u aplikaciji Viavo](https://viavo.app/sr/#say)
 
+[Kako da čujete WhatsApp poruku i odgovorite na srpskom u CarPlay-u](https://viavo.app/sr/whatsapp-carplay/)
+
 ## Šta to znači u CarPlay-u
 
 - Siri u CarPlay-u prima komande samo na nekom od jezika koje podržava, na primer na engleskom.
